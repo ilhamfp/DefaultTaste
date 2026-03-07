@@ -27,7 +27,7 @@ export function ProbeUrlForm() {
 
   return (
     <form
-      className="mx-auto w-full max-w-xl"
+      className="mx-auto w-full max-w-[42rem]"
       onSubmit={(event) => {
         event.preventDefault();
 
@@ -44,8 +44,8 @@ export function ProbeUrlForm() {
         Agent server URL
       </label>
 
-      <div className="rounded-xl border border-border/90 bg-white/90 p-1.5 shadow-[0_18px_60px_rgba(12,12,9,0.04)] backdrop-blur">
-        <div className="flex flex-col gap-2 sm:flex-row">
+      <div className="rounded-xl border border-border/90 bg-white/88 p-1.5 shadow-[0_20px_64px_rgba(12,12,9,0.045)] backdrop-blur">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
           <input
             id="agent-server-url"
             name="agentServerUrl"
@@ -59,22 +59,22 @@ export function ProbeUrlForm() {
             spellCheck={false}
             placeholder="https://agent.example.com/v1/generate or wss://agent.example.com/live"
             aria-describedby={helperId}
-            className="min-w-0 flex-1 rounded-lg border border-transparent bg-transparent px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-border focus:outline-none"
+            className="min-w-0 flex-1 rounded-lg border border-transparent bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-border focus:outline-none"
           />
 
           <button
             type="submit"
             disabled={!isValid}
-            className="rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="rounded-lg bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
-            Open Demo
+            Set Up Demo
           </button>
         </div>
       </div>
 
       <p
         id={helperId}
-        className="mt-2 text-center text-xs text-muted-foreground"
+        className="mt-2.5 text-center text-xs text-muted-foreground"
       >
         Open the demo setup for website or music and preview the intended probe
         flow.

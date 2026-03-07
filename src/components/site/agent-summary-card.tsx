@@ -21,8 +21,8 @@ export function AgentSummaryCard({
       className={cn(
         "group block border border-border bg-card transition-[transform,border-color,box-shadow] hover:border-primary/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         isCompact
-          ? "rounded-[1.25rem] bg-card/94 p-4 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(12,12,9,0.06)]"
-          : "rounded-2xl p-5",
+          ? "rounded-xl bg-card/94 p-3.5 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(12,12,9,0.06)]"
+          : "rounded-xl p-5",
         className,
       )}
     >
@@ -46,7 +46,7 @@ export function AgentSummaryCard({
           <h3
             className={cn(
               "font-serif tracking-tight text-foreground",
-              isCompact ? "mt-2 text-xl leading-none" : "mt-3 text-2xl",
+              isCompact ? "mt-1.5 text-lg leading-tight" : "mt-3 text-2xl",
             )}
           >
             {agent.name}
@@ -54,7 +54,7 @@ export function AgentSummaryCard({
           <p
             className={cn(
               "truncate font-mono text-muted-foreground",
-              isCompact ? "mt-1.5 text-[11px]" : "mt-2 text-xs",
+              isCompact ? "mt-1 text-[10px]" : "mt-2 text-xs",
             )}
           >
             {agent.model}
@@ -64,7 +64,7 @@ export function AgentSummaryCard({
         <span
           className={cn(
             "shrink-0 rounded-full bg-primary/10 font-medium text-primary",
-            isCompact ? "px-2 py-1 text-[10px]" : "px-2.5 py-1 text-[11px]",
+            isCompact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-[11px]",
           )}
         >
           {agent.probeCount} probes
@@ -72,16 +72,16 @@ export function AgentSummaryCard({
       </div>
 
       {isCompact ? (
-        <dl className="mt-4 grid grid-cols-3 gap-2">
+        <dl className="mt-3 grid grid-cols-3 gap-2">
           {agent.keyStats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-xl bg-muted/70 px-2.5 py-2"
+              className="rounded-lg bg-muted/70 px-2 py-1.5"
             >
-              <dt className="truncate text-[9px] uppercase tracking-[0.18em] text-muted-foreground">
+              <dt className="truncate text-[8px] uppercase tracking-[0.18em] text-muted-foreground">
                 {stat.label}
               </dt>
-              <dd className="mt-1 truncate text-xs font-medium text-foreground">
+              <dd className="mt-0.5 truncate text-[11px] font-medium text-foreground">
                 {stat.value}
               </dd>
             </div>

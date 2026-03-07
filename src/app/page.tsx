@@ -8,7 +8,7 @@ import { getHomepageAgentSummaries } from "@/lib/data";
 export const metadata: Metadata = {
   title: "DefaultTaste",
   description:
-    "Try the demo probe flow and preview the taste profile DefaultTaste would map.",
+    "Set up the DefaultTaste demo and reveal the taste an agent defaults to.",
 };
 
 export default async function Home() {
@@ -20,31 +20,31 @@ export default async function Home() {
       backgroundVariant="home"
       mainClassName="px-4 sm:px-6 lg:h-[calc(100svh-3.5rem)]"
     >
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-6 py-5 sm:gap-8 sm:py-6 lg:h-full lg:gap-3 lg:py-4">
-        <div className="flex flex-1 items-center justify-center lg:min-h-0">
-          <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
+      <section className="mx-auto flex w-full max-w-6xl flex-col py-6 sm:py-8 lg:h-full lg:justify-between lg:py-5">
+        <div className="flex flex-1 items-center justify-center py-4 lg:min-h-0 lg:py-7">
+          <div className="mx-auto flex w-full max-w-[44rem] flex-col items-center gap-6 text-center sm:gap-7 lg:-translate-y-3 lg:gap-8">
             <BrandLockup
               centered
               tone="hero"
-              markClassName="size-12 drop-shadow-[0_14px_28px_rgba(0,120,111,0.12)] sm:size-14"
-              wordmarkClassName="text-[2.35rem] sm:text-[3rem]"
+              markClassName="size-[3.25rem] drop-shadow-[0_14px_28px_rgba(0,120,111,0.12)] sm:size-[3.75rem]"
+              wordmarkClassName="text-[2.45rem] sm:text-[3.1rem]"
             />
 
-            <h1 className="mt-5 max-w-4xl font-serif text-[2rem] leading-[1.02] tracking-tight text-foreground text-pretty sm:text-[2.75rem] lg:text-[3rem]">
+            <h1 className="max-w-[38rem] font-serif text-[1.9rem] leading-[1.04] tracking-tight text-foreground text-pretty sm:text-[2.45rem] lg:text-[2.7rem]">
               <span className="block">Point us at an agent.</span>
-              <span className="mt-1.5 block italic text-foreground/80">
-                Preview the taste it tends to echo.
+              <span className="mt-2 block italic text-foreground/78">
+                Reveal the taste it defaults to.
               </span>
             </h1>
 
-            <div className="mt-5 w-full">
+            <div className="w-full">
               <ProbeUrlForm />
             </div>
           </div>
         </div>
 
-        <div className="shrink-0 pb-1 lg:pb-0">
-          <div className="mb-2 flex items-center justify-center gap-3">
+        <div className="shrink-0 lg:pb-1">
+          <div className="mb-3 flex items-center justify-center gap-3">
             <div className="h-px w-10 bg-border sm:w-16" />
             <h2 className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
               Already probed

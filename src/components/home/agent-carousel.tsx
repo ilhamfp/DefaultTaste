@@ -13,7 +13,7 @@ export function AgentCarousel({ agents }: AgentCarouselProps) {
 
   if (agents.length === 0) {
     return (
-      <div className="rounded-2xl border border-dashed border-border bg-muted/30 px-6 py-10 text-center text-sm text-muted-foreground">
+      <div className="rounded-xl border border-dashed border-border bg-muted/30 px-6 py-10 text-center text-sm text-muted-foreground">
         No probed agents available yet.
       </div>
     );
@@ -28,7 +28,7 @@ export function AgentCarousel({ agents }: AgentCarouselProps) {
               key={agent.id}
               agent={agent}
               density="compact"
-              className="w-[15rem] shrink-0 sm:w-[15.5rem]"
+              className="w-[14rem] shrink-0 sm:w-[14.5rem]"
             />
           ))}
         </div>
@@ -58,7 +58,7 @@ export function AgentCarousel({ agents }: AgentCarouselProps) {
                 key={`${key}-sequence-${sequence}`}
                 agent={agent}
                 density="compact"
-                className="w-[15rem] shrink-0 sm:w-[15.5rem]"
+                className="w-[14rem] shrink-0 sm:w-[14.5rem]"
               />
             ))}
           </div>

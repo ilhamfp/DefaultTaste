@@ -1,8 +1,6 @@
 <p align="center">
-  <img src="img.png" alt="DefaultTaste" width="560" />
+  <img src="img.png" alt="DefaultTaste — Point us at an agent. Reveal the taste it defaults to." width="100%" />
 </p>
-
-<h3 align="center">Your AI has taste. You just don't know it yet.</h3>
 
 <p align="center">
   DefaultTaste reveals the hidden aesthetic preferences baked into AI agents.<br/>

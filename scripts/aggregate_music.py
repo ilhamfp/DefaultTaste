@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
 """DefaultTaste - Music Aggregation Script
 
-Reads parsed music JSONs from data/music/parsed/, computes BPM stats,
-frequency distributions, brightness/density scores, and writes
-data/music/profile.json matching the AgentProfile TypeScript interface.
+Reads parsed music JSONs from data/music/parsed/, selects one output per
+refinement chain, computes BPM stats, frequency distributions, brightness /
+density scores, and writes data/music/profile.json matching the AgentProfile
+TypeScript interface.
 
-No API calls — pure data processing.
+Preferred selection is the highest-step liked result in a chain. If a chain
+never reaches liked=true, the highest-step successfully parsed result is used.
 """
 
 import json
 import math
-from collections import Counter
+import re
+from collections import Counter, defaultdict
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PARSED_DIR = PROJECT_ROOT / "data" / "music" / "parsed"
+RAW_DIR = PROJECT_ROOT / "data" / "music" / "raw"
 PROFILE_PATH = PROJECT_ROOT / "data" / "music" / "profile.json"
 
 
@@ -24,8 +28,70 @@ def load_parsed_files() -> list[dict]:
     data = []
     for f in files:
         with open(f, "r", encoding="utf-8") as fh:
-            data.append(json.load(fh))
+            item = json.load(fh)
+            item.setdefault("file_id", f.stem)
+            data.append(item)
     return data
+
+
+def parse_file_id(file_id: str) -> tuple[str, int] | None:
+    """Parse file IDs like c01_s03 into (chain_id, step)."""
+    match = re.fullmatch(r"(c\d+)_s(\d+)", file_id)
+    if match is None:
+        return None
+    return match.group(1), int(match.group(2))
+
+
+def load_raw_metadata(file_id: str) -> dict:
+    """Load raw chain metadata for a parsed result when available."""
+    raw_path = RAW_DIR / f"{file_id}.json"
+    if not raw_path.exists():
+        return {}
+
+    try:
+        with open(raw_path, "r", encoding="utf-8") as fh:
+            return json.load(fh)
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+def select_chain_results(items: list[dict]) -> list[dict]:
+    """Select one parsed result per chain for aggregation."""
+    chain_entries: dict[str, list[dict]] = defaultdict(list)
+
+    for item in items:
+        file_id = item.get("file_id")
+        if not isinstance(file_id, str):
+            continue
+
+        parsed = parse_file_id(file_id)
+        if parsed is None:
+            continue
+
+        chain_id, step = parsed
+        raw_data = load_raw_metadata(file_id)
+        evaluation = raw_data.get("evaluation") or {}
+
+        chain_entries[chain_id].append(
+            {
+                "step": step,
+                "liked": evaluation.get("liked") is True,
+                "item": item,
+            }
+        )
+
+    selected = []
+    for chain_id in sorted(chain_entries, key=lambda value: int(value[1:])):
+        entries = sorted(
+            chain_entries[chain_id],
+            key=lambda entry: entry["step"],
+            reverse=True,
+        )
+        liked_entry = next((entry for entry in entries if entry["liked"]), None)
+        chosen = liked_entry or entries[0]
+        selected.append(chosen["item"])
+
+    return selected
 
 
 def count_to_taste_entries(counter: Counter, total: int) -> list[dict]:
@@ -180,33 +246,39 @@ def generate_correction_prompt(profile: dict) -> str:
 
 def run() -> None:
     """Main entry point."""
-    items = load_parsed_files()
-    total = len(items)
+    parsed_items = load_parsed_files()
+    selected_items = select_chain_results(parsed_items)
+    total = len(selected_items)
 
     if total == 0:
         print("No parsed files found. Run analyze_music.py first.", flush=True)
         return
 
-    print(f"DefaultTaste - Music Aggregation ({total} files)", flush=True)
+    print(
+        f"DefaultTaste - Music Aggregation ({total} selected chains from {len(parsed_items)} parsed steps)",
+        flush=True,
+    )
 
     # BPM stats
-    bpm = compute_bpm_stats(items)
+    bpm = compute_bpm_stats(selected_items)
 
     # Keys
-    key_counter = Counter(item.get("key", "Unknown") for item in items)
+    key_counter = Counter(item.get("key", "Unknown") for item in selected_items)
     keys = count_to_taste_entries(key_counter, total)
 
     # Genres
-    genre_counter = Counter(item.get("genre", "Unknown") for item in items)
+    genre_counter = Counter(
+        item.get("genre", "Unknown") for item in selected_items
+    )
     genres = count_to_taste_entries(genre_counter, total)
 
     # Moods
-    mood_counter = Counter(item.get("mood", "Unknown") for item in items)
+    mood_counter = Counter(item.get("mood", "Unknown") for item in selected_items)
     moods = count_to_taste_entries(mood_counter, total)
 
     # Instruments — flatten and count per-file presence
     inst_counter = Counter()
-    for item in items:
+    for item in selected_items:
         seen = set()
         for inst in item.get("instruments", []):
             if inst not in seen:
@@ -215,12 +287,14 @@ def run() -> None:
     instruments = count_to_taste_entries(inst_counter, total)
 
     # Cultural origins
-    origin_counter = Counter(item.get("cultural_origin", "Unknown") for item in items)
+    origin_counter = Counter(
+        item.get("cultural_origin", "Unknown") for item in selected_items
+    )
     cultural_origins = count_to_taste_entries(origin_counter, total)
 
     # Brightness and density
-    brightness = compute_brightness(items)
-    density = compute_density(items)
+    brightness = compute_brightness(selected_items)
+    density = compute_density(selected_items)
 
     music_profile = {
         "bpm": bpm,

@@ -7,7 +7,7 @@ import { getHomepageAgentSummaries } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Documentation | DefaultTaste",
   description:
-    "How DefaultTaste works, what it measures, and how the current demo flow is staged.",
+    "How DefaultTaste works and what it measures.",
 };
 
 const websiteDimensions = [
@@ -58,11 +58,8 @@ export default async function DocsPage() {
             profile.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-            The product is simple on purpose: point to an agent, run it enough
-            times to expose its defaults, then turn those defaults into a
-            profile and a correction prompt. In this hackathon build, the
-            showcase profiles are published examples and the custom URL flow is
-            a staged demo of that pipeline.
+            Point to an agent, run it enough times to expose its defaults, then
+            turn those defaults into a profile and a correction prompt.
           </p>
         </section>
 
@@ -82,7 +79,7 @@ export default async function DocsPage() {
               </li>
               <li>
                 <span className="font-medium text-foreground">3.</span> Follow
-                the permanent run URL as DefaultTaste walks through a simulated
+                the permanent run URL as DefaultTaste walks through the
                 validate, probe, analyze, aggregate, and correction flow.
               </li>
             </ol>
@@ -94,14 +91,7 @@ export default async function DocsPage() {
             </p>
             <p className="mt-4 text-base leading-7 text-foreground">
               The showcase profiles are available now. Custom URL submissions
-              currently run as a guided demo walkthrough.
-            </p>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
-              The demo uses pre-generated artifacts and deterministic logic to
-              show the intended pipeline. The future integration targets are
-              Gemini-style HTTPS endpoints for website probes and Lyria-style
-              live endpoints for music probes. Protected endpoints and custom
-              auth are out of scope for this demo pass.
+              run the full probe pipeline against your endpoint.
             </p>
           </div>
         </section>
@@ -195,9 +185,8 @@ export default async function DocsPage() {
             Want the full story?
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-            The docs explain the product and the demo run flow. The About page
-            explains why it matters, why Gemini made it possible, and how the
-            hackathon build stages the idea today.
+            The docs explain the product and the probe run flow. The About page
+            explains why it matters and how Gemini powers it.
           </p>
           <div className="mt-6">
             <Link

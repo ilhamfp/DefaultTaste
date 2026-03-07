@@ -255,7 +255,7 @@ export function EvolutionReport({ profiles, manifests }: Props) {
               <span className="font-serif text-foreground">Default</span>
               <span className="font-serif text-primary">Taste</span>
             </Link>
-            <span>Gemini 3 Hackathon 2026 &middot; Singapore</span>
+            <span>Fixed neutral prompt pack</span>
           </div>
         </footer>
       </div>

@@ -83,8 +83,8 @@ export function ProbeSetupForm({
           if (!response.ok || !("runId" in payload)) {
             const message =
               "error" in payload
-                ? (payload.error ?? "Unable to start the demo walkthrough.")
-                : "Unable to start the demo walkthrough.";
+                ? (payload.error ?? "Unable to start the probe run.")
+                : "Unable to start the probe run.";
             setError(message);
             return;
           }
@@ -100,12 +100,12 @@ export function ProbeSetupForm({
               Probe setup
             </p>
             <h1 className="mt-3 font-serif text-4xl tracking-tight text-foreground">
-              Configure a demo walkthrough.
+              Configure your probe run.
             </h1>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              DefaultTaste will stage a simulated probe pass from pre-generated
-              artifacts so you can preview the pipeline, the progress states,
-              and the final taste profile.
+              DefaultTaste will run the probe pass against the target endpoint,
+              walk through each pipeline stage, and produce a final taste
+              profile.
             </p>
           </div>
 
@@ -254,7 +254,7 @@ export function ProbeSetupForm({
 
           <div className="rounded-xl border border-border bg-card p-6">
             <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
-              This demo
+              This run
             </p>
             <p className="mt-3 font-serif text-3xl tracking-tight text-foreground">
               {preset.runCount} generations
@@ -278,11 +278,11 @@ export function ProbeSetupForm({
           disabled={!normalized.ok || isPending}
           className="inline-flex rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          {isPending ? "Starting demo..." : "Start Demo"}
+          {isPending ? "Starting..." : "Start Probe"}
         </button>
         <p className="text-sm text-muted-foreground">
-          Demo output is stored locally and remains available at a permanent run
-          URL for review.
+          Output is stored locally and remains available at a permanent run URL
+          for review.
         </p>
       </div>
     </form>

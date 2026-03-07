@@ -4,9 +4,9 @@ import { MarketingShell } from "@/components/site/marketing-shell";
 import type { ProbeDepth, ProbeMedia } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Set Up Demo | DefaultTaste",
+  title: "Set Up Probe | DefaultTaste",
   description:
-    "Choose the medium and depth for a simulated DefaultTaste probe walkthrough.",
+    "Choose the medium and depth for a DefaultTaste probe run.",
 };
 
 function pickParam(value: string | string[] | undefined) {

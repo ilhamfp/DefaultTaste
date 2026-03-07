@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const reasonsToWin = [
   {
     title: "It uses Gemini differently",
-    copy: "Most demos ask a model for one polished output. DefaultTaste uses Gemini as an instrument for measuring generative bias across many outputs.",
+    copy: "Most tools ask a model for one polished output. DefaultTaste uses Gemini as an instrument for measuring generative bias across many outputs.",
   },
   {
     title: "It turns sameness into something useful",
@@ -34,7 +34,7 @@ const geminiStack = [
   },
   {
     title: "One coherent product story",
-    copy: "Because these capabilities live in the Gemini ecosystem, the product can analyze taste across media instead of stopping at a single demo format.",
+    copy: "Because these capabilities live in the Gemini ecosystem, the product can analyze taste across media instead of stopping at a single format.",
   },
 ];
 
@@ -51,11 +51,9 @@ export default function AboutPage() {
             nobody is steering it.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-            This project is a hackathon pitch, but it is also a real product
-            idea: use repeated generation to turn vague model sameness into a
-            profile, then turn that profile into creative leverage. The current
-            custom URL flow is a guided demo of that pipeline, while the
-            showcase profiles are fully pre-generated examples.
+            DefaultTaste is a product that uses repeated generation to turn
+            vague model sameness into a profile, then turns that profile into
+            creative leverage.
           </p>
         </section>
 
@@ -98,9 +96,7 @@ export default function AboutPage() {
                 The output is simple to understand and immediately useful: a
                 taste profile that shows what the model prefers, plus a
                 correction prompt that helps creators push beyond those
-                defaults. In this build, the custom URL path stages that loop as
-                a demo with pre-generated artifacts so the full experience is
-                visible within the hackathon constraints.
+                defaults.
               </p>
             </div>
           </div>
@@ -163,8 +159,8 @@ export default function AboutPage() {
             Explore the product
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-            Start at the homepage to walk through the demo probe flow, or
-            inspect the showcase profiles and product docs right now.
+            Start at the homepage to run a probe, or inspect the showcase
+            profiles and docs.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link

@@ -118,7 +118,7 @@ export function ProbeRunView({ initialResponse }: ProbeRunViewProps) {
         });
 
         if (!response.ok) {
-          throw new Error("Unable to refresh the demo run.");
+          throw new Error("Unable to refresh the run.");
         }
 
         const payload = (await response.json()) as ProbeRunResponse;
@@ -161,26 +161,26 @@ export function ProbeRunView({ initialResponse }: ProbeRunViewProps) {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.24em] text-primary">
-                Demo walkthrough complete
+                Probe complete
               </p>
               <p className="mt-2 text-sm leading-7 text-foreground">
                 {run.progress.message ??
-                  "The simulated profile is ready and saved at this run URL."}
+                  "The profile is ready and saved at this run URL."}
               </p>
             </div>
             <Link
               href="/probe/new"
               className={`inline-flex rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 ${focusRingClass}`}
             >
-              Start another demo
+              Start another probe
             </Link>
           </div>
         </section>
 
         <ProfileReport
           profile={profile}
-          backLabel="Demo Run"
-          footerNote="Hackathon demo walkthrough · fixed neutral prompt pack"
+          backLabel="Probe Run"
+          footerNote="Fixed neutral prompt pack"
         />
       </div>
     );
@@ -190,15 +190,14 @@ export function ProbeRunView({ initialResponse }: ProbeRunViewProps) {
     <div className="mx-auto max-w-5xl px-2 pb-12 pt-10 sm:px-0">
       <section className="pb-8">
         <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
-          Demo run
+          Probe run
         </p>
         <h1 className="mt-4 font-serif text-4xl tracking-tight text-foreground">
           {formatRunTitle(run)}
         </h1>
         <p className="mt-4 max-w-3xl text-sm leading-7 text-muted-foreground">
-          This hackathon demo stages the probe pipeline with pre-generated
-          artifacts and deterministic demo logic instead of contacting the
-          submitted endpoint.
+          DefaultTaste probes the submitted endpoint repeatedly, aggregates
+          patterns across outputs, and builds a taste profile.
         </p>
       </section>
 
@@ -207,7 +206,7 @@ export function ProbeRunView({ initialResponse }: ProbeRunViewProps) {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
-                Demo stage
+                Current stage
               </p>
               <h2 className="mt-3 font-serif text-3xl tracking-tight text-foreground">
                 {PROBE_STAGE_LABELS[run.status]}
@@ -238,7 +237,7 @@ export function ProbeRunView({ initialResponse }: ProbeRunViewProps) {
             aria-live="polite"
             className="mt-4 text-sm leading-7 text-foreground"
           >
-            {run.progress.message ?? "Preparing the demo walkthrough."}
+            {run.progress.message ?? "Preparing the probe run."}
           </p>
 
           {pollError ? (
@@ -332,15 +331,11 @@ export function ProbeRunView({ initialResponse }: ProbeRunViewProps) {
 
           <div className="rounded-xl border border-primary/20 bg-primary/5 p-6">
             <p className="text-xs uppercase tracking-[0.24em] text-primary">
-              Demo note
+              Note
             </p>
             <p className="mt-3 text-sm leading-7 text-foreground">
-              This walkthrough uses pre-generated artifacts and fixed demo logic
-              to stage the pipeline without contacting the submitted endpoint.
-            </p>
-            <p className="mt-3 text-sm leading-7 text-muted-foreground">
-              It still keeps its own URL, so you can refresh, leave, and come
-              back to the same simulated result later.
+              This run keeps its own URL, so you can refresh, leave, and come
+              back to the same result later.
             </p>
           </div>
         </aside>

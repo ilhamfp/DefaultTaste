@@ -13,7 +13,7 @@ export async function GET(
   const run = await refreshProbeRunState(runId);
 
   if (!run) {
-    return NextResponse.json({ error: "Demo run not found." }, { status: 404 });
+    return NextResponse.json({ error: "Run not found." }, { status: 404 });
   }
 
   const profile =

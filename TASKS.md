@@ -132,7 +132,7 @@ Create `src/app/api/profile/[agentId]/route.ts` that serves the profile JSON.
 
 ---
 
-## Task 3: Website Generation Script (Friend) — Run at 10:30am
+## Task 3: Website Generation Script (Friend) — Run at 10:30am [DONE]
 
 Create `scripts/generate_websites.py`. This is the **first thing to run** because it takes ~20-30 min for 100 runs.
 
@@ -167,7 +167,7 @@ Run: `GEMINI_API_KEY=xxx python3 scripts/generate_websites.py`
 
 ---
 
-## Task 4: Music Generation Script (Ilham) — 45 min
+## Task 4: Music Generation Script (Ilham) — 45 min [DONE]
 
 ### ⚠️ TEST LYRIA FIRST (10 minutes)
 
@@ -205,10 +205,12 @@ GEMINI_API_KEY=xxx python3 scripts/test_lyria.py
 
 **Key features:**
 
-- 20 probes across 4 sets: pure default (5x "Make me a song"), mood-only (5x), vague prompts (5x), genre-only no config (5x)
-- Each track: 12 seconds of audio via WebSocket
-- Saves WAV to `data/music/audio/001.wav` and metadata to `data/music/raw/001.json`
-- **Resumable + retry** (same pattern as website script)
+- Runs 20 independent refinement chains
+- Each chain starts with `"Make me a song"`
+- Generates audio via Lyria RealTime, then has Gemini evaluate the result
+- If Gemini dislikes a song, save the feedback and suggested next prompt, then continue refining within the same chain until a liked result or the max step limit
+- Saves WAV to `data/music/audio/c01_s01.wav` and metadata to `data/music/raw/c01_s01.json`
+- **Resumable + retry**: scans existing chain files, skips completed chains, and resumes incomplete ones from the next step
 - Runs SEQUENTIALLY (concurrent WebSocket sessions may conflict)
 - 3-second delay between sessions
 - Uses `wave` module for WAV file creation (48kHz, stereo, 16-bit PCM)
@@ -217,7 +219,7 @@ GEMINI_API_KEY=xxx python3 scripts/test_lyria.py
 
 **Full implementation provided in ARCHITECTURE.md Section 3.5.**
 
-### ✅ Done when: WAV files in `data/music/audio/`, JSON metadata in `data/music/raw/`
+### ✅ Done when: additional WAV files exist in `data/music/audio/`, JSON metadata exists in `data/music/raw/`, and the refreshed Lyria profile is visible on `/agent/lyria`
 
 ---
 

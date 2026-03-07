@@ -134,7 +134,7 @@ export async function refreshProbeRunState(runId: string) {
     } catch {
       return markProbeRunInterrupted(
         runId,
-        "The background demo process stopped unexpectedly.",
+        "The background process stopped unexpectedly.",
       );
     }
   }
@@ -142,7 +142,7 @@ export async function refreshProbeRunState(runId: string) {
   if (Date.now() - new Date(run.updatedAt).getTime() > STALLED_RUN_MS) {
     return markProbeRunInterrupted(
       runId,
-      "The demo walkthrough stalled before finishing.",
+      "The probe run stalled before finishing.",
     );
   }
 

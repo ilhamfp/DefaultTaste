@@ -31,13 +31,12 @@ export function ProbeUrlForm() {
       onSubmit={(event) => {
         event.preventDefault();
 
-        if (!parsedUrl) {
-          return;
-        }
+        const trimmed = endpoint.trim();
+        const params = trimmed
+          ? `?endpoint=${encodeURIComponent(parsedUrl ? parsedUrl.toString() : trimmed)}`
+          : "";
 
-        router.push(
-          `/probe/new?endpoint=${encodeURIComponent(parsedUrl.toString())}`,
-        );
+        router.push(`/probe/new${params}`);
       }}
     >
       <label htmlFor="agent-server-url" className="sr-only">
@@ -64,10 +63,9 @@ export function ProbeUrlForm() {
 
           <button
             type="submit"
-            disabled={!isValid}
             className="rounded-lg bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
-            Set Up Demo
+            Set Up
           </button>
         </div>
       </div>
@@ -76,8 +74,7 @@ export function ProbeUrlForm() {
         id={helperId}
         className="mt-2.5 text-center text-xs text-muted-foreground"
       >
-        Open the demo setup for website or music and preview the intended probe
-        flow.
+        Enter an agent endpoint to configure a probe run for website or music.
       </p>
     </form>
   );

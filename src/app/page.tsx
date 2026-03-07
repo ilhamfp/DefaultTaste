@@ -8,7 +8,7 @@ import { getHomepageAgentSummaries } from "@/lib/data";
 export const metadata: Metadata = {
   title: "DefaultTaste",
   description:
-    "Set up the DefaultTaste demo and reveal the taste an agent defaults to.",
+    "Reveal the hidden aesthetic preferences your AI agent defaults to.",
 };
 
 export default async function Home() {

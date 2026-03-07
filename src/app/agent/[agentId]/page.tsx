@@ -40,7 +40,7 @@ export default async function AgentProfilePage({
           profile={profile}
           interactiveData={interactiveData}
           backLabel="Agents"
-          footerNote="Gemini 3 Hackathon 2026 · Singapore"
+          footerNote="Fixed neutral prompt pack"
         />
       </div>
     </MarketingShell>

@@ -7,7 +7,7 @@ export const PROBE_TRANSPORT_NOTES: Record<ProbeMedia, string> = {
 };
 
 export const PROBE_PROMPT_NOTE =
-  "This demo keeps a fixed neutral prompt pack and stages the run from pre-generated artifacts. Your label and description are saved as metadata only and do not influence the prompts.";
+  "DefaultTaste uses a fixed neutral prompt pack. Your label and description are saved as metadata only and do not influence the prompts.";
 
 export const PROBE_DEPTH_PRESETS: Record<
   ProbeMedia,
@@ -63,10 +63,10 @@ export const PROBE_STAGE_LABELS: Record<ProbeRunStatus, string> = {
   queued: "Queued",
   validating: "Checking setup",
   probing: "Staging probe pass",
-  analyzing: "Inspecting demo artifacts",
+  analyzing: "Inspecting artifacts",
   aggregating: "Assembling profile",
   generating_correction_prompt: "Writing correction prompt",
-  completed: "Demo complete",
+  completed: "Complete",
   failed: "Failed",
   interrupted: "Interrupted",
 };

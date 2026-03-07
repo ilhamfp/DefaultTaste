@@ -7,9 +7,9 @@ import { readProbeRunProfile, refreshProbeRunState } from "@/lib/probe-runs";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Demo Run | DefaultTaste",
+  title: "Probe Run | DefaultTaste",
   description:
-    "Track a simulated DefaultTaste probe walkthrough as it stages each step of the pipeline.",
+    "Track a DefaultTaste probe run as it stages each step of the pipeline.",
 };
 
 export default async function ProbeRunPage({

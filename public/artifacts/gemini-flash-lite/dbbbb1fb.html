@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Minimalist Page</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --text: #f8fafc;
+            --accent: #38bdf8;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+        }
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        p { color: #94a3b8; margin-bottom: 2rem; }
+        button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            background: var(--accent);
+            border: none;
+            border-radius: 8px;
+            color: var(--bg);
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+        button:hover { transform: scale(1.05); background: #7dd3fc; }
+        #message { margin-top: 2rem; font-weight: bold; color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hello, World.</h1>
+        <p>This is a self-contained web page generated entirely within one file. Click the button below to interact with the JavaScript logic.</p>
+        <button id="actionBtn">Click for Surprise</button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('actionBtn');
+        const msg = document.getElementById('message');
+        const greetings = [
+            "You just triggered a JavaScript event!",
+            "Keep clicking to see what happens.",
+            "The time is now: " + new Date().toLocaleTimeString(),
+            "Stay curious and keep coding!"
+        ];
+
+        btn.addEventListener('click', () => {
+            const randomMsg = greetings[Math.floor(Math.random() * greetings.length)];
+            msg.innerText = randomMsg;
+            btn.style.backgroundColor = '#f472b6';
+        });
+    </script>
+</body>
+</html>

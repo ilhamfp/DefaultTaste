@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Personal Portfolio</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: #334155;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Web Developer & Designer</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="card">
+            <h2>About Me</h2>
+            <p>I am a passionate developer who loves building clean, user-friendly websites. I enjoy solving problems and turning ideas into digital reality.</p>
+        </section>
+
+        <section id="projects" class="card">
+            <h2>Projects</h2>
+            <p>Click the button below to see a project update.</p>
+            <button id="actionBtn">View Project Status</button>
+            <p id="statusMsg" style="margin-top: 15px; font-weight: bold;"></p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2023 Built with passion.
+    </footer>
+
+    <script>
+        const btn = document.getElementById('actionBtn');
+        const msg = document.getElementById('statusMsg');
+
+        btn.addEventListener('click', () => {
+            msg.textContent = "Status: All systems operational. Portfolio is live!";
+            msg.style.color = "green";
+            btn.style.backgroundColor = "#059669";
+        });
+    </script>
+</body>
+</html>

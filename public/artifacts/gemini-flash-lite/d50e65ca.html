@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Personal Space</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 { margin-top: 0; color: #2c3e50; }
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        button:hover { background-color: #2980b9; }
+        #message { margin-top: 20px; font-weight: bold; color: #e67e22; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Hello, World!</h1>
+        <p>This is a self-contained web page. Click the button below to see some interactivity.</p>
+        <button id="clickMe">Click Me</button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('clickMe').addEventListener('click', function() {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = "You've successfully triggered the JavaScript!";
+            this.style.backgroundColor = '#27ae60';
+        });
+    </script>
+</body>
+</html>

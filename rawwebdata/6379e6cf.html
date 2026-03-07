@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Portfolio</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --text: #333;
+            --accent: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #message {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Site</h1>
+        <p>Built with pure HTML, CSS, and JS.</p>
+    </header>
+
+    <main class="container">
+        <h2>About</h2>
+        <p>This is a self-contained web page. Everything you need is in this single file. No build tools, no frameworks, just clean code.</p>
+        
+        <h2>Interactive Element</h2>
+        <button id="clickMe">Click for a surprise</button>
+        <p id="message"></p>
+    </main>
+
+    <script>
+        const btn = document.getElementById('clickMe');
+        const msg = document.getElementById('message');
+
+        btn.addEventListener('click', () => {
+            const colors = ['#ef4444', '#f59e0b', '#10b981', '#3b82f6'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            msg.textContent = "Hello! Hope you're having a great day!";
+            msg.style.color = randomColor;
+            btn.style.backgroundColor = randomColor;
+        });
+    </script>
+</body>
+</html>

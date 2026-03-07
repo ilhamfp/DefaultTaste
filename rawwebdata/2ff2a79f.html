@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Interactive Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 0.5em 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        main {
+            flex-grow: 1;
+            padding: 2em;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        section {
+            margin-bottom: 2em;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
+        }
+        .cta-button:hover {
+            background-color: #218838;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background-color: #e9f7ff;
+            border: 1px solid #cceeff;
+            border-radius: 8px;
+            padding: 1em;
+            flex: 1 1 calc(33% - 40px); /* 3 cards per row with gap */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+            min-width: 250px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: auto;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+        #message-display {
+            margin-top: 1em;
+            padding: 10px;
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            border-radius: 5px;
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Awesome Page!</h1>
+        <p>Your journey begins here.</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Discover What We Offer</h2>
+            <p>This is a simple, yet engaging webpage designed to showcase interactive elements and a clean layout. Explore the sections below to learn more.</p>
+            <button class="cta-button" onclick="showAlert()">Click Me!</button>
+            <div id="message-display">Hello from JavaScript!</div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are dedicated to providing excellent web solutions. Our team works tirelessly to deliver high-quality and user-friendly experiences.</p>
+            <p>Our mission is to empower individuals and businesses through innovative technology and creative design.</p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Web Design</h3>
+                    <p>Beautiful and responsive designs tailored to your needs.</p>
+                </div>
+                <div class="card">
+                    <h3>Development</h3>
+                    <p>Robust and scalable web applications built with modern technologies.</p>
+                </div>
+                <div class="card">
+                    <h3>SEO Optimization</h3>
+                    <p>Improve your online visibility and rank higher in search results.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>Have questions or want to start a project? Feel free to reach out to us!</p>
+            <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+            <form id="contact-form">
+                <p>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                </p>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            <p id="form-status" style="margin-top: 1em; color: green; font-weight: bold;"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Interactive Webpage. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showAlert() {
+            const messageDisplay = document.getElementById('message-display');
+            messageDisplay.style.display = 'block';
+            setTimeout(() => {
+                messageDisplay.style.display = 'none';
+            }, 3000); // Hide after 3 seconds
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const formStatus = document.getElementById('form-status');
+            
+            // In a real application, you would send this data to a server
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            console.log("Form Submitted!");
+            console.log("Name:", name);
+            console.log("Email:", email);
+            console.log("Message:", message);
+
+            formStatus.textContent = "Thank you for your message, " + name + "! We will get back to you soon.";
+            formStatus.style.color = "green";
+            this.reset(); // Clear form fields
+            setTimeout(() => {
+                formStatus.textContent = "";
+            }, 5000); // Clear status after 5 seconds
+        });
+
+        // Simple scroll to section functionality
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

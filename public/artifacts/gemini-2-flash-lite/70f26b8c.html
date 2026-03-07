@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Website</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+nav {
+  background-color: #444;
+  padding: 0.5em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 1em;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+#image-container {
+    width: 100%;
+    text-align: center;
+}
+
+#image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to My Website</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section>
+    <h2>About Us</h2>
+    <p>This is a sample website built with HTML, CSS, and JavaScript.  It's a demonstration of a basic website structure, layout and some basic interactivity.</p>
+  </section>
+
+    <section>
+        <h2>Featured Image</h2>
+        <div id="image-container">
+            <img src="https://picsum.photos/800/400" alt="Sample Image">
+            <script>
+            // Simple JavaScript to change the image source on load
+            const img = document.querySelector("#image-container img");
+            if (img) {
+              img.onload = () => {
+                img.src = 'https://picsum.photos/800/400?random=' + Math.random(); //Change src on load
+              }
+
+            }
+
+            </script>
+        </div>
+    </section>
+
+  <section>
+    <h2>Our Services</h2>
+    <ul>
+      <li>Web Design</li>
+      <li>Web Development</li>
+      <li>SEO Optimization</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>Feel free to contact us at <a href="mailto:info@example.com">info@example.com</a>.</p>
+    <a href="#" class="button">Learn More</a>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

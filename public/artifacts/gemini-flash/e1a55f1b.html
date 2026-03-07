@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 0.5rem 0;
+            text-align: center;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x400/3498db/ffffff?text=Welcome+to+Our+Site');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto 1.5rem auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background-color: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .section h3 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-top: 0;
+            border-bottom: 2px solid #2ecc71;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .grid-item {
+            background-color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .grid-item img {
+            max-width: 100px;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            border: 3px solid #2ecc71;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .highlight-text {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            nav a {
+                display: block;
+                margin: 0.5rem auto;
+            }
+            .hero {
+                padding: 3rem 1rem;
+            }
+            .hero h2 {
+                font-size: 2.5em;
+            }
+            .section {
+                padding: 1.5rem;
+            }
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Awesome Website</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main class="container">
+        <section id="home" class="hero">
+            <h2>Discover <span class="highlight-text">Amazing</span> Things!</h2>
+            <p>Welcome to our platform where innovation meets simplicity. Explore our features and join our community today.</p>
+            <a href="#services" class="btn">Get Started Now</a>
+        </section>
+
+        <section id="about" class="section">
+            <h3>About Us</h3>
+            <p>We are a passionate team dedicated to creating solutions that matter. Our mission is to empower individuals and businesses with cutting-edge tools and exceptional experiences. With years of expertise, we continuously strive for excellence and user satisfaction.</p>
+            <p>Our values include transparency, innovation, and customer-centricity. We believe that by focusing on these core principles, we can build strong relationships and deliver outstanding results.</p>
+        </section>
+
+        <section id="services" class="section">
+            <h3>Our Services</h3>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/100x100/2980b9/ffffff?text=Web" alt="Web Development Icon">
+                    <h4>Web Development</h4>
+                    <p>Building responsive and modern websites tailored to your needs.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/100x100/e67e22/ffffff?text=App" alt="App Development Icon">
+                    <h4>App Development</h4>
+                    <p>Crafting intuitive and powerful mobile applications for all platforms.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/100x100/27ae60/ffffff?text=SEO" alt="SEO Optimization Icon">
+                    <h4>SEO Optimization</h4>
+                    <p>Improving your online visibility and search engine rankings.</p>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/100x100/9b59b6/ffffff?text=Cloud" alt="Cloud Hosting Icon">
+                    <h4>Cloud Hosting</h4>
+                    <p>Reliable and scalable cloud solutions to power your applications.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h3>Contact Us</h3>
+            <p>Have questions or want to collaborate? <span class="highlight-text">We'd love to hear from you!</span></p>
+            <form id="contactForm">
+                <p>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required style="width: calc(100% - 22px); padding: 10px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required style="width: calc(100% - 22px); padding: 10px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="5" required style="width: calc(100% - 22px); padding: 10px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; resize: vertical;"></textarea>
+                </p>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <p id="formStatus" style="margin-top: 1rem; font-weight: bold;"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> My Awesome Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Set current year in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Simple form submission handler
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                // In a real application, you would send this data to a server
+                // using fetch() or XMLHttpRequest.
+                formStatus.style.color = '#2ecc71';
+                formStatus.textContent = 'Thank you for your message, ' + name + '! We will get back to you shortly.';
+                contactForm.reset(); // Clear the form
+            } else {
+                formStatus.style.color = '#e74c3c';
+                formStatus.textContent = 'Please fill out all fields.';
+            }
+
+            // Clear status message after a few seconds
+            setTimeout(() => {
+                formStatus.textContent = '';
+            }, 5000);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

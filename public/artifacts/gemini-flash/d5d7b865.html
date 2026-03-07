@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #controls {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #controls input[type="number"],
+        #controls button {
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #controls input[type="number"] {
+            border: 1px solid #ccc;
+            width: 80px;
+            text-align: center;
+            -moz-appearance: textfield; /* Firefox */
+        }
+
+        #controls input[type="number"]::-webkit-outer-spin-button,
+        #controls input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        #controls button {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        #controls button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        #controls button:active {
+            transform: translateY(0);
+        }
+
+        #card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1200px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .card .card-footer {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #777;
+            text-align: right;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem 2rem;
+            margin-top: auto;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dynamic Card Generator</h1>
+        <p>Create and manage content cards on the fly!</p>
+    </header>
+
+    <main>
+        <div id="controls">
+            <input type="number" id="numCardsInput" value="5" min="1" max="50">
+            <button id="generateCardsBtn">Generate Cards</button>
+            <button id="clearCardsBtn" style="background-color: #e74c3c;">Clear Cards</button>
+        </div>
+        <div id="card-container">
+            <!-- Cards will be injected here by JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Dynamic Card App. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const numCardsInput = document.getElementById('numCardsInput');
+            const generateCardsBtn = document.getElementById('generateCardsBtn');
+            const clearCardsBtn = document.getElementById('clearCardsBtn');
+            const cardContainer = document.getElementById('card-container');
+
+            // Initial generation of cards
+            generateCards(parseInt(numCardsInput.value));
+
+            generateCardsBtn.addEventListener('click', () => {
+                const num = parseInt(numCardsInput.value);
+                if (num > 0 && num <= 50) {
+                    generateCards(num);
+                } else {
+                    alert('Please enter a number between 1 and 50.');
+                }
+            });
+
+            clearCardsBtn.addEventListener('click', () => {
+                cardContainer.innerHTML = '';
+            });
+
+            function generateCards(count) {
+                cardContainer.innerHTML = ''; // Clear existing cards
+                for (let i = 1; i <= count; i++) {
+                    const card = document.createElement('div');
+                    card.classList.add('card');
+                    card.innerHTML = `
+                        <h3>Card Title #${i}</h3>
+                        <p>${generateRandomParagraph()}</p>
+                        <div class="card-footer">Generated: ${new Date().toLocaleTimeString()}</div>
+                    `;
+                    cardContainer.appendChild(card);
+                }
+            }
+
+            function generateRandomParagraph(wordCount = 30) {
+                const words = [
+                    "Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit",
+                    "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore",
+                    "magna", "aliqua", "Ut", "enim", "ad", "minim", "veniam", "quis", "nostrud",
+                    "exercitation", "ullamco", "laboris", "nisi", "ut", "aliquip", "ex", "ea",
+                    "commodo", "consequat", "Duis", "aute", "irure", "dolor", "in", "reprehenderit",
+                    "in", "voluptate", "velit", "esse", "cillum", "dolore", "eu", "fugiat", "nulla",
+                    "pariatur", "Excepteur", "sint", "occaecat", "cupidatat", "non", "proident",
+                    "sunt", "in", "culpa", "qui", "officia", "deserunt", "mollit", "anim", "id",
+                    "est", "laborum"
+                ];
+
+                let paragraph = [];
+                for (let i = 0; i < wordCount; i++) {
+                    const randomIndex = Math.floor(Math.random() * words.length);
+                    paragraph.push(words[randomIndex]);
+                }
+                return paragraph.join(' ') + '.';
+            }
+        });
+    </script>
+</body>
+</html>

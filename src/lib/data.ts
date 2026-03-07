@@ -1,17 +1,22 @@
-import { AgentProfile, AgentSummary } from "./types";
+import { AgentProfile, AgentSummary, ArtifactEntry } from "./types";
 import { mockProfiles } from "./mock";
 import fs from "fs";
 import path from "path";
 
-export const KNOWN_AGENT_IDS = ["gemini-flash", "lyria"] as const;
+export const KNOWN_AGENT_IDS = [
+  "gemini-flash",
+  "gemini-flash-lite",
+  "gemini-2-flash-lite",
+  "lyria",
+] as const;
 
 export async function getAgentProfile(
   agentId: string,
 ): Promise<AgentProfile | null> {
   const dataDir = path.join(process.cwd(), "data");
 
-  if (agentId === "gemini-flash") {
-    const profilePath = path.join(dataDir, "websites", "profile.json");
+  if (agentId === "gemini-flash" || agentId === "gemini-flash-lite" || agentId === "gemini-2-flash-lite") {
+    const profilePath = path.join(dataDir, "websites", agentId, "profile.json");
     if (fs.existsSync(profilePath)) {
       const raw = fs.readFileSync(profilePath, "utf-8");
       return JSON.parse(raw) as AgentProfile;
@@ -27,6 +32,23 @@ export async function getAgentProfile(
   }
 
   return mockProfiles[agentId] ?? null;
+}
+
+export async function getArtifactManifest(
+  agentId: string,
+): Promise<ArtifactEntry[] | null> {
+  const manifestPath = path.join(
+    process.cwd(),
+    "data",
+    "websites",
+    agentId,
+    "artifacts.json",
+  );
+  if (fs.existsSync(manifestPath)) {
+    const raw = fs.readFileSync(manifestPath, "utf-8");
+    return JSON.parse(raw) as ArtifactEntry[];
+  }
+  return null;
 }
 
 function formatTopColor(name: string | undefined) {
@@ -47,16 +69,16 @@ function toAgentSummary(profile: AgentProfile): AgentSummary {
       probeCount: profile.probe_count,
       keyStats: [
         {
+          label: "Top Font",
+          value: profile.website_profile.fonts[0]?.name ?? "Unknown",
+        },
+        {
           label: "Dark Mode",
           value: `${profile.website_profile.dark_mode_percentage}%`,
         },
         {
           label: "Top Color",
           value: formatTopColor(profile.website_profile.colors[0]?.name),
-        },
-        {
-          label: "Top Font",
-          value: profile.website_profile.fonts[0]?.name ?? "Unknown",
         },
       ],
     };

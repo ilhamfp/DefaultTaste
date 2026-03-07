@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Interactive Webpage</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #007bff;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        section {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+        .cta-button:hover {
+            background-color: #218838;
+        }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            width: 280px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .card h3 {
+            color: #007bff;
+            margin-top: 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: auto;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+        #interactive-area {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        #color-box {
+            width: 100px;
+            height: 100px;
+            background-color: #007bff;
+            margin: 20px auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #status-message {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Interactive Webpage</h1>
+        <p>A simple, yet dynamic example of web development.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#interactive">Interactive Section</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are dedicated to creating engaging web experiences. This page demonstrates basic HTML, CSS, and JavaScript interactions to provide a glimpse into the possibilities of modern web development.</p>
+            <p>Our goal is to make learning and exploring web technologies fun and accessible for everyone.</p>
+            <a href="#" class="cta-button">Learn More</a>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Web Design</h3>
+                    <p>Crafting beautiful and responsive user interfaces.</p>
+                </div>
+                <div class="card">
+                    <h3>Development</h3>
+                    <p>Building robust and scalable web applications.</p>
+                </div>
+                <div class="card">
+                    <h3>Consulting</h3>
+                    <p>Guiding you through the best web solutions.</p>
+                </div>
+            </div>
+            <a href="#" class="cta-button">Get a Quote</a>
+        </section>
+
+        <section id="interactive">
+            <h2>Interactive Fun</h2>
+            <p>Click the box below to change its color! This demonstrates basic JavaScript event handling.</p>
+            <div id="interactive-area">
+                <p>Click the square!</p>
+                <div id="color-box"></div>
+                <p id="status-message"></p>
+                <button id="reset-button" class="cta-button">Reset Color</button>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback? Feel free to reach out!</p>
+            <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+            <p>Phone: (123) 456-7890</p>
+            <form id="contact-form">
+                <p>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                </p>
+                <button type="submit" class="cta-button" style="background-color: #007bff;">Send Message</button>
+                <p id="form-status" style="margin-top: 15px;"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Interactive Webpage. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const colorBox = document.getElementById('color-box');
+        const statusMessage = document.getElementById('status-message');
+        const resetButton = document.getElementById('reset-button');
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        const colors = ['#dc3545', '#ffc107', '#17a2b8', '#6610f2', '#e83e8c', '#20c997'];
+        let currentColorIndex = 0;
+
+        function changeColor() {
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            colorBox.style.backgroundColor = colors[currentColorIndex];
+            statusMessage.textContent = `Color changed to ${colors[currentColorIndex].toUpperCase()}!`;
+            statusMessage.style.color = colors[currentColorIndex];
+        }
+
+        function resetColor() {
+            colorBox.style.backgroundColor = '#007bff';
+            statusMessage.textContent = 'Color reset!';
+            statusMessage.style.color = '#007bff';
+            currentColorIndex = -1; // So the next click starts from 0 again
+        }
+
+        colorBox.addEventListener('click', changeColor);
+        resetButton.addEventListener('click', resetColor);
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                formStatus.textContent = "Thank you for your message, " + name + "! We will get back to you shortly.";
+                formStatus.style.color = '#28a745';
+                contactForm.reset(); // Clear the form
+            } else {
+                formStatus.textContent = "Please fill in all fields.";
+                formStatus.style.color = '#dc3545';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Web Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav {
+            background-color: #333;
+            padding: 0.75rem 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        main {
+            flex-grow: 1;
+            padding: 2rem;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        section {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+        h1, h2 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task-list li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+        }
+        .task-list li.completed {
+            text-decoration: line-through;
+            color: #888;
+            background-color: #e6ffe6;
+        }
+        .task-list li button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .task-list li button:hover {
+            background-color: #c82333;
+        }
+        .task-input-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+        .task-input-container input[type="text"] {
+            flex-grow: 1;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-width: 400px;
+        }
+        .task-input-container button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .task-input-container button:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: auto;
+        }
+        .quote {
+            font-style: italic;
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #555;
+        }
+        .counter-box {
+            background-color: #e9f5ff;
+            border: 1px solid #a3d9ff;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #0056b3;
+        }
+         .counter-box span {
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Dynamic Web Page!</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#tasks">Tasks</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About This Page</h2>
+            <p>This is a simple, single-file HTML page designed to showcase basic web development features using inline CSS and JavaScript.</p>
+            <p>It's built to be self-contained and run directly in any modern web browser without server-side dependencies.</p>
+            <p class="quote">"The only way to do great work is to love what you do." - Steve Jobs</p>
+        </section>
+
+        <section id="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Dynamic Content:</strong> Elements change with user interaction.</li>
+                <li><strong>Interactive To-Do List:</strong> Add and remove tasks.</li>
+                <li><strong>Styling:</strong> Modern and clean design using inline CSS.</li>
+                <li><strong>Client-Side Logic:</strong> JavaScript handles all interactions.</li>
+                <li><strong>Self-Contained:</strong> Everything in one HTML file.</li>
+            </ul>
+        </section>
+
+        <section id="tasks">
+            <h2>Interactive To-Do List</h2>
+            <div class="task-input-container">
+                <input type="text" id="newTaskInput" placeholder="Add a new task...">
+                <button id="addTaskButton">Add Task</button>
+            </div>
+            <ul id="taskList" class="task-list">
+                <!-- Tasks will be added here by JavaScript -->
+            </ul>
+            <div class="counter-box">
+                Total Tasks: <span id="totalTasksCount">0</span> | Completed Tasks: <span id="completedTasksCount">0</span>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Feel free to reach out to us for any inquiries or feedback.</p>
+            <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+            <p>Phone: +1 (123) 456-7890</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Dynamic Web Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYearSpan = document.getElementById('currentYear');
+            currentYearSpan.textContent = new Date().getFullYear();
+
+            const newTaskInput = document.getElementById('newTaskInput');
+            const addTaskButton = document.getElementById('addTaskButton');
+            const taskList = document.getElementById('taskList');
+            const totalTasksCountSpan = document.getElementById('totalTasksCount');
+            const completedTasksCountSpan = document.getElementById('completedTasksCount');
+
+            // Load tasks from localStorage
+            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+            function updateCounters() {
+                totalTasksCountSpan.textContent = tasks.length;
+                const completedTasks = tasks.filter(task => task.completed).length;
+                completedTasksCountSpan.textContent = completedTasks;
+            }
+
+            function renderTasks() {
+                taskList.innerHTML = ''; // Clear existing tasks
+                tasks.forEach((task, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = task.text;
+                    if (task.completed) {
+                        li.classList.add('completed');
+                    }
+
+                    const removeButton = document.createElement('button');
+                    removeButton.textContent = 'Remove';
+                    removeButton.onclick = (e) => {
+                        e.stopPropagation(); // Prevent toggling completion when removing
+                        tasks.splice(index, 1);
+                        saveTasks();
+                        renderTasks();
+                    };
+
+                    li.appendChild(removeButton);
+                    li.onclick = () => {
+                        tasks[index].completed = !tasks[index].completed;
+                        saveTasks();
+                        renderTasks();
+                    };
+
+                    taskList.appendChild(li);
+                });
+                updateCounters();
+            }
+
+            function addTask() {
+                const taskText = newTaskInput.value.trim();
+                if (taskText !== '') {
+                    tasks.push({ text: taskText, completed: false });
+                    newTaskInput.value = ''; // Clear input
+                    saveTasks();
+                    renderTasks();
+                }
+            }
+
+            function saveTasks() {
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+            }
+
+            addTaskButton.addEventListener('click', addTask);
+            newTaskInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    addTask();
+                }
+            });
+
+            // Initial render
+            renderTasks();
+        });
+    </script>
+</body>
+</html>

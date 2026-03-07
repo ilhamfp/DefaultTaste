@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Digital Presence</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        nav {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .hero {
+            padding: 4rem 0;
+        }
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        #message {
+            margin-top: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <strong>WebDev</strong>
+        <div>Home | About | Contact</div>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Welcome to my website</h1>
+            <p>Built with pure HTML, CSS, and JS. Simple, fast, and responsive.</p>
+            <button onclick="showMessage()">Click for a Surprise</button>
+            <div id="message"></div>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            const msg = document.getElementById('message');
+            msg.innerText = "Hello from the JavaScript engine! The date is " + new Date().toLocaleDateString();
+        }
+    </script>
+</body>
+</html>

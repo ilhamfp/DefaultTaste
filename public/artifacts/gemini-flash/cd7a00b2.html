@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Interactive Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #555;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #777;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .interactive-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        #message-display {
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #007bff;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Awesome Page!</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>This is a simple, interactive webpage built entirely with HTML, CSS, and JavaScript. It demonstrates basic web development principles.</p>
+            <p>Feel free to explore the interactive elements below!</p>
+            <img src="https://via.placeholder.com/600x300?text=Placeholder+Image" alt="Placeholder Image">
+        </section>
+
+        <section id="interactive-section" class="interactive-section">
+            <h2>Interactive Section</h2>
+            <p>Click the buttons to see some magic!</p>
+            <button id="changeTextBtn">Change Text</button>
+            <button id="toggleImageBtn">Toggle Image</button>
+            <button id="showAlertBtn">Show Alert</button>
+            <div id="message-display">Hello there!</div>
+            <img id="dynamicImage" src="https://via.placeholder.com/300x200?text=Dynamic+Image" alt="Dynamic Image" style="display: none;">
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Web Design</li>
+                <li>Front-end Development</li>
+                <li>Interactive Experiences</li>
+                <li>Basic Scripting</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>You can reach us at info@example.com</p>
+            <p>Connect with us on social media (links coming soon!).</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Interactive Webpage. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const changeTextBtn = document.getElementById('changeTextBtn');
+            const toggleImageBtn = document.getElementById('toggleImageBtn');
+            const showAlertBtn = document.getElementById('showAlertBtn');
+            const messageDisplay = document.getElementById('message-display');
+            const dynamicImage = document.getElementById('dynamicImage');
+
+            let isTextOriginal = true;
+            let isImageVisible = false;
+
+            changeTextBtn.addEventListener('click', () => {
+                if (isTextOriginal) {
+                    messageDisplay.textContent = 'Text has been changed!';
+                    messageDisplay.style.color = '#dc3545';
+                } else {
+                    messageDisplay.textContent = 'Hello there!';
+                    messageDisplay.style.color = '#007bff';
+                }
+                isTextOriginal = !isTextOriginal;
+            });
+
+            toggleImageBtn.addEventListener('click', () => {
+                if (isImageVisible) {
+                    dynamicImage.style.display = 'none';
+                    toggleImageBtn.textContent = 'Show Image';
+                } else {
+                    dynamicImage.style.display = 'block';
+                    toggleImageBtn.textContent = 'Hide Image';
+                }
+                isImageVisible = !isImageVisible;
+            });
+
+            showAlertBtn.addEventListener('click', () => {
+                alert('Welcome to our interactive page!');
+            });
+        });
+    </script>
+</body>
+</html>

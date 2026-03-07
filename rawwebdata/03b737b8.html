@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Greeting Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        #greetingMessage {
+            margin-top: 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #ff6f00;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Dynamic Page!</h1>
+        <p>Enter your name below and click the button to get a personalized greeting.</p>
+
+        <input type="text" id="nameInput" placeholder="Your name here">
+        <button onclick="greetUser()">Say Hello</button>
+
+        <div id="greetingMessage"></div>
+    </div>
+
+    <div class="footer">
+        &copy; <span id="currentYear"></span> A Simple Dynamic Page.
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Set the current year in the footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Store visit count in localStorage
+            let visitCount = localStorage.getItem('visitCount');
+            if (visitCount) {
+                visitCount = parseInt(visitCount) + 1;
+            } else {
+                visitCount = 1;
+            }
+            localStorage.setItem('visitCount', visitCount);
+
+            // Greet based on time of day
+            const hours = new Date().getHours();
+            let timeOfDayGreeting = "Good evening";
+            if (hours < 12) {
+                timeOfDayGreeting = "Good morning";
+            } else if (hours < 18) {
+                timeOfDayGreeting = "Good afternoon";
+            }
+
+            // Display an initial greeting if a name was previously entered
+            const storedName = localStorage.getItem('userName');
+            if (storedName) {
+                document.getElementById('nameInput').value = storedName;
+                document.getElementById('greetingMessage').innerHTML = 
+                    `<p>${timeOfDayGreeting}, ${storedName}! Welcome back. This is your visit #${visitCount}.</p>`;
+            } else {
+                document.getElementById('greetingMessage').innerHTML = `<p>${timeOfDayGreeting}! It's nice to see you.</p>`;
+            }
+        });
+
+        function greetUser() {
+            const userName = document.getElementById('nameInput').value.trim();
+            const greetingMessageDiv = document.getElementById('greetingMessage');
+            const visitCount = localStorage.getItem('visitCount');
+
+            if (userName) {
+                let timeOfDayGreeting = "";
+                const hours = new Date().getHours();
+                if (hours < 12) {
+                    timeOfDayGreeting = "Good morning";
+                } else if (hours < 18) {
+                    timeOfDayGreeting = "Good afternoon";
+                } else {
+                    timeOfDayGreeting = "Good evening";
+                }
+
+                greetingMessageDiv.innerHTML = `<p>${timeOfDayGreeting}, <span style="color: #007bff;">${userName}</span>! This is your visit #${visitCount}.</p>`;
+                localStorage.setItem('userName', userName); // Store the name
+            } else {
+                greetingMessageDiv.innerHTML = "<p style='color: red;'>Please enter your name!</p>";
+            }
+        }
+    </script>
+</body>
+</html>

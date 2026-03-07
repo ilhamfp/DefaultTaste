@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio Starter</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        nav {
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--light);
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 1rem; }
+        
+        button {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        button:hover { transform: scale(1.05); }
+
+        .container { padding: 4rem 10%; }
+        
+        footer { text-align: center; padding: 2rem; background: var(--dark); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <strong>DevFolio</strong>
+        <div>Home | About | Contact</div>
+    </nav>
+
+    <header class="hero">
+        <h1 id="headline">Welcome to my site</h1>
+        <p>I am a developer building modern web experiences.</p>
+        <button onclick="changeMessage()">Inspire Me</button>
+    </header>
+
+    <div class="container">
+        <h2>About Me</h2>
+        <p>This is a self-contained HTML page generated for your project. It includes basic styling and interactive JavaScript.</p>
+    </div>
+
+    <footer>
+        &copy; 2023 Built with pure HTML/CSS/JS
+    </footer>
+
+    <script>
+        function changeMessage() {
+            const h1 = document.getElementById('headline');
+            const messages = [
+                "Keep building awesome things!",
+                "Code is poetry.",
+                "Innovation starts here.",
+                "Hello, World!"
+            ];
+            h1.innerText = messages[Math.floor(Math.random() * messages.length)];
+        }
+    </script>
+</body>
+</html>

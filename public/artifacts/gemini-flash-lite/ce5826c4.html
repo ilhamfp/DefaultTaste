@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Minimalist Dashboard</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --accent: #38bdf8;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            width: 90%;
+            max-width: 1000px;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        button {
+            background: var(--accent);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            color: var(--bg);
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        #clock {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome Dashboard</h1>
+        <div id="clock">00:00:00</div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h3>Counter</h3>
+            <p id="count">0</p>
+            <button onclick="increment()">Click Me</button>
+        </div>
+        <div class="card">
+            <h3>Status</h3>
+            <p id="status">System Online</p>
+            <button onclick="toggleStatus()">Toggle</button>
+        </div>
+        <div class="card">
+            <h3>Browser Info</h3>
+            <p id="ua">Detecting...</p>
+        </div>
+    </div>
+
+    <script>
+        // Clock functionality
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Card logic
+        let count = 0;
+        function increment() {
+            count++;
+            document.getElementById('count').innerText = count;
+        }
+
+        function toggleStatus() {
+            const el = document.getElementById('status');
+            el.innerText = el.innerText === "System Online" ? "System Busy" : "System Online";
+        }
+
+        // Info logic
+        document.getElementById('ua').innerText = navigator.platform;
+    </script>
+</body>
+</html>

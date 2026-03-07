@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Website</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+nav {
+  background-color: #444;
+  padding: 0.5em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  margin: 0 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to My Website</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section>
+    <h2>About Us</h2>
+    <p>This is a sample website built with HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <section>
+    <h2>Our Services</h2>
+    <ul>
+      <li>Web Design</li>
+      <li>Web Development</li>
+      <li>SEO Optimization</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>Email us at <a href="mailto:info@example.com">info@example.com</a></p>
+  </section>
+
+  <button id="myButton">Click me!</button>
+
+</main>
+
+<footer>
+  <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById('myButton').addEventListener('click', function() {
+    alert('Button clicked!');
+  });
+</script>
+
+</body>
+</html>

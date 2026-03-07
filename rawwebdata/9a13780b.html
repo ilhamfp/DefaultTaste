@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .input-section {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        textarea {
+            width: calc(100% - 20px);
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1200px;
+            padding-top: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background-color: #e9ecef;
+            padding: 15px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #34495e;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-body p {
+            margin: 0 0 10px 0;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .card-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card-footer {
+            background-color: #f8f9fa;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid #dee2e6;
+        }
+
+        @media (max-width: 768px) {
+            .input-section {
+                padding: 20px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Card Generator</h1>
+
+    <div class="input-section">
+        <div class="input-group">
+            <label for="cardTitle">Card Title:</label>
+            <input type="text" id="cardTitle" placeholder="e.g., My Awesome Project">
+        </div>
+        <div class="input-group">
+            <label for="cardDescription">Card Description:</label>
+            <textarea id="cardDescription" placeholder="A brief description of the card's content or purpose."></textarea>
+        </div>
+        <div class="input-group">
+            <label for="cardFooterText">Card Footer (Optional):</label>
+            <input type="text" id="cardFooterText" placeholder="e.g., Created by John Doe">
+        </div>
+        <button onclick="createCard()">Add New Card</button>
+    </div>
+
+    <div id="cardContainer" class="card-container">
+        <!-- Cards will be added here dynamically -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add a default card when the page loads
+            createCard('Welcome Card', 'This is a dynamically generated card! Use the form above to add your own custom cards.', 'Generated on Load');
+        });
+
+        function createCard(title, description, footer) {
+            const cardTitleInput = document.getElementById('cardTitle');
+            const cardDescriptionInput = document.getElementById('cardDescription');
+            const cardFooterTextInput = document.getElementById('cardFooterText');
+
+            // Use provided arguments if available, otherwise use input field values
+            const actualTitle = title || cardTitleInput.value.trim();
+            const actualDescription = description || cardDescriptionInput.value.trim();
+            const actualFooter = footer || cardFooterTextInput.value.trim();
+
+            if (!actualTitle || !actualDescription) {
+                alert('Please enter both a title and a description for the card.');
+                return;
+            }
+
+            const cardContainer = document.getElementById('cardContainer');
+
+            const cardDiv = document.createElement('div');
+            cardDiv.classList.add('card');
+
+            const cardHeader = document.createElement('div');
+            cardHeader.classList.add('card-header');
+            cardHeader.textContent = actualTitle;
+
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+            const descriptionParagraph = document.createElement('p');
+            descriptionParagraph.textContent = actualDescription;
+            cardBody.appendChild(descriptionParagraph);
+
+            const cardFooter = document.createElement('div');
+            cardFooter.classList.add('card-footer');
+            cardFooter.textContent = actualFooter || 'No footer text provided.';
+
+            cardDiv.appendChild(cardHeader);
+            cardDiv.appendChild(cardBody);
+            cardDiv.appendChild(cardFooter);
+
+            cardContainer.prepend(cardDiv); // Add to the beginning
+
+            // Clear input fields only if the card was created from user input
+            if (!title && !description) {
+                cardTitleInput.value = '';
+                cardDescriptionInput.value = '';
+                cardFooterTextInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

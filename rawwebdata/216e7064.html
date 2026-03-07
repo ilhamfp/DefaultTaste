@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.5s ease;
+        }
+        .container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #d10000;
+        }
+        .dark-mode {
+            background-color: #2c2c2c;
+            color: #f4f4f4;
+        }
+        .dark-mode .container {
+            background-color: #3e3e3e;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .dark-mode h1 {
+            color: #90caf9;
+        }
+        .dark-mode button {
+            background-color: #6a1b9a;
+        }
+        .dark-mode button:hover {
+            background-color: #4a148c;
+        }
+        .dark-mode #message {
+            color: #ffcdd2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="pageTitle">Welcome to My Dynamic Page!</h1>
+        <p id="pageText">
+            This is a simple HTML page that demonstrates inline CSS for styling and JavaScript for interactivity.
+            Click the buttons below to see changes!
+        </p>
+        <button id="changeTextBtn">Change Text</button>
+        <button id="toggleBgBtn">Toggle Dark Mode</button>
+        <button id="showAlertBtn">Show Alert</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const pageTitle = document.getElementById('pageTitle');
+        const pageText = document.getElementById('pageText');
+        const changeTextBtn = document.getElementById('changeTextBtn');
+        const toggleBgBtn = document.getElementById('toggleBgBtn');
+        const showAlertBtn = document.getElementById('showAlertBtn');
+        const messageDisplay = document.getElementById('message');
+        const body = document.body;
+
+        let isDarkMode = false;
+        let textChangedCount = 0;
+
+        changeTextBtn.addEventListener('click', () => {
+            textChangedCount++;
+            let newText = "";
+            let newTitle = "";
+
+            if (textChangedCount % 3 === 1) {
+                newTitle = "Text Changed!";
+                newText = "You've successfully changed the text using JavaScript! Isn't that neat? Click again for another surprise.";
+                messageDisplay.textContent = "";
+            } else if (textChangedCount % 3 === 2) {
+                newTitle = "More Changes!";
+                newText = "The content is truly dynamic. Imagine what you can build with more complex interactions!";
+                messageDisplay.textContent = "Keep clicking!";
+            } else {
+                newTitle = "Back to Original!";
+                newText = "This is a simple HTML page that demonstrates inline CSS for styling and JavaScript for interactivity. Click the buttons below to see changes!";
+                messageDisplay.textContent = "Welcome back!";
+            }
+            pageTitle.textContent = newTitle;
+            pageText.textContent = newText;
+        });
+
+        toggleBgBtn.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                toggleBgBtn.textContent = 'Toggle Light Mode';
+                messageDisplay.textContent = 'Dark mode activated!';
+            } else {
+                body.classList.remove('dark-mode');
+                toggleBgBtn.textContent = 'Toggle Dark Mode';
+                messageDisplay.textContent = 'Light mode activated!';
+            }
+        });
+
+        showAlertBtn.addEventListener('click', () => {
+            setTimeout(() => {
+                alert('Hello from your JavaScript alert!');
+                messageDisplay.textContent = 'Alert button clicked!';
+            }, 100); // Small delay to allow message to register visually first
+        });
+    </script>
+</body>
+</html>

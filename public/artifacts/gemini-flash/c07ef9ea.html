@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            background-color: #444;
+            padding: 0.5em 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8em 1.5em;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        #message-area {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0ffe0;
+            border: 1px solid #aaffaa;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: auto;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Dynamic Page!</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Home Section</h2>
+            <p>This is the home section of our dynamic web page. Click the button below to see a message!</p>
+            <button class="button" id="show-message-btn">Show Fun Message</button>
+            <div id="message-area">
+                Hello, web visitor! You're awesome for clicking!
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a small team dedicated to creating simple, yet effective web solutions. Our goal is to make the web accessible and enjoyable for everyone.</p>
+            <p>Learn more about our mission and values. We believe in open source and community-driven development.</p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Web Design & Development</li>
+                <li>Responsive Layouts</li>
+                <li>Interactive User Interfaces</li>
+                <li>Content Management</li>
+                <li>Basic SEO Optimization</li>
+            </ul>
+            <p>Get in touch for a custom quote!</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have a question or want to start a project? Feel free to reach out!</p>
+            <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <form id="contact-form">
+                <p>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
+                </p>
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;">
+                </p>
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box;"></textarea>
+                </p>
+                <button type="submit" class="button">Send Message</button>
+            </form>
+            <div id="form-feedback" style="margin-top: 15px; color: green; font-weight: bold; display: none;">
+                Thank you for your message! We will get back to you shortly.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Dynamic Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the current year and display it in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // JavaScript for the "Show Fun Message" button
+        const showMessageBtn = document.getElementById('show-message-btn');
+        const messageArea = document.getElementById('message-area');
+
+        showMessageBtn.addEventListener('click', function() {
+            if (messageArea.style.display === 'none' || messageArea.style.display === '') {
+                messageArea.style.display = 'block';
+                showMessageBtn.textContent = 'Hide Message';
+            } else {
+                messageArea.style.display = 'none';
+                showMessageBtn.textContent = 'Show Fun Message';
+            }
+        });
+
+        // JavaScript for handling the contact form submission
+        const contactForm = document.getElementById('contact-form');
+        const formFeedback = document.getElementById('form-feedback');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // In a real application, you would send this data to a server
+            // For now, we'll just simulate a successful submission
+            console.log('Form submitted!');
+            console.log('Name:', document.getElementById('name').value);
+            console.log('Email:', document.getElementById('email').value);
+            console.log('Message:', document.getElementById('message').value);
+
+            // Display feedback to the user
+            formFeedback.style.display = 'block';
+
+            // Clear the form fields
+            contactForm.reset();
+
+            // Optionally, hide the feedback after a few seconds
+            setTimeout(() => {
+                formFeedback.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

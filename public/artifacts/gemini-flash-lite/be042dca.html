@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio Starter</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        nav {
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hero {
+            padding: 100px 10%;
+            text-align: center;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+        }
+
+        .btn {
+            background: white;
+            color: var(--primary);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover { transform: translateY(-3px); }
+
+        .container { padding: 50px 10%; }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        footer { text-align: center; padding: 40px; color: #64748b; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <strong>DevFolio</strong>
+        <div>
+            <a href="#" style="margin-right: 20px; text-decoration: none; color: inherit;">Home</a>
+            <a href="#" style="text-decoration: none; color: inherit;">Projects</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Building Digital Excellence</h1>
+        <p>Turning caffeine into clean code and innovative user experiences.</p>
+        <a href="#" class="btn" onclick="showMessage()">Get Started</a>
+    </header>
+
+    <div class="container">
+        <h2>My Work</h2>
+        <div class="cards">
+            <div class="card"><h3>Web Design</h3><p>Intuitive and responsive layouts.</p></div>
+            <div class="card"><h3>Development</h3><p>High-performance frontend solutions.</p></div>
+            <div class="card"><h3>Consulting</h3><p>Strategic technical guidance.</p></div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 Built with passion.
+    </footer>
+
+    <script>
+        function showMessage() {
+            alert('Welcome! Let\'s start building something amazing together.');
+        }
+    </script>
+</body>
+</html>

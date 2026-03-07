@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Personal Dashboard</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --card: #ffffff;
+            --text: #333;
+            --accent: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 { margin-bottom: 0.5rem; color: var(--accent); }
+        .clock { font-size: 2rem; font-weight: bold; margin: 1rem 0; }
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        button:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome</h1>
+        <div class="clock" id="clock">00:00:00</div>
+        <p>Current Local Time</p>
+        <button onclick="changeEmoji()">Change Mood</button>
+        <div id="emoji" style="font-size: 3rem; margin-top: 1rem;">✨</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        function changeEmoji() {
+            const emojis = ['🚀', '🌟', '🍀', '🍕', '🎨', '🔥'];
+            const random = emojis[Math.floor(Math.random() * emojis.length)];
+            document.getElementById('emoji').innerText = random;
+        }
+    </script>
+</body>
+</html>

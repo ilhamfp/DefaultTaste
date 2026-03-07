@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio Page</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Web Developer & Designer</p>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>About Me</h2>
+            <p>I am a passionate web developer creating modern, responsive, and user-friendly web applications. I love working with JavaScript, CSS, and modern frameworks.</p>
+        </div>
+
+        <div class="card">
+            <h2>Interactive Section</h2>
+            <p id="counter">Click the button to see a counter: 0</p>
+            <button id="btn">Increment</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Web Project</p>
+    </footer>
+
+    <script>
+        let count = 0;
+        const btn = document.getElementById('btn');
+        const counterText = document.getElementById('counter');
+
+        btn.addEventListener('click', () => {
+            count++;
+            counterText.innerText = `Click the button to see a counter: ${count}`;
+        });
+    </script>
+</body>
+</html>

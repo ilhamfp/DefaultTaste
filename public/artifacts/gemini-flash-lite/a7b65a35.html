@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Personal Hub</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 { color: var(--primary); }
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        button:hover { transform: scale(1.05); }
+        #message { margin-top: 1.5rem; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to My Hub</h1>
+        <p>This is a clean, responsive single-file website.</p>
+        <button id="actionBtn">Click for a Surprise</button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('actionBtn');
+        const msg = document.getElementById('message');
+        
+        btn.addEventListener('click', () => {
+            const themes = ["Keep building great things!", "Code is poetry.", "Stay curious!", "Success is a journey."];
+            const random = themes[Math.floor(Math.random() * themes.length)];
+            msg.textContent = random;
+            msg.style.color = "#6366f1";
+        });
+    </script>
+</body>
+</html>

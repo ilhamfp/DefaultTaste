@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Welcome Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            overflow: hidden; /* Prevent scrollbar from animation */
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            animation: fadeIn 1s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            animation: bounceIn 0.8s ease-out forwards;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #2196F3;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #1976D2;
+            transform: translateY(-3px);
+        }
+
+        .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-effect 0.6s linear forwards;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        @keyframes ripple-effect {
+            to {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        .message-area {
+            margin-top: 25px;
+            font-style: italic;
+            color: #777;
+            min-height: 25px; /* Prevent layout shift */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="welcomeMessage">Welcome, Guest!</h1>
+        <p>This is a simple, dynamic web page example created purely with HTML, CSS, and JavaScript. Explore its interactivity below.</p>
+        <button id="changeTextBtn" class="cta-button">Change Welcome Message</button>
+        <div class="message-area" id="dynamicMessage">Click the button to see a change!</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const welcomeMessage = document.getElementById('welcomeMessage');
+            const changeTextBtn = document.getElementById('changeTextBtn');
+            const dynamicMessage = document.getElementById('dynamicMessage');
+            let clickCount = 0;
+
+            const messages = [
+                "Hello there! Isn't this neat?",
+                "Glad to have you here!",
+                "You've clicked me again!",
+                "Welcome to a world of possibilities!",
+                "Keep clicking, surprises await (maybe not, but it's fun!).",
+                "Fantastic! Another click for the collection.",
+                "The journey of a thousand clicks begins with a single one.",
+                "Still here? Awesome!",
+                "You're a persistent one!",
+                "This is the tenth message! You win... a message."
+            ];
+
+            const initialWelcomeText = welcomeMessage.textContent;
+
+            changeTextBtn.addEventListener('click', (event) => {
+                // Ripple effect
+                const x = event.clientX - changeTextBtn.getBoundingClientRect().left;
+                const y = event.clientY - changeTextBtn.getBoundingClientRect().top;
+
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                changeTextBtn.appendChild(ripple);
+
+                ripple.addEventListener('animationend', () => {
+                    ripple.remove();
+                });
+
+                // Change text logic
+                clickCount++;
+                dynamicMessage.textContent = messages[(clickCount - 1) % messages.length];
+
+                if (clickCount % 3 === 0) {
+                    welcomeMessage.textContent = "Interactive!";
+                } else {
+                    welcomeMessage.textContent = initialWelcomeText;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

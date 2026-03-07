@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .controls {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .controls label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .controls input[type="text"],
+        .controls input[type="number"],
+        .controls select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        .controls button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .controls button:hover {
+            background-color: #2980b9;
+        }
+
+        #cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .card-footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: auto; /* Pushes footer to the bottom */
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Card Generator</h1>
+
+    <div class="controls">
+        <div>
+            <label for="cardTitleInput">Card Title:</label>
+            <input type="text" id="cardTitleInput" value="New Feature">
+        </div>
+        <div>
+            <label for="cardDescriptionInput">Description:</label>
+            <input type="text" id="cardDescriptionInput" value="This is a fantastic new feature for our product.">
+        </div>
+        <div>
+            <label for="cardImageUrlInput">Image URL:</label>
+            <input type="text" id="cardImageUrlInput" placeholder="Optional image URL">
+        </div>
+        <div>
+            <label for="cardFooterTextInput">Footer Text:</label>
+            <input type="text" id="cardFooterTextInput" value="Created by User">
+        </div>
+        <button onclick="addCard()">Add Card</button>
+        <button onclick="clearCards()" style="background-color: #e74c3c;">Clear All Cards</button>
+    </div>
+
+    <div id="cards-container">
+        <!-- Cards will be added here by JavaScript -->
+    </div>
+
+    <script>
+        const cardsContainer = document.getElementById('cards-container');
+
+        function addCard() {
+            const title = document.getElementById('cardTitleInput').value || 'Default Title';
+            const description = document.getElementById('cardDescriptionInput').value || 'A brief description of this card content.';
+            const imageUrl = document.getElementById('cardImageUrlInput').value;
+            const footerText = document.getElementById('cardFooterTextInput').value || 'Generated Card';
+
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            card.innerHTML = `
+                <div class="card-image">
+                    ${imageUrl ? `<img src="${imageUrl}" alt="${title}">` : 'No Image'}
+                </div>
+                <div class="card-title">${title}</div>
+                <div class="card-description">${description}</div>
+                <div class="card-footer">
+                    <span>${footerText}</span>
+                    <span>${new Date().toLocaleDateString()}</span>
+                </div>
+            `;
+
+            cardsContainer.appendChild(card);
+
+            // Clear input fields after adding
+            document.getElementById('cardTitleInput').value = 'New Feature';
+            document.getElementById('cardDescriptionInput').value = 'This is a fantastic new feature for our product.';
+            document.getElementById('cardImageUrlInput').value = '';
+            document.getElementById('cardFooterTextInput').value = 'Created by User';
+        }
+
+        function clearCards() {
+            cardsContainer.innerHTML = '';
+        }
+
+        // Add a default card on load
+        window.onload = function() {
+            addCard();
+            document.getElementById('cardTitleInput').value = 'Another Great Idea';
+            document.getElementById('cardDescriptionInput').value = 'Explore new horizons with this exciting concept.';
+            document.getElementById('cardImageUrlInput').value = 'https://via.placeholder.com/300x180/ADD8E6/FFFFFF?text=Placeholder+Image';
+            document.getElementById('cardFooterTextInput').value = 'Development Team';
+            addCard();
+        };
+    </script>
+</body>
+</html>

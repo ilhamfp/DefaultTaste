@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Personal Portfolio</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --text: #333;
+            --accent: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 { margin-top: 0; color: var(--accent); }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: opacity 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover { opacity: 0.9; }
+        footer { margin-top: 2rem; font-size: 0.9rem; color: #777; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Workspace</h1>
+        <p>Building digital experiences, one line of code at a time.</p>
+    </header>
+
+    <main class="container">
+        <h2>About Me</h2>
+        <p>I am a passionate web developer focused on creating clean, efficient, and user-friendly websites. I enjoy solving complex problems and learning new technologies in the ever-evolving world of software engineering.</p>
+        
+        <h2>My Skills</h2>
+        <ul>
+            <li>Front-end: HTML5, CSS3, JavaScript (ES6+)</li>
+            <li>Frameworks: React, Vue, Tailwind CSS</li>
+            <li>Tools: Git, VS Code, Webpack</li>
+        </ul>
+
+        <button class="btn" onclick="toggleColor()">Toggle Theme Shift</button>
+    </main>
+
+    <footer>
+        &copy; 2023 Built with passion.
+    </footer>
+
+    <script>
+        function toggleColor() {
+            const body = document.body;
+            if (body.style.backgroundColor === 'rgb(30, 30, 30)') {
+                body.style.backgroundColor = '#f4f4f9';
+                body.style.color = '#333';
+            } else {
+                body.style.backgroundColor = '#1e1e1e';
+                body.style.color = '#eee';
+            }
+        }
+    </script>
+</body>
+</html>

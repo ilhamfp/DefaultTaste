@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Digital Presence</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        nav {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        #status {
+            margin-top: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .card {
+            background: white;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="font-weight: bold; font-size: 1.5rem;">CORE.IO</div>
+        <div>Menu</div>
+    </nav>
+
+    <div class="hero">
+        <h1>Welcome to the Future</h1>
+        <p>Built with pure HTML, CSS, and JS.</p>
+        <button id="actionBtn">Click for Insight</button>
+        <div id="status"></div>
+    </div>
+
+    <div class="card">
+        <h2>About this page</h2>
+        <p>This is a self-contained web document. No external dependencies, just speed and simplicity. Use this as a foundation for your next project.</p>
+    </div>
+
+    <script>
+        const btn = document.getElementById('actionBtn');
+        const status = document.getElementById('status');
+
+        btn.addEventListener('click', () => {
+            const messages = [
+                "Great minds think alike!",
+                "Code is poetry.",
+                "Innovation starts with a single line.",
+                "Keep building, keep learning."
+            ];
+            const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+            status.textContent = randomMsg;
+            btn.style.backgroundColor = '#4f46e5';
+        });
+    </script>
+</body>
+</html>

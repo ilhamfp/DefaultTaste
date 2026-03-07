@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Website</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+#output {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+</style>
+</head>
+<body>
+
+<h1>Welcome to My Awesome Website</h1>
+
+<div class="container">
+  <p>This is a simple website created with HTML, CSS, and JavaScript.</p>
+  <button id="myButton">Click Me</button>
+  <div id="output"></div>
+</div>
+
+<script>
+document.getElementById('myButton').addEventListener('click', function() {
+  document.getElementById('output').textContent = "Button clicked!";
+});
+</script>
+
+</body>
+</html>

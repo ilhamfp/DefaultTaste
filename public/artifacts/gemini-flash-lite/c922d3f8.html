@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio Page</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #0f172a;
+            --text: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        nav {
+            padding: 2rem;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        header {
+            margin-top: 10vh;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 2rem;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .card {
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-top: 3rem;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>DEV_PORTFOLIO</nav>
+
+    <header>
+        <h1>Building Digital Excellence</h1>
+        <p>Turning complex ideas into elegant solutions.</p>
+        <button id="cta">Click for Spark</button>
+    </header>
+
+    <div class="card" id="infoCard" style="display: none;">
+        <h3>Welcome!</h3>
+        <p>This is a self-contained web page. Check the console or click the button again to toggle visibility.</p>
+    </div>
+
+    <script>
+        const btn = document.getElementById('cta');
+        const card = document.getElementById('infoCard');
+
+        btn.addEventListener('click', () => {
+            if (card.style.display === 'none') {
+                card.style.display = 'block';
+                btn.innerText = 'Hide Details';
+                console.log('User engaged with the site.');
+            } else {
+                card.style.display = 'none';
+                btn.innerText = 'Click for Spark';
+            }
+        });
+    </script>
+</body>
+</html>

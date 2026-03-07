@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #283747;
+            color: #ecf0f1;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #2c3e50;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            color: #283747;
+            text-align: center;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x400/3498db/ffffff?text=Welcome+to+Our+Site');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: #283747;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: #283747;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #status-message {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 5px;
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Awesome Website</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('about')">About Us</a>
+        <a href="#" onclick="showSection('services')">Services</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <main class="container">
+        <section id="home-section" class="active">
+            <div class="hero">
+                <h1>Discover Something Amazing!</h1>
+                <p>Your journey begins here. Explore our content and services.</p>
+                <button class="button" onclick="showAlert()">Learn More</button>
+            </div>
+
+            <h2>What We Offer</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Innovative Solutions</h3>
+                    <p>We provide cutting-edge solutions for your business needs.</p>
+                    <a href="#" class="button">Details</a>
+                </div>
+                <div class="card">
+                    <h3>Expert Support</h3>
+                    <p>Our team of experts is ready to assist you 24/7.</p>
+                    <a href="#" class="button">Contact Support</a>
+                </div>
+                <div class="card">
+                    <h3>Creative Design</h3>
+                    <p>Beautiful and functional designs tailored just for you.</p>
+                    <a href="#" class="button">Portfolio</a>
+                </div>
+            </div>
+            <div id="status-message"></div>
+        </section>
+
+        <section id="about-section" style="display:none;">
+            <h2>About Our Company</h2>
+            <p>Welcome to My Awesome Website! We are dedicated to providing the best online experience, offering a range of services from web development to digital marketing.</p>
+            <p>Founded in 2023, our mission is to empower individuals and businesses with the tools and knowledge to succeed in the digital age. Our team is passionate about technology and committed to excellence.</p>
+            <p>We believe in transparency, innovation, and customer satisfaction. Join us on our journey!</p>
+        </section>
+
+        <section id="services-section" style="display:none;">
+            <h2>Our Services</h2>
+            <p>Explore the wide array of services we provide to help you achieve your goals:</p>
+            <ul>
+                <li>Web Design & Development</li>
+                <li>Digital Marketing Strategy</li>
+                <li>Search Engine Optimization (SEO)</li>
+                <li>Cloud Solutions</li>
+                <li>Content Creation</li>
+                <li>IT Consulting</li>
+            </ul>
+            <p>Contact us today for a free consultation and let's discuss how we can help you.</p>
+        </section>
+
+        <section id="contact-section" style="display:none;">
+            <h2>Get in Touch</h2>
+            <p>Have questions? We'd love to hear from you!</p>
+            <form id="contactForm">
+                <p>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem; margin-top: 0.3rem; border: 1px solid #ccc; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; margin-top: 0.3rem; border: 1px solid #ccc; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.5rem; margin-top: 0.3rem; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                </p>
+                <button type="submit" class="button">Send Message</button>
+            </form>
+            <div id="form-status" style="margin-top: 1rem; padding: 0.8rem; border-radius: 5px; display: none;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> My Awesome Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Function to show alert
+        function showAlert() {
+            const messageElement = document.getElementById('status-message');
+            messageElement.textContent = 'You clicked "Learn More"! Thanks for your interest.';
+            messageElement.style.display = 'block';
+            messageElement.style.backgroundColor = '#d4edda';
+            messageElement.style.color = '#155724';
+            messageElement.style.borderColor = '#c3e6cb';
+            setTimeout(() => {
+                messageElement.style.display = 'none';
+            }, 3000); // Hide after 3 seconds
+        }
+
+        // Function to switch sections
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('main section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            document.getElementById(`${sectionId}-section`).style.display = 'block';
+        }
+
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formStatus = document.getElementById('form-status');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Simple validation
+            if (!name || !email || !message) {
+                formStatus.textContent = 'Please fill in all fields.';
+                formStatus.style.backgroundColor = '#f8d7da';
+                formStatus.style.color = '#721c24';
+                formStatus.style.borderColor = '#f5c6cb';
+                formStatus.style.display = 'block';
+                return;
+            }
+
+            // Simulate form submission
+            formStatus.textContent = `Thank you, ${name}! Your message has been sent. We'll reply to ${email} shortly.`;
+            formStatus.style.backgroundColor = '#d4edda';
+            formStatus.style.color = '#155724';
+            formStatus.style.borderColor = '#c3e6cb';
+            formStatus.style.display = 'block';
+
+            // Clear the form
+            document.getElementById('contactForm').reset();
+
+            // Hide status message after a few seconds
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 5000);
+        });
+
+        // Ensure home section is visible on load
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('home');
+        });
+
+    </script>
+</body>
+</html>

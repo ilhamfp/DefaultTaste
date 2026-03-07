@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Design Studio</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --text: #2d3436;
+            --accent: #6c5ce7;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        nav {
+            padding: 2rem;
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: space-between;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        button {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+        button:hover { transform: scale(1.05); }
+        #log { margin-top: 2rem; font-style: italic; color: #636e72; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <strong>STUDIO.IO</strong>
+        <div>Work / About</div>
+    </nav>
+
+    <main>
+        <h1>Creative Solutions.</h1>
+        <p>We build professional websites with simple, clean design principles.</p>
+        <button id="cta">Click for Interaction</button>
+        <div id="log"></div>
+    </main>
+
+    <script>
+        const btn = document.getElementById('cta');
+        const log = document.getElementById('log');
+
+        btn.addEventListener('click', () => {
+            const timestamp = new Date().toLocaleTimeString();
+            log.innerText = `Last interaction logged at: ${timestamp}`;
+            btn.style.backgroundColor = '#00b894';
+            setTimeout(() => {
+                btn.style.backgroundColor = '#6c5ce7';
+            }, 500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            background-color: #444;
+            padding: 0.8em 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00bcd4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x400/00bcd4/ffffff?text=Welcome+to+My+Site');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #00bcd4;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0097a7;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 30px;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        }
+
+        #current-time {
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Awesome Website</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero" id="home">
+        <div>
+            <h1>Experience the Future Today!</h1>
+            <p>Discover amazing things we've built just for you.</p>
+            <a href="#services" class="button">Learn More</a>
+        </div>
+    </div>
+
+    <div class="container" id="about">
+        <h2>About Us</h2>
+        <p>Welcome to our website! We are a passionate team dedicated to creating high-quality web solutions. Our goal is to provide exceptional service and innovative products that exceed your expectations.</p>
+        <p>Founded in 2023, we've quickly grown by focusing on user-centric design and robust development practices. We believe in transparency, collaboration, and continuous improvement.</p>
+    </div>
+
+    <div class="container" id="services">
+        <h2>Our Services</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x180/FF6347/FFFFFF?text=Web+Design" alt="Web Design">
+                <h3>Web Design</h3>
+                <p>Stunning designs that captivate your audience and reflect your brand.</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x180/4682B4/FFFFFF?text=Development" alt="Development">
+                <h3>Web Development</h3>
+                <p>Robust and scalable web applications built with the latest technologies.</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x180/32CD32/FFFFFF?text=SEO" alt="SEO">
+                <h3>SEO Optimization</h3>
+                <p>Improve your online visibility and rank higher in search engine results.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="contact">
+        <h2>Contact Us</h2>
+        <p>Have a project in mind or just want to say hello? Fill out the form below and we'll get back to you as soon as possible.</p>
+        <form id="contact-form">
+            <p>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+            </p>
+            <p>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+            </p>
+            <p>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+            </p>
+            <p>
+                <button type="submit" class="button">Send Message</button>
+            </p>
+        </form>
+        <div id="form-response" style="margin-top: 15px; color: green;"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 My Awesome Website. All rights reserved.</p>
+        <div id="current-time"></div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to update current time in the footer
+            function updateTime() {
+                const now = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                document.getElementById('current-time').textContent = `Current time: ${now.toLocaleDateString('en-US', options)}`;
+            }
+
+            // Update time every second
+            setInterval(updateTime, 1000);
+            updateTime(); // Initial call to display time immediately
+
+            // Handle contact form submission
+            const contactForm = document.getElementById('contact-form');
+            const formResponse = document.getElementById('form-response');
+
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent default form submission
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                // Simple validation
+                if (name && email && message) {
+                    formResponse.style.color = 'green';
+                    formResponse.textContent = `Thank you, ${name}! Your message has been received. We'll reply to ${email} shortly.`;
+                    contactForm.reset(); // Clear the form
+                } else {
+                    formResponse.style.color = 'red';
+                    formResponse.textContent = 'Please fill in all fields.';
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

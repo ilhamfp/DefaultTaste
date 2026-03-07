@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Website</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            background-color: #333;
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            transition: background-color 0.3s ease;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #555;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 2rem;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.08);
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: calc(33% - 40px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: #4CAF50;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        #dynamic-content {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-left: 5px solid #4CAF50;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            .card {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: calc(100% - 40px);
+            }
+            main {
+                padding: 1rem;
+                margin: 10px auto;
+            }
+            header {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Awesome Website!</h1>
+        <p>Your one-stop destination for everything amazing.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Discover Our Features</h2>
+            <p>We offer a range of innovative solutions designed to meet your needs. Explore our services and see how we can help you achieve your goals.</p>
+            <p>Click the button below to learn more about what makes us unique!</p>
+            <button class="cta-button" id="learnMoreBtn">Learn More</button>
+
+            <div id="dynamic-content">
+                <p>Welcome! Click "Learn More" to see some dynamic content.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Founded in 2023, our mission is to provide high-quality services and exceptional customer satisfaction. We believe in innovation, integrity, and building lasting relationships with our clients.</p>
+            <p>Our team comprises dedicated professionals passionate about bringing the best to you.</p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>Crafting beautiful and functional websites tailored to your business needs.</p>
+                </div>
+                <div class="card">
+                    <h3>Creative Design</h3>
+                    <p>Stunning visual designs that capture attention and communicate your brand effectively.</p>
+                </div>
+                <div class="card">
+                    <h3>Consulting</h3>
+                    <p>Expert advice and strategies to help your business grow and thrive.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions? We'd love to hear from you!</p>
+            <p>You can reach us at <a href="mailto:info@example.com">info@example.com</a> or call us at (123) 456-7890.</p>
+            <form id="contactForm">
+                <p>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                </p>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            <div id="form-status" style="margin-top: 15px; color: green; font-weight: bold;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Awesome Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const learnMoreBtn = document.getElementById('learnMoreBtn');
+            const dynamicContentDiv = document.getElementById('dynamic-content');
+            const contactForm = document.getElementById('contactForm');
+            const formStatusDiv = document.getElementById('form-status');
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            let contentVisible = false;
+
+            learnMoreBtn.addEventListener('click', () => {
+                if (!contentVisible) {
+                    dynamicContentDiv.innerHTML = '<p>Thank you for your interest! We are constantly working on new and exciting features to enhance your experience. Stay tuned for more updates!</p>';
+                    learnMoreBtn.textContent = 'Hide Details';
+                } else {
+                    dynamicContentDiv.innerHTML = '<p>Welcome! Click "Learn More" to see some dynamic content.</p>';
+                    learnMoreBtn.textContent = 'Learn More';
+                }
+                contentVisible = !contentVisible;
+            });
+
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent actual form submission
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                if (name && email && message) {
+                    formStatusDiv.textContent = 'Thank you for your message, ' + name + '! We will get back to you soon.';
+                    contactForm.reset(); // Clear the form
+                    formStatusDiv.style.color = 'green';
+                } else {
+                    formStatusDiv.textContent = 'Please fill in all fields.';
+                    formStatusDiv.style.color = 'red';
+                }
+            });
+
+            // Smooth scrolling for navigation links and active state
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    window.scrollTo({
+                        top: targetSection.offsetTop - (document.querySelector('header').offsetHeight + document.querySelector('nav').offsetHeight), // Adjust for fixed header/nav
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Set initial active state based on current URL hash (if any)
+            const currentHash = window.location.hash;
+            if (currentHash) {
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentHash) {
+                        link.classList.add('active');
+                    }
+                });
+            } else {
+                // Default to home if no hash
+                document.querySelector('nav ul li a[href="#home"]').classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

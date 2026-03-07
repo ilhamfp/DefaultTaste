@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient to right, #e0f2f7, #c8e6c9;
+            color: #333;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #0d47a1;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .controls {
+            background-color: #ffffff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .controls label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #1976d2;
+        }
+
+        .controls input[type="text"],
+        .controls textarea,
+        .controls input[type="color"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #bbdefb;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .controls input[type="text"]:focus,
+        .controls textarea:focus,
+        .controls input[type="color"]:focus {
+            outline: none;
+            border-color: #2196f3;
+            box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+        }
+
+        .controls textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .controls button {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            align-self: flex-end;
+        }
+
+        .controls button:hover {
+            background-color: #43a047;
+            transform: translateY(-2px);
+        }
+
+        #outputCards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-left: 5px solid; /* Placeholder, color set by JS */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #1a237e;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            word-wrap: break-word;
+        }
+
+        .card p {
+            color: #424242;
+            line-height: 1.6;
+            flex-grow: 1;
+            word-wrap: break-word;
+        }
+
+        .empty-state {
+            color: #757575;
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 50px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                padding: 20px;
+            }
+            .controls button {
+                width: 100%;
+            }
+            .card h2 {
+                font-size: 1.5em;
+            }
+            #outputCards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dynamic Card Generator</h1>
+
+    <div class="controls">
+        <label for="cardTitle">Card Title:</label>
+        <input type="text" id="cardTitle" placeholder="Enter card title" value="My Awesome Card">
+
+        <label for="cardContent">Card Content:</label>
+        <textarea id="cardContent" placeholder="Enter card description or content">This is some dynamic content for my card. I can write anything here!</textarea>
+
+        <label for="cardColor">Border Color:</label>
+        <input type="color" id="cardColor" value="#2196f3">
+
+        <button onclick="addCard()">Add Card</button>
+    </div>
+
+    <div id="outputCards">
+        <!-- Cards will be generated here -->
+        <p class="empty-state" id="emptyStateText">No cards yet. Add one!</p>
+    </div>
+
+    <script>
+        function addCard() {
+            const titleInput = document.getElementById('cardTitle');
+            const contentInput = document.getElementById('cardContent');
+            const colorInput = document.getElementById('cardColor');
+            const outputCardsDiv = document.getElementById('outputCards');
+            const emptyStateText = document.getElementById('emptyStateText');
+
+            const title = titleInput.value.trim();
+            const content = contentInput.value.trim();
+            const color = colorInput.value;
+
+            if (title === '' || content === '') {
+                alert('Please enter both a title and content for the card.');
+                return;
+            }
+
+            // Hide empty state text if cards are being added
+            if (emptyStateText) {
+                emptyStateText.style.display = 'none';
+            }
+
+            const cardDiv = document.createElement('div');
+            cardDiv.classList.add('card');
+            cardDiv.style.borderLeftColor = color;
+
+            const cardTitle = document.createElement('h2');
+            cardTitle.textContent = title;
+
+            const cardContent = document.createElement('p');
+            cardContent.textContent = content;
+
+            cardDiv.appendChild(cardTitle);
+            cardDiv.appendChild(cardContent);
+            outputCardsDiv.appendChild(cardDiv);
+
+            // Clear input fields after adding
+            titleInput.value = '';
+            contentInput.value = '';
+            // colorInput.value = '#2196f3'; // Reset color if desired, or keep last used
+        }
+
+        // Add a default card when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('cardTitle').value = 'Welcome Card';
+            document.getElementById('cardContent').value = 'This is a pre-filled card to show you how it works. Use the controls above to create your own unique cards!';
+            addCard();
+            document.getElementById('cardTitle').value = ''; // Clear after adding default
+            document.getElementById('cardContent').value = '';
+        });
+    </script>
+</body>
+</html>

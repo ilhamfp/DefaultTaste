@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 30px;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        }
+
+        .highlight {
+            color: #ff5733;
+            font-weight: bold;
+        }
+
+        #clickCountDisplay {
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Awesome Website!</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="home">
+        <h2>Hello World!</h2>
+        <p>This is a demonstration of a simple HTML page with <span class="highlight">inline CSS and JavaScript</span>. Everything is contained within a single file, making it easy to share and run.</p>
+        <p>Explore different sections of the page using the navigation above. We hope you find this example useful!</p>
+        <a href="#contact" class="cta-button" id="mainCtaButton">Get in Touch!</a>
+    </div>
+
+    <div class="container" id="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to providing excellent web development examples. Our goal is to make learning and prototyping easier by offering self-contained, functional code snippets.</p>
+        <p>This page demonstrates basic HTML structure, styling with CSS, and interactivity with JavaScript.</p>
+        <p>Click the button below to see a simple JavaScript counter in action:</p>
+        <button class="cta-button" onclick="incrementCounter()">Click Me!</button>
+        <p id="clickCountDisplay">Button clicked 0 times.</p>
+    </div>
+
+    <div class="container" id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Front-end Development</li>
+            <li>Back-end Development</li>
+            <li>Full-stack Solutions</li>
+            <li>Website Design</li>
+        </ul>
+        <p>We offer a range of services to bring your web projects to life. Contact us for more details.</p>
+    </div>
+
+    <div class="container" id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or feedback? Feel free to reach out!</p>
+        <form id="contactForm">
+            <p>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+            </p>
+            <p>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+            </p>
+            <p>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px; resize: vertical;"></textarea>
+            </p>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+        <p id="formStatus" style="margin-top: 15px; color: green; font-weight: bold;"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 My Awesome Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let clickCount = 0;
+        const clickCountDisplay = document.getElementById('clickCountDisplay');
+
+        function incrementCounter() {
+            clickCount++;
+            clickCountDisplay.textContent = `Button clicked ${clickCount} time${clickCount === 1 ? '' : 's'}.`;
+        }
+
+        const mainCtaButton = document.getElementById('mainCtaButton');
+        mainCtaButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor jump
+            alert('You clicked the main Call to Action button!');
+            // You can also programmatically scroll:
+            // document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                // In a real application, you'd send this data to a server
+                formStatus.textContent = `Thank you, ${name}! Your message has been received (not actually sent in this demo).`;
+                contactForm.reset(); // Clear the form
+            } else {
+                formStatus.textContent = 'Please fill in all fields.';
+                formStatus.style.color = 'red';
+            }
+        });
+
+        // Simple smooth scrolling for navigation links
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

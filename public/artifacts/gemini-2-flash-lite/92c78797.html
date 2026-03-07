@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Website</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+nav {
+  background-color: #444;
+  padding: 0.5em;
+  text-align: center;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em 1em;
+}
+nav a:hover {
+  background-color: #555;
+}
+main {
+  padding: 20px;
+}
+section {
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#imageGallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.gallery-image {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+#modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+#modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+#modal-image {
+  max-width: 80%;
+  max-height: 80%;
+}
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to My Website</h1>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>
+
+<main>
+  <section>
+    <h2>About Us</h2>
+    <p>This is a sample website built with HTML, CSS, and JavaScript. It demonstrates basic structure and functionality.</p>
+  </section>
+
+  <section>
+    <h2>Image Gallery</h2>
+    <div id="imageGallery">
+        <img class="gallery-image" src="https://via.placeholder.com/150x100?text=Image1" alt="Image 1">
+        <img class="gallery-image" src="https://via.placeholder.com/150x100?text=Image2" alt="Image 2">
+        <img class="gallery-image" src="https://via.placeholder.com/150x100?text=Image3" alt="Image 3">
+        <img class="gallery-image" src="https://via.placeholder.com/150x100?text=Image4" alt="Image 4">
+    </div>
+  </section>
+
+   <section>
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+          </div>
+          <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer>
+
+<div id="modal">
+    <div id="modal-content">
+        <span id="close-modal">&times;</span>
+        <img id="modal-image" src="" alt="Enlarged Image">
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const galleryImages = document.querySelectorAll('.gallery-image');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        const closeModal = document.getElementById('close-modal');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modalImage.src = img.src;
+                modal.style.display = 'block';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+
+    function submitForm() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (name && email && message) {
+            alert('Form submitted!\nName: ' + name + '\nEmail: ' + email + '\nMessage: ' + message);
+            document.getElementById('contactForm').reset();
+        } else {
+            alert('Please fill out all fields.');
+        }
+    }
+</script>
+
+</body>
+</html>

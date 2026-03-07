@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Personal Portfolio</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --text: #333;
+            --accent: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        button {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        #message {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+        <p>Built with pure HTML, CSS, and JS.</p>
+    </header>
+
+    <div class="container">
+        <h2>About Me</h2>
+        <p>This is a self-contained web page. I'm a developer learning how to build simple, efficient experiences for the web.</p>
+        
+        <h2>Interact</h2>
+        <button id="clickMe">Click for a surprise!</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const button = document.getElementById('clickMe');
+        const message = document.getElementById('message');
+
+        button.addEventListener('click', () => {
+            const colors = ['#6366f1', '#f43f5e', '#10b981', '#f59e0b'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            message.textContent = "Hello! Have an amazing day!";
+            document.body.style.backgroundColor = '#e0e7ff';
+            button.style.backgroundColor = randomColor;
+        });
+    </script>
+</body>
+</html>

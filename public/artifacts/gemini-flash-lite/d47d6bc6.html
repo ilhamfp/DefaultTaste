@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio Showcase</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #output {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Website</h1>
+    <p>Built with pure HTML, CSS, and JS</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Interactive Section</h2>
+        <p>Click the button below to see a JavaScript interaction in action.</p>
+        <button id="actionBtn">Click Me</button>
+        <p id="output"></p>
+    </div>
+
+    <div class="card">
+        <h2>About</h2>
+        <p>This is a self-contained, single-file HTML document. It uses minimal styles and scripts to demonstrate a functional web page structure.</p>
+    </div>
+</div>
+
+<script>
+    const btn = document.getElementById('actionBtn');
+    const output = document.getElementById('output');
+
+    btn.addEventListener('click', () => {
+        const time = new Date().toLocaleTimeString();
+        output.textContent = `Button clicked at: ${time}`;
+        btn.style.backgroundColor = '#4f46e5';
+    });
+</script>
+
+</body>
+</html>

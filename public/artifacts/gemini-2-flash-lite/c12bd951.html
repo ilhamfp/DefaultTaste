@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Website</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+nav {
+  background-color: #444;
+  padding: 0.5em;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em 1em;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+main {
+  padding: 2em;
+  background-color: #fff;
+  margin: 1em;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to My Website</h1>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>
+
+<main>
+  <h2>About Us</h2>
+  <p>This is a simple website created using HTML, CSS, and JavaScript.</p>
+
+  <button class="button" onclick="showAlert()">Click Me</button>
+
+   <p id="dynamicText"></p>
+</main>
+
+<footer>
+  <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer>
+
+<script>
+function showAlert() {
+  alert("Button clicked!");
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('dynamicText').textContent = "Content loaded dynamically.";
+});
+</script>
+
+</body>
+</html>

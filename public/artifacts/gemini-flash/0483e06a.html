@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 90%;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .input-group label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        .input-group input[type="text"],
+        .input-group textarea,
+        .input-group input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .input-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 30px;
+            padding-bottom: 40px; /* Space for the footer */
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            padding: 25px;
+            word-wrap: break-word;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #007bff;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .card p {
+            margin-bottom: 8px;
+            line-height: 1.6;
+            color: #666;
+        }
+        .card .small-text {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: auto; /* Pushes to the bottom */
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            margin-top: 15px;
+        }
+        footer {
+            margin-top: 40px;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 20px;
+                width: 95%;
+            }
+            #cards-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                width: 95%;
+            }
+            button {
+                font-size: 1em;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dynamic Card Generator</h1>
+        <p>Create and display custom content cards below.</p>
+    </header>
+
+    <div class="container">
+        <h2>Generate a New Card</h2>
+        <div class="input-group">
+            <label for="cardTitle">Card Title:</label>
+            <input type="text" id="cardTitle" placeholder="Enter title" required>
+        </div>
+        <div class="input-group">
+            <label for="cardContent">Card Content:</label>
+            <textarea id="cardContent" placeholder="Enter card description or content" required></textarea>
+        </div>
+        <div class="input-group">
+            <label for="cardAuthor">Author/Source (Optional):</label>
+            <input type="text" id="cardAuthor" placeholder="Enter author name or source">
+        </div>
+        <button onclick="createCard()">Add Card</button>
+    </div>
+
+    <div id="cards-container">
+        <!-- Cards will be dynamically added here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Dynamic Card Generator. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function createCard() {
+            const titleInput = document.getElementById('cardTitle');
+            const contentInput = document.getElementById('cardContent');
+            const authorInput = document.getElementById('cardAuthor');
+
+            const title = titleInput.value.trim();
+            let content = contentInput.value.trim();
+            const author = authorInput.value.trim();
+
+            if (!title || !content) {
+                alert('Please enter both a title and content for the card.');
+                return;
+            }
+
+            const cardsContainer = document.getElementById('cards-container');
+
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const cardTitle = document.createElement('h2');
+            cardTitle.textContent = title;
+            card.appendChild(cardTitle);
+
+            // Replace newlines with <br> for multi-line content
+            content = content.replace(/\n/g, '<br>');
+            const cardP = document.createElement('p');
+            cardP.innerHTML = content;
+            card.appendChild(cardP);
+
+            if (author) {
+                const cardAuthor = document.createElement('div');
+                cardAuthor.classList.add('small-text');
+                cardAuthor.innerHTML = `<strong>Author:</strong> ${author}`;
+                card.appendChild(cardAuthor);
+            }
+
+            const timestamp = new Date().toLocaleString();
+            const cardTimestamp = document.createElement('div');
+            cardTimestamp.classList.add('small-text');
+            cardTimestamp.innerHTML += `Generated: ${timestamp}`;
+            card.appendChild(cardTimestamp);
+
+            cardsContainer.prepend(card); // Add new card to the top
+
+            // Clear input fields
+            titleInput.value = '';
+            contentInput.value = '';
+            authorInput.value = '';
+        }
+
+        // Add a default card on load
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('cardTitle').value = 'Welcome Card';
+            document.getElementById('cardContent').value = 'This is a dynamically generated card! You can create your own using the form above.\nTry adding multiple lines of text.';
+            document.getElementById('cardAuthor').value = 'Card Generator';
+            createCard();
+
+            document.getElementById('cardTitle').value = '';
+            document.getElementById('cardContent').value = '';
+            document.getElementById('cardAuthor').value = '';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Personal Hub</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        nav {
+            background: var(--dark);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover { opacity: 0.9; }
+
+        #counter-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        footer { text-align: center; margin-top: 2rem; color: #64748b; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div><strong>MyWebsite</strong></div>
+        <div id="date"></div>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome to My Portal</h1>
+        <p>This is a self-contained HTML page built for demonstration purposes. It includes CSS for styling, HTML for structure, and JS for interactivity.</p>
+        
+        <hr>
+        
+        <h3>Interactive Counter</h3>
+        <div id="counter-display">0</div>
+        <button id="increment-btn">Increase Count</button>
+    </div>
+
+    <footer>
+        &copy; 2023 Developed with Vanilla Technologies
+    </footer>
+
+    <script>
+        // Update Date
+        document.getElementById('date').innerText = new Date().toLocaleDateString();
+
+        // Increment Logic
+        let count = 0;
+        const display = document.getElementById('counter-display');
+        const btn = document.getElementById('increment-btn');
+
+        btn.addEventListener('click', () => {
+            count++;
+            display.innerText = count;
+            display.style.transform = "scale(1.1)";
+            setTimeout(() => display.style.transform = "scale(1)", 100);
+        });
+    </script>
+</body>
+</html>

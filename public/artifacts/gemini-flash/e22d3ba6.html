@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Web Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            transition: all 0.3s ease;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .button-group {
+            margin-top: 30px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        #message {
+            margin-top: 25px;
+            font-size: 1.1em;
+            color: #28a745;
+            font-weight: bold;
+            display: none; /* Hidden by default */
+        }
+        .footer {
+            margin-top: 40px;
+            color: #999;
+            font-size: 0.9em;
+        }
+        .dark-mode {
+            background-color: #222;
+        }
+        .dark-mode .container {
+            background-color: #333;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+        .dark-mode h1 {
+            color: #eee;
+        }
+        .dark-mode p {
+            color: #ccc;
+        }
+        .dark-mode button {
+            background-color: #6c757d;
+        }
+        .dark-mode button:hover {
+            background-color: #5a6268;
+        }
+        .dark-mode #message {
+            color: #90ee90;
+        }
+        .dark-mode .footer {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="mainTitle">Welcome to My Dynamic Page!</h1>
+        <p id="mainParagraph">
+            This is a simple web page created with HTML, CSS, and JavaScript.
+            You can interact with it using the buttons below.
+            Feel free to explore its basic functionalities.
+        </p>
+        <div class="button-group">
+            <button id="changeTextBtn">Change Text</button>
+            <button id="toggleDarkModeBtn">Toggle Dark Mode</button>
+            <button id="showAlertBtn">Show Alert</button>
+        </div>
+        <p id="message"></p>
+    </div>
+    <div class="footer">
+        © <span id="currentYear"></span> My Dynamic Page. All rights reserved.
+    </div>
+
+    <script>
+        // Get elements by ID
+        const mainTitle = document.getElementById('mainTitle');
+        const mainParagraph = document.getElementById('mainParagraph');
+        const changeTextBtn = document.getElementById('changeTextBtn');
+        const toggleDarkModeBtn = document.getElementById('toggleDarkModeBtn');
+        const showAlertBtn = document.getElementById('showAlertBtn');
+        const messageDisplay = document.getElementById('message');
+        const currentYearSpan = document.getElementById('currentYear');
+        const body = document.body;
+
+        // Set current year in the footer
+        currentYearSpan.textContent = new Date().getFullYear();
+
+        // Event listener for "Change Text" button
+        changeTextBtn.addEventListener('click', () => {
+            mainTitle.textContent = "Text Has Been Changed!";
+            mainParagraph.textContent = "You successfully updated the content using JavaScript. Isn't that neat?";
+            
+            // Display a temporary message
+            messageDisplay.textContent = "Content updated!";
+            messageDisplay.style.display = 'block';
+
+            // Hide the message after 3 seconds
+            setTimeout(() => {
+                messageDisplay.style.display = 'none';
+            }, 3000);
+        });
+
+        // Event listener for "Toggle Dark Mode" button
+        toggleDarkModeBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Display a temporary message
+            if (body.classList.contains('dark-mode')) {
+                messageDisplay.textContent = "Dark mode enabled!";
+            } else {
+                messageDisplay.textContent = "Dark mode disabled!";
+            }
+            messageDisplay.style.display = 'block';
+
+            // Hide the message after 3 seconds
+            setTimeout(() => {
+                messageDisplay.style.display = 'none';
+            }, 3000);
+        });
+
+        // Event listener for "Show Alert" button
+        showAlertBtn.addEventListener('click', () => {
+            alert('Hello from your dynamic web page!');
+        });
+    </script>
+</body>
+</html>

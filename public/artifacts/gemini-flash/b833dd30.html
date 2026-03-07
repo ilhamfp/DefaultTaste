@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Greeting Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px 60px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            box-sizing: border-box;
+            width: 90%;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #greetingOutput {
+            margin-top: 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #007bff;
+            background-color: #e9f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #bce2ff;
+            min-height: 2em; /* Ensure space for output */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer {
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
+            input[type="text"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Interactive Page!</h1>
+        <p>Enter your name below and click the button to get a personalized greeting.</p>
+
+        <label for="nameInput">Your Name:</label>
+        <input type="text" id="nameInput" placeholder="e.g., Alice Smith">
+
+        <button onclick="greetUser()">Generate Greeting</button>
+
+        <div id="greetingOutput">
+            <!-- Greeting will appear here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 My Greeting App. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function greetUser() {
+            const nameInput = document.getElementById('nameInput');
+            const greetingOutput = document.getElementById('greetingOutput');
+            const userName = nameInput.value.trim();
+
+            if (userName) {
+                greetingOutput.textContent = `Hello, ${userName}! It's great to see you!`;
+                nameInput.value = ''; // Clear input after greeting
+            } else {
+                greetingOutput.textContent = "Please enter your name to get a greeting!";
+            }
+        }
+
+        // Optional: Allow pressing Enter key to trigger the greeting
+        document.getElementById('nameInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                greetUser();
+            }
+        });
+
+        // Basic page load message
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('greetingOutput').textContent = "Waiting for your name...";
+        });
+    </script>
+</body>
+</html>

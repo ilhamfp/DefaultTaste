@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Website</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+nav {
+  background-color: #444;
+  padding: 0.5em;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em 1em;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+main {
+  padding: 1em;
+}
+
+section {
+  background-color: #fff;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Welcome to My Website</h1>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>
+
+<main>
+  <section>
+    <h2>About Us</h2>
+    <p>This is a sample website created using HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <section>
+    <h2>Services</h2>
+    <p>We offer a variety of services. Learn more...</p>
+    <button onclick="showAlert()">Click Me!</button>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Contact us at example@example.com</p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer>
+
+<script>
+function showAlert() {
+  alert("Button clicked!");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Personal Portfolio</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --text: #333;
+            --accent: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Page</h1>
+        <p>A simple, clean, and responsive landing page.</p>
+    </header>
+
+    <div class="container">
+        <h2>About Me</h2>
+        <p>This is a self-contained HTML file. No external dependencies, just pure code. I enjoy building things for the web.</p>
+        
+        <h3>Interactive Element</h3>
+        <button id="clickMe">Click for a Surprise</button>
+        <p id="message"></p>
+    </div>
+
+    <footer>
+        &copy; 2023 Built with passion.
+    </footer>
+
+    <script>
+        const button = document.getElementById('clickMe');
+        const message = document.getElementById('message');
+
+        button.addEventListener('click', () => {
+            const colors = ['#ef4444', '#22c55e', '#3b82f6', '#eab308'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            message.textContent = "Hello! Thanks for clicking the button!";
+            document.body.style.backgroundColor = randomColor;
+            button.style.backgroundColor = '#000';
+        });
+    </script>
+
+</body>
+</html>

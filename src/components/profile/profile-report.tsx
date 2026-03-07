@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import {
@@ -16,7 +16,18 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import type { PieLabelRenderProps } from "recharts";
-import type { AgentProfile } from "@/lib/types";
+import {
+  TasteDNA,
+  PersonalityRadarChart,
+  FontSpecimens,
+  VisualFeaturesGauges,
+  WarmthSpectrum,
+  MoodBubbles,
+  DarkModeSplit,
+  ColorPaletteGrid,
+  PhilosophyScale,
+} from "@/components/profile/visual-components";
+import type { AgentProfile, ArtifactEntry } from "@/lib/types";
 
 const CHART_COLORS = [
   "#46ECD5",
@@ -170,118 +181,74 @@ function CopyButton({ text }: { text: string }) {
 function WebsiteProfileView({
   profile,
   reducedMotion,
+  artifacts,
 }: {
   profile: AgentProfile;
   reducedMotion: boolean;
+  artifacts: ArtifactEntry[];
 }) {
   const wp = profile.website_profile!;
+  const agentId = profile.id;
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <Section
-          title="Framework Distribution"
-          index={3}
-          reducedMotion={reducedMotion}
-        >
-          <HorizontalBarChart data={wp.frameworks} />
-        </Section>
-        <Section
-          title="CSS Framework Distribution"
-          index={4}
-          reducedMotion={reducedMotion}
-        >
-          <HorizontalBarChart data={wp.css_frameworks} />
-        </Section>
-      </div>
-
-      <Section
-        title="Color Palette Defaults"
-        index={5}
-        reducedMotion={reducedMotion}
-      >
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {wp.colors.map((color) => (
-            <div
-              key={color.hex}
-              className="rounded-xl border border-border bg-muted/30 p-3"
-            >
-              <div
-                className="mb-3 aspect-square w-full rounded-lg border border-border"
-                style={{ backgroundColor: color.hex }}
-              />
-              <p className="text-xs font-medium text-foreground">
-                {color.name}
-              </p>
-              <p className="mt-1 font-mono text-xs text-muted-foreground">
-                {color.hex}
-              </p>
-              <p className="mt-2 text-xs font-medium text-primary">
-                {color.percentage}%
-              </p>
-            </div>
-          ))}
-        </div>
+      {/* Color Fingerprint */}
+      <Section title="Color Fingerprint" index={3} reducedMotion={reducedMotion}>
+        <TasteDNA colors={wp.colors} artifacts={artifacts} agentId={agentId} />
       </Section>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <Section title="Font Defaults" index={6} reducedMotion={reducedMotion}>
-          <div className="flex flex-wrap gap-2">
-            {wp.fonts.map((font, i) => (
-              <span
-                key={font.name}
-                className={`rounded-full px-3 py-1.5 text-sm ${
-                  i === 0
-                    ? "border border-primary/20 bg-primary/10 text-primary"
-                    : "border border-border bg-muted text-muted-foreground"
-                }`}
-              >
-                {font.name}{" "}
-                <span className="font-medium">{font.percentage}%</span>
-              </span>
-            ))}
-          </div>
-        </Section>
+      {/* Personality Radar */}
+      <Section title="Aesthetic Personality" index={4} reducedMotion={reducedMotion}>
+        <PersonalityRadarChart personality={wp.personality} />
+      </Section>
 
-        <Section title="Layout Types" index={7} reducedMotion={reducedMotion}>
-          <TastePieChart data={wp.layouts} />
+      {/* Font Specimens */}
+      <Section title="Typography Defaults" index={5} reducedMotion={reducedMotion}>
+        <FontSpecimens fonts={wp.fonts} artifacts={artifacts} agentId={agentId} />
+      </Section>
+
+      {/* Color Palette */}
+      <Section title="Color Palette" index={6} reducedMotion={reducedMotion}>
+        <ColorPaletteGrid colors={wp.colors} artifacts={artifacts} agentId={agentId} />
+      </Section>
+
+      {/* Warmth + Mood */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <Section title="Color Temperature" index={7} reducedMotion={reducedMotion}>
+          <WarmthSpectrum data={wp.color_warmth} />
+        </Section>
+        <Section title="Emotional Mood" index={7} reducedMotion={reducedMotion}>
+          <MoodBubbles data={wp.emotional_mood} />
         </Section>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <Section
-          title="Common Libraries"
-          index={8}
-          reducedMotion={reducedMotion}
-        >
-          <div className="flex flex-wrap gap-2">
-            {wp.libraries.map((lib) => (
-              <span
-                key={lib.name}
-                className="rounded-full border border-border bg-muted px-3 py-1.5 text-sm text-muted-foreground"
-              >
-                {lib.name}{" "}
-                <span className="font-medium text-foreground">
-                  {lib.percentage}%
-                </span>
-              </span>
-            ))}
-          </div>
-        </Section>
+      {/* Visual Features */}
+      <Section title="Visual Features" index={8} reducedMotion={reducedMotion}>
+        <VisualFeaturesGauges features={wp.visual_features} />
+      </Section>
 
-        <Section
-          title="Dark Mode Default"
-          index={9}
-          reducedMotion={reducedMotion}
-        >
-          <div className="rounded-xl border border-border bg-muted/60 px-4 py-6 text-center">
-            <p className="font-mono text-5xl font-semibold tracking-tight text-primary">
-              {wp.dark_mode_percentage}%
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              of generated websites use dark mode
-            </p>
-          </div>
+      {/* Dark Mode */}
+      <Section title="Dark Mode Default" index={9} reducedMotion={reducedMotion}>
+        <DarkModeSplit darkPercentage={wp.dark_mode_percentage} artifacts={artifacts} agentId={agentId} />
+      </Section>
+
+      {/* Layout */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <Section title="Layout Types" index={10} reducedMotion={reducedMotion}>
+          <TastePieChart data={wp.layouts} />
+        </Section>
+        <Section title="Layout Techniques" index={10} reducedMotion={reducedMotion}>
+          <HorizontalBarChart data={wp.layout_techniques} />
+        </Section>
+      </div>
+
+      {/* Content Tone + Design Philosophy */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <Section title="Content Tone" index={11} reducedMotion={reducedMotion}>
+          <HorizontalBarChart data={wp.content_tone} />
+        </Section>
+        <Section title="Design Philosophy" index={11} reducedMotion={reducedMotion}>
+          <PhilosophyScale data={wp.design_philosophy} />
         </Section>
       </div>
     </div>
@@ -464,6 +431,25 @@ export function ProfileReport({
   footerNote: string;
 }) {
   const reducedMotion = useReducedMotion() ?? false;
+  const [artifacts, setArtifacts] = useState<ArtifactEntry[]>([]);
+
+  useEffect(() => {
+    if (profile.probe_type !== "website") return;
+    fetch(`/api/artifacts/${profile.id}`)
+      .then((res) => (res.ok ? res.json() : []))
+      .then(setArtifacts)
+      .catch(() => {});
+  }, [profile.id, profile.probe_type]);
+
+  // Sample thumbnails for hero
+  const sampleArtifacts = (() => {
+    if (artifacts.length === 0) return [];
+    const step = Math.max(1, Math.floor(artifacts.length / 6));
+    return Array.from(
+      { length: Math.min(6, artifacts.length) },
+      (_, i) => artifacts[i * step] ?? artifacts[i],
+    ).filter(Boolean);
+  })();
 
   return (
     <>
@@ -484,35 +470,62 @@ export function ProfileReport({
           </Link>
         </motion.div>
 
-        <motion.h1
-          className="mt-4 font-serif text-4xl tracking-tight text-foreground"
-          initial={reducedMotion ? false : "hidden"}
-          animate={reducedMotion ? undefined : "visible"}
-          variants={fadeUp}
-          custom={1}
-        >
-          {profile.name}
-        </motion.h1>
+        <div className="mt-4 flex flex-col gap-6 lg:flex-row lg:items-end lg:gap-8">
+          <motion.div
+            className="shrink-0"
+            initial={reducedMotion ? false : "hidden"}
+            animate={reducedMotion ? undefined : "visible"}
+            variants={fadeUp}
+            custom={1}
+          >
+            <h1 className="font-serif text-4xl tracking-tight text-foreground">
+              {profile.name}
+            </h1>
+            <div className="mt-3 flex flex-wrap items-center gap-3 font-mono text-xs text-muted-foreground sm:text-sm">
+              <span>{profile.model}</span>
+              <span>·</span>
+              <span>{profile.probe_count} probes</span>
+              <span>·</span>
+              <span>{formatProfileDate(profile.date)}</span>
+            </div>
+          </motion.div>
 
-        <motion.div
-          className="mt-3 flex flex-wrap items-center gap-3 font-mono text-xs text-muted-foreground sm:text-sm"
-          initial={reducedMotion ? false : "hidden"}
-          animate={reducedMotion ? undefined : "visible"}
-          variants={fadeUp}
-          custom={2}
-        >
-          <span>{profile.model}</span>
-          <span>·</span>
-          <span>{profile.probe_count} probes</span>
-          <span>·</span>
-          <span>{formatProfileDate(profile.date)}</span>
-        </motion.div>
+          {sampleArtifacts.length > 0 && (
+            <motion.div
+              className="min-w-0 flex-1"
+              initial={reducedMotion ? false : "hidden"}
+              animate={reducedMotion ? undefined : "visible"}
+              variants={fadeUp}
+              custom={2}
+            >
+              <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1">
+                {sampleArtifacts.map((a) => (
+                  <div
+                    key={a.id}
+                    className="shrink-0 overflow-hidden rounded-lg border border-border bg-white transition-shadow hover:shadow-md"
+                  >
+                    <div className="relative h-[68px] w-[90px] overflow-hidden">
+                      <iframe
+                        src={`/artifacts/${profile.id}/${a.id}.html`}
+                        sandbox="allow-scripts"
+                        loading="lazy"
+                        title={`Artifact ${a.run_index}`}
+                        className="pointer-events-none h-[600px] w-[800px] origin-top-left"
+                        style={{ transform: "scale(0.1125)" }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </div>
 
         <div className="mt-6 border-b border-border" />
       </section>
 
       {profile.website_profile && (
-        <WebsiteProfileView profile={profile} reducedMotion={reducedMotion} />
+        <WebsiteProfileView profile={profile} reducedMotion={reducedMotion} artifacts={artifacts} />
       )}
       {profile.music_profile && (
         <MusicProfileView profile={profile} reducedMotion={reducedMotion} />

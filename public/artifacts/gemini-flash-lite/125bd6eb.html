@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Minimalist Dashboard</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f8fafc;
+            --accent: #38bdf8;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        button {
+            background: var(--accent);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            color: var(--bg);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #clock {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome Dashboard</h1>
+        <div id="clock">00:00:00</div>
+        <button onclick="changeColor()">Change Theme</button>
+    </header>
+
+    <div class="container">
+        <div class="card" onclick="alert('Module 1 Active')">
+            <h3>System Status</h3>
+            <p>Everything is running smoothly.</p>
+        </div>
+        <div class="card" onclick="alert('Module 2 Active')">
+            <h3>Network</h3>
+            <p>Connection: Stable (5g)</p>
+        </div>
+        <div class="card" onclick="alert('Module 3 Active')">
+            <h3>Storage</h3>
+            <p>84% capacity used</p>
+        </div>
+    </div>
+
+    <script>
+        // Clock functionality
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Dynamic theme changer
+        function changeColor() {
+            const colors = ['#0f172a', '#1e1b4b', '#1a2e05', '#450a0a'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>

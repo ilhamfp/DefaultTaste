@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Interactive Web Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav {
+            background-color: #333;
+            padding: 0.5em 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8em 1.2em;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #007bff;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 20px;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+        #interactive-area {
+            text-align: center;
+            padding: 20px;
+            border: 1px dashed #ccc;
+            margin-top: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+        #color-box {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin: 20px auto;
+            transition: background-color 0.5s ease;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #message-display {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #d10000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Awesome Page!</h1>
+        <p>Your journey starts here.</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#interactive">Interactive</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are dedicated to providing the best web experiences. Our team of expert developers and designers work tirelessly to bring your ideas to life.</p>
+            <p>Discover more about our mission and values, and why we are the right choice for your needs.</p>
+            <a href="#" class="cta-button">Learn More</a>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Web Design & Development</li>
+                <li>E-commerce Solutions</li>
+                <li>Digital Marketing</li>
+                <li>Consulting & Support</li>
+            </ul>
+            <p>From concept to deployment, we handle every aspect of your online presence with professionalism.</p>
+            <a href="#" class="cta-button">Get a Quote</a>
+        </section>
+
+        <section id="interactive">
+            <h2>Interactive Section</h2>
+            <div id="interactive-area">
+                <p>Click the box below to change its color!</p>
+                <div id="color-box"></div>
+                <button id="show-message-btn" class="cta-button">Show Another Message</button>
+                <p id="message-display"></p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or ready to start a project? Reach out to us!</p>
+            <p>Email: info@example.com | Phone: (123) 456-7890</p>
+            <p>We look forward to hearing from you soon.</p>
+            <a href="#" class="cta-button">Send a Message</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Awesome Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const colorBox = document.getElementById('color-box');
+            const showMessageBtn = document.getElementById('show-message-btn');
+            const messageDisplay = document.getElementById('message-display');
+
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33DA', '#33FFE3'];
+            let currentColorIndex = 0;
+
+            colorBox.addEventListener('click', function() {
+                currentColorIndex = (currentColorIndex + 1) % colors.length;
+                colorBox.style.backgroundColor = colors[currentColorIndex];
+                messageDisplay.textContent = `Color changed to ${colors[currentColorIndex]}!`;
+            });
+
+            showMessageBtn.addEventListener('click', function() {
+                const messages = [
+                    "Hello there!",
+                    "You've clicked the button!",
+                    "Hope you're having a great day!",
+                    "Keep exploring the page!"
+                ];
+                const randomIndex = Math.floor(Math.random()
+                 * messages.length);
+                messageDisplay.textContent = messages[randomIndex];
+            });
+
+            // Optional: Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

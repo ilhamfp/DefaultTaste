@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Web Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #c5cae9;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .hero-section {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #e8eaf6;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .hero-section h1 {
+            color: #303f9f;
+            margin-bottom: 10px;
+        }
+        .hero-section p {
+            font-size: 1.1em;
+            color: #5c6bc0;
+        }
+        .content-section {
+            margin-bottom: 30px;
+        }
+        .content-section h2 {
+            color: #3f51b5;
+            border-bottom: 2px solid #c5cae9;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .counter-container {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e0f2f7;
+            border-radius: 8px;
+            border: 1px solid #b3e5fc;
+        }
+        #counter-display {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #0288d1;
+            margin-bottom: 15px;
+        }
+        .counter-buttons button {
+            background-color: #03a9f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .counter-buttons button:hover {
+            background-color: #039be5;
+        }
+        footer {
+            background-color: #3f51b5;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: auto;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <h1>Welcome to Our Dynamic Website!</h1>
+            <p>Experience the power of interactive web development.</p>
+            <button onclick="showAlert()">Click Me!</button>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>About Us</h2>
+            <p>We are a passionate team dedicated to creating amazing web experiences. Our expertise spans from front-end design to back-end development, ensuring robust and user-friendly applications.</p>
+            <p>This page demonstrates basic HTML, CSS, and JavaScript interactions within a single file structure.</p>
+        </section>
+
+        <section id="services" class="content-section">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Web Design & Development</li>
+                <li>Interactive UI/UX</li>
+                <li>Dynamic Content Generation</li>
+                <li>Client-Side Scripting</li>
+            </ul>
+            <p>We leverage modern technologies to deliver high-quality solutions tailored to your needs.</p>
+        </section>
+
+        <section id="counter" class="content-section">
+            <h2>Interactive Counter</h2>
+            <div class="counter-container">
+                <p>Current Count:</p>
+                <div id="counter-display">0</div>
+                <div class="counter-buttons">
+                    <button id="decrement-btn">Decrement</button>
+                    <button id="increment-btn">Increment</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <h2>Contact Us</h2>
+            <p>Feel free to reach out to us at <a href="mailto:info@example.com">info@example.com</a> or call us at (123) 456-7890.</p>
+            <p>We'd love to hear from you!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Dynamic Web Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for the "Click Me!" button
+        function showAlert() {
+            alert('Hello from JavaScript! This is a dynamic alert.');
+        }
+
+        // JavaScript for the counter
+        let count = 0;
+        const counterDisplay = document.getElementById('counter-display');
+        const incrementBtn = document.getElementById('increment-btn');
+        const decrementBtn = document.getElementById('decrement-btn');
+        const resetBtn = document.getElementById('reset-btn');
+
+        function updateCounterDisplay() {
+            counterDisplay.textContent = count;
+        }
+
+        incrementBtn.addEventListener('click', () => {
+            count++;
+            updateCounterDisplay();
+        });
+
+        decrementBtn.addEventListener('click', () => {
+            count--;
+            updateCounterDisplay();
+        });
+
+        resetBtn.addEventListener('click', () => {
+            count = 0;
+            updateCounterDisplay();
+        });
+
+        // Initialize display
+        updateCounterDisplay();
+    </script>
+</body>
+</html>

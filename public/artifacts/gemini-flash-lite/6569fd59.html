@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Portfolio</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --text: #333;
+            --accent: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            padding: 2rem;
+            width: 100%;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { opacity: 0.9; }
+        footer { margin-top: auto; padding: 2rem; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>Welcome to My Site</h1>
+    </nav>
+
+    <main>
+        <section class="card">
+            <h2>About Me</h2>
+            <p>I am a web developer creating clean, efficient, and user-friendly digital experiences. This site is a self-contained demonstration of functionality.</p>
+            <button id="actionBtn">Click for Surprise</button>
+            <p id="message" style="margin-top: 1rem; color: var(--accent); font-weight: bold;"></p>
+        </section>
+
+        <section class="card">
+            <h2>My Skills</h2>
+            <ul>
+                <li>HTML5 / CSS3 / JavaScript</li>
+                <li>Responsive Design</li>
+                <li>Web Performance Optimization</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2023 Built with pure HTML/CSS/JS
+    </footer>
+
+    <script>
+        document.getElementById('actionBtn').addEventListener('click', function() {
+            const msg = document.getElementById('message');
+            msg.innerText = "Hello! Thanks for clicking the button. Have a great day!";
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

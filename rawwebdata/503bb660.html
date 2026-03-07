@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            transition: background-color 0.5s ease;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        button:active {
+            background-color: #206f9d;
+            transform: translateY(0);
+        }
+        #message {
+            margin-top: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #e74c3c;
+            min-height: 25px; /* Prevent layout shift */
+            transition: color 0.3s ease;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        body.dark-mode .container {
+            background-color: #34495e;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-color: #4a627a;
+        }
+        body.dark-mode h1 {
+            color: #ecf0f1;
+        }
+        body.dark-mode #message {
+            color: #f1c40f;
+        }
+        body.dark-mode .footer {
+            color: #bdc3c7;
+        }
+        body.dark-mode button {
+            background-color: #27ae60;
+        }
+        body.dark-mode button:hover {
+            background-color: #229954;
+        }
+        body.dark-mode button:active {
+            background-color: #1a7b45;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="pageTitle">Hello, Web World!</h1>
+        <p>This is a simple, dynamic web page built using only HTML, CSS, and JavaScript.</p>
+        <p>You can interact with the buttons below to see changes.</p>
+        <div class="button-group">
+            <button id="changeTextBtn">Change Title</button>
+            <button id="alertBtn">Show Alert</button>
+            <button id="toggleBgBtn">Toggle Dark Mode</button>
+            <button id="randomFactBtn">Random Fact</button>
+        </div>
+        <p id="message"></p>
+    </div>
+    <div class="footer">
+        &copy; <span id="currentYear"></span> Your Name. All rights reserved.
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pageTitle = document.getElementById('pageTitle');
+            const changeTextBtn = document.getElementById('changeTextBtn');
+            const alertBtn = document.getElementById('alertBtn');
+            const toggleBgBtn = document.getElementById('toggleBgBtn');
+            const randomFactBtn = document.getElementById('randomFactBtn');
+            const messageDiv = document.getElementById('message');
+            const body = document.body;
+            const currentYearSpan = document.getElementById('currentYear');
+
+            currentYearSpan.textContent = new Date().getFullYear();
+
+            const facts = [
+                "The quick brown fox jumps over the lazy dog is a pangram.",
+                "Octopuses have three hearts.",
+                "A jiffy is an actual unit of time: 1/100th of a second.",
+                "Banging your head against a wall for one hour burns 150 calories.",
+                "The shortest war in history lasted 38 to 45 minutes.",
+                "Honey never spoils.",
+                "Wombat poop is cube-shaped."
+            ];
+
+            changeTextBtn.addEventListener('click', () => {
+                pageTitle.textContent = "Welcome to the Dynamic Page!";
+                messageDiv.textContent = "Title changed successfully!";
+                messageDiv.style.color = '#27ae60';
+                setTimeout(() => messageDiv.textContent = '', 2000);
+            });
+
+            alertBtn.addEventListener('click', () => {
+                alert("Hello from your web page!");
+                messageDiv.textContent = "Alert message displayed!";
+                messageDiv.style.color = '#f39c12';
+                setTimeout(() => messageDiv.textContent = '', 2000);
+            });
+
+            toggleBgBtn.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                const isDarkMode = body.classList.contains('dark-mode');
+                messageDiv.textContent = `Dark mode ${isDarkMode ? 'enabled' : 'disabled'}!`;
+                messageDiv.style.color = isDarkMode ? '#f1c40f' : '#2c3e50';
+                setTimeout(() => messageDiv.textContent = '', 2000);
+            });
+
+            randomFactBtn.addEventListener('click', () => {
+                const randomIndex = Math.floor(Math.random() * facts.length);
+                messageDiv.textContent = facts[randomIndex];
+                messageDiv.style.color = '#8e44ad';
+            });
+        });
+    </script>
+</body>
+</html>

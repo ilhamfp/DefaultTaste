@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Interactive Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            flex: 1;
+            padding: 2em;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        .button-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .action-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: #218838;
+        }
+
+        #message-display {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #e9ecef;
+            text-align: center;
+            font-weight: bold;
+            color: #0056b3;
+            min-height: 30px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Interactive Webpage!</h1>
+    </header>
+
+    <main>
+        <h2>About This Page</h2>
+        <p>This is a simple, self-contained HTML page designed to demonstrate basic web development concepts, including HTML structure, inline CSS for styling, and inline JavaScript for interactivity.</p>
+        <p>Feel free to click the button below to see a live demonstration of JavaScript in action!</p>
+
+        <div class="button-section">
+            <button class="action-button" onclick="displayMessage()">Click Me!</button>
+        </div>
+
+        <div id="message-display">
+            Click the button above to see a message here!
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Interactive Webpage. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function displayMessage() {
+            const messageDisplay = document.getElementById('message-display');
+            const messages = [
+                "Hello, Web Developer!",
+                "You clicked the button!",
+                "JavaScript is awesome!",
+                "Keep learning and building!",
+                "This is a dynamic message!"
+            ];
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            messageDisplay.textContent = messages[randomIndex];
+            messageDisplay.style.backgroundColor = '#d4edda'; // Change background on click
+            messageDisplay.style.borderColor = '#28a745';
+            messageDisplay.style.color = '#155724';
+            setTimeout(() => {
+                messageDisplay.style.backgroundColor = '#e9ecef'; // Reset background after a short delay
+                messageDisplay.style.borderColor = '#ddd';
+                messageDisplay.style.color = '#0056b3';
+            }, 1500);
+        }
+    </script>
+</body>
+</html>

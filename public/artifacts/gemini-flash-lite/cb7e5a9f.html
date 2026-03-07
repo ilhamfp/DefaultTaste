@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Personal Portfolio</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --text: #333;
+            --accent: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+            margin-bottom: 2rem;
+        }
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #message {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+        <p>Built with pure HTML, CSS, and JS</p>
+    </header>
+
+    <div class="card">
+        <h2>Hello, World!</h2>
+        <p>This is a self-contained single-page website. Click the button below to see some interactivity.</p>
+        <button id="actionBtn">Click Me!</button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById('actionBtn').addEventListener('click', function() {
+            const msg = document.getElementById('message');
+            const greetings = [
+                "Hello there! Have a great day.",
+                "JavaScript is running perfectly!",
+                "Thanks for clicking the button.",
+                "Keep building amazing things!"
+            ];
+            const randomMsg = greetings[Math.floor(Math.random() * greetings.length)];
+            msg.innerText = randomMsg;
+        });
+    </script>
+</body>
+</html>

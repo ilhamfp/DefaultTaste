@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Portfolio</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --text: #333;
+            --accent: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            padding: 2rem;
+            width: 100%;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        h1 { color: var(--accent); }
+        button {
+            padding: 0.8rem 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        button:hover { opacity: 0.8; }
+        #message {
+            margin-top: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>My Web Profile</h1>
+    </nav>
+
+    <div class="container">
+        <h2>Welcome to my site</h2>
+        <p>This is a self-contained HTML document featuring inline CSS and JavaScript. Built for simplicity and efficiency.</p>
+        <button id="actionBtn">Click for a surprise</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        const btn = document.getElementById('actionBtn');
+        const msg = document.getElementById('message');
+
+        btn.addEventListener('click', () => {
+            const colors = ['#ef4444', '#22c55e', '#eab308', '#ec4899'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            msg.innerText = "Hello! Your browser is running perfectly.";
+            msg.style.color = randomColor;
+            btn.style.backgroundColor = randomColor;
+        });
+    </script>
+</body>
+</html>

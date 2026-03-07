@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio Starter</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        button:hover { opacity: 0.9; }
+        footer { text-align: center; margin-top: 3rem; padding: 1rem; color: #666; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+        <p>Built with pure HTML, CSS, and JS</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>About Me</h2>
+            <p>This is a responsive, single-page application template built for quick prototyping.</p>
+        </section>
+
+        <section class="card">
+            <h2>Interactive Tool</h2>
+            <p>Click the button below to change the background color:</p>
+            <button id="colorBtn">Change Theme Color</button>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2023 Web Developer Template
+    </footer>
+
+    <script>
+        const btn = document.getElementById('colorBtn');
+        btn.addEventListener('click', () => {
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.querySelector('header').style.backgroundColor = randomColor;
+            btn.style.backgroundColor = randomColor;
+        });
+    </script>
+</body>
+</html>

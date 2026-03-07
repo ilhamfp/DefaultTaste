@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Personal Landing Page</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: white;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; }
+
+        button {
+            padding: 12px 30px;
+            background: var(--dark);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        button:hover { transform: scale(1.05); }
+
+        #counter { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="font-weight:bold; font-size: 1.2rem;">PORTFOLIO</div>
+    <nav>Home | Projects | Contact</nav>
+</header>
+
+<section class="hero">
+    <h1>Hello, I'm a Developer</h1>
+    <p>Building digital experiences with passion and clean code.</p>
+</section>
+
+<div class="container">
+    <h2>Interactivity Test</h2>
+    <p>How many times have you visited this page today?</p>
+    <p id="counter">0</p>
+    <button id="clickBtn">Increase Count</button>
+</div>
+
+<script>
+    const btn = document.getElementById('clickBtn');
+    const counterDisplay = document.getElementById('counter');
+    let count = localStorage.getItem('visitCount') || 0;
+
+    counterDisplay.innerText = count;
+
+    btn.addEventListener('click', () => {
+        count++;
+        localStorage.setItem('visitCount', count);
+        counterDisplay.innerText = count;
+    });
+</script>
+
+</body>
+</html>

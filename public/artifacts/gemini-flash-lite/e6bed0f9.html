@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Personal Hub</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            padding: 2rem;
+            text-align: center;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: opacity 0.2s;
+        }
+        button:hover { opacity: 0.9; }
+        #timestamp { font-size: 0.9rem; margin-top: 1rem; color: #64748b; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Hub</h1>
+    </header>
+
+    <div class="card">
+        <h2 id="greeting">Hello there!</h2>
+        <p>Interact with the button below to see some basic JavaScript in action.</p>
+        <button onclick="updateTime()">Check System Status</button>
+        <div id="timestamp"></div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const display = document.getElementById('timestamp');
+            const now = new Date();
+            display.innerHTML = `Last Updated: ${now.toLocaleTimeString()}`;
+            document.getElementById('greeting').innerText = "System Active!";
+            
+            // Subtle animation
+            const card = document.querySelector('.card');
+            card.style.transform = 'scale(1.02)';
+            setTimeout(() => card.style.transform = 'scale(1)', 200);
+        }
+    </script>
+</body>
+</html>

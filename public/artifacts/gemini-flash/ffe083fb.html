@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Website</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            background-color: #0056b3;
+            padding: 0.8em 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8em 1.5em;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #004085;
+        }
+
+        .container {
+            width: 80%;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        section {
+            margin-bottom: 2em;
+            padding-bottom: 1.5em;
+            border-bottom: 1px solid #eee;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 0.5em;
+            margin-top: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 0.8em 1.5em;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 1.5em;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: #007bff;
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            margin-top: 3em;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+
+        .highlight {
+            color: #ffc107;
+            font-weight: bold;
+        }
+
+        #current-time {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Awesome Website</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="home">
+            <span id="current-time"></span>
+            <h2>Discover Our Features</h2>
+            <p>This is a demonstration of a <span class="highlight">fully functional</span> static website. It includes a responsive design using modern CSS and a touch of JavaScript for interactivity. Explore our amazing content below!</p>
+            <p>Our goal is to provide a clean and engaging user experience for all visitors.</p>
+            <a href="#services" class="cta-button">Learn More About Our Services</a>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a passionate team dedicated to creating high-quality web solutions. Our expertise spans various technologies, and we pride ourselves on innovation and customer satisfaction.</p>
+            <p>Founded in 2023, we have been continuously striving to deliver excellence and build strong relationships with our community.</p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>Crafting beautiful and functional websites tailored to your needs.</p>
+                </div>
+                <div class="card">
+                    <h3>UI/UX Design</h3>
+                    <p>Creating intuitive and engaging user interfaces for optimal experience.</p>
+                </div>
+                <div class="card">
+                    <h3>Consulting</h3>
+                    <p>Expert advice to guide your digital strategy and achieve your goals.</p>
+                </div>
+                <div class="card">
+                    <h3>SEO Optimization</h3>
+                    <p>Helping your website rank higher and reach a wider audience.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>Have a question or want to start a project? Feel free to reach out to us!</p>
+            <form id="contactForm" onsubmit="event.preventDefault(); submitContactForm();">
+                <p>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;">
+                </p>
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                </p>
+                <button type="submit" class="cta-button" style="background-color: #007bff;">Send Message</button>
+                <p id="formStatus" style="margin-top: 1em;"></p>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> My Awesome Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Update current year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Function to update current time (just for demonstration)
+        function updateCurrentTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('current-time').textContent = `Current Time: ${now.toLocaleDateString('en-US', options)}`;
+        }
+
+        // Call it once and then every second
+        updateCurrentTime();
+        setInterval(updateCurrentTime, 1000);
+
+        // Simple form submission handler
+        function submitContactForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const formStatus = document.getElementById('formStatus');
+
+            if (name && email && message) {
+                formStatus.style.color = '#28a745';
+                formStatus.textContent = `Thank you, ${name}! Your message has been received. We'll get back to you at ${email}.`;
+                document.getElementById('contactForm').reset();
+            } else {
+                formStatus.style.color = '#dc3545';
+                formStatus.textContent = 'Please fill in all fields.';
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

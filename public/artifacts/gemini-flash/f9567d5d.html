@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Interactive Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005f7a;
+        }
+
+        #messageDisplay {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #d9534f;
+            min-height: 30px; /* To prevent layout shift */
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Interactive Webpage!</h1>
+    </header>
+
+    <main>
+        <p>This is a simple example of an HTML page with inline CSS and JavaScript.</p>
+        <p>Click the button below to see an interactive message.</p>
+
+        <div class="button-container">
+            <button id="actionButton">Click Me!</button>
+        </div>
+
+        <div id="messageDisplay"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Interactive Webpage. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const actionButton = document.getElementById('actionButton');
+            const messageDisplay = document.getElementById('messageDisplay');
+            let clickCount = 0;
+
+            actionButton.addEventListener('click', () => {
+                clickCount++;
+                if (clickCount === 1) {
+                    messageDisplay.textContent = 'Hello there! Thanks for clicking.';
+                    messageDisplay.style.color = '#4CAF50';
+                } else if (clickCount === 2) {
+                    messageDisplay.textContent = 'You clicked me again! Amazing.';
+                    messageDisplay.style.color = '#008CBA';
+                } else if (clickCount === 3) {
+                    messageDisplay.textContent = 'Three times a charm! This is fun.';
+                    messageDisplay.style.color = '#FFC107';
+                } else {
+                    messageDisplay.textContent = `You've clicked ${clickCount} times! Keep going!`;
+                    messageDisplay.style.color = `#${Math.floor(Math.random()*16777215).toString(16)}`; // Random color
+                }
+            });
+        });
+    </script>
+</body>
+</html>

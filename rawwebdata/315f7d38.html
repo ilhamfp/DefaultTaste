@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            flex-grow: 1;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+            justify-content: center;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+            flex: 1;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+        button {
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        #card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 180px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #007bff;
+            font-size: 1.5em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: #666;
+            flex-grow: 1;
+        }
+        .card-footer {
+            margin-top: 15px;
+            font-size: 0.85em;
+            color: #888;
+            text-align: right;
+        }
+        footer {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 768px) {
+            .input-section {
+                flex-direction: column;
+            }
+            .input-group {
+                min-width: unset;
+                width: 100%;
+            }
+            #card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dynamic Card Generator</h1>
+        <p>Create and display custom information cards</p>
+    </header>
+
+    <div class="container">
+        <div class="input-section">
+            <div class="input-group">
+                <label for="cardTitle">Card Title:</label>
+                <input type="text" id="cardTitle" placeholder="e.g., Important Note">
+            </div>
+            <div class="input-group">
+                <label for="cardContent">Card Content:</label>
+                <textarea id="cardContent" placeholder="Enter details for the card..."></textarea>
+            </div>
+            <button onclick="addCard()">Add Card</button>
+        </div>
+
+        <h2>Your Cards</h2>
+        <div id="card-container">
+            <!-- Cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Dynamic Card Generator. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addCard() {
+            const titleInput = document.getElementById('cardTitle');
+            const contentInput = document.getElementById('cardContent');
+            const cardContainer = document.getElementById('card-container');
+
+            const title = titleInput.value.trim();
+            const content = contentInput.value.trim();
+
+            if (title === '' || content === '') {
+                alert('Please enter both a title and content for the card.');
+                return;
+            }
+
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const cardTitle = document.createElement('h2');
+            cardTitle.textContent = title;
+
+            const cardContent = document.createElement('p');
+            cardContent.textContent = content;
+
+            const cardFooter = document.createElement('div');
+            cardFooter.classList.add('card-footer');
+            cardFooter.textContent = 'Created: ' + new Date().toLocaleString();
+
+            card.appendChild(cardTitle);
+            card.appendChild(cardContent);
+            card.appendChild(cardFooter);
+
+            cardContainer.prepend(card); // Add new cards to the top
+
+            // Clear input fields
+            titleInput.value = '';
+            contentInput.value = '';
+            titleInput.focus();
+        }
+
+        // Example initial cards
+        window.onload = function() {
+            document.getElementById('cardTitle').value = 'Welcome';
+            document.getElementById('cardContent').value = 'This is a dynamic card generator. Fill out the fields above and click "Add Card" to create your own.';
+            addCard();
+
+            document.getElementById('cardTitle').value = 'My To-Do';
+            document.getElementById('cardContent').value = 'Remember to buy groceries: milk, eggs, bread. Also, call plumber for the leak.';
+            addCard();
+        };
+    </script>
+</body>
+</html>

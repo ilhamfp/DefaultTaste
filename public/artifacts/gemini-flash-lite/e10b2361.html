@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Portfolio</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --text: #333;
+            --accent: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 90%;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Space</h1>
+        <p>A simple, self-contained web experience.</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>About Me</h2>
+            <p>I am a developer building clean and efficient web solutions. Everything on this page is contained within a single file for maximum portability.</p>
+        </div>
+
+        <div class="card">
+            <h2>Interactive Demo</h2>
+            <p id="counter">Click the button to see JavaScript in action!</p>
+            <button id="clickMe">Click Me</button>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('clickMe');
+        const text = document.getElementById('counter');
+        let count = 0;
+
+        btn.addEventListener('click', () => {
+            count++;
+            text.textContent = `You have clicked the button ${count} time(s)!`;
+            text.style.color = count % 2 === 0 ? '#6366f1' : '#333';
+        });
+    </script>
+</body>
+</html>

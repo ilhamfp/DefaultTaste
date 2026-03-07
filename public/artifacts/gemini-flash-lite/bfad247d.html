@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Portfolio</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --text: #333;
+            --accent: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            padding: 2rem;
+            width: 100%;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+        }
+        section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>My Webspace</h1>
+    </nav>
+
+    <div class="container">
+        <section>
+            <h2>Hello!</h2>
+            <p>Welcome to my self-contained HTML page. Everything here is powered by a single file.</p>
+            <button id="actionBtn">Click for a surprise</button>
+            <div id="message"></div>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('actionBtn').addEventListener('click', function() {
+            const messages = [
+                "Keep building cool things!",
+                "The web is yours to explore.",
+                "JavaScript is magic.",
+                "Have a fantastic day!"
+            ];
+            const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('message').innerText = randomMsg;
+        });
+    </script>
+</body>
+</html>

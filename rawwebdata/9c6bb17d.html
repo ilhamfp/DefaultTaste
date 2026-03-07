@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Portfolio</title>
+    <style>
+        :root {
+            --bg: #f4f4f9;
+            --text: #333;
+            --accent: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            padding: 2rem;
+        }
+        main {
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+        button:hover { opacity: 0.9; }
+        footer { margin-top: 3rem; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>My Website</h1>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h2 id="greeting">Hello, World!</h2>
+            <p>Welcome to this clean, self-contained single-page website generated for you.</p>
+            <button id="actionBtn">Click for Surprise</button>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2023 Built with HTML, CSS, and Vanilla JS
+    </footer>
+
+    <script>
+        const btn = document.getElementById('actionBtn');
+        const greeting = document.getElementById('greeting');
+        
+        btn.addEventListener('click', () => {
+            const colors = ['#f87171', '#fb923c', '#fbbf24', '#34d399', '#60a5fa'];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            greeting.innerText = "You clicked the button!";
+            btn.innerText = "Clicked!";
+            btn.style.backgroundColor = "#4b5563";
+        });
+    </script>
+</body>
+</html>

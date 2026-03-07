@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Website</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 0.8rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #4CAF50;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .card p {
+            font-size: 0.95em;
+            color: #555;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 30px;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        }
+        #interactive-section {
+            background-color: #e0e6ea;
+            grid-column: 1 / -1; /* Spans all columns */
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #result-display {
+            margin-top: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .input-group input[type="number"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 150px;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            main {
+                grid-template-columns: 1fr;
+                padding: 15px;
+                margin: 15px auto;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Awesome Website!</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home" class="card">
+            <h2>Discover Greatness</h2>
+            <p>Explore a world of possibilities with our innovative solutions and engaging content. We are dedicated to providing the best experience.</p>
+            <a href="#" class="button">Learn More</a>
+        </section>
+
+        <section id="about" class="card">
+            <h2>Who We Are</h2>
+            <p>We are a passionate team committed to excellence and creativity. Our mission is to empower individuals and businesses alike.</p>
+            <a href="#" class="button">Our Story</a>
+        </section>
+
+        <section id="services" class="card">
+            <h2>Our Services</h2>
+            <p>From web development to digital marketing, we offer a wide range of services tailored to meet your needs. Let us help you succeed.</p>
+            <a href="#" class="button">View Services</a>
+        </section>
+
+        <section id="contact" class="card">
+            <h2>Get in Touch</h2>
+            <p>Have questions or want to collaborate? Feel free to reach out to us. We'd love to hear from you!</p>
+            <a href="mailto:info@example.com" class="button">Email Us</a>
+        </section>
+
+        <section id="interactive-section">
+            <h2>Interactive Calculator</h2>
+            <p>Enter two numbers and click 'Calculate Sum'.</p>
+            <div class="input-group">
+                <label for="num1">Number 1:</label>
+                <input type="number" id="num1" value="0">
+            </div>
+            <div class="input-group">
+                <label for="num2">Number 2:</label>
+                <input type="number" id="num2" value="0">
+            </div>
+            <button class="button" onclick="calculateSum()">Calculate Sum</button>
+            <p id="result-display">Result: 0</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> My Awesome Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Simple interactive function
+        function calculateSum() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result-display').textContent = 'Result: Please enter valid numbers.';
+            } else {
+                const sum = num1 + num2;
+                document.getElementById('result-display').textContent = 'Result: ' + sum;
+            }
+        }
+
+        // Add active class to current nav item on scroll/load (simple version)
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav ul li a');
+            const sections = document.querySelectorAll('main section');
+
+            function highlightNavLink() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 80; // Adjust for header/nav height
+                    if (scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightNavLink);
+            highlightNavLink(); // Call on load to set initial active item
+        });
+    </script>
+</body>
+</html>

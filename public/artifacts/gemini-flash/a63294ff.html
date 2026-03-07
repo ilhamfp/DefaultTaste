@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Welcome Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        #name-input {
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 70%;
+            margin-bottom: 15px;
+        }
+
+        #submit-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        #submit-btn:hover {
+            background-color: #218838;
+        }
+
+        #welcome-message {
+            margin-top: 25px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #663399;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Our Dynamic Page!</h1>
+        <p>Enter your name below and click the button to see a personalized greeting.</p>
+
+        <input type="text" id="name-input" placeholder="Your Name">
+        <button id="submit-btn">Greet Me</button>
+
+        <div id="welcome-message"></div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nameInput = document.getElementById('name-input');
+            const submitBtn = document.getElementById('submit-btn');
+            const welcomeMessage = document.getElementById('welcome-message');
+            const currentYearSpan = document.getElementById('current-year');
+
+            // Set current year in footer
+            currentYearSpan.textContent = new Date().getFullYear();
+
+            submitBtn.addEventListener('click', function() {
+                const name = nameInput.value.trim(); // Get value and remove leading/trailing whitespace
+
+                if (name) {
+                    welcomeMessage.textContent = `Hello, ${name}! Welcome to our amazing website.`;
+                } else {
+                    welcomeMessage.textContent = "Please enter your name to receive a greeting!";
+                    welcomeMessage.style.color = "red";
+                }
+            });
+
+            // Optional: Allow pressing Enter key to submit
+            nameInput.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    submitBtn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

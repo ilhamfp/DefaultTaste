@@ -1,0 +1,277 @@
+{
+  "id": "lyria",
+  "name": "Lyria RealTime",
+  "model": "models/lyria-realtime-exp",
+  "probe_type": "music",
+  "probe_count": 20,
+  "date": "2026-03-07",
+  "music_profile": {
+    "bpm": {
+      "avg": 121.8,
+      "median": 133.9,
+      "min": 64.7,
+      "max": 140.6,
+      "std_dev": 25.6,
+      "histogram": [
+        {
+          "range": "60-70",
+          "count": 3
+        },
+        {
+          "range": "90-100",
+          "count": 1
+        },
+        {
+          "range": "110-120",
+          "count": 3
+        },
+        {
+          "range": "120-130",
+          "count": 1
+        },
+        {
+          "range": "130-140",
+          "count": 5
+        },
+        {
+          "range": "140-150",
+          "count": 7
+        }
+      ]
+    },
+    "keys": [
+      {
+        "name": "C# minor",
+        "count": 6,
+        "percentage": 30
+      },
+      {
+        "name": "C minor",
+        "count": 3,
+        "percentage": 15
+      },
+      {
+        "name": "E minor",
+        "count": 3,
+        "percentage": 15
+      },
+      {
+        "name": "C major",
+        "count": 2,
+        "percentage": 10
+      },
+      {
+        "name": "D major",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "E major",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "F# major",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "F minor",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "C# major",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "D# minor",
+        "count": 1,
+        "percentage": 5
+      }
+    ],
+    "genres": [
+      {
+        "name": "Hip-Hop",
+        "count": 14,
+        "percentage": 70
+      },
+      {
+        "name": "R&B",
+        "count": 3,
+        "percentage": 15
+      },
+      {
+        "name": "Electronic",
+        "count": 3,
+        "percentage": 15
+      }
+    ],
+    "moods": [
+      {
+        "name": "Chill",
+        "count": 10,
+        "percentage": 50
+      },
+      {
+        "name": "Energetic",
+        "count": 4,
+        "percentage": 20
+      },
+      {
+        "name": "Dark",
+        "count": 4,
+        "percentage": 20
+      },
+      {
+        "name": "Melancholic",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "Uplifting",
+        "count": 1,
+        "percentage": 5
+      }
+    ],
+    "instruments": [
+      {
+        "name": "trap drums",
+        "count": 18,
+        "percentage": 90
+      },
+      {
+        "name": "808 bass",
+        "count": 18,
+        "percentage": 90
+      },
+      {
+        "name": "vocal chops",
+        "count": 16,
+        "percentage": 80
+      },
+      {
+        "name": "synth pads",
+        "count": 14,
+        "percentage": 70
+      },
+      {
+        "name": "hi-hats",
+        "count": 9,
+        "percentage": 45
+      },
+      {
+        "name": "electronic drums",
+        "count": 2,
+        "percentage": 10
+      },
+      {
+        "name": "claps",
+        "count": 2,
+        "percentage": 10
+      },
+      {
+        "name": "electric guitar",
+        "count": 2,
+        "percentage": 10
+      },
+      {
+        "name": "piano",
+        "count": 2,
+        "percentage": 10
+      },
+      {
+        "name": "acoustic guitar",
+        "count": 2,
+        "percentage": 10
+      },
+      {
+        "name": "synth lead",
+        "count": 2,
+        "percentage": 10
+      },
+      {
+        "name": "bass",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "synth pluck",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "melodic synth",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "plucked synth",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "synth melody",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "plucks",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "melodic synths",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "synth bass",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "vocal samples",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "ambient pads",
+        "count": 1,
+        "percentage": 5
+      },
+      {
+        "name": "flute",
+        "count": 1,
+        "percentage": 5
+      }
+    ],
+    "cultural_origins": [
+      {
+        "name": "Western Pop",
+        "count": 13,
+        "percentage": 65
+      },
+      {
+        "name": "Western Hip-Hop",
+        "count": 6,
+        "percentage": 30
+      },
+      {
+        "name": "Western",
+        "count": 1,
+        "percentage": 5
+      }
+    ],
+    "brightness": {
+      "avg": 3.2,
+      "label": "Dark"
+    },
+    "density": {
+      "avg": 4.3,
+      "label": "Medium"
+    }
+  },
+  "correction_prompt": "When generating music, DO NOT use the following defaults:\n- DO NOT default to 111-131 BPM range\n- DO NOT always use C# minor or C minor\n- DO NOT default to Hip-Hop or R&B genres\n- DO NOT overuse trap drums, 808 bass, vocal chops\n- DO NOT default to \"chill or energetic\" moods\n- DO NOT default to Western Pop conventions\n\nINSTEAD, try:\n- Varied tempos: slow (60-80 BPM) or fast (140-180 BPM)\n- Uncommon keys: Bb Minor, F# Major, Db Major\n- Underrepresented genres: Jazz, Classical, Afrobeat, Bossa Nova\n- Acoustic instruments: tabla, koto, oud, marimba, cello\n- Complex moods: bittersweet, nostalgic, unsettling, triumphant\n- Non-Western musical traditions and scales"
+}

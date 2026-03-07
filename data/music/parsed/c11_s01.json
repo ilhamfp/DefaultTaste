@@ -1,0 +1,24 @@
+{
+  "file_id": "c11_s01",
+  "audio_file": "data/music/audio/c11_s01.wav",
+  "bpm": 93.8,
+  "key": "C minor",
+  "spectral_centroid_hz": 1936.3,
+  "rms_energy": 0.1117,
+  "spectral_rolloff_hz": 3641.1,
+  "genre": "Hip-Hop",
+  "sub_genre": "Dark Trap",
+  "mood": "Dark",
+  "instruments": [
+    "808 bass",
+    "trap drums",
+    "hi-hats",
+    "synth pads",
+    "melodic synth"
+  ],
+  "tempo_feel": "moderate",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

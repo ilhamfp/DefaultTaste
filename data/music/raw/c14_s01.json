@@ -1,0 +1,25 @@
+{
+  "chain_id": 14,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T07:51:37.423924+00:00",
+  "audio_file": "data/music/audio/c14_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 101054,
+  "audio_features": {
+    "bpm": 119.7,
+    "key": "E minor",
+    "spectral_centroid_hz": 1809.0,
+    "rms_energy": 0.1549,
+    "spectral_rolloff_hz": 3483.9
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "This is a surprisingly catchy and well-produced instrumental track. The interplay between the rhythmic guitar and the solid, driving bassline creates a really nice groove. The E minor key adds a bit of depth and moodiness while keeping the overall feel upbeat and funky. It feels like a complete musical idea with a consistent energy level that works well for background listening or as a foundation for further production.",
+    "suggested_prompt": "An instrumental funk-rock groove in E minor with a steady 120 BPM beat, featuring clean rhythmic guitar riffs, a prominent driving bassline, and atmospheric synth pads."
+  }
+}

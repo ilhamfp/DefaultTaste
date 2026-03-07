@@ -1,0 +1,24 @@
+{
+  "file_id": "c12_s01",
+  "audio_file": "data/music/audio/c12_s01.wav",
+  "bpm": 140.6,
+  "key": "C minor",
+  "spectral_centroid_hz": 2121.8,
+  "rms_energy": 0.0885,
+  "spectral_rolloff_hz": 4281.7,
+  "genre": "Hip-Hop",
+  "sub_genre": "Trap",
+  "mood": "Dark",
+  "instruments": [
+    "808 bass",
+    "trap drums",
+    "synth pads",
+    "vocal chops",
+    "plucked synth"
+  ],
+  "tempo_feel": "moderate",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Hip-Hop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

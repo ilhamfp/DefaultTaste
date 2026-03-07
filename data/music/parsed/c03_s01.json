@@ -1,0 +1,24 @@
+{
+  "file_id": "c03_s01",
+  "audio_file": "data/music/audio/c03_s01.wav",
+  "bpm": 67.0,
+  "key": "C# minor",
+  "spectral_centroid_hz": 1969.6,
+  "rms_energy": 0.1046,
+  "spectral_rolloff_hz": 3814.8,
+  "genre": "R&B",
+  "sub_genre": "Soulful Trap",
+  "mood": "Chill",
+  "instruments": [
+    "electric guitar",
+    "808 bass",
+    "trap drums",
+    "vocal chops",
+    "synth pads"
+  ],
+  "tempo_feel": "slow",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "medium",
+  "complexity": "moderate"
+}

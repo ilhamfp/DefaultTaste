@@ -1,0 +1,24 @@
+{
+  "file_id": "c14_s01",
+  "audio_file": "data/music/audio/c14_s01.wav",
+  "bpm": 119.7,
+  "key": "E minor",
+  "spectral_centroid_hz": 1809.0,
+  "rms_energy": 0.1549,
+  "spectral_rolloff_hz": 3483.9,
+  "genre": "Electronic",
+  "sub_genre": "Chill Trap",
+  "mood": "Chill",
+  "instruments": [
+    "synth pads",
+    "trap drums",
+    "vocal chops",
+    "808 bass",
+    "plucks"
+  ],
+  "tempo_feel": "moderate",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

@@ -1,0 +1,24 @@
+{
+  "file_id": "c01_s01",
+  "audio_file": "data/music/audio/c01_s01.wav",
+  "bpm": 119.7,
+  "key": "C# minor",
+  "spectral_centroid_hz": 2059.9,
+  "rms_energy": 0.1188,
+  "spectral_rolloff_hz": 4156.2,
+  "genre": "R&B",
+  "sub_genre": "Future R&B",
+  "mood": "Chill",
+  "instruments": [
+    "vocal chops",
+    "synth pads",
+    "bass",
+    "electronic drums",
+    "claps"
+  ],
+  "tempo_feel": "moderate",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "medium",
+  "complexity": "moderate"
+}

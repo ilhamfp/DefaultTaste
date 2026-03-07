@@ -1,0 +1,25 @@
+{
+  "chain_id": 5,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T06:15:32.871822+00:00",
+  "audio_file": "data/music/audio/c05_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 101601,
+  "audio_features": {
+    "bpm": 137.2,
+    "key": "C# minor",
+    "spectral_centroid_hz": 1885.7,
+    "rms_energy": 0.0924,
+    "spectral_rolloff_hz": 3584.9
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "This is an impressive first attempt. I really enjoyed the modern, high-energy trap influence. The rhythmic vocal chops add a lot of character and catchiness, and the production quality feels professional. The syncopation in the percussion keeps the track feeling dynamic and fresh throughout.",
+    "suggested_prompt": "A high-energy trap song with rhythmic vocal chops, atmospheric synth pads, and a heavy, driving bassline in C# minor."
+  }
+}

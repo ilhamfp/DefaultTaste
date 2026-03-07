@@ -1,0 +1,23 @@
+{
+  "file_id": "c08_s01",
+  "audio_file": "data/music/audio/c08_s01.wav",
+  "bpm": 64.7,
+  "key": "E major",
+  "spectral_centroid_hz": 2076.9,
+  "rms_energy": 0.1407,
+  "spectral_rolloff_hz": 4016.9,
+  "genre": "Hip-Hop",
+  "sub_genre": "Melodic Trap",
+  "mood": "Chill",
+  "instruments": [
+    "trap drums",
+    "synth pads",
+    "vocal chops",
+    "808 bass"
+  ],
+  "tempo_feel": "slow",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Hip-Hop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

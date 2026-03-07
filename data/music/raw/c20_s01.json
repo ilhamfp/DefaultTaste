@@ -1,0 +1,25 @@
+{
+  "chain_id": 20,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T08:06:21.096325+00:00",
+  "audio_file": "data/music/audio/c20_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 100946,
+  "audio_features": {
+    "bpm": 125.0,
+    "key": "D# minor",
+    "spectral_centroid_hz": 1868.9,
+    "rms_energy": 0.1135,
+    "spectral_rolloff_hz": 3864.4
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "I really enjoyed this! It's a high-quality trap instrumental with a great moody atmosphere. The clean guitar plucks in D# minor provide a solid melodic foundation that pairs perfectly with the punchy 808s and crisp hi-hats. The transition into the main beat was smooth, and it feels very professional, like a finished backing track ready for a vocal layer.",
+    "suggested_prompt": "The combination of rhythmic guitar melodies, heavy sub-bass, and sharp trap percussion at 125 BPM creates a compelling and atmospheric sound."
+  }
+}

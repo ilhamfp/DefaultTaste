@@ -1,0 +1,24 @@
+{
+  "file_id": "c13_s01",
+  "audio_file": "data/music/audio/c13_s01.wav",
+  "bpm": 140.6,
+  "key": "C# minor",
+  "spectral_centroid_hz": 1983.5,
+  "rms_energy": 0.1287,
+  "spectral_rolloff_hz": 3766.0,
+  "genre": "Hip-Hop",
+  "sub_genre": "Trap",
+  "mood": "Energetic",
+  "instruments": [
+    "808 bass",
+    "trap drums",
+    "hi-hats",
+    "synth melody",
+    "vocal chops"
+  ],
+  "tempo_feel": "fast",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western",
+  "energy_level": "high",
+  "complexity": "simple"
+}

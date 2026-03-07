@@ -1,0 +1,24 @@
+{
+  "file_id": "c20_s01",
+  "audio_file": "data/music/audio/c20_s01.wav",
+  "bpm": 125.0,
+  "key": "D# minor",
+  "spectral_centroid_hz": 1868.9,
+  "rms_energy": 0.1135,
+  "spectral_rolloff_hz": 3864.4,
+  "genre": "Hip-Hop",
+  "sub_genre": "Trap",
+  "mood": "Dark",
+  "instruments": [
+    "808 bass",
+    "trap drums",
+    "electric guitar",
+    "hi-hats",
+    "claps"
+  ],
+  "tempo_feel": "moderate",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

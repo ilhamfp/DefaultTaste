@@ -1,0 +1,25 @@
+{
+  "chain_id": 4,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T06:13:30.818403+00:00",
+  "audio_file": "data/music/audio/c04_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 100938,
+  "audio_features": {
+    "bpm": 69.4,
+    "key": "C# minor",
+    "spectral_centroid_hz": 1865.0,
+    "rms_energy": 0.0865,
+    "spectral_rolloff_hz": 3729.2
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "I really enjoyed this track! The late-night R&B vibes are spot on. The percussion is crisp and well-mixed, and the subtle vocal chops that enter halfway through add a great layer of depth. It has a professional, polished sound that works perfectly as a 'vibe' track.",
+    "suggested_prompt": "A smooth, atmospheric late-night R&B track with a slow, groovy hip-hop beat, deep melodic synth bass, and ethereal, processed vocal textures. Maintain the C# minor key and mellow energy."
+  }
+}

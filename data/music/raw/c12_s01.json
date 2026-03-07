@@ -1,0 +1,25 @@
+{
+  "chain_id": 12,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T07:47:31.249154+00:00",
+  "audio_file": "data/music/audio/c12_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 100980,
+  "audio_features": {
+    "bpm": 140.6,
+    "key": "C minor",
+    "spectral_centroid_hz": 2121.8,
+    "rms_energy": 0.0885,
+    "spectral_rolloff_hz": 4281.7
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "The syncopated rhythm and clean guitar production are very catchy and give the track a professional Afro-pop or modern R&B feel. The minor key adds a nice touch of moodiness without losing the energy. It works well as a high-quality backing track, though it lacks a lead vocal or melodic hook to make it a complete song.",
+    "suggested_prompt": "Make an upbeat Afro-pop song with a syncopated drum beat, clean electric guitar riffs in C minor, and a smooth male vocal melody."
+  }
+}

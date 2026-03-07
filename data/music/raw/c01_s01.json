@@ -1,0 +1,25 @@
+{
+  "chain_id": 1,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T06:07:27.667378+00:00",
+  "audio_file": "data/music/audio/c01_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 101064,
+  "audio_features": {
+    "bpm": 119.7,
+    "key": "C# minor",
+    "spectral_centroid_hz": 2059.9,
+    "rms_energy": 0.1188,
+    "spectral_rolloff_hz": 4156.2
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "For such a generic prompt, this is impressively polished. It has a great 'late-night' vibe, blending elements of chill R&B with a subtle Afrobeat rhythm. The syncopated percussion and the atmospheric vocal chops give it a professional, modern feel. The C# minor key perfectly complements the moody, laid-back energy.",
+    "suggested_prompt": "Make a chill R&B track with a syncopated Afrobeat rhythm, soulful vocal textures, and a melodic synth bassline."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "chain_id": 16,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T07:55:37.277901+00:00",
+  "audio_file": "data/music/audio/c16_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 101032,
+  "audio_features": {
+    "bpm": 119.7,
+    "key": "F minor",
+    "spectral_centroid_hz": 1535.5,
+    "rms_energy": 0.146,
+    "spectral_rolloff_hz": 3053.7
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "The track has a very polished, professional sound that immediately captures a 'late-night' mood. I really enjoyed the combination of the crisp trap-style percussion with the melodic, ethereal vocal chops. The F minor key provides a nice melancholic depth, and the BPM is perfect for that steady, head-nodding rhythm. It feels like a cohesive, well-produced instrumental that could easily sit on a Lo-Fi or Chill Trap playlist.",
+    "suggested_prompt": "What made this work was the balance between the heavy, clean sub-bass and the atmospheric, filtered textures in the higher frequencies. The use of indiscernible vocal samples added a human element without being distracting, and the steady 120 BPM rhythm provided a solid foundation for the moody F minor harmony."
+  }
+}

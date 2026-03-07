@@ -1,0 +1,24 @@
+{
+  "file_id": "c07_s01",
+  "audio_file": "data/music/audio/c07_s01.wav",
+  "bpm": 133.9,
+  "key": "D major",
+  "spectral_centroid_hz": 1466.7,
+  "rms_energy": 0.135,
+  "spectral_rolloff_hz": 2811.1,
+  "genre": "Hip-Hop",
+  "sub_genre": "Chill Trap",
+  "mood": "Chill",
+  "instruments": [
+    "808 bass",
+    "trap drums",
+    "synth lead",
+    "vocal chops",
+    "hi-hats"
+  ],
+  "tempo_feel": "moderate",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

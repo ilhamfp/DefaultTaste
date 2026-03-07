@@ -1,0 +1,23 @@
+{
+  "file_id": "c17_s02",
+  "audio_file": "data/music/audio/c17_s02.wav",
+  "bpm": 140.6,
+  "key": "E minor",
+  "spectral_centroid_hz": 1756.9,
+  "rms_energy": 0.1398,
+  "spectral_rolloff_hz": 3586.5,
+  "genre": "Hip-Hop",
+  "sub_genre": "Trap",
+  "mood": "Chill",
+  "instruments": [
+    "piano",
+    "trap drums",
+    "808 bass",
+    "synth pads"
+  ],
+  "tempo_feel": "moderate",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

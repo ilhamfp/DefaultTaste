@@ -1,0 +1,24 @@
+{
+  "file_id": "c05_s01",
+  "audio_file": "data/music/audio/c05_s01.wav",
+  "bpm": 137.2,
+  "key": "C# minor",
+  "spectral_centroid_hz": 1885.7,
+  "rms_energy": 0.0924,
+  "spectral_rolloff_hz": 3584.9,
+  "genre": "Hip-Hop",
+  "sub_genre": "Melodic Trap",
+  "mood": "Melancholic",
+  "instruments": [
+    "trap drums",
+    "synth pads",
+    "vocal chops",
+    "808 bass",
+    "piano"
+  ],
+  "tempo_feel": "fast",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Hip-Hop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

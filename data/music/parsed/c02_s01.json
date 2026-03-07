@@ -1,0 +1,23 @@
+{
+  "file_id": "c02_s01",
+  "audio_file": "data/music/audio/c02_s01.wav",
+  "bpm": 133.9,
+  "key": "C minor",
+  "spectral_centroid_hz": 1451.6,
+  "rms_energy": 0.1365,
+  "spectral_rolloff_hz": 2563.1,
+  "genre": "Hip-Hop",
+  "sub_genre": "Cloud Rap",
+  "mood": "Chill",
+  "instruments": [
+    "trap drums",
+    "vocal chops",
+    "synth pads",
+    "808 bass"
+  ],
+  "tempo_feel": "moderate",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Hip-Hop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

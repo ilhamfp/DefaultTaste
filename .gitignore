@@ -23,6 +23,10 @@ data/**/raw/
 data/**/parsed/
 data/**/audio/
 
+# But track music metadata needed for the deployed Lyria profile
+!data/music/raw/
+!data/music/parsed/
+
 # Python
 __pycache__/
 *.py[cod]

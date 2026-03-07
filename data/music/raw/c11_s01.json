@@ -1,0 +1,25 @@
+{
+  "chain_id": 11,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T07:45:27.199017+00:00",
+  "audio_file": "data/music/audio/c11_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 101014,
+  "audio_features": {
+    "bpm": 93.8,
+    "key": "C minor",
+    "spectral_centroid_hz": 1936.3,
+    "rms_energy": 0.1117,
+    "spectral_rolloff_hz": 3641.1
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "This is a very polished and professional-sounding trap instrumental. I really enjoyed the clean production and the moody atmosphere created by the C minor key. The percussion is crisp, and the subtle vocal stabs give it a high-quality 'type beat' feel. It strikes a great balance between being energetic enough to nod your head to while remaining chill enough for background listening.",
+    "suggested_prompt": "The track works well because of its cohesive mood and layered arrangement. To build on this, try: 'Make a moody trap instrumental in C minor with a catchy synth melody, crisp hi-hat patterns, atmospheric vocal chops, and a prominent but smooth sub-bass.'"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "chain_id": 15,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T07:53:40.166854+00:00",
+  "audio_file": "data/music/audio/c15_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 101062,
+  "audio_features": {
+    "bpm": 133.9,
+    "key": "C major",
+    "spectral_centroid_hz": 1887.9,
+    "rms_energy": 0.1135,
+    "spectral_rolloff_hz": 3785.2
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "I really enjoyed the infectious energy of this track. The combination of the crisp, high-tempo hip-hop beat and the melodic, heavily processed vocal chops gives it a very modern, professional pop/trap feel. The rhythmic repetition is extremely catchy, and the production quality feels polished and radio-ready.",
+    "suggested_prompt": "An energetic pop-trap song with a catchy rhythmic beat, synth bass, and melodic vocal chops at 134 BPM."
+  }
+}

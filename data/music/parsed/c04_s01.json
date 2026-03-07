@@ -1,0 +1,24 @@
+{
+  "file_id": "c04_s01",
+  "audio_file": "data/music/audio/c04_s01.wav",
+  "bpm": 69.4,
+  "key": "C# minor",
+  "spectral_centroid_hz": 1865.0,
+  "rms_energy": 0.0865,
+  "spectral_rolloff_hz": 3729.2,
+  "genre": "R&B",
+  "sub_genre": "Trap Soul",
+  "mood": "Chill",
+  "instruments": [
+    "808 bass",
+    "synth pads",
+    "trap drums",
+    "vocal chops",
+    "hi-hats"
+  ],
+  "tempo_feel": "slow",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "low",
+  "complexity": "simple"
+}

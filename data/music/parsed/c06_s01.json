@@ -1,0 +1,24 @@
+{
+  "file_id": "c06_s01",
+  "audio_file": "data/music/audio/c06_s01.wav",
+  "bpm": 140.6,
+  "key": "C major",
+  "spectral_centroid_hz": 1897.7,
+  "rms_energy": 0.0888,
+  "spectral_rolloff_hz": 3824.4,
+  "genre": "Hip-Hop",
+  "sub_genre": "Chill Trap",
+  "mood": "Chill",
+  "instruments": [
+    "acoustic guitar",
+    "trap drums",
+    "808 bass",
+    "vocal chops",
+    "hi-hats"
+  ],
+  "tempo_feel": "moderate",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

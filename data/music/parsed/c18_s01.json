@@ -1,0 +1,25 @@
+{
+  "file_id": "c18_s01",
+  "audio_file": "data/music/audio/c18_s01.wav",
+  "bpm": 140.6,
+  "key": "E minor",
+  "spectral_centroid_hz": 1550.3,
+  "rms_energy": 0.1164,
+  "spectral_rolloff_hz": 2968.5,
+  "genre": "Hip-Hop",
+  "sub_genre": "Trap",
+  "mood": "Chill",
+  "instruments": [
+    "flute",
+    "808 bass",
+    "trap drums",
+    "hi-hats",
+    "synth pads",
+    "vocal chops"
+  ],
+  "tempo_feel": "moderate",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

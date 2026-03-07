@@ -1,0 +1,24 @@
+{
+  "file_id": "c19_s01",
+  "audio_file": "data/music/audio/c19_s01.wav",
+  "bpm": 140.6,
+  "key": "C# major",
+  "spectral_centroid_hz": 2070.0,
+  "rms_energy": 0.1002,
+  "spectral_rolloff_hz": 3986.6,
+  "genre": "Hip-Hop",
+  "sub_genre": "Melodic Trap",
+  "mood": "Energetic",
+  "instruments": [
+    "synth pads",
+    "trap drums",
+    "808 bass",
+    "vocal chops",
+    "synth lead"
+  ],
+  "tempo_feel": "fast",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "medium",
+  "complexity": "moderate"
+}

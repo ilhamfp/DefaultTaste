@@ -1,0 +1,25 @@
+{
+  "chain_id": 3,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T06:11:32.961144+00:00",
+  "audio_file": "data/music/audio/c03_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 101006,
+  "audio_features": {
+    "bpm": 67.0,
+    "key": "C# minor",
+    "spectral_centroid_hz": 1969.6,
+    "rms_energy": 0.1046,
+    "spectral_rolloff_hz": 3814.8
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "I was pleasantly surprised by the quality of this track. The combination of atmospheric, ethereal synth pads with a sharp, trap-style beat creates a compelling 'late-night' vibe. The use of vocal chops adds a professional layer of texture, and the C# minor key perfectly complements the moody, slightly melancholy mood. It feels cohesive and well-mixed for an AI-generated piece.",
+    "suggested_prompt": "A moody, slow-tempo trap instrumental with ethereal synth pads, crisp hi-hats, rhythmic vocal chops, and a more prominent, melodic sub-bass line."
+  }
+}

@@ -5,7 +5,6 @@ import type { LyriaInteractiveProfile } from "@/lib/types";
 const MUSIC_ROOT = path.join(process.cwd(), "data", "music");
 const RAW_DIR = path.join(MUSIC_ROOT, "raw");
 const PARSED_DIR = path.join(MUSIC_ROOT, "parsed");
-const AUDIO_FILE_ID_PATTERN = /^c\d+_s\d+$/;
 const CHAIN_FILE_ID_PATTERN = /^(c\d+)_s(\d+)$/;
 const SELECTION_REASON =
   "Closest to the aggregate default across tempo, brightness, density, and rolloff.";
@@ -225,7 +224,7 @@ export async function getLyriaInteractiveProfile() {
     selectionMethod: "centroid_distance",
     representativeRun: {
       fileId: representativeRun.fileId,
-      audioUrl: `/api/music/audio/${representativeRun.fileId}`,
+      audioUrl: `/audio/music/${representativeRun.fileId}.wav`,
       audioDurationSeconds: representativeRun.audioDurationSeconds,
       bpm: representativeRun.bpm,
       key: representativeRun.key,
@@ -241,10 +240,3 @@ export async function getLyriaInteractiveProfile() {
   } satisfies LyriaInteractiveProfile;
 }
 
-export function isValidMusicFileId(fileId: string) {
-  return AUDIO_FILE_ID_PATTERN.test(fileId);
-}
-
-export function getMusicAudioFilePath(fileId: string) {
-  return path.join(MUSIC_ROOT, "audio", `${fileId}.wav`);
-}

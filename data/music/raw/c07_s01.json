@@ -1,0 +1,25 @@
+{
+  "chain_id": 7,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T07:37:24.623700+00:00",
+  "audio_file": "data/music/audio/c07_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 101106,
+  "audio_features": {
+    "bpm": 133.9,
+    "key": "D major",
+    "spectral_centroid_hz": 1466.7,
+    "rms_energy": 0.135,
+    "spectral_rolloff_hz": 2811.1
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "The track has a really infectious, bouncy groove that blends acoustic guitar with a modern trap-style rhythm section. I liked the clean production and how the syncopated guitar riff interacts with the 808 bass. It feels very polished and professional, though as an instrumental, it becomes a bit repetitive over time. It serves as an excellent foundation for a song, but could benefit from a lead melody or vocal to give it more of a focal point.",
+    "suggested_prompt": "Make me a chill hip-hop song with a catchy acoustic guitar riff and punchy 808s, but include a melodic synth lead or a vocal hook to add more variety to the structure."
+  }
+}

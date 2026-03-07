@@ -1,0 +1,24 @@
+{
+  "file_id": "c15_s01",
+  "audio_file": "data/music/audio/c15_s01.wav",
+  "bpm": 133.9,
+  "key": "C major",
+  "spectral_centroid_hz": 1887.9,
+  "rms_energy": 0.1135,
+  "spectral_rolloff_hz": 3785.2,
+  "genre": "Electronic",
+  "sub_genre": "Future Bass",
+  "mood": "Uplifting",
+  "instruments": [
+    "vocal chops",
+    "synth pads",
+    "trap drums",
+    "808 bass",
+    "melodic synths"
+  ],
+  "tempo_feel": "fast",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Pop",
+  "energy_level": "high",
+  "complexity": "moderate"
+}

@@ -1,0 +1,25 @@
+{
+  "chain_id": 10,
+  "step": 1,
+  "prompt": "Make me a song",
+  "music_model": "models/lyria-realtime-exp",
+  "eval_model": "gemini-3-flash-preview",
+  "timestamp": "2026-03-07T07:43:27.595274+00:00",
+  "audio_file": "data/music/audio/c10_s01.wav",
+  "audio_duration_seconds": 100.0,
+  "audio_size_bytes": 19200000,
+  "chunk_count": 50,
+  "generation_time_ms": 100973,
+  "audio_features": {
+    "bpm": 140.6,
+    "key": "F# major",
+    "spectral_centroid_hz": 1858.4,
+    "rms_energy": 0.1082,
+    "spectral_rolloff_hz": 3694.5
+  },
+  "evaluation": {
+    "liked": true,
+    "feedback": "The song is a very catchy, high-energy trap instrumental. I really enjoyed the syncopated percussion and the crispness of the hi-hats. The melodic synth lead is simple but effective, creating a driving, confident mood that works well for a background track or a workout playlist. It feels professionally produced, though it stays quite consistent throughout without a major shift in intensity.",
+    "suggested_prompt": "An upbeat, high-energy trap instrumental with a syncopated 808 beat, crisp hi-hat rolls, and a bright, melodic synthesizer lead in F# major. Add a contrasting breakdown section with atmospheric textures before returning to the main beat."
+  }
+}

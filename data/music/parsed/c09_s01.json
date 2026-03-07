@@ -1,0 +1,24 @@
+{
+  "file_id": "c09_s01",
+  "audio_file": "data/music/audio/c09_s01.wav",
+  "bpm": 133.9,
+  "key": "C# minor",
+  "spectral_centroid_hz": 1930.2,
+  "rms_energy": 0.1111,
+  "spectral_rolloff_hz": 3704.1,
+  "genre": "Hip-Hop",
+  "sub_genre": "Trap",
+  "mood": "Energetic",
+  "instruments": [
+    "808 bass",
+    "hi-hats",
+    "trap drums",
+    "synth pluck",
+    "vocal chops"
+  ],
+  "tempo_feel": "fast",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Hip-Hop",
+  "energy_level": "high",
+  "complexity": "simple"
+}

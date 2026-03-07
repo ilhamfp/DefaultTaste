@@ -1,0 +1,25 @@
+{
+  "file_id": "c10_s01",
+  "audio_file": "data/music/audio/c10_s01.wav",
+  "bpm": 140.6,
+  "key": "F# major",
+  "spectral_centroid_hz": 1858.4,
+  "rms_energy": 0.1082,
+  "spectral_rolloff_hz": 3694.5,
+  "genre": "Hip-Hop",
+  "sub_genre": "Trap",
+  "mood": "Energetic",
+  "instruments": [
+    "808 bass",
+    "trap drums",
+    "hi-hats",
+    "acoustic guitar",
+    "synth pads",
+    "vocal chops"
+  ],
+  "tempo_feel": "moderate",
+  "production_style": "Modern/Polished",
+  "cultural_origin": "Western Hip-Hop",
+  "energy_level": "medium",
+  "complexity": "simple"
+}

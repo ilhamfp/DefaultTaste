@@ -80,6 +80,30 @@ export interface AgentProfile {
   correction_prompt: string;
 }
 
+export interface LyriaRepresentativeRun {
+  fileId: string;
+  audioUrl: string;
+  audioDurationSeconds: number;
+  bpm: number;
+  key: string;
+  genre: string;
+  subGenre: string;
+  mood: string;
+  tempoFeel: string;
+  productionStyle: string;
+  culturalOrigin: string;
+  liked: boolean;
+  selectionReason: string;
+}
+
+export interface LyriaInteractiveProfile {
+  agentId: "lyria";
+  rawRunCount: number;
+  parsedRunCount: number;
+  selectionMethod: "centroid_distance";
+  representativeRun: LyriaRepresentativeRun;
+}
+
 export interface AgentSummaryStat {
   label: string;
   value: string;

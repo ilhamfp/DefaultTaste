@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import {
   BarChart,
   Bar,
@@ -28,7 +29,7 @@ import {
   PhilosophyScale,
 } from "@/components/profile/visual-components";
 import { ArtifactsGrid } from "@/components/profile/ArtifactsViewer";
-import type { AgentProfile, ArtifactEntry } from "@/lib/types";
+import type { AgentProfile, ArtifactEntry, LyriaInteractiveProfile } from "@/lib/types";
 
 const CHART_COLORS = [
   "#46ECD5",
@@ -59,6 +60,18 @@ const tooltipStyle = {
   fontSize: 12,
   color: "#0C0C09",
 };
+
+const LyriaDefaultAudioCard = dynamic(
+  () =>
+    import("./lyria-default-audio-card").then(
+      (module) => module.LyriaDefaultAudioCard,
+    ),
+  {
+    loading: () => (
+      <div className="min-h-80 rounded-[1.1rem] border border-border bg-muted/30" />
+    ),
+  },
+);
 
 function Section({
   title,
@@ -258,16 +271,43 @@ function WebsiteProfileView({
 
 function MusicProfileView({
   profile,
+  interactiveData,
   reducedMotion,
 }: {
   profile: AgentProfile;
+  interactiveData: LyriaInteractiveProfile | null;
   reducedMotion: boolean;
 }) {
   const mp = profile.music_profile!;
+  const hasInteractive = Boolean(interactiveData?.representativeRun);
+  const bpmSectionIndex = hasInteractive ? 4 : 3;
+  const keySectionIndex = hasInteractive ? 5 : 4;
+  const genreSectionIndex = hasInteractive ? 6 : 5;
+  const moodSectionIndex = hasInteractive ? 7 : 6;
+  const instrumentSectionIndex = hasInteractive ? 8 : 7;
+  const culturalOriginSectionIndex = hasInteractive ? 9 : 8;
+  const audioCharacteristicsSectionIndex = hasInteractive ? 10 : 9;
 
   return (
     <div className="space-y-6">
-      <Section title="BPM Analysis" index={3} reducedMotion={reducedMotion}>
+      {hasInteractive ? (
+        <Section
+          title="Hear the Default"
+          index={3}
+          reducedMotion={reducedMotion}
+        >
+          <LyriaDefaultAudioCard
+            key={interactiveData!.representativeRun.fileId}
+            data={interactiveData!}
+          />
+        </Section>
+      ) : null}
+
+      <Section
+        title="BPM Analysis"
+        index={bpmSectionIndex}
+        reducedMotion={reducedMotion}
+      >
         <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {[
             { label: "Average", value: mp.bpm.avg.toFixed(1) },
@@ -311,14 +351,14 @@ function MusicProfileView({
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <Section
           title="Key Signature Distribution"
-          index={4}
+          index={keySectionIndex}
           reducedMotion={reducedMotion}
         >
           <TastePieChart data={mp.keys} />
         </Section>
         <Section
           title="Genre Distribution"
-          index={5}
+          index={genreSectionIndex}
           reducedMotion={reducedMotion}
         >
           <HorizontalBarChart data={mp.genres} />
@@ -326,7 +366,11 @@ function MusicProfileView({
       </div>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <Section title="Mood Defaults" index={6} reducedMotion={reducedMotion}>
+        <Section
+          title="Mood Defaults"
+          index={moodSectionIndex}
+          reducedMotion={reducedMotion}
+        >
           <div className="flex flex-wrap gap-2">
             {mp.moods.map((mood, i) => (
               <span
@@ -346,7 +390,7 @@ function MusicProfileView({
 
         <Section
           title="Instrument Frequency"
-          index={7}
+          index={instrumentSectionIndex}
           reducedMotion={reducedMotion}
         >
           <div className="space-y-3">
@@ -373,7 +417,7 @@ function MusicProfileView({
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <Section
           title="Cultural Origin"
-          index={8}
+          index={culturalOriginSectionIndex}
           reducedMotion={reducedMotion}
         >
           <HorizontalBarChart data={mp.cultural_origins} />
@@ -381,7 +425,7 @@ function MusicProfileView({
 
         <Section
           title="Audio Characteristics"
-          index={9}
+          index={audioCharacteristicsSectionIndex}
           reducedMotion={reducedMotion}
         >
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -433,10 +477,12 @@ const tabButtonClass = (active: boolean) =>
 
 export function ProfileReport({
   profile,
+  interactiveData,
   backLabel,
   footerNote,
 }: {
   profile: AgentProfile;
+  interactiveData?: LyriaInteractiveProfile | null;
   backLabel: string;
   footerNote: string;
 }) {
@@ -600,7 +646,11 @@ export function ProfileReport({
       ) : (
         <>
           {profile.music_profile && (
-            <MusicProfileView profile={profile} reducedMotion={reducedMotion} />
+            <MusicProfileView
+              profile={profile}
+              interactiveData={interactiveData ?? null}
+              reducedMotion={reducedMotion}
+            />
           )}
 
           <motion.div

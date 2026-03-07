@@ -1,5 +1,6 @@
 import { AgentProfile, AgentSummary, ArtifactEntry } from "./types";
 import { mockProfiles } from "./mock";
+import { getLyriaInteractiveProfile } from "./music-interactive";
 import fs from "fs";
 import path from "path";
 
@@ -49,6 +50,14 @@ export async function getArtifactManifest(
     return JSON.parse(raw) as ArtifactEntry[];
   }
   return null;
+}
+
+export async function getAgentInteractiveProfile(agentId: string) {
+  if (agentId !== "lyria") {
+    return null;
+  }
+
+  return getLyriaInteractiveProfile();
 }
 
 function formatTopColor(name: string | undefined) {

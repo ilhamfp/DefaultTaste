@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ProfileReport } from "@/components/profile/profile-report";
 import { MarketingShell } from "@/components/site/marketing-shell";
-import { getAgentProfile } from "@/lib/data";
+import { getAgentInteractiveProfile, getAgentProfile } from "@/lib/data";
 
 const focusRingClass =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
@@ -12,7 +12,10 @@ export default async function AgentProfilePage({
   params: Promise<{ agentId: string }>;
 }) {
   const { agentId } = await params;
-  const profile = await getAgentProfile(agentId);
+  const [profile, interactiveData] = await Promise.all([
+    getAgentProfile(agentId),
+    getAgentInteractiveProfile(agentId),
+  ]);
 
   if (!profile) {
     return (
@@ -35,6 +38,7 @@ export default async function AgentProfilePage({
       <div className="mx-auto max-w-5xl px-2 pb-12 pt-10 sm:px-0">
         <ProfileReport
           profile={profile}
+          interactiveData={interactiveData}
           backLabel="Agents"
           footerNote="Gemini 3 Hackathon 2026 · Singapore"
         />

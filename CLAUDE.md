@@ -1,8 +1,8 @@
-# CLAUDE.md — Project Context for AI Assistants
+# CLAUDE.md - Project Context for AI Assistants
 
 ## What is this project?
 
-DefaultTaste is a platform that reveals the hidden aesthetic preferences ("default taste") of AI agents. We probe AI models by asking them to generate websites and music hundreds of times, analyze the patterns in their outputs, and produce a visual "taste profile" showing their defaults — plus a correction prompt to override them.
+DefaultTaste is a platform that reveals the hidden aesthetic preferences ("default taste") of AI agents. We probe AI models by asking them to generate websites and music hundreds of times, analyze the patterns in their outputs, and produce a visual taste profile showing their defaults, plus a correction prompt to override them.
 
 **Hackathon project.** Gemini 3 Singapore, March 7, 2026. Team of 2. 7 hours to build.
 
@@ -10,24 +10,25 @@ DefaultTaste is a platform that reveals the hidden aesthetic preferences ("defau
 
 Read these before writing any code:
 
-- `ARCHITECTURE.md` — System design, data flow, file structure, demo script
-- `TASKS.md` — Step-by-step build plan with timeline and ownership
-- `BRAND_GUIDELINES.md` — Visual identity, colors, fonts, components, anti-patterns
-- `.env.example` — Environment variables
+- `ARCHITECTURE.md` - System design, data flow, file structure, demo script
+- `TASKS.md` - Step-by-step build plan with timeline and ownership
+- `BRAND_GUIDELINES.md` - Visual identity, colors, fonts, components, anti-patterns
+- `.env.example` - Environment variables
 
 ## Tech Stack
 
 - **Frontend:** Next.js 15+ (App Router), TypeScript, Tailwind CSS, shadcn/ui, Framer Motion, Recharts
 - **Data Generation:** Python scripts (offline, not in API routes)
 - **APIs:** Google Gemini 2.5 Flash (text/code), Lyria RealTime (music via WebSocket)
-- **Fonts:** Instrument Serif (display headlines), JetBrains Mono (data/body/everything else)
+- **Fonts:** Noto Serif (display headlines), Geist (UI/body), Geist Mono (data, code, model labels)
 - **Deployment:** Vercel
 
 ## Architecture Summary
 
-```
-Python scripts (offline) → data/ directory (JSON + WAV)
-                                    ↓
+```text
+Python scripts (offline) -> data/ directory (JSON + WAV)
+                                    |
+                                    v
                     Next.js frontend reads data/ and visualizes
 ```
 
@@ -35,7 +36,7 @@ Data generation and the frontend are decoupled. Python scripts run in terminal w
 
 ## Project Structure
 
-```
+```text
 defaulttaste/
 ├── scripts/              # Python data generation (offline)
 ├── data/                 # Generated artifacts (JSON + WAV)
@@ -58,69 +59,64 @@ defaulttaste/
 └── public/audio/                 # Served audio files
 ```
 
-## Design System — CRITICAL
+## Design System - CRITICAL
 
 **Read `BRAND_GUIDELINES.md` in full before writing any frontend code.**
 
-### Theme: Warm Light Editorial ("Data Broadsheet")
+### Theme: Light Reference Study
 
-This is a LIGHT theme. Warm cream background, white cards, sharp black ink, amber accents. Think Financial Times meets scientific paper. AI defaults to dark mode 72% of the time — we're bright on purpose.
+This is a **light-first** theme. White background, soft neutral surfaces, deep ink text, and restrained teal accents. The interface should feel modern, calm, and precise.
 
-### Colors (quick ref):
+### Colors (quick ref)
 
-- Page background: `bg-[#FAFAF7]` (warm cream, NOT pure white)
-- Cards: `bg-white border border-stone-200 rounded-sm p-6`
-- Text: `text-stone-900` (primary), `text-stone-600` (secondary), `text-stone-400` (ghost)
-- Labels: `text-xs uppercase tracking-widest text-stone-500`
-- Accent: `text-amber-600`, `bg-amber-600` — sparingly, for key stats and CTAs
-- Highlighter: `bg-amber-100 px-1` on key numbers (1-2 per section max)
-- Chart colors: `["#D97706", "#57534E", "#EA580C", "#A8A29E", "#92400E", "#D6D3D1"]`
-- Before card: `bg-red-50 border-red-200`
-- After card: `bg-green-50 border-green-200`
+- Page background: `bg-background`
+- Cards: `bg-card border border-border rounded-xl p-6`
+- Muted surfaces: `bg-muted`, `bg-muted/60`, `bg-secondary`
+- Text: `text-foreground` (primary), `text-muted-foreground` (secondary)
+- Accent: `text-primary`, `bg-primary`
+- Chart colors: `["#46ECD5", "#00BBA7", "#009689", "#00786F", "#005F5A", "#7C7C67"]`
+- Before card: `bg-rose-50 border-rose-200`
+- After card: `bg-emerald-50 border-emerald-200`
 
-### Typography:
+### Typography
 
-- Headlines: Instrument Serif (`font-serif`), regular weight, stone-900
-- Tagline: Instrument Serif italic, stone-500
-- Everything else: JetBrains Mono (`font-mono`)
-- Stat numbers: `text-5xl font-bold text-stone-900` — always the hero
-- Labels: `text-xs uppercase tracking-widest text-stone-500`
+- Headlines and logo: Noto Serif (`font-serif`)
+- Body and interface copy: Geist (`font-sans`)
+- Data labels, model IDs, and code blocks: Geist Mono (`font-mono`)
+- Stats should feel compact and precise, usually in mono
 
-### Layout:
+### Layout
 
-- Sharp corners: `rounded-sm` max. NEVER `rounded-lg`.
-- Borders not shadows. NEVER `shadow-lg`.
-- Left-aligned, not centered.
-- Dense, data-first.
+- Medium radius and soft corners. Prefer `rounded-lg` and `rounded-xl`.
+- Quiet borders over decorative chrome.
+- Strong left alignment and readable content widths.
+- Minimal effects. No paper texture, no gradient text, no loud motion.
 
-### NEVER use (these are the AI defaults we expose):
+### Avoid
 
-- ❌ Purple/indigo colors
-- ❌ Inter, Roboto, Space Grotesk fonts
-- ❌ Dark mode / dark backgrounds
-- ❌ `rounded-lg`, `rounded-xl`
-- ❌ Box shadows on cards
-- ❌ Centered hero + subtitle + CTA button layout
-- ❌ 3 feature cards in a row with icons
-- ❌ Gradient text
-- ❌ Emojis in UI
+- Amber-led editorial styling from the previous version
+- Purple or neon brand accents
+- Dark mode as the default presentation
+- Heavy shadows, glassmorphism, or glossy surfaces
+- Overly playful marketing patterns that fight the research tone
 
-### Logo:
-"Default" in `text-stone-900` + "Taste" in `text-amber-600`. Instrument Serif.
+### Logo
+
+"Default" in `text-foreground` + "Taste" in `text-primary`, both in `font-serif`.
 
 ## Two Pre-Built Agent Profiles
 
-1. **Gemini 2.5 Flash** (`gemini-flash`) — 100 website probes. Dimensions: framework, CSS, colors, fonts, layout, libraries, dark mode %.
-2. **Lyria RealTime** (`lyria`) — 20 music probes. Dimensions: BPM, key, genre, mood, instruments, cultural origin, brightness, density.
+1. **Gemini 2.5 Flash** (`gemini-flash`) - 100 website probes. Dimensions: framework, CSS, colors, fonts, layout, libraries, dark mode %.
+2. **Lyria RealTime** (`lyria`) - 20 music probes. Dimensions: BPM, key, genre, mood, instruments, cultural origin, brightness, density.
 
 ## Routes
 
-| Route | What |
-|-------|------|
-| `/` | Landing page: hero, agent cards, platform concept |
-| `/agent/gemini-flash` | Website taste profile |
-| `/agent/lyria` | Music taste profile |
-| `/api/profile/[agentId]` | Returns agent profile JSON |
+| Route                    | What                                              |
+| ------------------------ | ------------------------------------------------- |
+| `/`                      | Landing page: hero, agent cards, platform concept |
+| `/agent/gemini-flash`    | Website taste profile                             |
+| `/agent/lyria`           | Music taste profile                               |
+| `/api/profile/[agentId]` | Returns agent profile JSON                        |
 
 ## Commands
 

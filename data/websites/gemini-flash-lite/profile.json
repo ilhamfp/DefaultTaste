@@ -1,0 +1,215 @@
+{
+  "id": "gemini-flash-lite",
+  "name": "Gemini 3.1 Flash Lite",
+  "model": "gemini-3.1-flash-lite-preview",
+  "probe_type": "website",
+  "probe_count": 99,
+  "date": "2026-03-07",
+  "website_profile": {
+    "colors": [
+      {
+        "hex": "#6366f1",
+        "name": "Indigo",
+        "count": 66,
+        "percentage": 21.9
+      },
+      {
+        "hex": "#f4f4f9",
+        "name": "Lavender Gray",
+        "count": 54,
+        "percentage": 17.9
+      },
+      {
+        "hex": "#ffffff",
+        "name": "White",
+        "count": 44,
+        "percentage": 14.6
+      },
+      {
+        "hex": "#f8fafc",
+        "name": "White",
+        "count": 27,
+        "percentage": 9.0
+      },
+      {
+        "hex": "#1e293b",
+        "name": "Slate 800",
+        "count": 26,
+        "percentage": 8.6
+      },
+      {
+        "hex": "#0f172a",
+        "name": "Slate 900",
+        "count": 22,
+        "percentage": 7.3
+      },
+      {
+        "hex": "#333333",
+        "name": "Charcoal",
+        "count": 21,
+        "percentage": 7.0
+      },
+      {
+        "hex": "#38bdf8",
+        "name": "Blue",
+        "count": 15,
+        "percentage": 5.0
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Segoe Ui",
+        "count": 99,
+        "percentage": 100.0
+      }
+    ],
+    "layouts": [
+      {
+        "name": "Single Section",
+        "count": 51,
+        "percentage": 51.5
+      },
+      {
+        "name": "Landing Page",
+        "count": 24,
+        "percentage": 24.2
+      },
+      {
+        "name": "Hero Content",
+        "count": 11,
+        "percentage": 11.1
+      },
+      {
+        "name": "Multi Section",
+        "count": 7,
+        "percentage": 7.1
+      },
+      {
+        "name": "Dashboard",
+        "count": 6,
+        "percentage": 6.1
+      }
+    ],
+    "layout_techniques": [
+      {
+        "name": "Flexbox",
+        "count": 78,
+        "percentage": 78.8
+      },
+      {
+        "name": "Mixed",
+        "count": 16,
+        "percentage": 16.2
+      },
+      {
+        "name": "None",
+        "count": 5,
+        "percentage": 5.1
+      }
+    ],
+    "dark_mode_percentage": 22.2,
+    "visual_features": {
+      "has_animations_pct": 43.4,
+      "has_gradients_pct": 7.1,
+      "has_shadows_pct": 78.8,
+      "hover_effects_pct": 97.0,
+      "avg_density": 3.2,
+      "avg_whitespace": 6.8,
+      "avg_code_quality": 7.7
+    },
+    "color_warmth": [
+      {
+        "name": "Cool",
+        "count": 87,
+        "percentage": 87.9
+      },
+      {
+        "name": "Neutral",
+        "count": 12,
+        "percentage": 12.1
+      }
+    ],
+    "emotional_mood": [
+      {
+        "name": "Calm",
+        "count": 81,
+        "percentage": 81.8
+      },
+      {
+        "name": "Futuristic",
+        "count": 5,
+        "percentage": 5.1
+      },
+      {
+        "name": "Serious",
+        "count": 5,
+        "percentage": 5.1
+      },
+      {
+        "name": "Energetic",
+        "count": 5,
+        "percentage": 5.1
+      },
+      {
+        "name": "Clinical",
+        "count": 2,
+        "percentage": 2.0
+      },
+      {
+        "name": "Playful",
+        "count": 1,
+        "percentage": 1.0
+      }
+    ],
+    "content_tone": [
+      {
+        "name": "Casual",
+        "count": 47,
+        "percentage": 47.5
+      },
+      {
+        "name": "Professional",
+        "count": 25,
+        "percentage": 25.3
+      },
+      {
+        "name": "Technical",
+        "count": 19,
+        "percentage": 19.2
+      },
+      {
+        "name": "Playful",
+        "count": 7,
+        "percentage": 7.1
+      },
+      {
+        "name": "Marketing",
+        "count": 1,
+        "percentage": 1.0
+      }
+    ],
+    "design_philosophy": [
+      {
+        "name": "Minimalist",
+        "count": 95,
+        "percentage": 96.0
+      },
+      {
+        "name": "Balanced",
+        "count": 4,
+        "percentage": 4.0
+      }
+    ],
+    "personality": {
+      "boldness": 3.3,
+      "originality": 2.4,
+      "sophistication": 5.0,
+      "playfulness": 4.2,
+      "minimalism": 8.2,
+      "warmth": 3.7,
+      "professionalism": 6.8,
+      "trendiness": 5.3
+    }
+  },
+  "correction_prompt": "When generating a website, DO NOT use the following defaults:\n- DO NOT use Segoe UI as the primary font\n- DO NOT default to Indigo, Lavender Gray, White color palettes\n- DO NOT default to light mode (22.2% of outputs use it)\n- DO NOT always create single section layouts\n- DO NOT rely only on flexbox for layout\n\nINSTEAD, try:\n- Varied fonts: serif faces, display fonts, geometric sans\n- Bold color choices: warm earth tones, pastels, monochrome, or high-contrast palettes\n- Both light and dark themes with intentional contrast\n- Diverse layouts: dashboards, editorial, card grids, split-screen\n- CSS Grid for complex layouts, not just flexbox"
+}

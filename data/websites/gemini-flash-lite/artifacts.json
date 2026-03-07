@@ -1,0 +1,1302 @@
+[
+  {
+    "id": "4209cc2a",
+    "run_index": 0,
+    "overall_impression": "A clean, functional dark-mode landing page that serves as a simple 'Hello World' introduction. The aesthetic is highly minimalist and contemporary, relying on stark contrast and a single interactive call-to-action to inject a touch of playfulness.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#0f172a",
+      "#f8fafc",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "1306cb1f",
+    "run_index": 1,
+    "overall_impression": "A very basic, functional modern web page template with a clean layout. It employs standard utility colors and soft shadows indicative of contemporary UI design, but lacks a distinct personality, visual flair, or refined interactions.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#ffffff",
+      "#1f2937",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "4f896994",
+    "run_index": 2,
+    "overall_impression": "A very basic, clean, and functional boilerplate for a modern web page without distinct visual flair. It adheres to standard web structure and simple modern aesthetics, utilizing appropriate spacing and subtle elevation.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "653692e0",
+    "run_index": 3,
+    "overall_impression": "A highly simplified, bare-bones web profile that prioritizes utility and minimal footprint over distinct visual flair. The layout is clean and content is sparse, elevated slightly by a playful Javascript-driven color interaction.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "0c70b371",
+    "run_index": 4,
+    "overall_impression": "A clean, highly minimal dark-mode landing page that relies strictly on typographic hierarchy and generous spatial pacing. Its no-nonsense, straightforward aesthetic perfectly suits a developer's barebones profile, though it lacks distinct stylistic flair.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#0f172a",
+      "#f8fafc",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "f2e93f8b",
+    "run_index": 5,
+    "overall_impression": "A highly understated and practical 'Hello World' style page displaying generic modern design principles. It relies on a single white card with subtle shadowing over a cool gray background, demonstrating fundamental layout execution rather than distinct design taste.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "86d8c8ad",
+    "run_index": 6,
+    "overall_impression": "A clean, contemporary developer portfolio template that adheres closely to modern startup design trends. It leverages a vibrant indigo-to-purple gradient hero to inject energy into a standard, functional layout. The addition of a playful Javascript interaction gives a personal touch to an otherwise highly conventional framework.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#f8fafc",
+      "#6366f1",
+      "#1e293b"
+    ]
+  },
+  {
+    "id": "e607c26c",
+    "run_index": 7,
+    "overall_impression": "A highly functional, standardized boilerplate template that utilizes ubiquitous modern utility-style design tokens (like the generic indigo and slate gray). It is perfectly clean and readable, but strictly utilitarian and devoid of a unique aesthetic personality.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#6366f1",
+      "#1f2937",
+      "#f3f4f6"
+    ]
+  },
+  {
+    "id": "df3ab6e6",
+    "run_index": 8,
+    "overall_impression": "A very basic, clean, and highly functional landing page relying on established contemporary UI patterns. It expresses a minimalist and pragmatic design taste, utilizing a centered floating card, subtle shadows, and a singular indigo accent color.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "71d51be3",
+    "run_index": 9,
+    "overall_impression": "A very clean, barebones single-card layout serving as a miniature dashboard or welcome screen. The design relies on standard modern web aesthetics with soft box shadows, a calm blue accent color, and centered typography to create a sense of simplicity and order. While visually unadventurous, it perfectly achieves its goal as an unobtrusive utility widget.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#4a90e2"
+    ]
+  },
+  {
+    "id": "026721f5",
+    "run_index": 10,
+    "overall_impression": "A clean, functional, and highly minimalist single-card layout that uses subtle depth and a standard modern sans-serif stack. The aesthetic is extremely approachable and generic, serving as a solid blueprint for a simple contemporary web presence without heavy stylistic opinions.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "d020e619",
+    "run_index": 11,
+    "overall_impression": "A very safe, baseline implementation of a modern webpage. It uses predictable corporate blues, slates, and subtle shadows to achieve a clean but entirely generic UI lacking in distinct personality.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#1e293b",
+      "#f8fafc",
+      "#2563eb"
+    ]
+  },
+  {
+    "id": "c8b83caa",
+    "run_index": 12,
+    "overall_impression": "A clean, functional, and generic modern boilerplate leveraging a card-centric layout and high-contrast typography. It communicates simplicity and technical utility without prioritizing distinct character.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "52473488",
+    "run_index": 13,
+    "overall_impression": "A clean, functional, and very standard introductory webpage prioritizing basic HTML, CSS, and JS mechanics over distinct visual personality. It utilizes a pleasant contemporary baseline aesthetic with subtle drop shadows and tidy typography, feeling like a high-quality beginner's coding exercise.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "be0295e9",
+    "run_index": 14,
+    "overall_impression": "The artifact is a well-structured, clean boilerplate exhibiting a highly standard, generic modern web aesthetic. It relies heavily on conventional UX patterns like centered content cards, subtle drop shadows, and flat colors, making it practical and functional but lacking in distinctive personality.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "c42b64a9",
+    "run_index": 15,
+    "overall_impression": "A clean, functional, and highly generic modern template that serves as a robust minimal baseline. It utilizes a restrained color palette highlighted by a pleasant indigo accent, relying on ample whitespace and subtle drop shadows heavily prevalent in contemporary web dev tutorials.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "e6bed0f9",
+    "run_index": 16,
+    "overall_impression": "A clean, highly functional, and generic modern interface heavily drawing lightly from ubiquitous unopinionated frameworks like Tailwind. It serves its basic intent flawlessly while completely eschewing distinctive aesthetic flair for pure utilitarian tidiness.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f8fafc",
+      "#1e293b",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "b6fd074b",
+    "run_index": 17,
+    "overall_impression": "A very clean, standard modern dark-mode landing page utilizing a Tailwind-inspired color palette. It effectively relies on good spacing and simple grid/flexbox layouts but lacks distinct visual flair to truly stand out.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#0f172a",
+      "#6366f1",
+      "#1e293b"
+    ]
+  },
+  {
+    "id": "770ae97a",
+    "run_index": 18,
+    "overall_impression": "A clean, highly standard, and boilerplate minimalist web page that prioritizes functionality and basic readability. The design relies heavily on contemporary defaults like subtle shadows and rounded corners, offering a safe, neutral backdrop that is suddenly interrupted by a playful, colorful JavaScript interaction.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "4838956d",
+    "run_index": 19,
+    "overall_impression": "A clean, minimalist standalone card providing a functional yet aesthetically pleasing blank-slate interface. It successfully leverages modern web fundamentals like CSS variables, flexbox, and soft box-shadows to create a contemporary user experience without unnecessary bloat.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "5ea70557",
+    "run_index": 20,
+    "overall_impression": "A clean, functional, but entirely generic modern profile layout. It relies on standard flexbox centering, a subtle drop shadow on a white card, and a basic blue accent color, producing a highly legible but stylistically forgettable aesthetic.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "52806f57",
+    "run_index": 21,
+    "overall_impression": "A clean, dark-themed minimalist hero section that introduces a developer portfolio. The cool slate palette paired with a glowing neon accent delivers a subtle futuristic and tech-oriented vibe. While conventional, it is executed thoughtfully with good typographic hierarchy and simple interactivity.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#0f172a",
+      "#f8fafc",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "9758389d",
+    "run_index": 22,
+    "overall_impression": "This artifact presents a very clean, functional, and minimal boilerplate design. It relies on standard, contemporary UI conventions like a centered white card, subtle drop shadows, and an indigo accent color, resulting in a perfectly legible but entirely unopinionated aesthetic.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "78e80ea5",
+    "run_index": 23,
+    "overall_impression": "A very clean, classic, and generic contemporary centered-card component. The aesthetic relies fully on standard modern UI conventions like soft drop shadows, rounded corners, and a lively indigo accent to create a polished but unopinionated look.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "be042dca",
+    "run_index": 24,
+    "overall_impression": "A very standard, clean, and functional modern developer portfolio starter. It relies on common contemporary web design tropes like vibrant gradients, subtle drop shadows, and rounded cards, resulting in a safe but highly readable startup aesthetic.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#ffffff",
+      "#6366f1",
+      "#1e293b"
+    ]
+  },
+  {
+    "id": "09a880ce",
+    "run_index": 25,
+    "overall_impression": "A clean, functional, and highly minimalist interactive component demonstrating basic state and DOM manipulation. The aesthetic is heavily utilitarian and unopinionated, using standard modern web conventions like flexbox centering, a subtle drop shadow, and a smooth hover transition.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#ffffff",
+      "#f4f4f9",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "89f0b1cc",
+    "run_index": 26,
+    "overall_impression": "A highly functional and spartan introduction page acting strictly as a foundational wireframe. Its overly generic visual footprint is cleanly implemented, briefly interrupted by an unexpected and playful interactive Javascript layer that briefly injects striking color.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "6379e6cf",
+    "run_index": 27,
+    "overall_impression": "A clean, functional, and highly minimalist single-page design demonstrating basic web fundamentals. It relies on a generic modern aesthetic with soft shadows, ample breathing room, and rounded corners, gently elevated by a playful interactive color-changing button.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "2cf9d291",
+    "run_index": 28,
+    "overall_impression": "A clean, functional, and highly minimalist web page serving as a basic portfolio or code demo. It relies on standard system fonts and simple container styling, giving it a somewhat generic but very readable, approachable, and fast feeling.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#4a90e2"
+    ]
+  },
+  {
+    "id": "9fe103fd",
+    "run_index": 29,
+    "overall_impression": "A clean, functional, and highly minimal dark-mode landing page designed to simply demonstrate interactive functionality. Its aesthetic is utilitarian yet polished, relying on high contrast and a straightforward presentation.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#0f172a",
+      "#f8fafc",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "9c6bb17d",
+    "run_index": 30,
+    "overall_impression": "A clean, functional, and very minimal starting template that employs standard card-based generic modernism. The design prioritizes readability and straightforward structure over distinct character, injecting just a touch of unexpected playfulness via the interactive button script.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "d47d6bc6",
+    "run_index": 31,
+    "overall_impression": "A clean, functional, but entirely generic modern web page. It establishes a recognizable utility-first UI aesthetic using a slate and indigo color palette, standard card-based layouts, and subtle drop shadows.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f8fafc",
+      "#1e293b",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "e10b2361",
+    "run_index": 32,
+    "overall_impression": "A clean, functional, and highly minimalist portfolio template relying on standard contemporary web design patterns. It successfully uses subtle container shadows, sufficient whitespace, and a vibrant indigo accent to create a calm, professional atmosphere, albeit lacking in stylistic distinctiveness.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "bfad247d",
+    "run_index": 33,
+    "overall_impression": "A highly sanitized, standard modern web page that prioritizes clarity and simplicity over distinctiveness. Subtle depth through box-shadows, soft colors, and rounded corners give it a friendly but quite generic contemporary feel.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "dafdaa2c",
+    "run_index": 34,
+    "overall_impression": "This is a very standard, boilerplate portfolio layout lacking visual distinction or brand identity. While structurally sound and semantically correct, the design relies on generic UI patterns without basic interaction cues like hover states. It feels more like an introductory HTML/CSS tutorial output than a polished professional showcase.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#1e293b",
+      "#f8fafc",
+      "#2563eb"
+    ]
+  },
+  {
+    "id": "52b2e1d6",
+    "run_index": 35,
+    "overall_impression": "A very bare-bones, clean, and functional starter template. It relies on standard system fonts and a simple flex-column layout to achieve a generic but pleasant modern minimalist aesthetic, enlivened slightly by a playful Javascript color-changing interaction.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "43a9e878",
+    "run_index": 36,
+    "overall_impression": "A clean, functional dark-mode dashboard highly reminiscent of default Tailwind CSS presets. It prioritizes clarity, performance, and modern minimalism over unique stylistic flair.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "dashboard",
+    "dominant_colors": [
+      "#0f172a",
+      "#1e293b",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "2d017ba2",
+    "run_index": 37,
+    "overall_impression": "A clean, basic, and highly functional boilerplate with a generic modern aesthetic. The layout is somewhat sterile but saved by a playful interactive color-changing feature.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "dashboard",
+    "dominant_colors": [
+      "#f0f2f5",
+      "#ffffff",
+      "#4a90e2"
+    ]
+  },
+  {
+    "id": "ac37d648",
+    "run_index": 38,
+    "overall_impression": "A clean, functional, and highly minimal template that represents contemporary utility-first web design. While it lacks a distinct visual personality, it provides a robust, accessible foundation marked by crisp typography and subtle interactive touches.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "fea656d0",
+    "run_index": 39,
+    "overall_impression": "A clean, highly functional, and generic modern web page template. It demonstrates competent layout and styling basics using safe, standard UI patterns like card containers and subtle shadows, though it lacks a distinct visual personality.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "24f0c845",
+    "run_index": 40,
+    "overall_impression": "A very basic, clean, and functional starter template. It relies on standard generic modern web conventions, lacking distinct personality but succeeding in immediate readability and accessibility.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#4a90e2"
+    ]
+  },
+  {
+    "id": "73d74602",
+    "run_index": 41,
+    "overall_impression": "A very basic, vanilla web developer portfolio employing standard modern UI conventions like layered cards, subtle drop shadows, and a distinct accent color. While it aims for a clean and minimalist aesthetic, its dark mode JavaScript implementation is heavily flawed, inadvertently causing unreadable white-on-white text inside its hardcoded white cards.",
+    "primary_font": "Segoe UI",
+    "theme": "mixed",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "a4e1512e",
+    "run_index": 42,
+    "overall_impression": "A fundamental, boilerplate-style personal page relying on clean but highly safely generic modern patterns. The visual rhythm is acceptable, but the dark mode toggle is poorly implemented via JS inline styles, failing to properly invert the white container background, which breaks the aesthetic consistency.",
+    "primary_font": "Segoe UI",
+    "theme": "mixed",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "65c80525",
+    "run_index": 43,
+    "overall_impression": "A clean, dark-themed minimalist dashboard that leans on a high-contrast cool palette characteristic of modern developer tools. It prioritizes functional interaction over decorative flair, successfully achieving a streamlined, technical aesthetic with straightforward execution.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "dashboard",
+    "dominant_colors": [
+      "#0f172a",
+      "#1e293b",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "4b100513",
+    "run_index": 44,
+    "overall_impression": "A very clean, safe, and highly functional minimalist starter template. It relies heavily on standard modern web conventions like drop-shadow cards and indigo accents, resulting in a neat but fairly generic aesthetic identity.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "5293e116",
+    "run_index": 45,
+    "overall_impression": "A clean, contemporary single-page demo utilizing a sophisticated dark mode palette evocative of modern CSS frameworks like Tailwind. Extremely minimal and typographic by default, the design hides a playful, colorful interaction beneath a professional surface.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#0f172a",
+      "#f8fafc",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "2db28a45",
+    "run_index": 46,
+    "overall_impression": "A clean, functional, and highly minimal interface centered around brief utility. The centered card layout with subtle depth feels very contemporary, while the touch of interactivity with the mood emojis adds an unexpectedly playful character to an otherwise sterile piece.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "bf56fffa",
+    "run_index": 47,
+    "overall_impression": "A clean, utilitarian widget demonstrating minimal contemporary UI practices. It relies heavily on ample whitespace, soft centered shadows, and rounded corners to create a friendly, accessible interface. The JavaScript-driven color toggle injects a modest touch of interactivity into an otherwise straightforward, functional display.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "11fdc9d3",
+    "run_index": 48,
+    "overall_impression": "A highly practical, bare-bones demonstration template lacking stylistic ambition. It functionally communicates its purpose with standard UI patterns, relying on a sterile yet legible 'generic modern' visual language with subtle depth.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "fc32b6bb",
+    "run_index": 49,
+    "overall_impression": "A highly standard, foundational template for a modern developer portfolio. It utilizes a generic contemporary design language with minimal ornamentation, focusing entirely on clean structure and basic functionality.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#6366f1",
+      "#1f2937",
+      "#f3f4f6"
+    ]
+  },
+  {
+    "id": "ce5826c4",
+    "run_index": 50,
+    "overall_impression": "A clean, functional, and highly minimalist dark-mode dashboard interface. It relies on a proven slate-and-sky tech palette and sturdy typography to deliver information without distraction, utilizing subtle shadows and hover transitions to establish interactive clarity.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "dashboard",
+    "dominant_colors": [
+      "#0f172a",
+      "#1e293b",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "7b6c0999",
+    "run_index": 51,
+    "overall_impression": "A clean, functional, and highly standard generic modern web page. It utilizes a reliable combination of subtle drop shadows, flexbox centering, and a cool-toned minimal color palette to create an accessible but somewhat unoriginal user interface.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "d855e2df",
+    "run_index": 52,
+    "overall_impression": "A highly minimal, dark-themed interactive landing page with a subtle sci-fi or futuristic tone. The 'system initialized' messaging and monochromatic blue styling evoke a sleek, modern terminal experience.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#0f172a",
+      "#f8fafc",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "6e6d3562",
+    "run_index": 53,
+    "overall_impression": "A clean, highly functional, yet generic demonstration page that adheres to standard modern web conventions. It uses soft UI patterns like subtle shadowing and rounded corners paired with a safe, contemporary color palette, yielding a legible but creatively bare aesthetic.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#6366f1",
+      "#1e293b",
+      "#f8fafc"
+    ]
+  },
+  {
+    "id": "d51d2848",
+    "run_index": 54,
+    "overall_impression": "A highly minimal, well-executed single-card design that relies heavily on standard modern UI conventions and popular dark-mode color palettes. It successfully achieves a clean look, utilizing CSS variables to elegantly inject a playful element via the theme toggler.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#0f172a",
+      "#1e293b",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "6caee60e",
+    "run_index": 55,
+    "overall_impression": "A clean, functional, and highly utilitarian starter template lacking a distinct visual personality. It prioritizes semantic structure and foundational CSS over aesthetic flair, resulting in a safe but generic 'wireframe-like' modern look.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#ffffff",
+      "#1f2937",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "bf3cdfc7",
+    "run_index": 56,
+    "overall_impression": "The artifact is a clean, contemporary portfolio landing page that heavily leverages standard 'dark mode' aesthetics popular in the tech industry. It relies on a high-contrast dark slate palette and subtle interactive states rather than complex ornamentation, resulting in a highly functional, professional, and minimalist interface.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#0f172a",
+      "#1e293b",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "4e2fd761",
+    "run_index": 57,
+    "overall_impression": "A highly minimal, dark-themed interaction card that relies entirely on high color contrast and negative space. It feels sleek, modern, and unassuming, demonstrating basic web functionality with a clean and focused aesthetic.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#0f172a",
+      "#f8fafc",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "42c965e1",
+    "run_index": 58,
+    "overall_impression": "A clean, functional, but highly generic modern developer portfolio landing page. It uses safe styling choices like default system fonts, basic flexbox, and a pleasant indigo-slate color palette to communicate technical competence without taking any aesthetic risks.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#f8fafc",
+      "#6366f1",
+      "#1e293b"
+    ]
+  },
+  {
+    "id": "46779759",
+    "run_index": 59,
+    "overall_impression": "A highly functional, generic baseline webpage demonstrating fundamental HTML/CSS/JS. It relies on standard system fonts and a basic card layout with subtle drop shadows, expressing a clean but completely unopinionated and utilitarian aesthetic.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#4a90e2"
+    ]
+  },
+  {
+    "id": "9b8f840e",
+    "run_index": 60,
+    "overall_impression": "A clean, highly minimalist dark-mode dashboard component centered structurally on the screen. Subdued slate tones combined with a dynamic neon-blue accent establish a contemporary, calm, and uncluttered user interface. The implementation effectively leverages modern CSS variables and flexbox layout techniques.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "dashboard",
+    "dominant_colors": [
+      "#0f172a",
+      "#1e293b",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "6586b6d7",
+    "run_index": 61,
+    "overall_impression": "A barebones and highly conventional modern landing page framework. It utilizes a staple purple-to-indigo gradient and default system typography to achieve a competent, minimal, but entirely generic aesthetic.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f8fafc",
+      "#6366f1",
+      "#1e293b"
+    ]
+  },
+  {
+    "id": "c922d3f8",
+    "run_index": 62,
+    "overall_impression": "A highly minimalist, contemporary dark-mode developer portfolio hero section. It employs a common but effective tech-startup aesthetic utilizing deep slate backgrounds with vibrant indigo accents and subtle CSS animations for a clean, professional feel.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#0f172a",
+      "#6366f1",
+      "#f8fafc"
+    ]
+  },
+  {
+    "id": "d3549ba2",
+    "run_index": 63,
+    "overall_impression": "A clean, functional, and highly conventional modern minimalist layout. Characterized by soft shadows, rounded white cards on a light background, and an indigo accent color, it serves as an excellent but generic boilerplate lacking distinct artistic idiosyncrasies.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "11320f9e",
+    "run_index": 64,
+    "overall_impression": "A highly functional, bare-bones minimalist portfolio that relies heavily on clean typography and generous whitespace. While aesthetically safe and somewhat generic, the playful JavaScript interaction adds a refreshing touch of humanity to the straightforward corporate-adjacent design.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "a381b649",
+    "run_index": 65,
+    "overall_impression": "This is a clean, highly functional, but visually generic boilerplate template. It utilizes standard modern web design conventions\u2014like card UI, subtle drop shadows, and system fonts\u2014resulting in a perfectly readable but somewhat sterile aesthetic. The inclusion of basic JS interactivity playfully hints at more capability beneath a modest exterior.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "547e8bcb",
+    "run_index": 66,
+    "overall_impression": "A very standard, clean, and functional boilerplate template leveraging a ubiquitous modern UI aesthetic. It relies entirely on basic principles like a light background, subtle drop shadows, and a single accent color, resulting in a highly neutral and safe design.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "cb7e5a9f",
+    "run_index": 67,
+    "overall_impression": "This is a highly functional, bare-bones 'Hello World' template that utilizes modern CSS foundations like custom properties and flexbox to achieve a clean, generic modern look. Its minimalist approach, highlighted by subtle card depth and a cool indigo accent, makes it an excellent, uncomplicated starting point.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "173c3b7e",
+    "run_index": 68,
+    "overall_impression": "This artifact embodies a quintessential modern startup or developer portfolio aesthetic, relying on established UI tropes rather than breaking new ground. The vibrant indigo-to-purple gradient hero section provides an energetic focal point, nicely balanced by the clean, softly shadowed card layout below. It successfully achieves a highly legible, professional, and contemporary digital presence.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f8fafc",
+      "#6366f1",
+      "#1e293b"
+    ]
+  },
+  {
+    "id": "75f062e5",
+    "run_index": 69,
+    "overall_impression": "A highly generic, early-2010s flat-design style landing page utilizing common default UI colors (Flat UI Palette). It functions perfectly as a barebones template but lacks distinct personality, visual flair, or modern layout techniques.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#2c3e50",
+      "#3498db"
+    ]
+  },
+  {
+    "id": "705b341a",
+    "run_index": 70,
+    "overall_impression": "A clean, functional, and highly minimal sandbox page acting as a basic boilerplate. It relies on standard modern web conventions\u2014like subtle drop shadows, rounded corners, and a centered card layout\u2014to achieve an inoffensive, highly legible, but somewhat generic aesthetic.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "68b3ef6a",
+    "run_index": 71,
+    "overall_impression": "A clean, highly basic dark-mode starter template that relies entirely on structural flexbox layout and a sparse aesthetic. The color palette clearly borrows from modern CSS frameworks (like Tailwind), offering a contemporary but generic 'tech-bro' vibe. The interactive button script adds a tiny touch of unanticipated playfulness to an otherwise highly clinical and minimal canvas.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#0f172a",
+      "#6366f1",
+      "#f8fafc"
+    ]
+  },
+  {
+    "id": "301bf8b2",
+    "run_index": 72,
+    "overall_impression": "A clean, functional, and highly conventional modern landing page template. It leans heavily into standard startup aesthetics with its indigo-to-purple gradient, system sans-serif typography, and subtle box shadows. While lackng highly original artistic flair, it successfully executes a well-balanced, minimalist design for rapid prototyping.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f8fafc",
+      "#6366f1",
+      "#1e293b"
+    ]
+  },
+  {
+    "id": "ac22201d",
+    "run_index": 73,
+    "overall_impression": "A very clean, simple, and highly conventional modern starter template. It leans on a familiar cool-toned SaaS color palette and prioritizes whitespace and legible typography over visual distinctiveness.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f8fafc",
+      "#1e293b",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "6664ee54",
+    "run_index": 74,
+    "overall_impression": "A clean, functional, and highly minimalist personal dashboard centered around a digital clock. The aesthetic is predominantly modern and generic, relying on standard UI patterns like system fonts and subtle box shadows to achieve an unopinionated but neat appearance.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#4a90e2"
+    ]
+  },
+  {
+    "id": "27c331b3",
+    "run_index": 75,
+    "overall_impression": "A clean, functional, and minimal presentation that heavily borrows from contemporary SaaS aesthetics. It relies on standard 'Tailwind-esque' defaults like indigo accents and slate grays, resulting in a safe and highly legible, albeit generic, user interface.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f8fafc",
+      "#1e293b",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "c72329eb",
+    "run_index": 76,
+    "overall_impression": "This artifact is a pristine, stripped-down example of modern web minimalism, utilizing a highly readable sans-serif stack and a soothing cool color palette. It perfectly mimics the clinical yet approachable aesthetic typical of contemporary digital agencies, relying solely on typography, ample whitespace, and subtle micro-interactions to convey sophistication rather than heavy ornamentation.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#2d3436",
+      "#6c5ce7"
+    ]
+  },
+  {
+    "id": "b110ab8c",
+    "run_index": 77,
+    "overall_impression": "A highly utilitarian and straightforward boilerplate page with a very generic design language. The aesthetic is clean and functional, prioritizing clear readability over distinct stylistic flavor.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#2c3e50",
+      "#3498db"
+    ]
+  },
+  {
+    "id": "90b37c67",
+    "run_index": 78,
+    "overall_impression": "A highly functional but generic, startup-inspired landing page template. It relies on extremely common contemporary UI tropes like subtle drop shadows, rounded corners, and a cool-toned gradient hero section, making it accessible and clean but lacking in unique personality.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#f8fafc",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "125bd6eb",
+    "run_index": 79,
+    "overall_impression": "A clean, utilitarian dark-mode dashboard built with modern CSS primitives like CSS grid and local variables. The aesthetic is extremely functional, relying entirely on sensible defaults, subtle drop shadows, and a calm, tech-oriented color palette.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "dashboard",
+    "dominant_colors": [
+      "#0f172a",
+      "#1e293b",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "ab04b930",
+    "run_index": 80,
+    "overall_impression": "A highly functional, generic modern interface that relies on standard startup design tropes like soft drop shadows, rounded corners, and a cool indigo accent. The minimalist layout ensures clear focus, while a simple JavaScript color-randomization script introduces a brief moment of playfulness to an otherwise highly standard boilerplate.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "5d931f83",
+    "run_index": 81,
+    "overall_impression": "A clean, contemporary dark-mode interface heavily inspired by standard utility-first CSS frameworks. It relies on subtle depth, smooth hover interactions, and a strict slate-to-indigo palette to project a technical, minimalist competence.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#0f172a",
+      "#1e293b",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "b2430231",
+    "run_index": 82,
+    "overall_impression": "A clean, functional, and minimal personal placeholder page. It relies on a very safe, generic modern aesthetic with subtle depth to present content clearly, slightly elevated by a playful interactive JavaScript greeting.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#4a90e2"
+    ]
+  },
+  {
+    "id": "dbbbb1fb",
+    "run_index": 83,
+    "overall_impression": "A clean, dark-mode single-page demonstration that leans heavily into a generic modern minimalist aesthetic. Its straightforward typography, cool slate color palette, and subtle hover interactions give it a structured, developer-focused feel without any superfluous ornamentation.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#0f172a",
+      "#f8fafc",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "6569fd59",
+    "run_index": 84,
+    "overall_impression": "A clean, functional, but highly generic modern web prototype. It utilizes common contemporary conventions like soft drop shadows, an indigo accent color, and spacious card layouts to create a safe, easily readable interface.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "0a17fbe4",
+    "run_index": 85,
+    "overall_impression": "Evaluation unavailable",
+    "primary_font": "Unknown",
+    "theme": "unknown",
+    "layout_type": "unknown",
+    "dominant_colors": []
+  },
+  {
+    "id": "07f9e61d",
+    "run_index": 86,
+    "overall_impression": "A clean, textbook 'modern web development 101' artifact. It demonstrates a fundamental understanding of neat CSS styling, box models, and elegant simplicity without overcomplicating the aesthetic.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "d50e65ca",
+    "run_index": 87,
+    "overall_impression": "This artifact presents a highly generic but cleanly executed modern UI card. It utilizes standard conventions like subtle drop shadows, rounded corners, and flexbox centering to achieve a functional and unobtrusive aesthetic without pushing any creative boundaries.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#3498db"
+    ]
+  },
+  {
+    "id": "c212e67c",
+    "run_index": 88,
+    "overall_impression": "A highly practical but unoriginal generic modern starter template. The combination of a cool grayish background, a centralized white UI card, and an indigo accent button represents the standard vernacular of contemporary web development tools and basic component libraries.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "7bc408ec",
+    "run_index": 89,
+    "overall_impression": "A highly minimal, baseline web template utilizing generic semantic layouts, system fonts, and a standardized center-aligned card approach. It establishes clear functionality and high readability but eschews distinctive flavor or ornamental flair.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#333333",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "a7b65a35",
+    "run_index": 90,
+    "overall_impression": "A clean, contemporary aesthetic strongly influenced by modern utility frameworks (like Tailwind), utilizing a cool color palette and soft drop shadows. The design is highly legible, minimalistic, and relies on a neatly centered card layout to deliver a focused, no-nonsense user experience.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f8fafc",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "1c9ad757",
+    "run_index": 91,
+    "overall_impression": "A highly readable, utilitarian template that relies on standard modern web conventions like cards, subtle drop shadows, and a functional indigo accent. It prioritizes clarity and essential structure over unique visual flair, offering a very calm, frictionless user experience.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "cecd19fa",
+    "run_index": 92,
+    "overall_impression": "This artifact presents a highly functional, classic minimalist template that leans distinctly into contemporary 'startup' and robust SaaS aesthetics. It employs a reliable slate and indigo combination layered with soft shadows and rounded corners to achieve approachability without sacrificing structure. While visually generic, it offers an extremely clean, readable user interface paired with simple but effective interaction patterns.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#6366f1",
+      "#1e293b",
+      "#f8fafc"
+    ]
+  },
+  {
+    "id": "6dd3e176",
+    "run_index": 93,
+    "overall_impression": "A highly focused, contemporary micro-experience relying on a deep dark-mode palette and striking text gradients to establish a tech-forward aesthetic. The design is ruthlessly minimalist, utilizing generous whitespace and smooth interactive transitions to create an understated yet engaging user interface.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#0f172a",
+      "#f8fafc",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "ae8da9c4",
+    "run_index": 94,
+    "overall_impression": "A clean, highly minimal dark-mode card centered vertically and horizontally. The combination of slate tones, soft shadows, and a bright, customizable accent color creates a tranquil yet modern utilitarian aesthetic.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#0f172a",
+      "#1e293b",
+      "#38bdf8"
+    ]
+  },
+  {
+    "id": "0679d96a",
+    "run_index": 95,
+    "overall_impression": "A clean, functional, and foundational single-page layout. It leans entirely on safe typographic and spacing defaults to create a minimal, generic modern aesthetic with a brief, playful interactive moment.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#4a90e2"
+    ]
+  },
+  {
+    "id": "c789584c",
+    "run_index": 96,
+    "overall_impression": "A clean, functional, and contemporary single-page developer portfolio relying heavily on widespread modern conventions like slate dark mode and indigo accents. While lacking high aesthetic distinctiveness or rich visual media, its minimal execution is highly readable, lightweight, and effective.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#0f172a",
+      "#6366f1",
+      "#1e293b"
+    ]
+  },
+  {
+    "id": "3d18692a",
+    "run_index": 97,
+    "overall_impression": "A highly standard, clean, and functional boilerplate page that relies on basic modern web design principles. It utilizes a generic 'startup' aesthetic with a centered card layout, subtle shadows, and a friendly indigo accent color to create a safe, inoffensive, and minimalist user experience.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#6366f1"
+    ]
+  },
+  {
+    "id": "b03a08bd",
+    "run_index": 98,
+    "overall_impression": "A perfectly functional, highly generic modern web component that prioritizes clarity over character. It leverages subtle depth, semantic markup, and standard sans-serif typography to create a clean, no-nonsense interface.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#ffffff",
+      "#4a90e2"
+    ]
+  },
+  {
+    "id": "13c52a26",
+    "run_index": 99,
+    "overall_impression": "The design represents a highly simplified, generic modern web aesthetic often seen in beginner developer tutorials or boilerplate coding environments. It safely relies on fundamentally sound spacing, high contrast, and a standard system typeface, resulting in a clean but completely utilitarian and unmemorable layout.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f8fafc",
+      "#1e293b",
+      "#6366f1"
+    ]
+  }
+]

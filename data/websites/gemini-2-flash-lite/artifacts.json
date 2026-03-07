@@ -1,0 +1,1304 @@
+[
+  {
+    "id": "69d54a83",
+    "run_index": 0,
+    "overall_impression": "A bare-bones, structurally sound but stylistically barren HTML template reminiscent of early 2010s web tutorials. It successfully utilizes basic semantic tags and subtle box-shadows, but entirely lacks responsive design techniques, typography refinement, and modern interaction states.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "1f2d04f8",
+    "run_index": 1,
+    "overall_impression": "This is a highly rudimentary, boilerplate webpage reminiscent of early CSS learning exercises. It lacks distinct artistic character, while suffering from structural layout flaws like an absolutely positioned footer and logical bugs in the JavaScript carousel.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "ea88120c",
+    "run_index": 2,
+    "overall_impression": "A highly utilitarian, barebones layout that serves more as a wireframe than a fully stylized design. The aesthetic relies entirely on browser defaults, basic box shadows, and a stark monochromatic palette, resulting in a distinctly generic feel.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "208829d1",
+    "run_index": 3,
+    "overall_impression": "A very rudimentary, tutorial-style web page layout lacking modern design sensibilities or polish. It uses standard block-level styling with basic shadows and rounded corners, giving it a somewhat dated but highly functional appearance.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "b3178447",
+    "run_index": 4,
+    "overall_impression": "A highly generic, boilerplate website template reminiscent of early Web 2.0 CSS tutorials. It relies perfectly on basic semantic HTML structuring and grayscale styling, lacking distinct character but highly functional as a bare-bones scaffold.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f0f0f0",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "b02a9c7f",
+    "run_index": 5,
+    "overall_impression": "A fundamental, textbook example of an early-stage web development project. It effectively utilizes semantic HTML and basic CSS but completely lacks brand personality, modern design flourishes, or distinct visual flare.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f0f0f0",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "73a4f28f",
+    "run_index": 6,
+    "overall_impression": "A barebones, generic webpage that serves purely as a technical demonstration rather than a designed experience. It applies rudimentary styling fundamentals like padding, borders, and basic box-shadows, but lacks structural layout logic and an aesthetic personality.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#ffffff",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "c000fa88",
+    "run_index": 7,
+    "overall_impression": "A very basic, utilitarian HTML template demonstrating fundamental document structure. It lacks modern styling, responsive techniques, or aesthetic flair, presenting a generic and slightly dated appearance primarily useful for educational boilerplate.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "47e3dcea",
+    "run_index": 8,
+    "overall_impression": "This artifact represents a highly generic, unopinionated foundational webpage template. It utilizes standard semantic HTML structure and very basic CSS styling, feeling reminiscent of early 2010s introductory web development tutorials.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#ffffff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "d838e6a0",
+    "run_index": 9,
+    "overall_impression": "This artifact is a highly stripped-down, generic website template reminiscent of early HTML5 tutorials. Its aesthetic choices prioritize rudimentary functional structure over design, resulting in a strictly utilitarian interface lacking any defining personality or stylistic nuance.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "3200a645",
+    "run_index": 10,
+    "overall_impression": "A highly rudimentary and generic web template illustrating fundamental HTML/CSS concepts. It lacks distinct personality, relying on standard block layout, default sans-serif typography, and simple box shadows without any sophisticated styling.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "5ec5878e",
+    "run_index": 11,
+    "overall_impression": "A bare-bones, utilitarian website resembling an early 2010s web development tutorial. It relies purely on default document flow and lacks modern styling techniques, functioning strictly as a rudimentary technical demonstration.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "054c315d",
+    "run_index": 12,
+    "overall_impression": "The artifact is a textbook example of a basic, utilitarian web development starter template. It lacks brand personality, modern responsiveness features, or ornamental styling, serving instead as a purely structural wireframe with generic 'Web 2.0' card aesthetics.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "92c78797",
+    "run_index": 13,
+    "overall_impression": "This artifact represents a quintessential 'Hello World' boilerplate website from the early HTML5 era. It prioritizes baseline semantic structure and foundational mechanics over distinct aesthetic branding, resulting in a functional but completely generic visual profile.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#ffffff",
+      "#f0f0f0",
+      "#333333"
+    ]
+  },
+  {
+    "id": "752c0efc",
+    "run_index": 14,
+    "overall_impression": "This artifact reflects an early-2010s 'my first website' template aesthetic, heavily relying on default block layouts and standard system fonts. It is strictly utilitarian and generic, entirely lacking contemporary design sensibilities or personal flavor.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#008cba"
+    ]
+  },
+  {
+    "id": "70f26b8c",
+    "run_index": 15,
+    "overall_impression": "This artifact reflects a highly generic, traditional early-2010s web layout typical of beginner HTML/CSS tutorials. While it lacks distinct visual personality or modern aesthetic polish, it is structurally sound, highly legible, and serves as a classic boilerplate template.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#ffffff",
+      "#333333",
+      "#f0f0f0"
+    ]
+  },
+  {
+    "id": "8bf561c1",
+    "run_index": 16,
+    "overall_impression": "A textbook, generic HTML/CSS demonstration echoing the early 2010s era of web design. While structurally sound and semantically correct, it lacks modern layout techniques, responsive considerations, and a distinct aesthetic personality.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "c12bd951",
+    "run_index": 17,
+    "overall_impression": "This is a highly basic, functional template reminiscent of early 2010s HTML/CSS tutorials. It lacks visual flair and modern design techniques, opting instead for rigid, utilitarian simplicity.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#4caf50"
+    ]
+  },
+  {
+    "id": "1f355e07",
+    "run_index": 18,
+    "overall_impression": "A highly generic, foundational HTML template representing the basic wireframe aesthetic of early web development tutorials. It relies entirely on standard document flow, simple padding, and default browser typography, lacking distinct brand personality or modern stylization while remaining perfectly legible and structurally sound.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "81be2041",
+    "run_index": 19,
+    "overall_impression": "This is a highly generic, boilerplate HTML5 template reminiscent of early 2010s web design. It functions primarily as a stark structural skeleton rather than an expressive aesthetic piece, utilizing basic browser defaults and unopinionated styling.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "936efc09",
+    "run_index": 20,
+    "overall_impression": "A highly generic, utilitarian HTML template reminiscent of early 2010s web design tutorials. It relies on standard block layout and minimal styling, serving entirely as a functional skeleton rather than expressing any distinct aesthetic personality.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f4f4f4",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "819110df",
+    "run_index": 21,
+    "overall_impression": "A fundamental, boilerplate website template that relies on standard web design conventions. It lacks distinct aesthetic personality or branding, serving primarily as a structural starting point rather than a finished design.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "card-grid",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "e032c736",
+    "run_index": 22,
+    "overall_impression": "This artifact is a prototypical beginner HTML/CSS project, exhibiting a completely generic and utilitarian aesthetic. It relies on default browser typography and basic block styling with a monochromatic color scheme. The design has virtually no distinct personality, acting purely as a structural wireframe.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "dd2162f7",
+    "run_index": 23,
+    "overall_impression": "This artifact represents a highly generic, baseline webpage template relying entirely on default block layouts and standard web-safe fonts. It lacks any distinct visual personality, relying instead on pure functional structure, making it feel like a mid-2000s tutorial strictly focused on fundamentals.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "0a3b8822",
+    "run_index": 24,
+    "overall_impression": "A highly generic, boilerplate webpage typical of early beginner web development tutorials. It prioritizes basic semantic HTML structure and fundamental CSS styling over aesthetic nuance, resulting in a strictly functional but uninspired appearance.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "82fdc229",
+    "run_index": 25,
+    "overall_impression": "A quintessential, zero-frills boilerplate template straight out of a beginner web dev tutorial from the late 2000s or early 2010s. It leverages plain block flow layout, highly neutral grayscale colors, and standard system fonts, entirely avoiding any stylistic risks or modern design paradigms.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "0856e438",
+    "run_index": 26,
+    "overall_impression": "The design is highly generic, reminiscent of early 2010s basic HTML/CSS tutorials. It lacks a distinctive brand identity or visual flair, relying entirely on a standard grayscale palette and default typography.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "a31ab348",
+    "run_index": 27,
+    "overall_impression": "This artifact represents a quintessential 'first web project' aesthetic from the early 2010s, heavily reliant on basic CSS and default browser behaviors. While highly semantic and structured, it lacks any modern styling techniques or distinct visual identity, serving strictly as a utilitarian structural wireframe.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "f7ff73f9",
+    "run_index": 28,
+    "overall_impression": "The artifact represents a quintessential boilerplate HTML5 layout, likely intended for educational or scaffolding purposes. It heavily prioritizes foundational semantic structure over visual design, resulting in a slightly outdated, deeply generic aesthetic characterized by default sans-serif web typography and muted grayscale backgrounds.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "02aa79a1",
+    "run_index": 29,
+    "overall_impression": "A highly generic, rudimentary boilerplate template strongly reminiscent of early 2010s HTML5 web design tutorials. It emphasizes basic semantic tags and default styling over any distinct artistic or aesthetic personality.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f4f4f4",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "3699ec56",
+    "run_index": 30,
+    "overall_impression": "This artifact is a textbook example of a generic, early 2010s HTML/CSS boilerplate. It completely lacks distinct visual personality, acting instead as a purely functional, structural blank slate.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#ffffff",
+      "#f0f0f0",
+      "#333333"
+    ]
+  },
+  {
+    "id": "f51a31d7",
+    "run_index": 31,
+    "overall_impression": "A highly utilitarian and barebones prototype that prioritizes structural demonstration over aesthetic refinement. It relies entirely on standard browser rendering paradigms and basic styling blocks, resulting in a strictly functional, generic Web 2.0-adjacent appearance.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "3d5e3d7b",
+    "run_index": 32,
+    "overall_impression": "This is a remarkably basic, boilerplate web page design typical of beginner HTML/CSS tutorials. It provides clear structural semantics but entirely lacks modern styling, brand personality, or aesthetic refinement.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "1e948b87",
+    "run_index": 33,
+    "overall_impression": "A very barebones boilerplate HTML template highly reminiscent of early 2010s web development tutorials. While logically structured using semantic HTML tags, it completely lacks visual distinctiveness or modern responsive design practices.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f4f4f4",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "241f2abd",
+    "run_index": 34,
+    "overall_impression": "This artifact epitomizes a fundamental, early-learning approach to web design, heavily relying on default typography, rigid block layouts, and a stark grayscale palette with a single blue accent. The aesthetic is entirely utilitarian, reading more like an unstyled structural wireframe than a branded page. While semantically well-structured, its lack of modern layout primitives (Flexbox/Grid), viewport responsiveness, and design nuance places it firmly in the category of a rudimentary prototype.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#008CBA"
+    ]
+  },
+  {
+    "id": "5cfdb5ef",
+    "run_index": 35,
+    "overall_impression": "A highly generic, boilerplate HTML template reminiscent of early 2010s CSS tutorials. It lacks visual maturity and strong identity, functioning more as a bare-bones structural demonstration than a fully fleshed-out design.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#ffffff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "f70d6290",
+    "run_index": 36,
+    "overall_impression": "A highly generic, foundational web template featuring basic styling, standard system fonts, and a simple card layout. It presents a clean but unopinionated aesthetic typical of beginner tutorials or early-stage wireframes, lacking distinct personality.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#ffffff",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "47d5a4a8",
+    "run_index": 37,
+    "overall_impression": "The artifact is a quintessential barebones HTML5 template. While structurally sound and semantically correct, its aesthetic is entirely generic, functional, and devoid of distinct design personality.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#ffffff",
+      "#f0f0f0"
+    ]
+  },
+  {
+    "id": "d585b4f2",
+    "run_index": 38,
+    "overall_impression": "This artifact represents a fundamental, generic approach to web layout typical of early introductory web development patterns. It relies on basic block flow and standard grayscale colors, resulting in a highly functional but characterless and clinical aesthetic personality.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "87985cb7",
+    "run_index": 39,
+    "overall_impression": "This artifact is a highly generic, pragmatic template akin to early web development tutorials. It prioritizes semantic structure and bare-minimum styling over visual flair, resulting in a functional, clinical, and somewhat dated aesthetic.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "be693af1",
+    "run_index": 40,
+    "overall_impression": "An extremely basic, boilerplate HTML/CSS layout reminiscent of standard web development tutorials. It strongly relies on standard document block flow, simple grayscale colors, and browser defaults, purposefully lacking any distinct aesthetic ambition.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "3faa716b",
+    "run_index": 41,
+    "overall_impression": "A completely generic, barebones HTML5 starter template that serves purely as a structural foundation. It uses basic semantic tags with an unremarkable, utilitarian aesthetic devoid of any distinct personality or modern flair.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f0f0f0",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "89218634",
+    "run_index": 42,
+    "overall_impression": "The artifact is a textbook example of a heavily utilitarian, early 2010s HTML5/CSS tutorial template. It functions perfectly as a structural demonstration but lacks completely in stylistic identity, original aesthetics, or modern design paradigms.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "1b56cb68",
+    "run_index": 43,
+    "overall_impression": "A classic, highly generic webpage structure reminiscent of basic web development tutorials from the early 2010s. It employs functional but dated design practices (like floated navigation), creating a purely pragmatic and aesthetically uninspired layout.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "006212b6",
+    "run_index": 44,
+    "overall_impression": "The artifact is a highly generic, bare-bones HTML template demonstrating foundational web structuring. It lacks distinct personality or styling flair, functioning more as a standard wireframe than a fully realized aesthetic layout component.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "70a94d22",
+    "run_index": 45,
+    "overall_impression": "A barebones, early-2010s style HTML/CSS template serving as a functional prototype rather than a designed experience. It relies entirely on fundamental box-model styling, basic typography, and subtle shadows with a highly generic aesthetic execution.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#ffffff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "68d37969",
+    "run_index": 46,
+    "overall_impression": "A quintessential 'first HTML/CSS tutorial' output. It relies heavily on standard gray, black, and white combinations with a single green accent, functioning strictly as a rudimentary structural template rather than a styled aesthetic experience.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "24005a6a",
+    "run_index": 47,
+    "overall_impression": "A fundamental, boilerplate HTML template that serves as an introductory web development example. The aesthetic is purely functional and deeply generic, lacking distinct stylistic choices or visual polish.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "026faa18",
+    "run_index": 48,
+    "overall_impression": "A barebones, entry-level document demonstrating fundamental HTML semantics and basic CSS formatting. The design lacks a distinct visual personality or contemporary styling, functioning purely as a structural wireframe.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#ffffff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "1d7a4525",
+    "run_index": 49,
+    "overall_impression": "A fundamental, boilerplate web page that relies entirely on browser defaults and basic declarative styling. It functions well as a beginner's HTML5/CSS3 learning artifact, but lacks any distinct aesthetic personality or modern layout techniques.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "ed3eef85",
+    "run_index": 50,
+    "overall_impression": "The design is a highly generic, somewhat antiquated layout reminiscent of early 2010s HTML/CSS tutorials. It lacks modern layout techniques like flexbox or grid, omits hover states, and features a fixed footer without compensating padding, conveying a strictly utilitarian and unpolished aesthetic.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "69d9a759",
+    "run_index": 51,
+    "overall_impression": "A highly generic, rudimentary HTML5 template reminiscent of early beginner web development tutorials. It features a basic block layout, a neutral monochrome palette, and standard semantic structuring without any distinct visual identity or modern responsive practices.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "bbd467f8",
+    "run_index": 52,
+    "overall_impression": "This artifact represents a quintessential beginner's HTML/CSS project with its universally recognizable, highly generic block layout. It relies primarily on default fonts, solid gray sections, and a single splash of standard success green, yielding a purely utilitarian but aesthetically devoid experience.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "5ad98793",
+    "run_index": 53,
+    "overall_impression": "This is a highly generic, tutorial-style web template commonly seen in early web development courses. It efficiently demonstrates basic semantic markup and layout logic but completely lacks distinct aesthetic character, modern rendering techniques, and responsive design features.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "40f455f7",
+    "run_index": 54,
+    "overall_impression": "A highly generic, boilerplate-style template reminiscent of early 2010s CSS tutorials. It focuses on basic semantic structure and fundamental styling but entirely lacks distinct personality, modern design sensibilities, or aesthetic refinement.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "e5e2298e",
+    "run_index": 55,
+    "overall_impression": "This design resembles a rudimentary HTML/CSS tutorial template with zero stylistic ambition. It utilizes standard document flow, bare-minimum styling, and basic semantic tags to create a functional but purely clinical, unpolished interface.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "e36eb2e1",
+    "run_index": 56,
+    "overall_impression": "A fundamental, tutorial-style web template reminiscent of early 2010s web design. It lacks distinct aesthetic personality or modern responsive considerations, functioning purely as a barebones structural baseline.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "a1a126a2",
+    "run_index": 57,
+    "overall_impression": "This artifact is a prototypical beginner's HTML/CSS project or basic boilerplate. It relies heavily on generic browser defaults, basic grays, standard padding, and slight drop shadows to achieve a highly legible but entirely unopinionated aesthetic lacking stylistic identity.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "41efe98e",
+    "run_index": 58,
+    "overall_impression": "A highly generic, rudimentary webpage template typical of a beginner's HTML/CSS tutorial. It relies on standard semantic tags and basic block layouts, lacking a distinctive aesthetic personality or modern layout logic.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "147c9d04",
+    "run_index": 59,
+    "overall_impression": "This artifact is a highly generic, bare-bones introductory HTML/CSS template reminiscent of early 2010s web design tutorials. It lacks distinct personality, utilizing basic typography, elementary layouts, and standard component styling to fulfill technical requirements rather than aesthetic goals.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#008CBA"
+    ]
+  },
+  {
+    "id": "e42fc2c2",
+    "run_index": 60,
+    "overall_impression": "A very basic, bare-bones HTML/CSS template typically found in introductory web development tutorials. It prioritizes standard semantic structure and fundamental styling over unique visual aesthetics, resulting in a clean but highly generic appearance.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "9e352657",
+    "run_index": 61,
+    "overall_impression": "This artifact represents a quintessential 'first website tutorial' aesthetic, prioritizing basic structural demonstration over distinct design. It utilizes a highly generic grayscale palette and default typography, resulting in a strictly utilitarian and clinical presentation.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "f02d512a",
+    "run_index": 62,
+    "overall_impression": "A highly generic, foundational HTML template reminiscent of early web standards tutorials. It utilizes basic block layouts and subtle drop shadows but lacks modern styling techniques, responsive media queries, and any distinct personality.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "b5326402",
+    "run_index": 63,
+    "overall_impression": "The design is a highly generic, straightforward boiler-plate typical of early learning examples or basic wireframes. It severely lacks distinct personality, relying purely on default structural attributes and unopinionated styling.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "686dabdc",
+    "run_index": 64,
+    "overall_impression": "A highly generic, foundational web template reminiscent of early 2010s HTML/CSS tutorials. It lacks distinct personality or modern layout techniques, serving purely as a utilitarian structural example.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "902b9e18",
+    "run_index": 65,
+    "overall_impression": "This is a quintessential boilerplate layout that serves strictly as a pragmatic placeholder rather than a deliberate design endeavor. It utilizes default styling and basic box model techniques to achieve a functional, but visually sterile and entirely generic aesthetic.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "4a6902b1",
+    "run_index": 66,
+    "overall_impression": "The design is an extremely basic, archetypal HTML/CSS boilerplate reminiscent of early 2010s web tutorials. It entirely lacks a distinct aesthetic personality, relying on standard block formatting, default typography, and rudimentary box shadows. While structurally semantic, visually it serves merely as a bare-bones wireframe rather than a considered interface.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "67c231a7",
+    "run_index": 67,
+    "overall_impression": "A very standard, bare-bones website template reminiscent of early 2010s HTML/CSS tutorials. It uses a basic gray-and-white color palette with a single green accent button, lacking modern polish but functioning perfectly as a foundational structure.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f0f0f0",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "095266ad",
+    "run_index": 68,
+    "overall_impression": "A quintessential 'first HTML/CSS project' template that serves as a rudimentary structural baseline but lacks contemporary design sensibilities. Its reliance on default flow layouts, standard system fonts, and a stark, highly contrastive grayscale palette yields an outdated, strictly utilitarian aesthetic.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "f914f80a",
+    "run_index": 69,
+    "overall_impression": "This is a quintessential beginner-level template built using basic CSS selectors and standard block-flow behaviors. It acts purely as a functional blank slate, demonstrating basic structure but completely lacking any modern aesthetic intent, originality, or design personality.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "3a0b3b14",
+    "run_index": 70,
+    "overall_impression": "This artifact is a highly utilitarian, boilerplate web template lacking in distinct aesthetic personality. It effectively demonstrates fundamental HTML document structure and basic CSS styling like cards and shadows, but stops short of implementing modern layout techniques or thoughtful design choices.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "67c9b98c",
+    "run_index": 71,
+    "overall_impression": "A quintessential, bare-bones HTML5 boilerplate reminiscent of early 2010s web design tutorials. It serves strictly as a functional structural outline without communicating any distinct brand identity or modern visual polish.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "653328e1",
+    "run_index": 72,
+    "overall_impression": "This artifact is a highly generic, bare-bones web template built as a simple structural example. Its aesthetic is exceptionally plain, prioritizing standard HTML semantics and basic styling over any defined visual personality or modern interactive polish.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "9750783d",
+    "run_index": 73,
+    "overall_impression": "A fundamental, generic boilerplate template commonly used for learning HTML and CSS. It relies heavily on default browser styling overlaid with basic utility styling, resulting in a functional but completely unopinionated aesthetic.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff",
+      "#444444"
+    ]
+  },
+  {
+    "id": "717eaacd",
+    "run_index": 74,
+    "overall_impression": "A very basic, functional HTML template reminiscent of early 2010s web design tutorials. It relies heavily on grayscale tones and outdated float-based layout techniques, providing a pragmatic but visually uninspired foundation.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "7922d578",
+    "run_index": 75,
+    "overall_impression": "This artifact represents a highly utilitarian, boilerplate web template reminiscent of early 2010s HTML/CSS tutorials. While structurally sound with semantic HTML, it completely lacks modern design sensibilities, responsive considerations, and a distinct brand personality.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "869979ae",
+    "run_index": 76,
+    "overall_impression": "This artifact serves as a classic, barebones structural template reminiscent of beginner web development tutorials. It strongly adheres to basic HTML semantics but lacks refined design intent, resulting in a strictly utilitarian and generic presentation.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "22e68686",
+    "run_index": 77,
+    "overall_impression": "A highly generic, barebones template reminiscent of early 2010s web design tutorials. It relies entirely on standard browser defaults and simple block layouts with minimal bespoke styling, yielding a fully functional but completely uninspired visual presence.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "52768ed1",
+    "run_index": 78,
+    "overall_impression": "This is a rudimentary, boilerplate layout reminiscent of early beginner tutorials, prioritizing basic document structure over aesthetic refinement. Its visual identity is strictly utilitarian and generic, relying entirely on default browser rendering algorithms aside from a few basic alignment and background color rules.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "39c851bb",
+    "run_index": 79,
+    "overall_impression": "This artifact is a quintessential beginner's HTML/CSS tutorial output, representing early 2010s web design conventions. It relies entirely on standard document flow, generic grey tones, and default sans-serif typography with no distinct aesthetic point of view. While technically semantic and functional, the design is highly primitive and lacks modern layout techniques.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "328d1391",
+    "run_index": 80,
+    "overall_impression": "This is a rudimentary, textbook-style HTML template that serves as a functional boilerplate rather than a considered design. It relies heavily on early HTML5-era patterns, yielding a generic and unopinionated aesthetic lacking in distinct visual personality.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f0f0f0",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "8a2c0333",
+    "run_index": 81,
+    "overall_impression": "This is a quintessential beginner-level boilerplate template that prioritizes basic semantic HTML structure over visual flourish. It features a stark, generic aesthetic reminiscent of early 2010s standard layouts, completely devoid of opinion or brand identity.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "edea321e",
+    "run_index": 82,
+    "overall_impression": "A barebones, entry-level website template utilizing fundamental HTML structures and basic CSS styling. It completely lacks modern layout techniques like Flexbox or Grid, and omits the viewport meta tag, rendering it inadequately responsive. The aesthetic is purely functional and deeply generic.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#ffffff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "07613a9a",
+    "run_index": 83,
+    "overall_impression": "A highly generic, bare-bones web template reminiscent of early HTML5 tutorials. It prioritizes functional structure and basic semantic tags over any distinct aesthetic identity or modern design principles.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "79c2226c",
+    "run_index": 84,
+    "overall_impression": "A highly generic, rudimentary HTML construct reminiscent of early 2010s basic web tutorials. It relies entirely on standard document flow, default browser typography, and bare-minimum styling to achieve a completely strictly functional, utilitarian result.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#5cb85c"
+    ]
+  },
+  {
+    "id": "0e83c364",
+    "run_index": 85,
+    "overall_impression": "A highly generic, structurally basic HTML template reminiscent of early rudimentary CSS layouts. It prioritizes function over form with a stark grayscale palette, lacking modern design styling or layout techniques.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "abdaa728",
+    "run_index": 86,
+    "overall_impression": "This is a quintessential tutorial-level website demonstrating foundational HTML, CSS, and elementary JavaScript. It consciously prioritizes valid semantic structure and readable layout over distinct visual personality or modern frontend techniques.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f0f0f0",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "79659567",
+    "run_index": 87,
+    "overall_impression": "A classic 'hello world' style webpage that serves as a functional boilerplate but lacks aesthetic ambition. Its reliance on unstyled type ramps, dated CSS layout techniques, and complete absence of interactive states gives it a static, rigid, early-2010s tutorial feel.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "05a25f47",
+    "run_index": 88,
+    "overall_impression": "A bare-bones, boilerplate web page template that resembles an early 2010s HTML/CSS tutorial. It is purely functional and highly generic, lacking modern design refinements like hover states, intentional typography, or mobile-first responsive scaling.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "c7e62e46",
+    "run_index": 89,
+    "overall_impression": "A highly basic, boilerplate layout reminiscent of conventional beginner HTML/CSS tutorials from the early 2010s. It lacks distinct personality or visual sophistication, relying on unstyled generic fonts and primitive layout techniques.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f0f0f0",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "827faa06",
+    "run_index": 90,
+    "overall_impression": "The design functions as an incredibly basic, dated wireframe utilizing standard HTML flow. It bears the hallmark of an introductory web development tutorial lacking styling beyond elementary margins, padding, and subtle box shadows.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "4f1e4c34",
+    "run_index": 91,
+    "overall_impression": "A barebones, utilitarian web template reminiscent of early 2010s HTML5 tutorials. It prioritizes functional structure over aesthetic polish, resulting in a highly generic but understandable interface.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#333333",
+      "#f4f4f4",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "1b174f84",
+    "run_index": 92,
+    "overall_impression": "A barebones HTML5 boilerplate demonstrating fundamental web layout principles. It leans entirely on browser default styling combined with neutral gray tones, serving as an unopinionated functional skeleton rather than an expressive design.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "b0685706",
+    "run_index": 93,
+    "overall_impression": "This is a textbook beginner HTML/CSS tutorial layout typical of the early 2010s. While functionally semantically correct, it severely lacks modern styling techniques, actual responsiveness, and any distinct aesthetic personality.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f0f0f0",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "e1dcb3b4",
+    "run_index": 94,
+    "overall_impression": "This is a barebones, boilerplate HTML/CSS template showcasing elementary structure and styling. It lacks distinct personality, relying on generic sans-serif fonts, greyscale tones, and default spatial alignments reminiscent of early 2010s beginner tutorials.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "6cd77f64",
+    "run_index": 95,
+    "overall_impression": "A highly generic, tutorial-style web page that prioritizes basic semantic structure over sophisticated design. The aesthetic relies entirely on defaults, system fonts, basic gray block backgrounds, and rudimentary box shadows, reflecting a purely functional 'web fundamentals' approach. It entirely lacks modern layout techniques and a distinct visual personality.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "42930905",
+    "run_index": 96,
+    "overall_impression": "This is a barebones, introductory-level HTML/CSS template lacking distinct personality or modern design flares. It functions primarily as a structural wireframe using classical neutral styling, basic element shadows, and standard system typography.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f4f4f4",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "eb22c07d",
+    "run_index": 97,
+    "overall_impression": "This artifact is a textbook example of a basic, generic HTML template primarily focused on structural semantics overhead aesthetic distinction. It lacks modern layout paradigms like Flexbox or Grid, and its clinical, stripped-down visual style resembles an early wireframe. The design relies entirely on browser defaults and rudimentary coloring, demonstrating functional fundamentals but possessing no distinct brand personality.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ffffff",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "2a2ba713",
+    "run_index": 98,
+    "overall_impression": "A highly generic, rudimentary boilerplate design that serves as a basic structural example rather than a styled aesthetic piece. It leans heavily on default browser rendering combined with elementary CSS styles like basic box-shadows and unrefined system default fonts.",
+    "primary_font": "sans-serif",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f0f0f0",
+      "#333333",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "e6bcb86f",
+    "run_index": 99,
+    "overall_impression": "A baseline, boilerplate HTML and CSS template lacking distinctive personality or modern design aesthetics. It relies on standard browser defaults with minimal custom styling to achieve a rudimentary layout.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f4f4f4",
+      "#008cba"
+    ]
+  }
+]

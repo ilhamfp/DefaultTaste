@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 /* ── Animated SVG patterns ─────────────────────────────────────── */
@@ -246,207 +246,11 @@ function PatternRenderer({
   return <NestedRects color={color} looping={looping} />;
 }
 
-/* ── Small card in the fan ─────────────────────────────────────── */
-
-function SmallCard({
-  card,
-  dimmed,
-  onClick,
-}: {
-  card: CardDef;
-  dimmed: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <motion.div
-      className="absolute origin-center cursor-pointer select-none"
-      style={{ left: "50%", top: "50%" }}
-      initial={false}
-      animate={{
-        x: card.tx,
-        y: card.ty,
-        rotate: card.rotate,
-        zIndex: card.z,
-        scale: dimmed ? 0.9 : 1,
-        opacity: dimmed ? 0.4 : 1,
-      }}
-      transition={spring}
-      onClick={(e) => {
-        e.stopPropagation();
-        onClick();
-      }}
-    >
-      <div
-        className="relative overflow-hidden rounded-2xl shadow-lg"
-        style={{
-          backgroundColor: card.bg,
-          width: SMALL.w,
-          height: SMALL.h,
-        }}
-      >
-        <h3
-          className="absolute font-serif"
-          style={{
-            color: card.textColor,
-            whiteSpace: "pre-line",
-            fontSize: 22,
-            lineHeight: "24px",
-            top: 16,
-            left: 16,
-          }}
-        >
-          {card.title}
-        </h3>
-
-        {!card.available && (
-          <span
-            className="absolute font-mono text-[9px] uppercase tracking-widest"
-            style={{ color: card.textColor, opacity: 0.5, top: 70, left: 16 }}
-          >
-            Coming soon
-          </span>
-        )}
-
-        <div
-          className="absolute overflow-hidden"
-          style={{ left: 14, right: 14, bottom: 14, height: 105 }}
-        >
-          <PatternRenderer
-            type={card.patternKey}
-            color={card.textColor}
-            looping={false}
-          />
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-/* ── Expanded overlay ──────────────────────────────────────────── */
-
-function ExpandedOverlay({
-  card,
-  onClose,
-}: {
-  card: CardDef;
-  onClose: () => void;
-}) {
-  const router = useRouter();
-
-  return (
-    <motion.div
-      className="fixed inset-0 z-[100] flex items-start justify-center pt-[12vh]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.2 }}
-      onClick={onClose}
-    >
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
-
-      {/* Expanded card */}
-      <motion.div
-        className="relative cursor-pointer select-none"
-        initial={{ scale: 0.6, y: 40, rotate: card.rotate }}
-        animate={{ scale: 1, y: 0, rotate: 0 }}
-        exit={{ scale: 0.6, y: 40, rotate: card.rotate, opacity: 0 }}
-        transition={spring}
-        onClick={(e) => {
-          e.stopPropagation();
-          if (card.available) {
-            router.push(card.slug);
-          }
-        }}
-      >
-        <div
-          className="relative overflow-hidden rounded-2xl shadow-2xl"
-          style={{
-            backgroundColor: card.bg,
-            width: LARGE.w,
-            height: LARGE.h,
-          }}
-        >
-          {/* Title */}
-          <h3
-            className="absolute font-serif"
-            style={{
-              color: card.textColor,
-              whiteSpace: "pre-line",
-              fontSize: 38,
-              lineHeight: "40px",
-              top: 20,
-              left: 20,
-            }}
-          >
-            {card.title}
-          </h3>
-
-          {/* Coming soon badge */}
-          {!card.available && (
-            <span
-              className="absolute font-mono text-[10px] uppercase tracking-widest"
-              style={{
-                color: card.textColor,
-                opacity: 0.5,
-                top: 110,
-                left: 20,
-              }}
-            >
-              Coming soon
-            </span>
-          )}
-
-          {/* Description */}
-          <motion.p
-            className="absolute text-sm leading-relaxed"
-            style={{
-              color: card.descColor,
-              left: 20,
-              right: 20,
-              top: card.available ? 108 : 134,
-            }}
-            initial={{ opacity: 0, filter: "blur(4px)" }}
-            animate={{ opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 0.4, delay: 0.15 }}
-          >
-            {card.description}
-          </motion.p>
-
-          {/* CTA */}
-          {card.available && (
-            <motion.span
-              className="absolute z-10 font-mono text-xs tracking-wide"
-              style={{ color: card.textColor, left: 20, bottom: 20 }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.7 }}
-              transition={{ duration: 0.25, delay: 0.25 }}
-            >
-              Click to view report →
-            </motion.span>
-          )}
-
-          {/* Animated illustration */}
-          <div
-            className="absolute overflow-hidden"
-            style={{ left: 16, right: 16, bottom: card.available ? 44 : 16, height: 200 }}
-          >
-            <PatternRenderer
-              type={card.patternKey}
-              color={card.textColor}
-              looping={true}
-            />
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-}
-
 /* ── Exported carousel ─────────────────────────────────────────── */
 
 export function VisualReportCarousel() {
   const [expanded, setExpanded] = useState<string | null>(null);
+  const router = useRouter();
 
   const collapse = useCallback(() => setExpanded(null), []);
 
@@ -462,30 +266,218 @@ export function VisualReportCarousel() {
   const expandedCard = CARDS.find((c) => c.id === expanded) ?? null;
 
   return (
-    <>
+    <LayoutGroup>
+      {/* Fan of small cards */}
       <div
         className="relative flex w-full items-center justify-center"
         style={{ height: 280 }}
       >
         <div className="relative h-full w-full max-w-[500px]">
-          {CARDS.map((card) => (
-            <SmallCard
-              key={card.id}
-              card={card}
-              dimmed={expanded !== null}
-              onClick={() =>
-                setExpanded((prev) => (prev === card.id ? null : card.id))
-              }
-            />
-          ))}
+          {CARDS.map((card) => {
+            if (card.id === expanded) return null;
+
+            return (
+              <motion.div
+                key={card.id}
+                layoutId={`rcard-${card.id}`}
+                className="absolute cursor-pointer select-none"
+                style={{
+                  left: "50%",
+                  top: "50%",
+                  x: card.tx,
+                  y: card.ty,
+                  rotate: card.rotate,
+                  zIndex: card.z,
+                }}
+                initial={false}
+                animate={{
+                  scale: expanded !== null ? 0.9 : 1,
+                  opacity: expanded !== null ? 0.4 : 1,
+                }}
+                transition={spring}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setExpanded((prev) =>
+                    prev === card.id ? null : card.id,
+                  );
+                }}
+              >
+                <div
+                  className="relative overflow-hidden rounded-2xl shadow-lg"
+                  style={{
+                    backgroundColor: card.bg,
+                    width: SMALL.w,
+                    height: SMALL.h,
+                  }}
+                >
+                  <h3
+                    className="absolute font-serif"
+                    style={{
+                      color: card.textColor,
+                      whiteSpace: "pre-line",
+                      fontSize: 22,
+                      lineHeight: "24px",
+                      top: 16,
+                      left: 16,
+                    }}
+                  >
+                    {card.title}
+                  </h3>
+
+                  {!card.available && (
+                    <span
+                      className="absolute font-mono text-[9px] uppercase tracking-widest"
+                      style={{
+                        color: card.textColor,
+                        opacity: 0.5,
+                        top: 70,
+                        left: 16,
+                      }}
+                    >
+                      Coming soon
+                    </span>
+                  )}
+
+                  <div
+                    className="absolute overflow-hidden"
+                    style={{ left: 14, right: 14, bottom: 14, height: 105 }}
+                  >
+                    <PatternRenderer
+                      type={card.patternKey}
+                      color={card.textColor}
+                      looping={false}
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
+      {/* Backdrop — fades in/out */}
       <AnimatePresence>
-        {expandedCard && (
-          <ExpandedOverlay card={expandedCard} onClose={collapse} />
+        {expanded && (
+          <motion.div
+            key="backdrop"
+            className="fixed inset-0 z-[99] bg-background/60 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.18 }}
+            onClick={collapse}
+          />
         )}
       </AnimatePresence>
-    </>
+
+      {/* Expanded card — layoutId drives the transition from fan position */}
+      {expandedCard && (
+        <div
+          className="pointer-events-none fixed inset-0 z-[100] flex items-start justify-center pt-[12vh]"
+          onClick={collapse}
+        >
+          <motion.div
+            layoutId={`rcard-${expandedCard.id}`}
+            className="pointer-events-auto relative cursor-pointer select-none"
+            transition={spring}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (expandedCard.available) {
+                router.push(expandedCard.slug);
+              }
+            }}
+          >
+            <div
+              className="relative overflow-hidden rounded-2xl shadow-2xl"
+              style={{
+                backgroundColor: expandedCard.bg,
+                width: LARGE.w,
+                height: LARGE.h,
+              }}
+            >
+              {/* Title */}
+              <h3
+                className="absolute font-serif"
+                style={{
+                  color: expandedCard.textColor,
+                  whiteSpace: "pre-line",
+                  fontSize: 38,
+                  lineHeight: "40px",
+                  top: 20,
+                  left: 20,
+                }}
+              >
+                {expandedCard.title}
+              </h3>
+
+              {/* Coming soon badge */}
+              {!expandedCard.available && (
+                <span
+                  className="absolute font-mono text-[10px] uppercase tracking-widest"
+                  style={{
+                    color: expandedCard.textColor,
+                    opacity: 0.5,
+                    top: 110,
+                    left: 20,
+                  }}
+                >
+                  Coming soon
+                </span>
+              )}
+
+              {/* Description */}
+              <motion.p
+                className="absolute text-sm leading-relaxed"
+                style={{
+                  color: expandedCard.descColor,
+                  left: 20,
+                  right: 20,
+                  top: expandedCard.available ? 108 : 134,
+                }}
+                initial={{ opacity: 0, filter: "blur(4px)" }}
+                animate={{ opacity: 1, filter: "blur(0px)" }}
+                transition={{ duration: 0.4, delay: 0.15 }}
+              >
+                {expandedCard.description}
+              </motion.p>
+
+              {/* CTA */}
+              {expandedCard.available && (
+                <motion.span
+                  className="absolute z-10 font-mono text-xs tracking-wide"
+                  style={{
+                    color: expandedCard.textColor,
+                    left: 20,
+                    bottom: 20,
+                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.7 }}
+                  transition={{ duration: 0.25, delay: 0.25 }}
+                >
+                  Click to view report →
+                </motion.span>
+              )}
+
+              {/* Animated illustration */}
+              <div
+                className="absolute overflow-hidden"
+                style={{
+                  left: 16,
+                  right: 16,
+                  bottom: expandedCard.available ? 44 : 16,
+                  height: 200,
+                }}
+              >
+                <PatternRenderer
+                  type={expandedCard.patternKey}
+                  color={expandedCard.textColor}
+                  looping={true}
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </LayoutGroup>
   );
 }

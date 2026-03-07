@@ -1,0 +1,190 @@
+{
+  "id": "gemini-2-flash-lite",
+  "name": "Gemini 2.0 Flash Lite",
+  "model": "gemini-2.0-flash-lite-001",
+  "probe_type": "website",
+  "probe_count": 100,
+  "date": "2026-03-07",
+  "website_profile": {
+    "colors": [
+      {
+        "hex": "#333333",
+        "name": "Charcoal",
+        "count": 98,
+        "percentage": 32.5
+      },
+      {
+        "hex": "#ffffff",
+        "name": "White",
+        "count": 73,
+        "percentage": 24.2
+      },
+      {
+        "hex": "#f0f0f0",
+        "name": "Light Gray",
+        "count": 52,
+        "percentage": 17.2
+      },
+      {
+        "hex": "#f4f4f4",
+        "name": "Light Gray",
+        "count": 48,
+        "percentage": 15.9
+      },
+      {
+        "hex": "#4caf50",
+        "name": "Green",
+        "count": 20,
+        "percentage": 6.6
+      },
+      {
+        "hex": "#007bff",
+        "name": "Blue",
+        "count": 5,
+        "percentage": 1.7
+      },
+      {
+        "hex": "#008cba",
+        "name": "Blue",
+        "count": 4,
+        "percentage": 1.3
+      },
+      {
+        "hex": "#444444",
+        "name": "Dark Gray",
+        "count": 1,
+        "percentage": 0.3
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Sans Serif",
+        "count": 67,
+        "percentage": 67.0
+      },
+      {
+        "name": "Arial",
+        "count": 33,
+        "percentage": 33.0
+      }
+    ],
+    "layouts": [
+      {
+        "name": "Multi Section",
+        "count": 92,
+        "percentage": 92.0
+      },
+      {
+        "name": "Landing Page",
+        "count": 5,
+        "percentage": 5.0
+      },
+      {
+        "name": "Single Section",
+        "count": 2,
+        "percentage": 2.0
+      },
+      {
+        "name": "Card Grid",
+        "count": 1,
+        "percentage": 1.0
+      }
+    ],
+    "layout_techniques": [
+      {
+        "name": "None",
+        "count": 55,
+        "percentage": 55.0
+      },
+      {
+        "name": "Mixed",
+        "count": 42,
+        "percentage": 42.0
+      },
+      {
+        "name": "Flexbox",
+        "count": 2,
+        "percentage": 2.0
+      },
+      {
+        "name": "Float",
+        "count": 1,
+        "percentage": 1.0
+      }
+    ],
+    "dark_mode_percentage": 0.0,
+    "visual_features": {
+      "has_animations_pct": 0.0,
+      "has_gradients_pct": 0.0,
+      "has_shadows_pct": 98.0,
+      "hover_effects_pct": 68.0,
+      "avg_density": 3.8,
+      "avg_whitespace": 4.1,
+      "avg_code_quality": 4.7
+    },
+    "color_warmth": [
+      {
+        "name": "Neutral",
+        "count": 95,
+        "percentage": 95.0
+      },
+      {
+        "name": "Cool",
+        "count": 5,
+        "percentage": 5.0
+      }
+    ],
+    "emotional_mood": [
+      {
+        "name": "Clinical",
+        "count": 90,
+        "percentage": 90.0
+      },
+      {
+        "name": "Calm",
+        "count": 8,
+        "percentage": 8.0
+      },
+      {
+        "name": "Serious",
+        "count": 2,
+        "percentage": 2.0
+      }
+    ],
+    "content_tone": [
+      {
+        "name": "Professional",
+        "count": 64,
+        "percentage": 64.0
+      },
+      {
+        "name": "Technical",
+        "count": 23,
+        "percentage": 23.0
+      },
+      {
+        "name": "Casual",
+        "count": 13,
+        "percentage": 13.0
+      }
+    ],
+    "design_philosophy": [
+      {
+        "name": "Minimalist",
+        "count": 100,
+        "percentage": 100.0
+      }
+    ],
+    "personality": {
+      "boldness": 1.6,
+      "originality": 1.0,
+      "sophistication": 2.2,
+      "playfulness": 1.2,
+      "minimalism": 7.2,
+      "warmth": 2.4,
+      "professionalism": 5.1,
+      "trendiness": 1.1
+    }
+  },
+  "correction_prompt": "When generating a website, DO NOT use the following defaults:\n- DO NOT use sans-serif as the primary font\n- DO NOT default to Charcoal, White, Light Gray color palettes\n- DO NOT default to light mode (0.0% of outputs use it)\n- DO NOT always create multi section layouts\n- DO NOT rely only on none for layout\n\nINSTEAD, try:\n- Varied fonts: serif faces, display fonts, geometric sans\n- Bold color choices: warm earth tones, pastels, monochrome, or high-contrast palettes\n- Both light and dark themes with intentional contrast\n- Diverse layouts: dashboards, editorial, card grids, split-screen\n- CSS Grid for complex layouts, not just flexbox"
+}

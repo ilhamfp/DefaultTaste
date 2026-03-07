@@ -18,12 +18,10 @@ dist/
 .env.test.local
 .env.production.local
 
-# Generated data artifacts
-data/**
-!data/
-!data/**/
-!data/.gitkeep
-!data/**/.gitkeep
+# Generated data artifacts (allow JSON profiles and artifacts)
+data/**/raw/
+data/**/parsed/
+data/**/audio/
 
 # Python
 __pycache__/

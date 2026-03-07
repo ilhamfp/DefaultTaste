@@ -1,0 +1,1279 @@
+[
+  {
+    "id": "c478f95d",
+    "run_index": 100,
+    "overall_impression": "A clean but highly generic single-card layout heavily inspired by early Material Design patterns. The design successfully incorporates smooth CSS animations and Javascript-based interaction touches like a button ripple, though its reliance on default Arial limits its typographic personality.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f7f6",
+      "#4CAF50",
+      "#2196F3"
+    ]
+  },
+  {
+    "id": "2a0363a7",
+    "run_index": 101,
+    "overall_impression": "This artifact represents a highly generic, mid-2010s style corporate landing page strongly reminiscent of default native frameworks like Bootstrap. It relies on standard blue accents, light gray backgrounds, and subtle drop shadows without taking any distinct stylistic risks, serving primarily as a functional baseline.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "f95cb5e5",
+    "run_index": 102,
+    "overall_impression": "The design serves as a foundational blueprint, heavily leaning into a ubiquitous CSS framework aesthetic with utilitarian grays and standard link-blue accents. While functionally solid and cleanly laid out, it lacks a distinct standalone visual identity, coming across as a reliable but highly generic modern boilerplate.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#333333",
+      "#f4f4f4",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "0e5e68ca",
+    "run_index": 103,
+    "overall_impression": "A highly generic, standard-issue corporate landing page reminiscent of default Bootstrap themes from the 2010s. It relies on a clinical blue and green color palette, subtle box shadows, and standard system fonts to achieve a utilitarian but somewhat uninspired aesthetic.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#f4f7f6",
+      "#343a40"
+    ]
+  },
+  {
+    "id": "20123f51",
+    "run_index": 104,
+    "overall_impression": "The artifact is a quintessential web development tutorial page, utilizing system fonts and a Bootstrap-inspired color palette. Its aesthetic is exceptionally generic and functional, prioritizing code structure and demonstration over design originality or emotional resonance.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#007bff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "9c66627e",
+    "run_index": 105,
+    "overall_impression": "A strongly generic, boilerplate-style landing page reminiscent of early 2010s Bootstrap default themes. It lacks unique personality or visual flair, prioritizing basic functional structure and semantic markup over aesthetic sophistication.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#f4f4f4",
+      "#333333"
+    ]
+  },
+  {
+    "id": "eb977862",
+    "run_index": 106,
+    "overall_impression": "A straightforward, cleanly executed but highly generic single-page website relying on late-2010s Flat UI color trends. It offers a perfectly functional and readable layout with subtle depth, though it lacks distinct personality or modern flair.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#2c3e50",
+      "#1abc9c",
+      "#f4f7f6"
+    ]
+  },
+  {
+    "id": "59d044d0",
+    "run_index": 107,
+    "overall_impression": "This artifact represents a highly generic, utilitarian web page reminiscent of a standard CSS framework's default theme (like Bootstrap). It prioritizes functional structure and clear information hierarchy over distinct aesthetic character or originality.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#ffffff",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "d5d7b865",
+    "run_index": 108,
+    "overall_impression": "A highly functional but aesthetically generic implementation of a card grid. The design employs classic flat UI colors and subtle material-esque drop shadows to create a clean, no-nonsense interface.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "card-grid",
+    "dominant_colors": [
+      "#f4f7f6",
+      "#2c3e50",
+      "#3498db"
+    ]
+  },
+  {
+    "id": "67110ccf",
+    "run_index": 109,
+    "overall_impression": "A classic, somewhat dated standard web template heavily influenced by early 2010s corporate patterns. It prioritizes functional clarity and predictable layout structures over aesthetic innovation.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#f4f4f4",
+      "#333333"
+    ]
+  },
+  {
+    "id": "f6d48b10",
+    "run_index": 110,
+    "overall_impression": "A highly practical, functional, and generic UI heavily inspired by flat design staples like early Bootstrap styles. It prioritizes clarity and utility over a distinctive aesthetic personality, resulting in a safe, standard, and familiar layout.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#3498db",
+      "#2c3e50"
+    ]
+  },
+  {
+    "id": "f60dbe75",
+    "run_index": 111,
+    "overall_impression": "The UI presents a highly generic, Bootstrap-inspired aesthetic reminiscent of early 2010s web design templates. While structurally sound and accessible, the heavy reliance on basic sans-serif typography, distinct primary colors, and simple box shadows makes it functional but stylistically uninspired.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#5cb85c",
+      "#f0ad4e"
+    ]
+  },
+  {
+    "id": "e22d3ba6",
+    "run_index": 112,
+    "overall_impression": "The page serves as a fundamental, highly generic template demonstrating standard web capabilities. Its aesthetic choices are purely utilitarian, prioritizing basic function, contrast, and layout mechanics over any distinct visual identity.",
+    "primary_font": "Arial",
+    "theme": "mixed",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#ffffff",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "75c71518",
+    "run_index": 113,
+    "overall_impression": "A highly conventional, generic landing page that acts as a prototypical HTML/JS/CSS boilerplate. It feels functional but lacks any distinct brand personality or modern design flourishes due to its strictly standard styling choices.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f7f6",
+      "#4CAF50",
+      "#333333"
+    ]
+  },
+  {
+    "id": "e295b086",
+    "run_index": 114,
+    "overall_impression": "A highly generic, template-like landing page representing a classic early-to-mid 2010s 'corporate standard' aesthetic. It relies on standard blue and green action colors, ubiquitous box shadows, and basic sans-serif typography without establishing a distinct brand identity.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#333333",
+      "#f4f4f4"
+    ]
+  },
+  {
+    "id": "0483e06a",
+    "run_index": 115,
+    "overall_impression": "A highly functional but aesthetically standard utility page reminiscent of early Bootstrap themes. It utilizes basic drop shadows, rounded corners, and standard primary blue and success green coloring to establish a clean, clinical layout with no unnecessary ornamentation.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "card-grid",
+    "dominant_colors": [
+      "#007bff",
+      "#f0f2f5",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "216e7064",
+    "run_index": 116,
+    "overall_impression": "This design presents a standard, generic modern web interface that relies on basic CSS styling typical of introductory web tutorials. While functionally intact with smooth interactivity and a working dark mode, the aesthetic lacks a cohesive, distinct visual identity or sophisticated color harmony.",
+    "primary_font": "Arial",
+    "theme": "mixed",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#ffffff",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "f83af779",
+    "run_index": 117,
+    "overall_impression": "A utilitarian and structurally sound webpage that relies heavily on a generic, mid-2010s corporate aesthetic. While it effectively demonstrates fundamental HTML/CSS/JS concepts with accessible contrast and semantic markup, its safe color palette and basic structural styling result in a familiar but unmemorable visual experience.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#3f51b5",
+      "#f4f4f4",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "c07ef9ea",
+    "run_index": 118,
+    "overall_impression": "This artifact represents a quintessential early-2010s HTML5 boilerplate, prioritizing basic web standards over aesthetic flair. Its highly generic, utility-driven visual language feels dated but functional, serving as a structural wireframe rather than a tailored modern design.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "61c12848",
+    "run_index": 119,
+    "overall_impression": "The design is highly generic and functional, reminiscent of standard Bootstrap-era components with a clean but unremarkable aesthetic. It relies on safe, high-contrast colors and simple box-shadows to establish a familiar structure without attempting any bold or unique stylistic choices.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#007BFF",
+      "#333333"
+    ]
+  },
+  {
+    "id": "46ab282c",
+    "run_index": 120,
+    "overall_impression": "Evaluation unavailable",
+    "primary_font": "Unknown",
+    "theme": "unknown",
+    "layout_type": "unknown",
+    "dominant_colors": []
+  },
+  {
+    "id": "ad2584a6",
+    "run_index": 121,
+    "overall_impression": "This artifact presents a very standard, functional, and accessible corporate landing page. The design relies on familiar patterns like a hero banner, grid-based feature cards, and clean typography, resulting in an inoffensive but somewhat generic aesthetic.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#2193b0",
+      "#6dd5ed",
+      "#f4f4f4"
+    ]
+  },
+  {
+    "id": "2b448773",
+    "run_index": 122,
+    "overall_impression": "The template relies heavily on a standard, default-state CSS utility aesthetic reminiscent of early Bootstrap components. It completely sacrifices distinct brand personality in favor of reliable layout functionality, clarity, and basic functional interactivity\u2014delivering a competent but entirely utilitarian visual experience.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#007bff",
+      "#f4f4f4",
+      "#333333"
+    ]
+  },
+  {
+    "id": "b833dd30",
+    "run_index": 123,
+    "overall_impression": "The artifact is a clean, highly generic UI component that heavily mirrors default framework aesthetics. It prioritizes pure function and readability over unique aesthetic personality, resulting in a slightly sterile but perfectly usable interface.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#ffffff",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "503bb660",
+    "run_index": 124,
+    "overall_impression": "A functional toolset demonstration wrapped in a distinctly generic, late-2010s Flat UI aesthetic. While it lacks strong visual originality, it executes its clean, centered layout with good contrast, tidy interactions, and competent rudimentary theming.",
+    "primary_font": "Segoe UI",
+    "theme": "mixed",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f7f6",
+      "#ffffff",
+      "#3498db"
+    ]
+  },
+  {
+    "id": "05a473d0",
+    "run_index": 125,
+    "overall_impression": "This artifact relies heavily on standard, predictable defaults, reminiscent of an out-of-the-box UI framework. The aesthetic focuses almost completely on clarity and functional layout rather than expressing any distinct brand personality or original design taste.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#ffffff",
+      "#f4f4f4",
+      "#333333"
+    ]
+  },
+  {
+    "id": "37a6196e",
+    "run_index": 126,
+    "overall_impression": "A structurally sound but visually basic layout reminiscent of early 2010s HTML/CSS tutorials. It successfully employs modern CSS layout techniques like Flexbox and Grid, but relies on unharmonized default colors and standard UI patterns that lack distinct sophistication.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#4CAF50",
+      "#333333",
+      "#f4f4f4"
+    ]
+  },
+  {
+    "id": "2ff2a79f",
+    "run_index": 127,
+    "overall_impression": "A highly conventional, generic landing page heavily inspired by classic Bootstrap-style aesthetics. It offers a clean, legible, and fully functional layout relying on standard flexbox techniques and subtle drop shadows, though it lacks a distinct brand identity or modern design flair.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#333333",
+      "#f4f4f4"
+    ]
+  },
+  {
+    "id": "ffb01517",
+    "run_index": 128,
+    "overall_impression": "An incredibly straightforward and utilitarian landing page that feels highly reminiscent of an era dominated by out-of-the-box Bootstrap templates. While it succeeds fundamentally in responsiveness and semantic structure, its aesthetic choices lack originality and rely purely on default web patterns.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#f4f4f4",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "f9567d5d",
+    "run_index": 129,
+    "overall_impression": "A very basic, functional web page that resembles early 2010s corporate and educational templates. It cleanly demonstrates HTML, CSS, and basic JavaScript interactions without pushing any boundaries in modern design or typography.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#4CAF50",
+      "#008CBA",
+      "#f4f4f4"
+    ]
+  },
+  {
+    "id": "4832a34b",
+    "run_index": 130,
+    "overall_impression": "Evaluation unavailable",
+    "primary_font": "Unknown",
+    "theme": "unknown",
+    "layout_type": "unknown",
+    "dominant_colors": []
+  },
+  {
+    "id": "14105826",
+    "run_index": 131,
+    "overall_impression": "A quintessential generic starter template devoid of a distinct visual personality. It relies heavily on default system fonts and unrefined primary colors reminiscent of early CSS frameworks, resulting in a functional but highly conventional aesthetic.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "42496c97",
+    "run_index": 132,
+    "overall_impression": "A bare-bones, tutorial-style web page that relies on early 2010s HTML/CSS standards. While functionally adequate for a demonstration, it lacks aesthetic refinement, distinct personality, and modern layout techniques like Flexbox or robust responsive design.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#333333",
+      "#f4f4f4",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "d74fad14",
+    "run_index": 133,
+    "overall_impression": "Evaluation unavailable",
+    "primary_font": "Unknown",
+    "theme": "unknown",
+    "layout_type": "unknown",
+    "dominant_colors": []
+  },
+  {
+    "id": "371ce57f",
+    "run_index": 134,
+    "overall_impression": "A functional, straightforward utility interface utilizing a classic 'Generic Modern' styling approach reminiscent of the mid-2010s web. It relies on ample white space, standard border-radii, and an interesting use of subtly colored drop-shadows to organize its dashboard and dynamic card-grid, prioritizing predictable usability over distinct stylistic flair.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "dashboard",
+    "dominant_colors": [
+      "#f4f7f6",
+      "#3498db",
+      "#2c3e50"
+    ]
+  },
+  {
+    "id": "d94931de",
+    "run_index": 135,
+    "overall_impression": "The artifact exemplifies a highly functional, utilitarian interface leaning on a classic 'Flat UI' color palette and standard flexbox styling. It is unopinionated and completely generic, prioritizing clean layout and usability over visual ambition or unique character.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "card-grid",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#ffffff",
+      "#3498db"
+    ]
+  },
+  {
+    "id": "5fbf7dae",
+    "run_index": 136,
+    "overall_impression": "A functional, straightforward landing page utilizing a basic flexbox layout and a complementary color scheme of vibrant teal and orange over whites and greys. The design leans heavily on flat, box-shadowed panels and standard Arial typography, lacking imagery but providing a clean, recognizable layout structure reminiscent of mid-2010s standard web boilerplate templates.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#1abc9c",
+      "#e67e22"
+    ]
+  },
+  {
+    "id": "d361df55",
+    "run_index": 137,
+    "overall_impression": "The artifact is a quintessential representation of a standard, generic corporate landing page. It prioritizes function and clarity over unique aesthetic expression, leaning heavily on established UI conventions like subtle drop shadows, rounded corners, and a safe blue and gray color palette.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#333333",
+      "#007bff",
+      "#f4f4f4"
+    ]
+  },
+  {
+    "id": "cd7a00b2",
+    "run_index": 138,
+    "overall_impression": "The artifact is a quintessential boilerplate web page acting as a functional canvas for fundamental HTML, CSS, and JavaScript. It lacks a distinct visual personality, relying heavily on default sans-serif typography, standard structural layouts, and commonplace blue utility buttons.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "8d055f61",
+    "run_index": 139,
+    "overall_impression": "A classic, boilerplate-style website template reminiscent of fundamental CSS tutorials. Its safe color choices, standard layout patterns, and reliance on generic typography make it highly functional but lacking in any distinct creative identity.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f9",
+      "#4CAF50",
+      "#333333"
+    ]
+  },
+  {
+    "id": "149ac86a",
+    "run_index": 140,
+    "overall_impression": "A highly standard, utilitarian business landing page highly reminiscent of early CSS framework boilerplate layouts. It relies strictly on safe, conventional layout patterns and a starkly functional color scheme. While semantically solid and easy to navigate, it completely lacks distinct brand personality or modern aesthetic flair.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "2ac32eb2",
+    "run_index": 141,
+    "overall_impression": "The design exhibits a highly generic, template-driven aesthetic reminiscent of early-2010s HTML/CSS tutorials. While structurally sound and functionally adequate, it entirely lacks stylistic originality, relying heavily on system fonts, basic geometric structural blocks, and unmodified default UI colors.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "06672f69",
+    "run_index": 142,
+    "overall_impression": "A highly standard, formulaic corporate landing page with a bright orange accent color to introduce slight energy. While fundamentally functional, responsive, and legible, it severely lacks distinct branding, modern refinements, or creative originality.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#ff9800"
+    ]
+  },
+  {
+    "id": "f3664b0c",
+    "run_index": 143,
+    "overall_impression": "The artifact is a quintessential, purely functional generic landing page template. It leans heavily on early-2010s design patterns, prioritizing clear content structure and basic usability over distinct aesthetic personality or modern coding techniques.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#00bcd4"
+    ]
+  },
+  {
+    "id": "a53e8cd6",
+    "run_index": 144,
+    "overall_impression": "This is a highly generic, template-like landing page that utilizes standard web components typical of mid-2010s layouts. It features a straightforward, accessible structure with a standard blue corporate color scheme offset by bright accents, resulting in a design that is functional and safe but completely lacking in distinct character or bespoke branding.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#f4f4f4",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "814fe88c",
+    "run_index": 145,
+    "overall_impression": "A highly generic, template-like corporate landing page that borrows heavily from standard mid-2010s framework aesthetics like Bootstrap. While highly functional, responsive, and semantically well-structured, it lacks distinct visual personality or modern aesthetic refinement.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#333333",
+      "#007bff",
+      "#28a745"
+    ]
+  },
+  {
+    "id": "ffe083fb",
+    "run_index": 146,
+    "overall_impression": "The artifact represents a quintessential generic corporate or small business landing page, heavily reliant on standard UI conventions. While functionally sound with semantic HTML, responsive CSS Grid, and basic JS interactivity, it lacks distinct visual identity, leaning entirely on safe, default 'Bootstrap-esque' design patterns like soft box-shadows and system-default blue/green coloring.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#f4f4f9",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "714ae366",
+    "run_index": 147,
+    "overall_impression": "This artifact represents a standard, beginner-level HTML/CSS template typical of early web tutorials or unstyled framework defaults. It prioritizes semantic structure and basic function over distinct stylistic expression, resulting in a highly generic, 'vanilla' aesthetic.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#007bff",
+      "#333333",
+      "#f4f4f4"
+    ]
+  },
+  {
+    "id": "4e4077a1",
+    "run_index": 148,
+    "overall_impression": "A textbook example of a generic, tutorial-style web page reminiscent of introductory HTML/CSS courses. While structurally semantic and functionally sound, its chaotic mix of bright system colors lacks aesthetic cohesion and sophistication.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "a63294ff",
+    "run_index": 149,
+    "overall_impression": "This is a purely utilitarian, framework-agnostic welcome page that leans heavily on default styling archetypes reminiscent of early 2010s front-end tutorials. While it lacks distinct character or aesthetic originality, it effectively achieves its technical purpose with clean spacing, clear contrast, and accessible logic.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#ffffff",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "6c874a28",
+    "run_index": 150,
+    "overall_impression": "A textbook early-learning JavaScript interactive playground. It applies a highly generic, unpolished visual style that successfully highlights the interactive behaviors but lacks aesthetic refinement and typographic sophistication.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f0f8ff",
+      "#6a5acd",
+      "#4682b4"
+    ]
+  },
+  {
+    "id": "eee37584",
+    "run_index": 151,
+    "overall_impression": "The design represents a highly generic, mid-2010s corporate web layout heavily reminiscent of basic framework templates. It utilizes extremely safe, standard colors with default Arial typography, lacking any distinct brand personality or artistic flair. While functionally sound, semantically structured, and responsive, the aesthetic is strictly utility-driven with minimal ornamentation or original stylistic choices.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#333333",
+      "#f4f4f4"
+    ]
+  },
+  {
+    "id": "056cecdf",
+    "run_index": 152,
+    "overall_impression": "The design embodies an exceptionally generic, early-2010s corporate template aesthetic, relying on basic primary colors and ubiquitous structural paradigms like Arial fonts and chunky block layouts. While highly structured, semantic, and functional, it lacks distinct brand personality or contemporary visual sophistication.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#f4f4f4",
+      "#28a745"
+    ]
+  },
+  {
+    "id": "52f93180",
+    "run_index": 153,
+    "overall_impression": "This artifact represents a highly generic, functional corporate landing page heavily reminiscent of the mid-2010s Flat UI era. While technically competent with semantic HTML and basic CSS Grid, its reliance on unmodified Arial, rudimentary block coloring, and sudden injection of inline styles in the contact section limits its aesthetic sophistication and brand personality.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#3498db",
+      "#2c3e50",
+      "#f4f4f4"
+    ]
+  },
+  {
+    "id": "03b737b8",
+    "run_index": 154,
+    "overall_impression": "A highly functional but aesthetically uninspired interface that feels reminiscent of a beginner's web tutorial. While it executes layout fundamentals and basic interactive JavaScript effectively, it entirely lacks distinct visual messaging or sophisticated design flair.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#ffffff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "abfafb77",
+    "run_index": 155,
+    "overall_impression": "A very traditional, baseline corporate prototype relying on safe blue hues, subtle box-shadows, and standard sans-serif typography. It effectively communicates fundamental business capabilities but lacks a distinct brand identity or contemporary design flair.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#3498db",
+      "#283747",
+      "#f4f7f6"
+    ]
+  },
+  {
+    "id": "9a13780b",
+    "run_index": 156,
+    "overall_impression": "This artifact presents a highly functional, Bootstrap-esque interface focused entirely on utility. While it lacks distinct character or originality, it achieves clear affordances, great readability, and a robust layout for generating dynamic content.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#ffffff",
+      "#f0f2f5",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "11df4b98",
+    "run_index": 157,
+    "overall_impression": "The artifact represents a highly formulaic, template-driven approach to web design, heavily reminiscent of standard mid-2010s corporate layouts. While functional, responsive, and legible, it completely lacks strong stylistic opinions or unique visual flair, relying entirely on safe UI patterns like card grids, subtle drop shadows, and a neutral palette highlighted by a single cyan accent.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#00bcd4"
+    ]
+  },
+  {
+    "id": "0db54c5b",
+    "run_index": 158,
+    "overall_impression": "This artifact is a highly utilitarian, boilerplate web page reminiscent of standard mid-2010s CSS frameworks like Bootstrap. It priorities structure and basic legibility entirely over aesthetic identity, resulting in a safe, sterile, and unmemorable visual presence.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#007bff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "482deed7",
+    "run_index": 159,
+    "overall_impression": "The design exhibits a highly functional but visually uninspired, early-to-mid 2010s corporate aesthetic. It relies entirely on browser defaults, basic CSS drop shadows, and standard system fonts to communicate its structure without establishing a distinct brand identity. While exceptionally clean and accessible, it functions more as a developmental boilerplate than a creatively realized digital experience.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "9324a7fa",
+    "run_index": 160,
+    "overall_impression": "A cleanly executed but highly generic demonstration page that relies heavily on standard web defaults. The straightforward layout features gentle drop shadows, basic interactive transitions, and an analogous cool-toned palette, making it functionally sound but lacking in distinct aesthetic personality.",
+    "primary_font": "Arial",
+    "theme": "mixed",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f0f8ff",
+      "#ffffff",
+      "#6a5acd"
+    ]
+  },
+  {
+    "id": "9d099238",
+    "run_index": 161,
+    "overall_impression": "This artifact is a prototypical, generic corporate webpage that heavily channels early-to-mid 2010s Bootstrap aesthetics. It relies on a very safe, clinical color palette, standard system fonts, and basic CSS shadows/transitions, resulting in a highly functional but safe and unoriginal design.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "0a6b7770",
+    "run_index": 162,
+    "overall_impression": "A straightforward, highly utilitarian digital agency template that prioritizes basic functionality over visual distinctiveness. It relies on a classic blue and gray palette with subtle box shadows and clean rounded corners, exhibiting a generic 'Bootstrap-esque' aesthetic.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#333333",
+      "#f4f4f4"
+    ]
+  },
+  {
+    "id": "241b2c71",
+    "run_index": 163,
+    "overall_impression": "Highly conventional and safe, this design heavily relies on early 2010s Flat UI color palettes and generic structural paradigms. It functions capably as a basic foundation, offering clarity and accessibility over distinct personality or flair.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f7f6",
+      "#2c3e50",
+      "#3498db"
+    ]
+  },
+  {
+    "id": "d32633ae",
+    "run_index": 164,
+    "overall_impression": "This artifact presents a very standard, template-like landing page design typical of straightforward business sites. It leans on a high-contrast charcoal, white, and yellow palette to add a touch of focus to an otherwise generic and strictly functional layout.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#cfcfcf",
+      "#333333",
+      "#ffcc00"
+    ]
+  },
+  {
+    "id": "b10c8f1d",
+    "run_index": 165,
+    "overall_impression": "A highly generic, default-styling approach reminiscent of basic Bootstrap templates from the mid-2010s. It prioritizes semantic structure and clear user interface patterns over aesthetic originality or brand identity.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#007bff",
+      "#f4f4f4",
+      "#333333"
+    ]
+  },
+  {
+    "id": "315f7d38",
+    "run_index": 166,
+    "overall_impression": "A highly functional but aesthetically generic utility application that relies heavily on standard web conventions reminiscent of default CSS frameworks like Bootstrap. It prioritizes clarity and usability through clear typography, standard padding, and subtle interactive elevation states, making it a predictable and reliable interface despite lacking distinct visual personality.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "card-grid",
+    "dominant_colors": [
+      "#f4f7f6",
+      "#007bff",
+      "#28a745"
+    ]
+  },
+  {
+    "id": "5b562103",
+    "run_index": 167,
+    "overall_impression": "This artifact presents a highly generic, Bootstrap-inspired utility design meant primarily for educational purposes. It prioritizes functional clarity over aesthetic expression, utilizing a straightforward card layout with system-default styling cues.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#007bff",
+      "#f4f4f4",
+      "#28a745"
+    ]
+  },
+  {
+    "id": "65a5a90a",
+    "run_index": 168,
+    "overall_impression": "A strongly generic, 2010s-era flat design template utilizing safe corporate color schemes reminiscent of early Bootstrap. It is perfectly functional and structurally semantic, but completely lacks distinct aesthetic personality or brand identity.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#2c3e50",
+      "#2980b9",
+      "#f4f7f6"
+    ]
+  },
+  {
+    "id": "7b9696f9",
+    "run_index": 169,
+    "overall_impression": "A structurally sound but visually generic landing page template. It employs a safe, standardized corporate aesthetic with soft shadows and a cool-toned blue/green color scheme, functioning perfectly as a baseline reference layout rather than a standout artistic piece.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "card-grid",
+    "dominant_colors": [
+      "#f4f7f6",
+      "#2c3e50",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "d3880942",
+    "run_index": 170,
+    "overall_impression": "A functional but basic landing page characterized by a bold purple-to-blue gradient and semi-transparent overlay cards. While it employs standard responsive flexbox techniques, the use of basic Arial typography and a slightly intrusive JavaScript prompt detract from its sophistication. The design ultimately feels like an energetic, generic modern template with very subtle nods to glassmorphism.",
+    "primary_font": "Arial",
+    "theme": "dark",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#6a11cb",
+      "#2575fc",
+      "#ffeb3b"
+    ]
+  },
+  {
+    "id": "06d58c33",
+    "run_index": 171,
+    "overall_impression": "A highly functional, textbook web interface heavily inspired by early 2010s Flat UI design trends. It prioritizes clarity and structured layout over distinct aesthetic personality, resulting in a safe but slightly dated technical demonstration.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "card-grid",
+    "dominant_colors": [
+      "#2c3e50",
+      "#3498db",
+      "#f4f7f6"
+    ]
+  },
+  {
+    "id": "15cef61a",
+    "run_index": 172,
+    "overall_impression": "A utilitarian, contemporary card generator interface modeled loosely on Material Design principles. The aesthetic is extremely generic, relying heavily on pronounced drop shadows and standard web-safe fonts, creating a functional but unmemorable user experience.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "card-grid",
+    "dominant_colors": [
+      "#ffffff",
+      "#1976d2",
+      "#4caf50"
+    ]
+  },
+  {
+    "id": "81155243",
+    "run_index": 173,
+    "overall_impression": "Evaluation unavailable",
+    "primary_font": "Unknown",
+    "theme": "unknown",
+    "layout_type": "unknown",
+    "dominant_colors": []
+  },
+  {
+    "id": "6b181acf",
+    "run_index": 174,
+    "overall_impression": "This artifact presents a very familiar, generic modern UI centered around a clean card layout with basic drop shadows and rounded inputs. The floating circular background elements and entrance animations add a touch of playfulness, elevating what would otherwise be a sterile, utilitarian form into a slightly more engaging user experience.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f0f2f5",
+      "#ffffff",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "6971d9f2",
+    "run_index": 175,
+    "overall_impression": "Evaluation unavailable",
+    "primary_font": "Unknown",
+    "theme": "unknown",
+    "layout_type": "unknown",
+    "dominant_colors": []
+  },
+  {
+    "id": "ae96642c",
+    "run_index": 176,
+    "overall_impression": "Evaluation unavailable",
+    "primary_font": "Unknown",
+    "theme": "unknown",
+    "layout_type": "unknown",
+    "dominant_colors": []
+  },
+  {
+    "id": "9a996838",
+    "run_index": 177,
+    "overall_impression": "This artifact is a quintessential example of utility-focused, generic modern web UI. It relies on a classic white, grey, and primary-blue color scheme with subtle layering and grid structures to execute a clean, entirely functional, and recognizable interface.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "card-grid",
+    "dominant_colors": [
+      "#ffffff",
+      "#f0f2f5",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "95c3e104",
+    "run_index": 178,
+    "overall_impression": "A lighthearted, interactive web component built to demonstrate basic web technologies. It uses vibrant gradients, state-driven changes, and simple animations to create a highly playful mood, though the fundamental aesthetic remains somewhat generic and dated.",
+    "primary_font": "Segoe UI",
+    "theme": "mixed",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#ff0066",
+      "#4a90e2",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "e1a55f1b",
+    "run_index": 179,
+    "overall_impression": "This is a highly boilerplate, generic business landing page prototype utilizing a standard flat design language common in the mid-to-late 2010s. It prioritizes functional clarity and predictable patterns over expressive design, making it highly readable but lacking in unique identity.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f7f6",
+      "#2c3e50",
+      "#2ecc71"
+    ]
+  },
+  {
+    "id": "fee766b8",
+    "run_index": 180,
+    "overall_impression": "A vibrant, playful welcome screen utilizing glassmorphism and keyframe animations to create an engaging experience. The bold gradient background and floating translucent geometric shapes give the design a highly energetic and dynamic contemporary feel.",
+    "primary_font": "Arial",
+    "theme": "mixed",
+    "layout_type": "hero-content",
+    "dominant_colors": [
+      "#ff0066",
+      "#4a90e2",
+      "#ffb703"
+    ]
+  },
+  {
+    "id": "ad695ef0",
+    "run_index": 181,
+    "overall_impression": "A highly functional and straightforward webpage reminiscent of early 2010s Bootstrap templates. While academically sound and structurally well-organized, it completely leans into generic patterns, lacking distinctive character or modern visual flair.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#007bff",
+      "#333333",
+      "#28a745"
+    ]
+  },
+  {
+    "id": "b5725eb1",
+    "run_index": 182,
+    "overall_impression": "This is a highly functional but purely generic website template reminiscent of early 2010s HTML/CSS tutorials. It effectively demonstrates foundational web development principles\u2014like flexbox layouts, semantic tags, and basic DOM manipulation\u2014but purposefully lacks a distinct visual voice or modern design polish.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#4CAF50",
+      "#007bff",
+      "#333333"
+    ]
+  },
+  {
+    "id": "da0bfb43",
+    "run_index": 183,
+    "overall_impression": "A structurally sound but highly generic landing page that leans on mid-2010s corporate web design conventions. It functions perfectly well and demonstrates solid HTML/CSS fundamentals, but it lacks aesthetic distinctiveness, brand personality, and refined modern visual polish.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#2196f3",
+      "#333333"
+    ]
+  },
+  {
+    "id": "63cee77b",
+    "run_index": 184,
+    "overall_impression": "This artifact serves as a basic, highly functional template reminiscent of an introductory web development tutorial. Its reliance on system fonts, default Bootstrap-like colors, and generic box-shadows creates a clean but visually uninspired, sterile aesthetic.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#007bff",
+      "#28a745"
+    ]
+  },
+  {
+    "id": "0a771d86",
+    "run_index": 185,
+    "overall_impression": "A cheerful but generic web component that uses a vibrant diagonal background gradient and JavaScript-generated floating particles to create visual buzz. The standard centered card layout benefits from clean structural padding and smooth interactive scaling transitions, though the reliance on system fonts and stock styling choices places it firmly within typical introductory project aesthetics.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#ff0066",
+      "#4a90e2",
+      "#ffffff"
+    ]
+  },
+  {
+    "id": "75168152",
+    "run_index": 186,
+    "overall_impression": "This artifact presents a clean, functional, but highly generic modern web component featuring a user greeting form. It successfully implements fundamental UI patterns like dark mode, form validation, and basic animations, though it lacks a distinct visual identity. The aesthetic relies primarily on standard box shadows, rounded corners, and a utilitarian green accent color to convey interactive states.",
+    "primary_font": "Arial",
+    "theme": "mixed",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#ffffff",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "87bec23e",
+    "run_index": 187,
+    "overall_impression": "This is a highly standardized, boilerplate corporate landing page typical of the mid-2010s responsive web era. It relies heavily on safe, high-contrast color choices and subtle drop shadows to create a clean but largely unmemorable user experience.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#2c3e50",
+      "#27ae60",
+      "#f4f7f6"
+    ]
+  },
+  {
+    "id": "31701bd1",
+    "run_index": 188,
+    "overall_impression": "A highly functional and straightforward UI built with standard contemporary design practices. It favors utility and clarity over stylistic flourishes, resulting in a predictable but robust user experience.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "card-grid",
+    "dominant_colors": [
+      "#ffffff",
+      "#f4f4f9",
+      "#3498db"
+    ]
+  },
+  {
+    "id": "3176af7f",
+    "run_index": 189,
+    "overall_impression": "This artifact represents a quintessential 'Hello World' multi-section web template, heavily reminiscent of standard 2010s corporate layouts. The aesthetic is purely functional and deeply generic, prioritizing structural demonstration and basic interactivity over a distinct visual identity.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#007bff",
+      "#333333",
+      "#f4f4f4"
+    ]
+  },
+  {
+    "id": "8e3a88e7",
+    "run_index": 190,
+    "overall_impression": "The design feels energetic and accessible, relying on a vibrant background gradient paired with a heavily shadowed semi-transparent container. It comes across as a functional prototype or a beginner's interactive coding exercise rather than a polished production interface.",
+    "primary_font": "Segoe UI",
+    "theme": "dark",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#ff0066",
+      "#4488ff",
+      "#0d6efd"
+    ]
+  },
+  {
+    "id": "4eb6b62e",
+    "run_index": 191,
+    "overall_impression": "A clean, functional, and highly generic presentation designed primarily as an interactive code demonstration. It relies on out-of-the-box system fonts, basic drop shadows, and simple animations to create a friendly but completely unopinionated user experience.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#f0f8ff",
+      "#ffffff",
+      "#4682b4"
+    ]
+  },
+  {
+    "id": "98deadd0",
+    "run_index": 192,
+    "overall_impression": "A lighthearted, contemporary single-card interface featuring a soft blue gradient background and floating geometric CSS animations. The design leans heavily into a friendly, casual aesthetic driven by rounded elements, bouncy interaction states, and a cheerful color palette.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "single-section",
+    "dominant_colors": [
+      "#a1c4fd",
+      "#ffffff",
+      "#4CAF50"
+    ]
+  },
+  {
+    "id": "38671ec2",
+    "run_index": 193,
+    "overall_impression": "The artifact is a foundational, highly generic web template reminiscent of early modern web standards. While it demonstrates solid semantic HTML and sensible structural layout, its aesthetics lack distinctiveness, relying heavily on default system sans-serif fonts and utilitarian design conventions.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007BFF"
+    ]
+  },
+  {
+    "id": "66452671",
+    "run_index": 194,
+    "overall_impression": "The design is a highly standard, functional landing page reminiscent of classic early-to-mid 2010s Bootstrap templates. While lacking in distinct visual personality or modern stylistic flair, it adheres tightly to robust accessibility and layout standards, offering a clear and predictable user experience.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#007bff"
+    ]
+  },
+  {
+    "id": "e16a9c94",
+    "run_index": 195,
+    "overall_impression": "This is a highly functional, boilerplate corporate landing page that prioritizes clarity and convention over originality. With its cool slate palette, subtle drop shadows, and standard flexbox layout, it embodies a generic, utilitarian aesthetic reminiscent of 2010s-era web design.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f7f6",
+      "#283747",
+      "#2E8B57"
+    ]
+  },
+  {
+    "id": "3bbfd334",
+    "run_index": 196,
+    "overall_impression": "This artifact represents a highly generic, Bootstrap-inspired corporate landing page. It prioritizes functional clarity and basic responsiveness over unique aesthetic choices, resulting in a safe but uninspired visual experience lacking in distinctive branding.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#007bff",
+      "#f4f4f4",
+      "#333333"
+    ]
+  },
+  {
+    "id": "8195f368",
+    "run_index": 197,
+    "overall_impression": "A highly generic, functional landing page reminiscent of early 2010s Bootstrap-era templates. It utilizes a striking complementary color scheme of cyan and orange but lacks modern typographic scale, custom visual flair, or semantic HTML boundaries.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "landing-page",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#333333",
+      "#00bcd4"
+    ]
+  },
+  {
+    "id": "88b882ca",
+    "run_index": 198,
+    "overall_impression": "A highly functional, generic modern card grid reminiscent of standard component libraries. It utilizes drop shadows, rounded corners, and a straightforward green and blue color palette to present information clearly, but lacks a distinct or memorable visual identity.",
+    "primary_font": "Segoe UI",
+    "theme": "light",
+    "layout_type": "card-grid",
+    "dominant_colors": [
+      "#4CAF50",
+      "#007bff",
+      "#f4f7f6"
+    ]
+  },
+  {
+    "id": "591584bd",
+    "run_index": 199,
+    "overall_impression": "The artifact captures the essence of a default, unopinionated web application utility interface. Its reliance on flat standard colors, basic system fonts, and straightforward functional layouts makes it highly legible but stylistically sterile.",
+    "primary_font": "Arial",
+    "theme": "light",
+    "layout_type": "multi-section",
+    "dominant_colors": [
+      "#f4f4f4",
+      "#007bff",
+      "#333333"
+    ]
+  }
+]

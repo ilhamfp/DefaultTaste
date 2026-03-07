@@ -19,7 +19,11 @@ dist/
 .env.production.local
 
 # Generated data artifacts
-data/
+data/**
+!data/
+!data/**/
+!data/.gitkeep
+!data/**/.gitkeep
 
 # Python
 __pycache__/

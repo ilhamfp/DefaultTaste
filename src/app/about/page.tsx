@@ -53,12 +53,14 @@ export default function AboutPage() {
           <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
             This project is a hackathon pitch, but it is also a real product
             idea: use repeated generation to turn vague model sameness into a
-            profile, then turn that profile into creative leverage.
+            profile, then turn that profile into creative leverage. The current
+            custom URL flow is a guided demo of that pipeline, while the
+            showcase profiles are fully pre-generated examples.
           </p>
         </section>
 
         <section className="mt-14 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-3xl border border-border bg-card p-8">
+          <div className="rounded-xl border border-border bg-card p-8">
             <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
               The problem
             </p>
@@ -80,7 +82,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-primary/20 bg-primary/5 p-8">
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-8">
             <p className="text-xs uppercase tracking-[0.24em] text-primary">
               The transformation
             </p>
@@ -96,7 +98,9 @@ export default function AboutPage() {
                 The output is simple to understand and immediately useful: a
                 taste profile that shows what the model prefers, plus a
                 correction prompt that helps creators push beyond those
-                defaults.
+                defaults. In this build, the custom URL path stages that loop as
+                a demo with pre-generated artifacts so the full experience is
+                visible within the hackathon constraints.
               </p>
             </div>
           </div>
@@ -117,7 +121,7 @@ export default function AboutPage() {
             {geminiStack.map((item) => (
               <div
                 key={item.title}
-                className="rounded-3xl border border-border bg-card p-7"
+                className="rounded-xl border border-border bg-card p-7"
               >
                 <h3 className="font-serif text-2xl tracking-tight text-foreground">
                   {item.title}
@@ -130,7 +134,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mt-14 rounded-3xl border border-border bg-card p-8">
+        <section className="mt-14 rounded-xl border border-border bg-card p-8">
           <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
             Why this should win
           </p>
@@ -141,7 +145,7 @@ export default function AboutPage() {
             {reasonsToWin.map((reason) => (
               <div
                 key={reason.title}
-                className="rounded-3xl border border-border bg-muted/40 p-6"
+                className="rounded-xl border border-border bg-muted/40 p-6"
               >
                 <h3 className="font-serif text-2xl tracking-tight text-foreground">
                   {reason.title}
@@ -154,24 +158,24 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mt-14 rounded-3xl border border-border bg-card p-8">
+        <section className="mt-14 rounded-xl border border-border bg-card p-8">
           <h2 className="font-serif text-3xl tracking-tight text-foreground">
             Explore the product
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-            Start at the homepage, submit an agent URL to see the upcoming flow,
-            or inspect the live profiles and product docs right now.
+            Start at the homepage to walk through the demo probe flow, or
+            inspect the showcase profiles and product docs right now.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/"
-              className="inline-flex rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Go to homepage
             </Link>
             <Link
               href="/docs"
-              className="inline-flex rounded-full border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Read the docs
             </Link>

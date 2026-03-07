@@ -8,7 +8,7 @@ import { getHomepageAgentSummaries } from "@/lib/data";
 export const metadata: Metadata = {
   title: "DefaultTaste",
   description:
-    "Paste an agent server URL and surface the taste it defaults to.",
+    "Try the demo probe flow and preview the taste profile DefaultTaste would map.",
 };
 
 export default async function Home() {
@@ -33,7 +33,7 @@ export default async function Home() {
             <h1 className="mt-5 max-w-4xl font-serif text-[2rem] leading-[1.02] tracking-tight text-foreground text-pretty sm:text-[2.75rem] lg:text-[3rem]">
               <span className="block">Point us at an agent.</span>
               <span className="mt-1.5 block italic text-foreground/80">
-                Reveal the taste it defaults to.
+                Preview the taste it tends to echo.
               </span>
             </h1>
 

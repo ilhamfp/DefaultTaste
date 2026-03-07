@@ -1,24 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <!--
-    DefaultTaste — Broken Grid Logo
-    Bottom-Right Rebel · Empty Slot Variant
-
-    Grid: 3 filled squares (36×36) + 1 dashed vacancy
-    Gap: 6px
-    Margin: 15px
-    Rebel: shifted +10x, +10y, rotated -7°
-  -->
-
-  <!-- Row 1 -->
-  <rect x="15" y="15" width="36" height="36" rx="2" fill="#D6D3D1"/>
-  <rect x="57" y="15" width="36" height="36" rx="2" fill="#D6D3D1"/>
-
-  <!-- Row 2 -->
-  <rect x="15" y="57" width="36" height="36" rx="2" fill="#D6D3D1"/>
-
-  <!-- Empty slot — where the rebel was -->
-  <rect x="57" y="57" width="36" height="36" rx="2" fill="none" stroke="#A8A29E" stroke-width="2" stroke-dasharray="5,4"/>
-
-  <!-- The rebel -->
-  <rect x="67" y="67" width="36" height="36" rx="2" fill="#D97706" transform="rotate(-7, 85, 85)"/>
+  <!-- DefaultTaste - Broken Grid Logo - Light Brand Variant -->
+  <rect x="15" y="15" width="36" height="36" rx="6" fill="#F4F4F0"/>
+  <rect x="57" y="15" width="36" height="36" rx="6" fill="#F4F4F0"/>
+  <rect x="15" y="57" width="36" height="36" rx="6" fill="#F4F4F0"/>
+  <rect x="57" y="57" width="36" height="36" rx="6" fill="none" stroke="#7C7C67" stroke-width="2" stroke-dasharray="6 4"/>
+  <rect x="67" y="67" width="36" height="36" rx="6" fill="#00786F" transform="rotate(-7, 85, 85)"/>
 </svg>

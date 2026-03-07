@@ -7,7 +7,7 @@ import { getHomepageAgentSummaries } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Documentation | DefaultTaste",
   description:
-    "How DefaultTaste works, what it measures, and what is currently live.",
+    "How DefaultTaste works, what it measures, and how the current demo flow is staged.",
 };
 
 const websiteDimensions = [
@@ -60,12 +60,14 @@ export default async function DocsPage() {
           <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
             The product is simple on purpose: point to an agent, run it enough
             times to expose its defaults, then turn those defaults into a
-            profile and a correction prompt.
+            profile and a correction prompt. In this hackathon build, the
+            showcase profiles are published examples and the custom URL flow is
+            a staged demo of that pipeline.
           </p>
         </section>
 
         <section className="mt-14 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-3xl border border-border bg-card p-7">
+          <div className="rounded-xl border border-border bg-card p-7">
             <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
               How to use it
             </p>
@@ -75,28 +77,31 @@ export default async function DocsPage() {
                 agent server URL into the homepage form.
               </li>
               <li>
-                <span className="font-medium text-foreground">2.</span> Today,
-                that form validates the URL and previews the upcoming custom
-                probing flow.
+                <span className="font-medium text-foreground">2.</span> Choose
+                the medium and probe depth on the setup page.
               </li>
               <li>
-                <span className="font-medium text-foreground">3.</span> For now,
-                explore the live profiles below to see how the output is
-                structured.
+                <span className="font-medium text-foreground">3.</span> Follow
+                the permanent run URL as DefaultTaste walks through a simulated
+                validate, probe, analyze, aggregate, and correction flow.
               </li>
             </ol>
           </div>
 
-          <div className="rounded-3xl border border-primary/20 bg-primary/5 p-7">
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-7">
             <p className="text-xs uppercase tracking-[0.24em] text-primary">
-              What is live today
+              What is available today
             </p>
             <p className="mt-4 text-base leading-7 text-foreground">
-              Pre-probed agents are live. Custom agent probing is coming next.
+              The showcase profiles are available now. Custom URL submissions
+              currently run as a guided demo walkthrough.
             </p>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
-              The homepage URL form is intentionally a placeholder CTA right
-              now. It is there to frame the product, not to start a job yet.
+              The demo uses pre-generated artifacts and deterministic logic to
+              show the intended pipeline. The future integration targets are
+              Gemini-style HTTPS endpoints for website probes and Lyria-style
+              live endpoints for music probes. Protected endpoints and custom
+              auth are out of scope for this demo pass.
             </p>
           </div>
         </section>
@@ -107,7 +112,7 @@ export default async function DocsPage() {
           </h2>
 
           <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <div className="rounded-3xl border border-border bg-card p-7">
+            <div className="rounded-xl border border-border bg-card p-7">
               <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
                 Websites
               </p>
@@ -121,7 +126,7 @@ export default async function DocsPage() {
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-border bg-card p-7">
+            <div className="rounded-xl border border-border bg-card p-7">
               <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
                 Music
               </p>
@@ -144,7 +149,7 @@ export default async function DocsPage() {
                 Supported agents
               </p>
               <h2 className="mt-2 font-serif text-3xl tracking-tight text-foreground">
-                Explore the live profiles
+                Explore the showcase profiles
               </h2>
             </div>
             <p className="max-w-xl text-sm leading-6 text-muted-foreground">
@@ -169,7 +174,7 @@ export default async function DocsPage() {
             {probingSteps.map((step, index) => (
               <div
                 key={step.title}
-                className="rounded-3xl border border-border bg-card p-7"
+                className="rounded-xl border border-border bg-card p-7"
               >
                 <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
                   Step {index + 1}
@@ -185,19 +190,19 @@ export default async function DocsPage() {
           </div>
         </section>
 
-        <section className="mt-14 rounded-3xl border border-border bg-card p-8">
+        <section className="mt-14 rounded-xl border border-border bg-card p-8">
           <h2 className="font-serif text-3xl tracking-tight text-foreground">
             Want the full story?
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-            The docs explain the product. The About page explains why it
-            matters, why Gemini made it possible, and why this project should
-            win.
+            The docs explain the product and the demo run flow. The About page
+            explains why it matters, why Gemini made it possible, and how the
+            hackathon build stages the idea today.
           </p>
           <div className="mt-6">
             <Link
               href="/about"
-              className="inline-flex rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Read the pitch
             </Link>

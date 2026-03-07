@@ -79,20 +79,29 @@ Replace `src/app/layout.tsx`:
 
 ```tsx
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Serif } from "next/font/google";
 import "./globals.css";
 
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
+const sans = Geist({ subsets: ["latin"], variable: "--font-sans" });
+const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
+const serif = Noto_Serif({ subsets: ["latin"], variable: "--font-serif" });
 
 export const metadata: Metadata = {
   title: "DefaultTaste — Your AI has taste",
-  description: "Reveal and correct the hidden aesthetic preferences of AI agents",
+  description:
+    "Reveal and correct the hidden aesthetic preferences of AI agents",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${mono.variable} font-mono antialiased bg-[#FAFAF7] text-stone-900`}>
+      <body
+        className={`${sans.variable} ${mono.variable} ${serif.variable} font-sans antialiased bg-background text-foreground`}
+      >
         {children}
       </body>
     </html>
@@ -109,7 +118,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 Create `src/lib/types.ts` with TypeScript interfaces for `WebsiteProfile`, `MusicProfile`, and `AgentProfile`.
 
 Create `src/lib/mock.ts` with realistic mock data for two agents:
-- **Gemini 2.5 Flash** (website profile): React 78%, Tailwind 65%, Inter 62%, purple colors, dark mode 72%, landing-page layout 55%
+
+- **Gemini 2.5 Flash** (website profile): React 78%, Tailwind 65%, neutral/teal palette defaults, dark mode 72%, landing-page layout 55%
 - **Lyria RealTime** (music profile): avg BPM 118.5, key of C 35%, pop 35%, electronic 25%, Western origin 85%, synth pads 70%
 
 Create `src/lib/data.ts` that loads real data from `data/` directory, falling back to mock when real data doesn't exist yet.
@@ -127,6 +137,7 @@ Create `src/app/api/profile/[agentId]/route.ts` that serves the profile JSON.
 Create `scripts/generate_websites.py`. This is the **first thing to run** because it takes ~20-30 min for 100 runs.
 
 **Key features required:**
+
 - Sends "Make me a website" to Gemini 100 times
 - Each result saved immediately as `data/websites/raw/001.json` through `100.json`
 - **Resumable**: checks which files exist, skips completed runs
@@ -135,6 +146,7 @@ Create `scripts/generate_websites.py`. This is the **first thing to run** becaus
 - Clear progress output: `[47/100] Generating... ✅ (3200 chars, 2100ms)`
 
 Each saved JSON:
+
 ```json
 {
   "id": 47,
@@ -192,6 +204,7 @@ GEMINI_API_KEY=xxx python3 scripts/test_lyria.py
 ### If Lyria works: Create `scripts/generate_music.py`
 
 **Key features:**
+
 - 20 probes across 4 sets: pure default (5x "Make me a song"), mood-only (5x), vague prompts (5x), genre-only no config (5x)
 - Each track: 12 seconds of audio via WebSocket
 - Saves WAV to `data/music/audio/001.wav` and metadata to `data/music/raw/001.json`
@@ -208,9 +221,10 @@ GEMINI_API_KEY=xxx python3 scripts/test_lyria.py
 
 ---
 
-## Task 5: Website Analysis Script (Friend) — 30 min
+## Task 5: Website Analysis Script (Friend) — 30 min ✅
 
 Create `scripts/analyze_websites.py`:
+
 - Reads each `data/websites/raw/NNN.json`
 - Sends the raw code to Gemini with the analysis prompt
 - Extracts: framework, css_framework, primary_colors, fonts, layout_type, libraries, deployment_platform, has_dark_mode, icon_library, description
@@ -223,9 +237,10 @@ Analysis prompt should ask Gemini to output JSON with the fields matching the `W
 
 ---
 
-## Task 6: Music Analysis Script (Ilham) — 30 min
+## Task 6: Music Analysis Script (Ilham) — 30 min ✅
 
 Create `scripts/analyze_music.py`:
+
 - For each WAV file, runs **two analyses**:
   - **librosa** (programmatic): BPM, key detection via chroma, spectral centroid (brightness), onset density, RMS energy
   - **Gemini audio** (semantic): uploads WAV to Gemini Files API, asks for genre, mood, instruments, tempo_feel, production_style, cultural_origin, energy_level, complexity
@@ -233,6 +248,7 @@ Create `scripts/analyze_music.py`:
 - Resume/retry pattern
 
 Key librosa code:
+
 ```python
 import librosa, numpy as np
 y, sr = librosa.load(wav_path, sr=22050, mono=True)
@@ -244,6 +260,7 @@ onsets = librosa.onset.onset_detect(y=y, sr=sr)
 ```
 
 Key Gemini code:
+
 ```python
 file = client.files.upload(file=wav_path)
 response = client.models.generate_content(model=MODEL, contents=[file, ANALYSIS_PROMPT])
@@ -253,12 +270,14 @@ response = client.models.generate_content(model=MODEL, contents=[file, ANALYSIS_
 
 ---
 
-## Task 7: Aggregation Scripts (Both) — 20 min
+## Task 7: Aggregation Scripts (Both) — 20 min ✅
 
 ### Website (Friend): `scripts/aggregate_websites.py`
+
 Read all `data/websites/parsed/*.json`, compute frequency distributions for each field, save `data/websites/profile.json`.
 
 ### Music (Ilham): `scripts/aggregate_music.py`
+
 Read all `data/music/parsed/*.json`, compute BPM stats (avg, median, std_dev, histogram), key distribution, genre/mood/instrument frequencies, save `data/music/profile.json`.
 
 ### ✅ Done when: `profile.json` files exist and match the TypeScript types
@@ -268,6 +287,7 @@ Read all `data/music/parsed/*.json`, compute BPM stats (avg, median, std_dev, hi
 ## Task 8: Negation Prompt Generator (Ilham) — 15 min
 
 Create `scripts/generate_negation.py`:
+
 - Reads both profile.json files
 - Sends each to Gemini: "Given this taste profile, write a system prompt that counteracts these defaults"
 - Saves to `data/negation/website_negation.txt` and `music_negation.txt`
@@ -281,10 +301,12 @@ Create `scripts/generate_negation.py`:
 Create `scripts/generate_demo.py`:
 
 **Website (Friend's part):**
+
 1. Generate one website with NO system prompt → `data/demo/default_website.html`
 2. Generate one website WITH the negation prompt as system instruction → `data/demo/corrected_website.html`
 
 **Music (Ilham's part):**
+
 1. Generate one Lyria track with "Make me a song" and NO config → `data/demo/default_music.wav`
 2. Generate one Lyria track with counter-default settings (BPM=75, scale=Eb, density=0.2, prompt="Sitar and tabla, ambient ethereal") → `data/demo/corrected_music.wav`
 
@@ -299,13 +321,14 @@ Copy audio files: `cp data/demo/*.wav public/audio/`
 Build `src/app/page.tsx` as a **platform landing page**. Must convey: "this is a product, not a hack."
 
 Key sections:
+
 1. **Hero** — "Your AI has taste. You just don't know it yet." Bold editorial typography.
 2. **Stats reveal** — "We probed Gemini 100 times." with animated counters
 3. **Agent cards** — Clickable cards linking to `/agent/gemini-flash` and `/agent/lyria`, plus a ghost "Add Agent +" card
 4. **Platform concept** — Input field for "Plug in your agent endpoint", dropdown for REST/WebSocket, probe count slider. Non-functional but shows the vision.
 5. **Defaults ticker** — Animated marquee: "React: 78% | Inter: 62% | Purple: 45% | Pop: 35% | 120 BPM | Key of C"
 
-**Design direction** (per BRAND_GUIDELINES.md): Warm light theme (cream #FAFAF7 background, white cards), amber-600 accents, Instrument Serif + JetBrains Mono, data-dense editorial feel, paper texture, sharp corners, borders not shadows. NO purple, Inter, dark mode, or rounded-lg.
+**Design direction** (per BRAND_GUIDELINES.md): Light-first theme, white background, muted neutral surfaces, teal accents, Noto Serif + Geist + Geist Mono, calm research interface, medium radius, and quiet borders over shadows. NO amber-led branding, paper texture, or dark-mode-first presentation.
 
 ---
 
@@ -314,6 +337,7 @@ Key sections:
 Build `src/app/agent/[agentId]/page.tsx`. Fetches from `/api/profile/[agentId]`.
 
 Sections:
+
 1. **Header** — Agent name, model, probe count, "Probed on Mar 7, 2026"
 2. **Web charts** (if website_profile) — framework horizontal bars, CSS framework bars, color swatch grid, font badges, layout pie chart, library badges, dark mode stat
 3. **Music charts** (if music_profile) — BPM big number + histogram, key pie, genre bars, mood badges, instrument badges, cultural origin bar, brightness/density gauges
@@ -348,47 +372,51 @@ Bottom of the agent profile page:
 
 ## Task 14: Timeline
 
-| Time | Ilham (Scripts + Music + Infra) | Friend (Frontend + Web Analysis) |
-|------|------|------|
-| **10:00–10:30** | Setup, claim credits, test Lyria | Setup, install deps, push to GitHub |
-| **10:30–11:00** | Start `generate_music.py` | Start `generate_websites.py` |
+| Time            | Ilham (Scripts + Music + Infra)              | Friend (Frontend + Web Analysis)      |
+| --------------- | -------------------------------------------- | ------------------------------------- |
+| **10:00–10:30** | Setup, claim credits, test Lyria             | Setup, install deps, push to GitHub   |
+| **10:30–11:00** | Start `generate_music.py`                    | Start `generate_websites.py`          |
 | **11:00–11:30** | Create mock data, types, data.ts, API routes | Start landing page (Hero, AgentCards) |
-| **11:30–12:00** | Write `analyze_music.py` | Landing page (ProbeInput, Ticker) |
-| **12:00–12:30** | 🍜 Lunch. Scripts running. | 🍜 Lunch. Scripts running. |
-| **12:30–1:00** | Run `analyze_music.py` | Write + run `analyze_websites.py` |
-| **1:00–1:30** | `aggregate_music.py` | `aggregate_websites.py` |
-| **1:30–2:00** | `generate_negation.py` + `generate_demo.py` | Agent profile page — charts |
-| **2:00–2:30** | Copy real data → `data/`, verify frontend | Profile page — music charts |
-| **2:30–3:00** | Debug data issues, help with frontend | Correction prompt + before/after |
-| **3:00–3:30** | Polish, deploy to Vercel | Final styling, animations |
-| **3:30–4:00** | Practice pitch | Record demo video |
-| **4:00–5:00** | ✅ Submit + pitch prep | ✅ Submit + pitch prep |
+| **11:30–12:00** | Write `analyze_music.py`                     | Landing page (ProbeInput, Ticker)     |
+| **12:00–12:30** | 🍜 Lunch. Scripts running.                   | 🍜 Lunch. Scripts running.            |
+| **12:30–1:00**  | Run `analyze_music.py`                       | Write + run `analyze_websites.py`     |
+| **1:00–1:30**   | `aggregate_music.py`                         | `aggregate_websites.py`               |
+| **1:30–2:00**   | `generate_negation.py` + `generate_demo.py`  | Agent profile page — charts           |
+| **2:00–2:30**   | Copy real data → `data/`, verify frontend    | Profile page — music charts           |
+| **2:30–3:00**   | Debug data issues, help with frontend        | Correction prompt + before/after      |
+| **3:00–3:30**   | Polish, deploy to Vercel                     | Final styling, animations             |
+| **3:30–4:00**   | Practice pitch                               | Record demo video                     |
+| **4:00–5:00**   | ✅ Submit + pitch prep                       | ✅ Submit + pitch prep                |
 
 ### Critical Milestones
 
-| By When | What Must Be Done |
-|---------|-------------------|
-| 10:30 | Lyria tested (or fallback decided) |
-| 11:00 | Both generation scripts running in background |
-| 12:00 | Landing page rendering with mock data |
-| 2:00 | Real profile data visible in frontend |
-| 3:30 | Before/after demo working, app deployed |
-| 4:30 | Video recorded, submission ready |
+| By When | What Must Be Done                             |
+| ------- | --------------------------------------------- |
+| 10:30   | Lyria tested (or fallback decided)            |
+| 11:00   | Both generation scripts running in background |
+| 12:00   | Landing page rendering with mock data         |
+| 2:00    | Real profile data visible in frontend         |
+| 3:30    | Before/after demo working, app deployed       |
+| 4:30    | Video recorded, submission ready              |
 
 ---
 
 ## Task 15: Fallback Plans
 
 ### If Lyria doesn't work
+
 Replace with text-only probing: ask Gemini "If you were composing a song, describe it in JSON: genre, bpm, key, instruments, mood." Run 50x. Still builds a music taste profile from text descriptions. Before/after becomes two contrasting text descriptions.
 
 ### If generation scripts don't finish in time
+
 Use mock data. Frontend falls back automatically. Mock is based on real research — credible in a demo.
 
 ### If Vercel deployment fails
+
 Demo from localhost. Totally fine for hackathon judging.
 
 ### If $20 credits run out
+
 100 Flash calls ≈ $3-5. Lyria is free. You have plenty of margin. If worried, reduce to 50 website probes.
 
 ---
@@ -413,6 +441,7 @@ GEMINI_API_KEY=
 ```
 
 For Python scripts, pass the key inline:
+
 ```bash
 GEMINI_API_KEY=your_key python3 scripts/generate_websites.py
 ```

@@ -1,29 +1,120 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useAnimationFrame,
+  useMotionValue,
+  useReducedMotion,
+} from "framer-motion";
 import { BrandLockup } from "@/components/site/brand-lockup";
 import { cn } from "@/lib/utils";
 
-type DriftMotion = {
-  x: number[];
-  y: number[];
-  rotate: number[];
-  duration: number;
-  delay: number;
+type ViewportSize = {
+  width: number;
+  height: number;
+  isCompact: boolean;
 };
+
+type CardDimensions = {
+  width: number;
+  height: number;
+};
+
+type LayoutPoint = {
+  xRatio: number;
+  yRatio: number;
+};
+
+type SizeTier = "wideHero" | "wide" | "tall" | "tallHero";
+
+type AnchorId =
+  | "northWest"
+  | "north"
+  | "northEast"
+  | "west"
+  | "eastUpper"
+  | "southWest"
+  | "southEast";
 
 type IntroTweetCard = {
   id: string;
-  href: string;
+  href?: string;
   src: string;
   alt: string;
   width: number;
   height: number;
-  anchorClassName: string;
-  widthClassName: string;
-  drift: DriftMotion;
+  sizeTier: SizeTier;
+  anchorId: AnchorId;
+  seed: number;
+};
+
+type DriftProfile = {
+  directionX: 1 | -1;
+  directionY: 1 | -1;
+  orbitX: number;
+  orbitY: number;
+  rotateAmplitude: number;
+  primaryFrequency: number;
+  secondaryFrequency: number;
+  tertiaryFrequency: number;
+  phase: number;
+  secondaryPhase: number;
+  tertiaryPhase: number;
+};
+
+const SIZE_TIER_CLASSES: Record<SizeTier, string> = {
+  wideHero:
+    "w-[14.4rem] sm:w-[16.75rem] md:w-[19.5rem] lg:w-[23rem] xl:w-[25.25rem]",
+  wide: "w-[12.75rem] sm:w-[14.4rem] md:w-[17rem] lg:w-[19.75rem] xl:w-[21.75rem]",
+  tall: "w-[10rem] sm:w-[11.25rem] md:w-[13rem] lg:w-[14.75rem] xl:w-[16rem]",
+  tallHero:
+    "w-[11rem] sm:w-[12.4rem] md:w-[14.1rem] lg:w-[15.8rem] xl:w-[17.25rem]",
+};
+
+const SIZE_TIER_ORBIT: Record<
+  SizeTier,
+  { x: number; y: number; rotate: number }
+> = {
+  wideHero: { x: 28, y: 16, rotate: 0.85 },
+  wide: { x: 24, y: 15, rotate: 0.8 },
+  tall: { x: 15, y: 24, rotate: 1.05 },
+  tallHero: { x: 17, y: 27, rotate: 1.15 },
+};
+
+const RING_ANCHORS: Record<
+  AnchorId,
+  { desktop: LayoutPoint; compact: LayoutPoint }
+> = {
+  northWest: {
+    desktop: { xRatio: 0.2, yRatio: 0.2 },
+    compact: { xRatio: 0.2, yRatio: 0.21 },
+  },
+  north: {
+    desktop: { xRatio: 0.5, yRatio: 0.17 },
+    compact: { xRatio: 0.5, yRatio: 0.18 },
+  },
+  northEast: {
+    desktop: { xRatio: 0.81, yRatio: 0.21 },
+    compact: { xRatio: 0.8, yRatio: 0.22 },
+  },
+  west: {
+    desktop: { xRatio: 0.14, yRatio: 0.49 },
+    compact: { xRatio: 0.14, yRatio: 0.45 },
+  },
+  eastUpper: {
+    desktop: { xRatio: 0.84, yRatio: 0.36 },
+    compact: { xRatio: 0.82, yRatio: 0.31 },
+  },
+  southWest: {
+    desktop: { xRatio: 0.22, yRatio: 0.77 },
+    compact: { xRatio: 0.21, yRatio: 0.73 },
+  },
+  southEast: {
+    desktop: { xRatio: 0.78, yRatio: 0.73 },
+    compact: { xRatio: 0.77, yRatio: 0.68 },
+  },
 };
 
 const introTweets: IntroTweetCard[] = [
@@ -34,16 +125,9 @@ const introTweets: IntroTweetCard[] = [
     alt: "Screenshot of an X post by @gdb.",
     width: 1194,
     height: 378,
-    anchorClassName: "left-[3%] top-[8%] sm:left-[6%] sm:top-[8%]",
-    widthClassName:
-      "w-[9rem] sm:w-[11rem] md:w-[13rem] lg:w-[15.5rem] xl:w-[17rem]",
-    drift: {
-      x: [0, 16, 6, -10, 0],
-      y: [0, -6, 10, 4, 0],
-      rotate: [-1.4, 0.2, -0.8, 0.4, -1.4],
-      duration: 23,
-      delay: 0.4,
-    },
+    sizeTier: "wideHero",
+    anchorId: "northWest",
+    seed: 18,
   },
   {
     id: "yuchen-top",
@@ -52,16 +136,9 @@ const introTweets: IntroTweetCard[] = [
     alt: "Screenshot of an X post by @Yuchenj_UW.",
     width: 1196,
     height: 1378,
-    anchorClassName: "right-[4%] top-[5%] sm:right-[8%] sm:top-[6%]",
-    widthClassName:
-      "w-[7.4rem] sm:w-[8.5rem] md:w-[10rem] lg:w-[11.5rem] xl:w-[12.25rem]",
-    drift: {
-      x: [0, -12, 4, -8, 0],
-      y: [0, 12, -10, 6, 0],
-      rotate: [1.2, 0.3, 1.6, 0.5, 1.2],
-      duration: 27,
-      delay: 1.1,
-    },
+    sizeTier: "tallHero",
+    anchorId: "north",
+    seed: 27,
   },
   {
     id: "yuchen-bottom",
@@ -70,16 +147,9 @@ const introTweets: IntroTweetCard[] = [
     alt: "Screenshot of another X post by @Yuchenj_UW.",
     width: 1202,
     height: 936,
-    anchorClassName: "bottom-[7%] right-[10%] sm:bottom-[8%] sm:right-[13%]",
-    widthClassName:
-      "w-[7.75rem] sm:w-[9rem] md:w-[10.5rem] lg:w-[12rem] xl:w-[13rem]",
-    drift: {
-      x: [0, -10, 8, 12, 0],
-      y: [0, 8, -12, 3, 0],
-      rotate: [-0.8, 0.6, -1.2, 0.1, -0.8],
-      duration: 25,
-      delay: 0.8,
-    },
+    sizeTier: "wide",
+    anchorId: "southEast",
+    seed: 34,
   },
   {
     id: "paulg",
@@ -88,16 +158,9 @@ const introTweets: IntroTweetCard[] = [
     alt: "Screenshot of an X post by @paulg.",
     width: 1200,
     height: 562,
-    anchorClassName: "bottom-[9%] left-[6%] sm:bottom-[10%] sm:left-[8%]",
-    widthClassName:
-      "w-[9.5rem] sm:w-[11.25rem] md:w-[13rem] lg:w-[15rem] xl:w-[16rem]",
-    drift: {
-      x: [0, 12, -4, 14, 0],
-      y: [0, -9, -3, 7, 0],
-      rotate: [1, 0, 1.4, 0.2, 1],
-      duration: 29,
-      delay: 1.4,
-    },
+    sizeTier: "wideHero",
+    anchorId: "southWest",
+    seed: 41,
   },
   {
     id: "netcapgirl",
@@ -106,192 +169,354 @@ const introTweets: IntroTweetCard[] = [
     alt: "Screenshot of an X post by @netcapgirl.",
     width: 1196,
     height: 1524,
-    anchorClassName: "left-[1%] top-[31%] sm:left-[4%] sm:top-[27%]",
-    widthClassName:
-      "w-[6.75rem] sm:w-[7.5rem] md:w-[8.75rem] lg:w-[9.5rem] xl:w-[10rem]",
-    drift: {
-      x: [0, 8, -6, 10, 0],
-      y: [0, 10, -8, 6, 0],
-      rotate: [-1, -0.2, -1.4, -0.4, -1],
-      duration: 31,
-      delay: 0.2,
-    },
+    sizeTier: "tall",
+    anchorId: "west",
+    seed: 56,
   },
   {
-    id: "malikules",
-    href: "https://x.com/malikules/status/2024213443356586428?s=20",
-    src: "/intro/tweets/malikules-2024213443356586428.png",
-    alt: "Screenshot of an X post by @malikules.",
-    width: 1198,
-    height: 1030,
-    anchorClassName: "right-[2%] top-[32%] sm:right-[6%] sm:top-[31%]",
-    widthClassName:
-      "w-[7.25rem] sm:w-[8.25rem] md:w-[9.75rem] lg:w-[11rem] xl:w-[11.5rem]",
-    drift: {
-      x: [0, -14, -4, -10, 0],
-      y: [0, -8, 9, -4, 0],
-      rotate: [0.8, 1.5, 0.4, 1.1, 0.8],
-      duration: 26,
-      delay: 1.7,
-    },
+    id: "extra-wide",
+    src: "/intro/tweets/Screenshot%202026-03-07%20at%203.52.10%E2%80%AFPM.png",
+    alt: "Screenshot of an additional X post.",
+    width: 1194,
+    height: 430,
+    sizeTier: "wide",
+    anchorId: "northEast",
+    seed: 63,
+  },
+  {
+    id: "extra-tall",
+    src: "/intro/tweets/Screenshot%202026-03-07%20at%203.52.38%E2%80%AFPM.png",
+    alt: "Screenshot of another additional X post.",
+    width: 1194,
+    height: 1062,
+    sizeTier: "tallHero",
+    anchorId: "eastUpper",
+    seed: 72,
   },
 ];
 
-export function IntroScene() {
-  const reducedMotion = useReducedMotion() ?? false;
-  const [isBrandVisible, setIsBrandVisible] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
+function clamp(value: number, min: number, max: number) {
+  return Math.min(max, Math.max(min, value));
+}
 
-  function handleToggle() {
-    if (!hasInteracted) {
-      setHasInteracted(true);
+function createSeededRandom(seed: number) {
+  let value = seed >>> 0;
+
+  return function nextRandom() {
+    value += 0x6d2b79f5;
+
+    let mixed = value;
+    mixed = Math.imul(mixed ^ (mixed >>> 15), mixed | 1);
+    mixed ^= mixed + Math.imul(mixed ^ (mixed >>> 7), mixed | 61);
+
+    return ((mixed ^ (mixed >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function resolveAnchorPoint(
+  anchorId: AnchorId,
+  isCompact: boolean,
+): LayoutPoint {
+  return isCompact ? RING_ANCHORS[anchorId].compact : RING_ANCHORS[anchorId].desktop;
+}
+
+function buildDriftProfile(tweet: IntroTweetCard): DriftProfile {
+  const random = createSeededRandom(tweet.seed);
+  const baseOrbit = SIZE_TIER_ORBIT[tweet.sizeTier];
+
+  return {
+    directionX: random() > 0.5 ? 1 : -1,
+    directionY: random() > 0.5 ? 1 : -1,
+    orbitX: baseOrbit.x * (0.94 + random() * 0.3),
+    orbitY: baseOrbit.y * (0.92 + random() * 0.34),
+    rotateAmplitude: baseOrbit.rotate * (0.9 + random() * 0.24),
+    primaryFrequency: 0.00042 * (0.84 + random() * 0.34),
+    secondaryFrequency: 0.00024 * (0.82 + random() * 0.38),
+    tertiaryFrequency: 0.00018 * (0.86 + random() * 0.42),
+    phase: random() * Math.PI * 2,
+    secondaryPhase: random() * Math.PI * 2,
+    tertiaryPhase: random() * Math.PI * 2,
+  };
+}
+
+function useViewportSize(): ViewportSize {
+  const [viewport, setViewport] = useState<ViewportSize>({
+    width: 0,
+    height: 0,
+    isCompact: false,
+  });
+
+  useEffect(() => {
+    function updateViewport() {
+      const width = window.innerWidth;
+
+      setViewport({
+        width,
+        height: window.innerHeight,
+        isCompact: width < 1100,
+      });
     }
 
-    setIsBrandVisible((current) => !current);
-  }
+    updateViewport();
+    window.addEventListener("resize", updateViewport, { passive: true });
+
+    return () => window.removeEventListener("resize", updateViewport);
+  }, []);
+
+  return viewport;
+}
+
+function FloatingTweetCard({
+  tweet,
+  reducedMotion,
+  viewport,
+}: {
+  tweet: IntroTweetCard;
+  reducedMotion: boolean;
+  viewport: ViewportSize;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const cardSizeRef = useRef<CardDimensions>({
+    width: tweet.width / 5,
+    height: tweet.height / 5,
+  });
+  const [drift] = useState(() => buildDriftProfile(tweet));
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotate = useMotionValue(0);
+
+  useEffect(() => {
+    const element = cardRef.current;
+
+    if (!element) {
+      return;
+    }
+
+    function updateCardSize() {
+      const nextRect = element!.getBoundingClientRect();
+
+      if (nextRect.width > 0 && nextRect.height > 0) {
+        cardSizeRef.current = {
+          width: nextRect.width,
+          height: nextRect.height,
+        };
+      }
+    }
+
+    updateCardSize();
+
+    if (typeof ResizeObserver === "undefined") {
+      return;
+    }
+
+    const observer = new ResizeObserver(updateCardSize);
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!viewport.width || !viewport.height) {
+      return;
+    }
+
+    const anchorPoint = resolveAnchorPoint(tweet.anchorId, viewport.isCompact);
+    const safePadding = viewport.isCompact ? 12 : 20;
+    const maxX = viewport.width - cardSizeRef.current.width - safePadding;
+    const maxY = viewport.height - cardSizeRef.current.height - safePadding;
+    const anchorX =
+      viewport.width * anchorPoint.xRatio - cardSizeRef.current.width / 2;
+    const anchorY =
+      viewport.height * anchorPoint.yRatio - cardSizeRef.current.height / 2;
+
+    x.set(clamp(anchorX, safePadding, maxX));
+    y.set(clamp(anchorY, safePadding, maxY));
+    rotate.set(0);
+  }, [
+    rotate,
+    tweet.anchorId,
+    viewport.height,
+    viewport.isCompact,
+    viewport.width,
+    x,
+    y,
+  ]);
+
+  useAnimationFrame((time) => {
+    if (reducedMotion || !viewport.width || !viewport.height) {
+      return;
+    }
+
+    const motionScale = viewport.isCompact ? 0.76 : 1;
+    const safePadding = viewport.isCompact ? 12 : 20;
+    const anchorPoint = resolveAnchorPoint(tweet.anchorId, viewport.isCompact);
+    const anchorX =
+      viewport.width * anchorPoint.xRatio - cardSizeRef.current.width / 2;
+    const anchorY =
+      viewport.height * anchorPoint.yRatio - cardSizeRef.current.height / 2;
+    const localX =
+      Math.sin(time * drift.primaryFrequency + drift.phase) *
+        drift.orbitX *
+        drift.directionX *
+        motionScale +
+      Math.cos(time * drift.secondaryFrequency + drift.secondaryPhase) *
+        drift.orbitX *
+        0.3 *
+        motionScale +
+      Math.sin(time * drift.tertiaryFrequency + drift.tertiaryPhase) *
+        drift.orbitX *
+        0.16 *
+        -drift.directionY *
+        motionScale;
+    const localY =
+      Math.cos(time * drift.primaryFrequency * 0.94 + drift.phase) *
+        drift.orbitY *
+        drift.directionY *
+        motionScale +
+      Math.sin(time * drift.secondaryFrequency * 1.1 + drift.secondaryPhase) *
+        drift.orbitY *
+        0.26 *
+        motionScale +
+      Math.cos(time * drift.tertiaryFrequency * 1.18 + drift.tertiaryPhase) *
+        drift.orbitY *
+        0.14 *
+        drift.directionX *
+        motionScale;
+    const nextX = clamp(
+      anchorX + localX,
+      safePadding,
+      viewport.width - cardSizeRef.current.width - safePadding,
+    );
+    const nextY = clamp(
+      anchorY + localY,
+      safePadding,
+      viewport.height - cardSizeRef.current.height - safePadding,
+    );
+
+    x.set(nextX);
+    y.set(nextY);
+    rotate.set(
+      (Math.sin(time * drift.secondaryFrequency * 0.82 + drift.phase) +
+        Math.cos(time * drift.tertiaryFrequency * 0.9 + drift.tertiaryPhase) *
+          0.45) *
+        drift.rotateAmplitude,
+    );
+  });
+
+  const cardBody = (
+    <div className="overflow-hidden rounded-xl border border-border/80 bg-card shadow-[0_14px_36px_rgba(12,12,9,0.05)] transition-transform duration-300 group-hover:scale-[1.01]">
+      <Image
+        src={tweet.src}
+        alt={tweet.alt}
+        width={tweet.width}
+        height={tweet.height}
+        priority
+        sizes="(max-width: 640px) 51vw, (max-width: 1024px) 36vw, 25vw"
+        className="h-auto w-full object-contain"
+      />
+    </div>
+  );
+
+  return (
+    <motion.div
+      ref={cardRef}
+      className={cn(
+        "absolute left-0 top-0 z-10 will-change-transform",
+        SIZE_TIER_CLASSES[tweet.sizeTier],
+      )}
+      style={{
+        x,
+        y,
+        rotate,
+        opacity: viewport.width ? 1 : 0,
+      }}
+    >
+      {tweet.href ? (
+        <a
+          href={tweet.href}
+          target="_blank"
+          rel="noreferrer"
+          onClick={(event) => event.stopPropagation()}
+          className="group relative block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          aria-label="Open original tweet on X"
+        >
+          {cardBody}
+        </a>
+      ) : (
+        <div
+          onClick={(event) => event.stopPropagation()}
+          className="group relative block"
+        >
+          {cardBody}
+        </div>
+      )}
+    </motion.div>
+  );
+}
+
+export function IntroScene() {
+  const reducedMotion = useReducedMotion() ?? false;
+  const viewport = useViewportSize();
+  const [isBrandVisible, setIsBrandVisible] = useState(false);
 
   return (
     <motion.section
       aria-label="DefaultTaste intro presentation"
-      onClick={handleToggle}
+      onClick={() => setIsBrandVisible((visible) => !visible)}
       className="relative isolate flex min-h-screen cursor-pointer items-center justify-center overflow-hidden bg-background px-4 py-6 text-foreground select-none sm:px-6 lg:px-10"
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_22%,rgba(0,120,111,0.18),transparent_28%),radial-gradient(circle_at_50%_50%,rgba(0,120,111,0.08),transparent_42%),radial-gradient(circle_at_50%_92%,rgba(0,120,111,0.12),transparent_32%)]"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,rgba(0,120,111,0.1),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f7f8f4_100%)]"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(232,232,227,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(232,232,227,0.45)_1px,transparent_1px)] bg-[size:4.75rem_4.75rem] [mask-image:radial-gradient(circle_at_center,black,transparent_88%)]"
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent"
       />
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-1/2 size-[18rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/12 blur-3xl sm:size-[26rem]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute left-1/2 top-1/2 size-[18rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/10 sm:size-[24rem]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute left-1/2 top-1/2 size-[13rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/12 sm:size-[18rem]"
-      />
-
-      <div
-        aria-hidden="true"
-        className="absolute inset-[13%_22%] hidden rounded-[2.75rem] border border-primary/8 bg-background/35 sm:block"
+        className="absolute left-1/2 top-1/2 size-[18rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-3xl sm:size-[24rem]"
       />
 
       {introTweets.map((tweet) => (
-        <div
+        <FloatingTweetCard
           key={tweet.id}
-          className={cn("absolute z-10", tweet.anchorClassName)}
-        >
-          <motion.a
-            href={tweet.href}
-            target="_blank"
-            rel="noreferrer"
-            onClick={(event) => event.stopPropagation()}
-            className={cn(
-              "group relative block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-              tweet.widthClassName,
-            )}
-            aria-label="Open original tweet on X"
-          >
-            <motion.div
-              animate={
-                reducedMotion
-                  ? undefined
-                  : {
-                      x: tweet.drift.x,
-                      y: tweet.drift.y,
-                      rotate: tweet.drift.rotate,
-                    }
-              }
-              transition={
-                reducedMotion
-                  ? undefined
-                  : {
-                      duration: tweet.drift.duration,
-                      delay: tweet.drift.delay,
-                      repeat: Infinity,
-                      repeatType: "mirror",
-                      ease: "easeInOut",
-                    }
-              }
-              className="will-change-transform"
-            >
-              <div className="overflow-hidden rounded-[1.55rem] border border-border/85 bg-card/95 shadow-[0_28px_64px_rgba(12,12,9,0.08)] backdrop-blur-[2px] transition-transform duration-300 group-hover:scale-[1.01]">
-                <Image
-                  src={tweet.src}
-                  alt={tweet.alt}
-                  width={tweet.width}
-                  height={tweet.height}
-                  priority
-                  sizes="(max-width: 640px) 38vw, (max-width: 1024px) 24vw, 16vw"
-                  className="h-auto w-full object-contain"
-                />
-              </div>
-            </motion.div>
-          </motion.a>
-        </div>
+          tweet={tweet}
+          reducedMotion={reducedMotion}
+          viewport={viewport}
+        />
       ))}
 
-      <div className="pointer-events-none relative z-20 flex items-center justify-center px-6">
+      <div className="pointer-events-none relative z-30 flex items-center justify-center px-6">
         <motion.div
           initial={false}
           animate={
             isBrandVisible
-              ? {
-                  opacity: 1,
-                  scale: 1,
-                  y: 0,
-                  filter: "blur(0px)",
-                }
-              : {
-                  opacity: 0,
-                  scale: 0.97,
-                  y: 8,
-                  filter: "blur(10px)",
-                }
+              ? { opacity: 1, scale: 1, y: 0 }
+              : { opacity: 0, scale: 0.98, y: 8 }
           }
           transition={
             reducedMotion
               ? { duration: 0.12 }
-              : { duration: 0.45, ease: [0.22, 1, 0.36, 1] }
+              : { duration: 0.42, ease: [0.22, 1, 0.36, 1] }
           }
           className="relative flex flex-col items-center"
         >
           <div
             aria-hidden="true"
-            className="absolute inset-x-[-1.5rem] inset-y-[-1rem] rounded-[2rem] border border-border/60 bg-background/88 shadow-[0_22px_60px_rgba(12,12,9,0.06)] backdrop-blur-md"
+            className="absolute inset-x-[-7rem] inset-y-[-5.5rem] bg-[radial-gradient(circle_at_50%_44%,rgba(0,120,111,0.1),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f7f8f4_100%)] blur-2xl [mask-image:radial-gradient(ellipse_at_center,black_0%,black_42%,transparent_80%)]"
           />
-          <div
-            aria-hidden="true"
-            className="absolute inset-x-6 inset-y-2 rounded-[1.7rem] bg-[radial-gradient(circle_at_50%_10%,rgba(0,120,111,0.18),transparent_62%)]"
-          />
-          <div className="relative px-8 py-7 sm:px-10 sm:py-8">
+          <div className="relative px-6 py-5 sm:px-8 sm:py-6">
             <BrandLockup
               centered
-              markClassName="size-16 drop-shadow-[0_14px_28px_rgba(0,120,111,0.12)] sm:size-20 lg:size-24"
-              wordmarkClassName="text-[2.7rem] leading-none sm:text-[4rem] lg:text-[5rem]"
+              className="drop-shadow-[0_12px_28px_rgba(0,120,111,0.08)]"
+              markClassName="size-[4.5rem] sm:size-[5.5rem] lg:size-[6rem]"
+              wordmarkClassName="text-[3rem] leading-none sm:text-[4.5rem] lg:text-[5.75rem]"
             />
           </div>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={false}
-        animate={
-          hasInteracted
-            ? { opacity: 0, y: 10 }
-            : { opacity: 1, y: 0 }
-        }
-        transition={{ duration: 0.3, ease: "easeOut" }}
-        className="pointer-events-none absolute bottom-5 left-1/2 z-30 -translate-x-1/2 rounded-full border border-border/75 bg-background/88 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-muted-foreground shadow-[0_8px_24px_rgba(12,12,9,0.04)] backdrop-blur md:bottom-7"
-      >
-        Click to reveal
-      </motion.div>
     </motion.section>
   );
 }

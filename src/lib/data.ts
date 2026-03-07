@@ -135,3 +135,4 @@ export async function getHomepageAgentSummaries(): Promise<AgentSummary[]> {
 
   return profiles.map(toAgentSummary);
 }
+

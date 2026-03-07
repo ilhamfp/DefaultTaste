@@ -3,11 +3,12 @@ import { cn } from "@/lib/utils";
 import { BrandLockup } from "./brand-lockup";
 
 type SiteHeaderProps = {
-  current?: "docs" | "about";
+  current?: "docs" | "about" | "visual-reports";
   compact?: boolean;
 };
 
 const navItems = [
+  { href: "/visual-reports", label: "Visual Reports", key: "visual-reports" },
   { href: "/docs", label: "Documentation", key: "docs" },
   { href: "/about", label: "About", key: "about" },
 ] as const;

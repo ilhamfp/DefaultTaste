@@ -51,7 +51,6 @@ export default async function Home() {
             </h2>
             <div className="h-px w-10 bg-border sm:w-16" />
           </div>
-
           <AgentCarousel agents={agents} />
         </div>
       </section>

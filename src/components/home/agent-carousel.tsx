@@ -28,7 +28,7 @@ export function AgentCarousel({ agents }: AgentCarouselProps) {
               key={agent.id}
               agent={agent}
               density="compact"
-              className="w-[14rem] shrink-0 sm:w-[14.5rem]"
+              className="w-[16rem] shrink-0 sm:w-[17rem]"
             />
           ))}
         </div>

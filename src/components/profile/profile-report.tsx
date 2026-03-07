@@ -27,6 +27,7 @@ import {
   ColorPaletteGrid,
   PhilosophyScale,
 } from "@/components/profile/visual-components";
+import { ArtifactsGrid } from "@/components/profile/ArtifactsViewer";
 import type { AgentProfile, ArtifactEntry } from "@/lib/types";
 
 const CHART_COLORS = [
@@ -421,6 +422,15 @@ export function formatProfileDate(value: string) {
   );
 }
 
+type ProfileTab = "report" | "artifacts";
+
+const tabButtonClass = (active: boolean) =>
+  `px-4 py-2 text-sm transition-colors border-b-2 ${
+    active
+      ? "border-primary font-medium text-primary"
+      : "border-transparent text-muted-foreground hover:text-foreground"
+  }`;
+
 export function ProfileReport({
   profile,
   backLabel,
@@ -432,14 +442,17 @@ export function ProfileReport({
 }) {
   const reducedMotion = useReducedMotion() ?? false;
   const [artifacts, setArtifacts] = useState<ArtifactEntry[]>([]);
+  const [activeTab, setActiveTab] = useState<ProfileTab>("report");
+
+  const isWebsite = profile.probe_type === "website";
 
   useEffect(() => {
-    if (profile.probe_type !== "website") return;
+    if (!isWebsite) return;
     fetch(`/api/artifacts/${profile.id}`)
       .then((res) => (res.ok ? res.json() : []))
       .then(setArtifacts)
       .catch(() => {});
-  }, [profile.id, profile.probe_type]);
+  }, [profile.id, isWebsite]);
 
   // Sample thumbnails for hero
   const sampleArtifacts = (() => {
@@ -524,67 +537,93 @@ export function ProfileReport({
         <div className="mt-6 border-b border-border" />
       </section>
 
-      {profile.website_profile && (
-        <WebsiteProfileView profile={profile} reducedMotion={reducedMotion} artifacts={artifacts} />
-      )}
-      {profile.music_profile && (
-        <MusicProfileView profile={profile} reducedMotion={reducedMotion} />
-      )}
+      {/* Tabbed layout for website profiles */}
+      {isWebsite ? (
+        <div>
+          {/* Top tabs */}
+          <nav className="mb-6 flex gap-1 border-b border-border">
+            <button
+              onClick={() => setActiveTab("report")}
+              className={tabButtonClass(activeTab === "report")}
+            >
+              Report
+            </button>
+            <button
+              onClick={() => setActiveTab("artifacts")}
+              className={tabButtonClass(activeTab === "artifacts")}
+            >
+              Artifacts
+              {artifacts.length > 0 && (
+                <span className="ml-1.5 font-mono text-xs text-muted-foreground">
+                  {artifacts.length}
+                </span>
+              )}
+            </button>
+          </nav>
 
-      <motion.div
-        initial={reducedMotion ? false : "hidden"}
-        animate={reducedMotion ? undefined : "visible"}
-        variants={fadeUp}
-        custom={10}
-        className="mt-8"
-      >
-        <div className={sectionClass}>
-          <div className="mb-4 flex items-center justify-between gap-4">
-            <h2 className={labelClass}>Correction Prompt</h2>
-            <CopyButton text={profile.correction_prompt} />
-          </div>
-          <div className="rounded-xl border border-border bg-muted/60 p-4">
-            <pre className="font-mono text-sm whitespace-pre-wrap leading-relaxed text-foreground">
-              {profile.correction_prompt}
-            </pre>
+          {/* Tab content */}
+          <div>
+            {activeTab === "report" && (
+              <>
+                <WebsiteProfileView
+                  profile={profile}
+                  reducedMotion={reducedMotion}
+                  artifacts={artifacts}
+                />
+                <motion.div
+                  initial={reducedMotion ? false : "hidden"}
+                  animate={reducedMotion ? undefined : "visible"}
+                  variants={fadeUp}
+                  custom={10}
+                  className="mt-8"
+                >
+                  <div className={sectionClass}>
+                    <div className="mb-4 flex items-center justify-between gap-4">
+                      <h2 className={labelClass}>Neutral Prompt</h2>
+                      <CopyButton text={profile.correction_prompt} />
+                    </div>
+                    <div className="rounded-xl border border-border bg-muted/60 p-4">
+                      <pre className="font-mono text-sm whitespace-pre-wrap leading-relaxed text-foreground">
+                        {profile.correction_prompt}
+                      </pre>
+                    </div>
+                  </div>
+                </motion.div>
+              </>
+            )}
+
+            {activeTab === "artifacts" && (
+              <ArtifactsGrid artifacts={artifacts} agentId={profile.id} />
+            )}
           </div>
         </div>
-      </motion.div>
+      ) : (
+        <>
+          {profile.music_profile && (
+            <MusicProfileView profile={profile} reducedMotion={reducedMotion} />
+          )}
 
-      <motion.div
-        initial={reducedMotion ? false : "hidden"}
-        animate={reducedMotion ? undefined : "visible"}
-        variants={fadeUp}
-        custom={11}
-        className="mt-6"
-      >
-        <h2 className={`${labelClass} mb-4`}>Before & After Correction</h2>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <div className="rounded-xl border border-rose-200 bg-rose-50/80 p-6">
-            <p className="text-xs uppercase tracking-[0.24em] text-rose-700">
-              Default Output
-            </p>
-            <div className="mt-3 flex min-h-[120px] items-center justify-center rounded-xl border border-rose-200 bg-white p-4">
-              <p className="text-sm italic text-muted-foreground">
-                Demo asset pending. This will show the default{" "}
-                {profile.probe_type === "website" ? "website" : "audio"} output.
-              </p>
+          <motion.div
+            initial={reducedMotion ? false : "hidden"}
+            animate={reducedMotion ? undefined : "visible"}
+            variants={fadeUp}
+            custom={10}
+            className="mt-8"
+          >
+            <div className={sectionClass}>
+              <div className="mb-4 flex items-center justify-between gap-4">
+                <h2 className={labelClass}>Neutral Prompt</h2>
+                <CopyButton text={profile.correction_prompt} />
+              </div>
+              <div className="rounded-xl border border-border bg-muted/60 p-4">
+                <pre className="font-mono text-sm whitespace-pre-wrap leading-relaxed text-foreground">
+                  {profile.correction_prompt}
+                </pre>
+              </div>
             </div>
-          </div>
-
-          <div className="rounded-xl border border-emerald-200 bg-emerald-50/80 p-6">
-            <p className="text-xs uppercase tracking-[0.24em] text-emerald-700">
-              Corrected Output
-            </p>
-            <div className="mt-3 flex min-h-[120px] items-center justify-center rounded-xl border border-emerald-200 bg-white p-4">
-              <p className="text-sm italic text-muted-foreground">
-                Demo asset pending. This will show the corrected{" "}
-                {profile.probe_type === "website" ? "website" : "audio"} output.
-              </p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
+          </motion.div>
+        </>
+      )}
 
       <footer className="mt-10 border-t border-border pt-6">
         <div className="flex flex-col gap-2 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">

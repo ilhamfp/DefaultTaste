@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import type { ArtifactEntry } from "@/lib/types";
 
-const PER_PAGE = 9;
+const PER_PAGE = 12;
 
 function ArtifactCard({
   artifact,
@@ -135,43 +135,130 @@ function ArtifactModal({
   );
 }
 
-export function ArtifactsViewer({ agentId }: { agentId: string }) {
-  const [artifacts, setArtifacts] = useState<ArtifactEntry[]>([]);
-  const [loading, setLoading] = useState(true);
+const selectClass =
+  "rounded-lg border border-border bg-card px-2.5 py-1.5 text-xs text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+
+function FilterSelect({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  options: string[];
+  onChange: (v: string) => void;
+}) {
+  return (
+    <select
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className={selectClass}
+      aria-label={label}
+    >
+      <option value="">{label}</option>
+      {options.map((opt) => (
+        <option key={opt} value={opt}>
+          {opt}
+        </option>
+      ))}
+    </select>
+  );
+}
+
+export function ArtifactsGrid({
+  artifacts,
+  agentId,
+}: {
+  artifacts: ArtifactEntry[];
+  agentId: string;
+}) {
+  const [themeFilter, setThemeFilter] = useState("");
+  const [layoutFilter, setLayoutFilter] = useState("");
+  const [fontFilter, setFontFilter] = useState("");
   const [page, setPage] = useState(0);
   const [expanded, setExpanded] = useState<ArtifactEntry | null>(null);
+  const handleClose = useCallback(() => setExpanded(null), []);
 
-  useEffect(() => {
-    fetch(`/api/artifacts/${agentId}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed");
-        return res.json();
-      })
-      .then((data) => {
-        setArtifacts(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, [agentId]);
+  const uniqueThemes = useMemo(
+    () => [...new Set(artifacts.map((a) => a.theme))].sort(),
+    [artifacts],
+  );
+  const uniqueLayouts = useMemo(
+    () => [...new Set(artifacts.map((a) => a.layout_type))].sort(),
+    [artifacts],
+  );
+  const uniqueFonts = useMemo(
+    () => [...new Set(artifacts.map((a) => a.primary_font))].sort(),
+    [artifacts],
+  );
 
-  const totalPages = Math.ceil(artifacts.length / PER_PAGE);
-  const pageArtifacts = artifacts.slice(
+  const filtered = useMemo(() => {
+    return artifacts.filter((a) => {
+      if (themeFilter && a.theme !== themeFilter) return false;
+      if (layoutFilter && a.layout_type !== layoutFilter) return false;
+      if (fontFilter && a.primary_font !== fontFilter) return false;
+      return true;
+    });
+  }, [artifacts, themeFilter, layoutFilter, fontFilter]);
+
+  // Reset page when filters change
+  useEffect(() => setPage(0), [themeFilter, layoutFilter, fontFilter]);
+
+  const totalPages = Math.ceil(filtered.length / PER_PAGE);
+  const pageArtifacts = filtered.slice(
     page * PER_PAGE,
     (page + 1) * PER_PAGE,
   );
 
-  const handleClose = useCallback(() => setExpanded(null), []);
+  const hasFilters = themeFilter || layoutFilter || fontFilter;
 
-  if (loading) {
+  if (artifacts.length === 0) {
     return (
-      <p className="text-sm text-muted-foreground">Loading artifacts...</p>
+      <p className="text-sm text-muted-foreground">No artifacts available.</p>
     );
   }
 
-  if (artifacts.length === 0) return null;
-
   return (
     <div>
+      {/* Filters */}
+      <div className="mb-5 flex flex-wrap items-center gap-2">
+        <FilterSelect
+          label="All themes"
+          value={themeFilter}
+          options={uniqueThemes}
+          onChange={setThemeFilter}
+        />
+        <FilterSelect
+          label="All layouts"
+          value={layoutFilter}
+          options={uniqueLayouts}
+          onChange={setLayoutFilter}
+        />
+        <FilterSelect
+          label="All fonts"
+          value={fontFilter}
+          options={uniqueFonts}
+          onChange={setFontFilter}
+        />
+        {hasFilters && (
+          <button
+            onClick={() => {
+              setThemeFilter("");
+              setLayoutFilter("");
+              setFontFilter("");
+            }}
+            className="text-xs text-primary transition-colors hover:text-primary/80"
+          >
+            Clear filters
+          </button>
+        )}
+        <span className="ml-auto font-mono text-xs text-muted-foreground">
+          {filtered.length} artifact{filtered.length !== 1 ? "s" : ""}
+        </span>
+      </div>
+
+      {/* Grid */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {pageArtifacts.map((artifact) => (
           <ArtifactCard
@@ -182,6 +269,12 @@ export function ArtifactsViewer({ agentId }: { agentId: string }) {
           />
         ))}
       </div>
+
+      {filtered.length === 0 && (
+        <p className="py-12 text-center text-sm text-muted-foreground">
+          No artifacts match the selected filters.
+        </p>
+      )}
 
       {totalPages > 1 && (
         <div className="mt-5 flex items-center justify-center gap-3">

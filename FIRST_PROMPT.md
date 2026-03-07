@@ -1,6 +1,4 @@
-# FIRST_PROMPT.md — Copy this into Claude Code to bootstrap the project
-
-Copy everything below the line into Claude Code as your first prompt.
+# FIRST_PROMPT.md — Copy everything below the line into Claude Code
 
 ---
 
@@ -12,76 +10,120 @@ Read CLAUDE.md, ARCHITECTURE.md, TASKS.md, and BRAND_GUIDELINES.md carefully. Th
 - Create a Next.js project with TypeScript, Tailwind, App Router, src directory
 - Install: shadcn/ui (New York style, Zinc base, CSS variables), recharts, framer-motion
 - Add shadcn components: button, card, badge, progress, tabs, separator
-- Set up JetBrains Mono (via next/font/google) and Instrument Serif (via Google Fonts CDN in layout)
-- Configure the dark theme in layout.tsx and globals.css per BRAND_GUIDELINES.md
-- Add the grain overlay CSS from BRAND_GUIDELINES.md
+- Set up both fonts via next/font/google:
+  - JetBrains Mono (weights: 300, 400, 500, 700) as `--font-mono`
+  - Instrument Serif (weight: 400, styles: normal + italic) as `--font-serif`
+- Apply both font variables to the body element
+- Configure layout.tsx: NO dark class on html. Body classes: `font-mono antialiased` with custom background color `#FAFAF7`
+- In globals.css: set the paper texture background on body per BRAND_GUIDELINES.md (the SVG noise with background-blend-mode: overlay on #FAFAF7)
+- Override shadcn's default theme to use stone colors for borders and warm cream for backgrounds
 
 ### 2. Directory structure
-Create all directories per ARCHITECTURE.md: scripts/, data/ (with subdirs), src/components/landing/, src/components/profile/, src/lib/, src/app/agent/[agentId]/, src/app/api/profile/[agentId]/
+Create all directories per ARCHITECTURE.md: scripts/, data/ (with all subdirs), src/components/landing/, src/components/profile/, src/lib/, src/app/agent/[agentId]/, src/app/api/profile/[agentId]/
 
 ### 3. Core lib files
 - `src/lib/types.ts` — Full TypeScript interfaces for WebsiteProfile, MusicProfile, BpmStats, TasteEntry, ColorEntry, AgentProfile per ARCHITECTURE.md
-- `src/lib/mock.ts` — Complete mock data for both agents (Gemini Flash + Lyria) with realistic numbers from the research. Use the exact mock data from TASKS.md Task 2
-- `src/lib/data.ts` — Data loading utility that reads from data/ directory and falls back to mock
+- `src/lib/mock.ts` — Complete mock data for both agents with realistic numbers. Gemini Flash: React 78%, Tailwind 65%, Inter 62%, purple colors dominant, dark mode 72%, landing-page 55%. Lyria: avg BPM 118.5, key of C 35%, pop 35%, electronic 25%, Western origin 85%, synth pads 70%.
+- `src/lib/data.ts` — Data loading utility: reads from data/ directory, falls back to mock
 
 ### 4. API route
-- `src/app/api/profile/[agentId]/route.ts` — GET route that returns agent profile JSON using data.ts
+- `src/app/api/profile/[agentId]/route.ts` — GET handler returning agent profile JSON
 
 ### 5. Landing page (`src/app/page.tsx`)
-Build the full landing page per BRAND_GUIDELINES.md. This is the most important page for first impressions:
+Build the full landing page. This is a PLATFORM landing page, not a simple demo. Follow BRAND_GUIDELINES.md exactly:
 
-- **Hero section**: Large "DefaultTaste" wordmark (Instrument Serif, "Default" in zinc-50, "Taste" in amber-600). Below it: "Your AI has taste. You just don't know it yet." in text-xl text-zinc-400. Below that: a stat line like "We probed Gemini 100 times. Here's what we found." with the "100" animated as a count-up.
+**Hero section:**
+- "DefaultTaste" wordmark: Instrument Serif. "Default" in text-stone-900, "Taste" in text-amber-600. text-5xl or text-6xl.
+- Below: *"Your AI has taste. You just don't know it yet."* in Instrument Serif italic, text-xl, text-stone-500.
+- Below: "We probed Gemini 100 times. Here's what we found." with the number "100" wrapped in `<span className="bg-amber-100 px-1">100</span>` for highlighter effect, and animated with a count-up from 0.
+- Left-aligned. NOT centered. No hero image.
 
-- **Agent cards section**: Two cards side by side linking to /agent/gemini-flash and /agent/lyria. Each card shows: agent name, model, probe count, 2-3 key stats pulled from mock data (e.g., "React: 78%" or "Pop: 35%, 120 BPM"). Plus a ghost "Add Agent +" card with dashed border. Cards use: bg-zinc-900 border border-zinc-800 rounded-sm p-6. Hover: border-zinc-700.
+**Agent cards section:**
+- Section label: `text-xs uppercase tracking-widest text-stone-500` saying "AGENT PROFILES"
+- Two cards side by side (grid cols-2 on desktop) linking to /agent/gemini-flash and /agent/lyria.
+  - Each card: `bg-white border border-stone-200 rounded-sm p-6 hover:border-stone-300 transition-colors`
+  - Card content: agent name in font-mono text-lg font-medium, model name in text-stone-500, probe count, and 2-3 key stat previews (e.g., "React: 78%" in amber-600)
+  - A subtle `border-t-2 border-t-amber-600` on the top edge of each card
+- Plus a ghost "Add Agent" card: `border border-dashed border-stone-300 rounded-sm p-6` with a + icon and "Add Agent" text in stone-400
 
-- **Platform concept section**: A non-functional form that shows the vision: text input labeled "AGENT ENDPOINT" with placeholder "wss://your-agent-endpoint...", a dropdown for "REST / WebSocket", a number input for probe count, and an amber "Start Probing" button. Below it, small text: "Supports any agent that accepts a prompt and returns a response." This doesn't need to work — it's conceptual.
+**Platform concept section:**
+- A form-like area (non-functional, shows the vision):
+  - Label "AGENT ENDPOINT" (uppercase tracked stone-500) above a text input with placeholder "wss://your-agent-endpoint..."
+  - Below: a row with select dropdown ("REST" / "WebSocket"), number input for runs (default "100"), and an amber button "Start Probing"
+  - Below the form: "Supports any agent that accepts a prompt and returns a response." in text-xs text-stone-400
+- All inputs styled with: `bg-white border border-stone-200 rounded-sm` — NOT default browser styling
 
-- **Defaults ticker**: A horizontal scrolling marquee at the bottom with stats: "React: 78% · Inter: 62% · Purple: 45% · Tailwind: 65% · Dark Mode: 72% · Pop: 35% · 120 BPM · Key of C · Western: 85%". Use CSS animation for the scroll. Monospace, text-xs, text-zinc-500, with amber highlights on the percentages.
+**Defaults ticker (bottom):**
+- A horizontally scrolling marquee: "React: 78% · Inter: 62% · Purple: 45% · Tailwind: 65% · Dark Mode: 72% · Pop: 35% · 120 BPM · Key of C · Western: 85%"
+- Use CSS animation (translateX) for infinite scroll. Duplicate the text for seamless loop.
+- Monospace, text-xs, text-stone-400. Percentages in text-amber-600.
+- Contained in a div with `border-t border-stone-200` as a separator, `py-4`
 
-- All entrance animations via Framer Motion: stagger in from below, 0.08s delay per element.
+**Animations:**
+- All elements stagger in via Framer Motion: `initial={{ opacity: 0, y: 16 }}` → `animate={{ opacity: 1, y: 0 }}` with `delay: index * 0.08`, `duration: 0.4`, `ease: "easeOut"`
 
 ### 6. Agent profile page (`src/app/agent/[agentId]/page.tsx`)
-Build the full agent profile page. Fetch data from /api/profile/[agentId].
+Build the full profile page. Fetch data client-side from /api/profile/[agentId] using useEffect + useState.
 
-- **Header**: Agent name (Instrument Serif, text-4xl), model name in zinc-400, probe count, timestamp. Left-aligned, not centered.
+**Header:**
+- Agent name: Instrument Serif, text-4xl, text-stone-900, left-aligned
+- Below: model version + probe count + date. text-sm text-stone-500. Font mono.
+- A dashed divider below: `border-t border-dashed border-stone-300 my-8`
 
-- **For gemini-flash (website_profile)**: 
-  - Framework bar chart (horizontal, Recharts, CHART_COLORS from brand guidelines)
-  - CSS framework bar chart
-  - Color swatches grid (square swatches with hex codes below, rounded-sm not rounded-full)
-  - Font badges (Badge component, top font gets default variant, rest get secondary)
-  - Layout type pie chart (Recharts)
-  - Library badges
-  - Dark mode percentage (large stat number)
+**For gemini-flash (when website_profile exists):**
+- Section label: "WEB GENERATION DEFAULTS" — text-xs uppercase tracking-widest text-stone-500
+- Grid of cards (2 cols desktop):
+  - **Framework**: horizontal BarChart (Recharts, layout="vertical"). XAxis percentage, YAxis category. Use CHART_COLORS. Contained in white card with border.
+  - **CSS Framework**: same style horizontal BarChart
+  - **Color Palette**: grid of square color swatches. Each swatch is a div with the hex background, rounded-sm, border-stone-200 border. Hex code in mono below. Count below that.
+  - **Fonts**: Badge components. First font gets a badge with `bg-amber-100 text-amber-800 border-amber-200`. Rest get `bg-stone-100 text-stone-600`. Show percentage after each.
+  - **Layout Type**: PieChart (Recharts). Use CHART_COLORS.
+  - **Libraries**: badges like fonts.
+  - **Dark Mode**: A big stat card. "72%" huge, "Dark Mode Default" label.
 
-- **For lyria (music_profile)**:
-  - BPM: three big numbers (average, median, ±std_dev) + histogram bar chart
-  - Key distribution pie chart
-  - Genre horizontal bar chart
-  - Mood badges
-  - Instrument badges
-  - Cultural origin horizontal bar chart
-  - Brightness + density as labeled gauges or stat numbers
+**For lyria (when music_profile exists):**
+- Section label: "MUSIC GENERATION DEFAULTS"
+- Grid of cards:
+  - **BPM**: Three big numbers (average, median, ±std_dev) in a row. Below: BarChart histogram of BPM distribution.
+  - **Key Signature**: PieChart
+  - **Genre**: horizontal BarChart
+  - **Mood**: badges (like font badges)
+  - **Instruments**: badges, sorted by frequency
+  - **Cultural Origin**: horizontal BarChart (this is the most important finding — 85% Western)
+  - **Brightness + Density**: Two stat numbers side by side with text labels ("warm", "moderate")
 
-- **Correction prompt section**: Display the negation_prompt in a pre/code block with bg-zinc-900 border. "Copy" button that copies to clipboard.
+**Correction prompt section:**
+- Dashed divider above
+- Section label "CORRECTION PROMPT"
+- The negation_prompt displayed in: `bg-stone-50 border border-stone-200 rounded-sm p-4 font-mono text-sm text-stone-700 whitespace-pre-wrap`
+- A "Copy" button (amber ghost style) that copies to clipboard, shows "Copied!" for 2 seconds
 
-- **Before/After section**: For gemini-flash: two side-by-side cards, left "DEFAULT" (red-600 label) with an iframe placeholder, right "CORRECTED" (green-600 label) with an iframe placeholder. For lyria: same layout but with audio player placeholders. Show mock metadata below each (framework/colors for web, BPM/key/genre for music).
+**Before/After section:**
+- Section label "BEFORE / AFTER"
+- Two cards side by side:
+  - Left: `bg-red-50 border border-red-200 rounded-sm p-4`. Label "DEFAULT" in text-red-600 text-xs uppercase tracking-widest. An iframe placeholder or audio player placeholder inside.
+  - Right: `bg-green-50 border border-green-200 rounded-sm p-4`. Label "CORRECTED" in text-green-600 text-xs uppercase tracking-widest. Same placeholder.
+  - Below each: metadata in text-xs text-stone-500 (framework + colors for web, BPM + key + genre for music)
 
-- All sections animate in with Framer Motion stagger.
+**Animations:** All cards stagger in with Framer Motion, 0.08s delay each.
 
-### 7. .env.example and .gitignore
-Create .env.example with GEMINI_API_KEY placeholder. Create .gitignore that ignores node_modules, .next, .env.local, data/websites/raw/, data/music/raw/ but NOT data/*/profile.json or data/negation/ or data/demo/.
+### 7. Utility files
+- `.env.example` with `GEMINI_API_KEY=` placeholder
+- `.gitignore`: node_modules, .next, .env.local, data/websites/raw/, data/music/raw/ (but NOT data/*/profile.json, data/negation/, data/demo/)
 
-## Design rules (non-negotiable)
+## Non-negotiable design rules
+
 Follow BRAND_GUIDELINES.md exactly:
-- Dark theme only (bg-zinc-950 page background)
-- Amber-600 accent, used sparingly
-- JetBrains Mono for all data/body, Instrument Serif for headlines only
-- Sharp corners (rounded-sm max), borders not shadows
-- Labels: text-xs uppercase tracking-widest text-zinc-500
-- Stat numbers: text-5xl font-bold text-zinc-50
-- Chart colors: ["#D97706", "#A1A1AA", "#EA580C", "#52525B", "#FBBF24", "#78716C"]
-- NEVER use purple, Inter, rounded-lg, shadow-lg, light backgrounds, centered hero+CTA layouts
-- Add the grain overlay CSS on body
+- Warm cream page background: `bg-[#FAFAF7]` with paper texture CSS
+- White cards: `bg-white border border-stone-200 rounded-sm`
+- Text: stone-900, stone-600, stone-400 scale
+- Accent: amber-600 ONLY. Used sparingly.
+- Highlighter: bg-amber-100 on key numbers
+- Font: Instrument Serif for headlines, JetBrains Mono for everything else
+- Labels: text-xs uppercase tracking-widest text-stone-500
+- Stats: text-5xl font-bold text-stone-900
+- Sharp corners (rounded-sm), borders not shadows, left-aligned not centered
+- Chart colors: ["#D97706", "#57534E", "#EA580C", "#A8A29E", "#92400E", "#D6D3D1"]
+- NEVER: purple, Inter, dark mode, rounded-lg, shadow-lg, centered hero, gradient text, emojis
 
-Build everything. Make it production-grade and visually striking. This is a hackathon demo that needs to impress judges on creativity and originality.
+Build everything in one pass. Make it production-grade and visually striking. This is a hackathon demo — judges score creativity (35%) and live demo (45%). The design must be memorable and distinctly NOT look like AI-generated slop.

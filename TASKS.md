@@ -91,8 +91,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${mono.variable} font-mono antialiased bg-zinc-950 text-zinc-100`}>
+    <html lang="en">
+      <body className={`${mono.variable} font-mono antialiased bg-[#FAFAF7] text-stone-900`}>
         {children}
       </body>
     </html>
@@ -305,7 +305,7 @@ Key sections:
 4. **Platform concept** — Input field for "Plug in your agent endpoint", dropdown for REST/WebSocket, probe count slider. Non-functional but shows the vision.
 5. **Defaults ticker** — Animated marquee: "React: 78% | Inter: 62% | Purple: 45% | Pop: 35% | 120 BPM | Key of C"
 
-**Design direction** (per frontend-design SKILL): Dark theme (zinc-950), amber/orange accents (#F59E0B), JetBrains Mono, data-dense editorial feel, grain texture overlay, NO purple gradients or Inter font.
+**Design direction** (per BRAND_GUIDELINES.md): Warm light theme (cream #FAFAF7 background, white cards), amber-600 accents, Instrument Serif + JetBrains Mono, data-dense editorial feel, paper texture, sharp corners, borders not shadows. NO purple, Inter, dark mode, or rounded-lg.
 
 ---
 

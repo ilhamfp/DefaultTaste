@@ -287,13 +287,15 @@ This is the meat of the demo. It shows:
 
 ### 5.4 Design Language
 
-Following the frontend-design skill, avoid the AI slop aesthetic:
-- **No** purple gradients, Inter font, or generic SaaS layout
-- **Yes** to bold typography (try: JetBrains Mono for data, Instrument Serif for headings)
-- Dark theme with amber/orange accents (ironic nod to the "orange-teal AI default")
-- Data-dense, editorial feel — like a Bloomberg terminal meets a design magazine
-- Generous use of monospace for data labels and stats
-- Grain texture overlay for depth
+Following BRAND_GUIDELINES.md ("Data Broadsheet" aesthetic):
+- **No** purple gradients, Inter font, dark mode, or generic SaaS layout
+- **Yes** to bold typography: JetBrains Mono for data, Instrument Serif for headings
+- Warm light theme: cream background (#FAFAF7), white cards, stone borders — AI defaults to dark 72% of the time, we're bright on purpose
+- Amber-600 as the only accent color, used sparingly (key stats, CTAs)
+- Data-dense, editorial feel — like a Financial Times data page meets a scientific paper
+- Sharp corners (rounded-sm), borders not shadows, left-aligned not centered
+- Paper noise texture on body for warmth
+- Highlighter effect (bg-amber-100) on key numbers
 
 ---
 

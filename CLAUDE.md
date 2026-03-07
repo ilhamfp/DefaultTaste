@@ -20,7 +20,7 @@ Read these before writing any code:
 - **Frontend:** Next.js 15+ (App Router), TypeScript, Tailwind CSS, shadcn/ui, Framer Motion, Recharts
 - **Data Generation:** Python scripts (offline, not in API routes)
 - **APIs:** Google Gemini 2.5 Flash (text/code), Lyria RealTime (music via WebSocket)
-- **Fonts:** Instrument Serif (display), JetBrains Mono (data/body)
+- **Fonts:** Instrument Serif (display headlines), JetBrains Mono (data/body/everything else)
 - **Deployment:** Vercel
 
 ## Architecture Summary
@@ -39,19 +39,14 @@ Data generation and the frontend are decoupled. Python scripts run in terminal w
 defaulttaste/
 ├── scripts/              # Python data generation (offline)
 ├── data/                 # Generated artifacts (JSON + WAV)
-│   ├── websites/raw/     # 100 raw Gemini responses
-│   ├── websites/parsed/  # 100 analyzed results
-│   ├── websites/profile.json
-│   ├── music/audio/      # WAV files from Lyria
-│   ├── music/raw/        # Music generation metadata
-│   ├── music/parsed/     # librosa + Gemini analysis
-│   ├── music/profile.json
+│   ├── websites/         # raw/, parsed/, profile.json
+│   ├── music/            # audio/, raw/, parsed/, profile.json
 │   ├── negation/         # Correction prompts
 │   └── demo/             # Before/after assets
 ├── src/
 │   ├── app/
 │   │   ├── page.tsx              # Landing page
-│   │   ├── agent/[agentId]/page.tsx  # Agent profile page
+│   │   ├── agent/[agentId]/      # Agent profile page
 │   │   └── api/                  # Minimal API routes
 │   ├── components/
 │   │   ├── landing/              # Hero, AgentCard, ProbeInput, Ticker
@@ -67,91 +62,71 @@ defaulttaste/
 
 **Read `BRAND_GUIDELINES.md` in full before writing any frontend code.**
 
-### Quick reference for every component you build:
+### Theme: Warm Light Editorial ("Data Broadsheet")
 
-**Colors:**
-- Background: `bg-zinc-950` (page), `bg-zinc-900` (cards), `bg-zinc-800` (elevated)
-- Accent: `text-amber-600`, `bg-amber-600` — used sparingly for key stats and CTAs only
-- Text: `text-zinc-50` (primary), `text-zinc-400` (secondary), `text-zinc-500` (labels)
-- Borders: `border-zinc-800` (default), `border-zinc-700` (hover)
-- Chart colors: `["#D97706", "#A1A1AA", "#EA580C", "#52525B", "#FBBF24", "#78716C"]`
+This is a LIGHT theme. Warm cream background, white cards, sharp black ink, amber accents. Think Financial Times meets scientific paper. AI defaults to dark mode 72% of the time — we're bright on purpose.
 
-**Typography:**
-- Headlines: Instrument Serif (loaded via Google Fonts), `font-serif`
-- Everything else: JetBrains Mono, `font-mono`
-- Labels: `text-xs uppercase tracking-widest text-zinc-500`
-- Stat numbers: `text-5xl font-bold text-zinc-50`
-- The number is always the hero. "78%" is huge. "Framework" is tiny.
+### Colors (quick ref):
 
-**Layout:**
-- Cards: `bg-zinc-900 border border-zinc-800 rounded-sm p-6` — SHARP corners, never rounded-lg
-- Borders not shadows. Never use `shadow-lg` or `shadow-xl`.
-- Dense, data-first. No decorative whitespace.
-- Max width: `max-w-7xl mx-auto`
+- Page background: `bg-[#FAFAF7]` (warm cream, NOT pure white)
+- Cards: `bg-white border border-stone-200 rounded-sm p-6`
+- Text: `text-stone-900` (primary), `text-stone-600` (secondary), `text-stone-400` (ghost)
+- Labels: `text-xs uppercase tracking-widest text-stone-500`
+- Accent: `text-amber-600`, `bg-amber-600` — sparingly, for key stats and CTAs
+- Highlighter: `bg-amber-100 px-1` on key numbers (1-2 per section max)
+- Chart colors: `["#D97706", "#57534E", "#EA580C", "#A8A29E", "#92400E", "#D6D3D1"]`
+- Before card: `bg-red-50 border-red-200`
+- After card: `bg-green-50 border-green-200`
 
-**Motion (Framer Motion):**
-- Stagger entrance: `initial={{ opacity: 0, y: 20 }}` → `animate={{ opacity: 1, y: 0 }}` with `delay: index * 0.08`
-- Duration: 0.4s for cards, 0.3s for small elements
-- Easing: `easeOut` only. No springs, no bounces.
+### Typography:
 
-### NEVER use these (they are the AI defaults we're exposing):
+- Headlines: Instrument Serif (`font-serif`), regular weight, stone-900
+- Tagline: Instrument Serif italic, stone-500
+- Everything else: JetBrains Mono (`font-mono`)
+- Stat numbers: `text-5xl font-bold text-stone-900` — always the hero
+- Labels: `text-xs uppercase tracking-widest text-stone-500`
 
-- ❌ Purple/indigo colors (#6366F1, #8B5CF6, etc.)
-- ❌ Inter, Roboto, Space Grotesk, or system fonts
-- ❌ `rounded-lg`, `rounded-xl`, `rounded-2xl`
-- ❌ `shadow-lg`, `shadow-xl`, box shadows on cards
-- ❌ Light/white backgrounds
-- ❌ Centered hero → subtitle → CTA button pattern
+### Layout:
+
+- Sharp corners: `rounded-sm` max. NEVER `rounded-lg`.
+- Borders not shadows. NEVER `shadow-lg`.
+- Left-aligned, not centered.
+- Dense, data-first.
+
+### NEVER use (these are the AI defaults we expose):
+
+- ❌ Purple/indigo colors
+- ❌ Inter, Roboto, Space Grotesk fonts
+- ❌ Dark mode / dark backgrounds
+- ❌ `rounded-lg`, `rounded-xl`
+- ❌ Box shadows on cards
+- ❌ Centered hero + subtitle + CTA button layout
 - ❌ 3 feature cards in a row with icons
 - ❌ Gradient text
-- ❌ Emojis in UI text
+- ❌ Emojis in UI
 
 ### Logo:
-"Default" in `text-zinc-50` + "Taste" in `text-amber-600`. Instrument Serif font. That's it.
+"Default" in `text-stone-900` + "Taste" in `text-amber-600`. Instrument Serif.
 
 ## Two Pre-Built Agent Profiles
 
-The platform showcases two agents:
-
-1. **Gemini 2.5 Flash** (`agent_id: "gemini-flash"`) — Website code generation
-   - 100 probes of "Make me a website"
-   - Taste dimensions: framework, CSS framework, colors, fonts, layout type, libraries, dark mode %
-
-2. **Lyria RealTime** (`agent_id: "lyria"`) — Music generation
-   - 20 probes of vague music prompts
-   - Taste dimensions: BPM, key, genre, mood, instruments, cultural origin, brightness, density
+1. **Gemini 2.5 Flash** (`gemini-flash`) — 100 website probes. Dimensions: framework, CSS, colors, fonts, layout, libraries, dark mode %.
+2. **Lyria RealTime** (`lyria`) — 20 music probes. Dimensions: BPM, key, genre, mood, instruments, cultural origin, brightness, density.
 
 ## Routes
 
-| Route | What it shows |
-|-------|--------------|
-| `/` | Landing page: hero, agent cards, platform concept input |
-| `/agent/gemini-flash` | Gemini website taste profile + correction + before/after |
-| `/agent/lyria` | Lyria music taste profile + correction + before/after |
+| Route | What |
+|-------|------|
+| `/` | Landing page: hero, agent cards, platform concept |
+| `/agent/gemini-flash` | Website taste profile |
+| `/agent/lyria` | Music taste profile |
 | `/api/profile/[agentId]` | Returns agent profile JSON |
 
 ## Commands
 
 ```bash
-# Dev server
-npm run dev
-
-# Run generation scripts (Python, from project root)
-GEMINI_API_KEY=xxx python3 scripts/generate_websites.py
-GEMINI_API_KEY=xxx python3 scripts/generate_music.py
-GEMINI_API_KEY=xxx python3 scripts/analyze_websites.py
-GEMINI_API_KEY=xxx python3 scripts/analyze_music.py
-GEMINI_API_KEY=xxx python3 scripts/aggregate_websites.py
-GEMINI_API_KEY=xxx python3 scripts/aggregate_music.py
-
-# Deploy
-npx vercel
+npm run dev                                              # Dev server
+GEMINI_API_KEY=xxx python3 scripts/generate_websites.py  # Generate data
+GEMINI_API_KEY=xxx python3 scripts/generate_music.py     # Generate music
+npx vercel                                               # Deploy
 ```
-
-## Important Context
-
-- This is a hackathon. Speed over perfection. Ship a working demo.
-- The frontend should work with mock data immediately. Real data replaces mock when available.
-- The "plug in your agent" form on the landing page is conceptual — it shows the platform vision but doesn't need to actually connect to arbitrary endpoints for the hackathon.
-- The before/after demo is the climax. If time is short, prioritize making the before/after comparison visually dramatic.
-- Judges score: Impact (20%), Live Demo (45%), Creativity & Originality (35%). The demo matters most.

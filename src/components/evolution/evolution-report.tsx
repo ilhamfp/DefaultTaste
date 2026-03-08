@@ -82,7 +82,7 @@ function CompactDNA({
       {colors.map((color, i) => (
         <div
           key={`${color.hex}-${i}`}
-          className="group relative transition-all duration-300"
+          className="group relative"
           style={{ backgroundColor: color.hex, flexGrow: color.percentage }}
         >
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
@@ -146,6 +146,7 @@ function DeltaCard({
           {suffix}
         </span>
         <svg
+          aria-hidden="true"
           width="16"
           height="16"
           viewBox="0 0 16 16"
@@ -288,7 +289,7 @@ function HeroSection({
       </Reveal>
 
       <Reveal reducedMotion={reducedMotion} className="mt-6">
-        <h1 className="font-serif text-4xl tracking-tight text-foreground sm:text-5xl">
+        <h1 className="text-pretty font-serif text-4xl tracking-tight text-foreground sm:text-5xl">
           How Gemini Learned to Feel
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
@@ -828,7 +829,7 @@ function ArtifactTriptychSection({
       <Reveal reducedMotion={reducedMotion}>
         <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="font-serif text-2xl tracking-tight text-foreground sm:text-3xl">
+            <h2 className="text-pretty font-serif text-2xl tracking-tight text-foreground sm:text-3xl">
               Side by Side
             </h2>
             <p className="mt-1 text-sm text-muted-foreground">
@@ -846,12 +847,14 @@ function ArtifactTriptychSection({
 
       <Reveal reducedMotion={reducedMotion}>
         {/* Mobile: tab switcher */}
-        <div className="mb-4 flex gap-2 md:hidden">
+        <div className="mb-4 flex gap-2 md:hidden" role="tablist" aria-label="Model generation tabs">
           {MODEL_LABELS.map((label, i) => (
             <button
               key={label}
+              role="tab"
+              aria-selected={activeTab === i}
               onClick={() => setActiveTab(i)}
-              className={`flex-1 rounded-lg border px-2 py-1.5 font-mono text-xs transition-colors ${
+              className={`flex-1 rounded-lg border px-2 py-1.5 font-mono text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
                 activeTab === i
                   ? "border-primary/40 bg-primary/5 text-foreground"
                   : "border-border text-muted-foreground"
@@ -909,7 +912,7 @@ function ArtifactTriptychSection({
         </div>
 
         {/* Mobile: single view */}
-        <div className="md:hidden">
+        <div className="md:hidden" role="tabpanel">
           {profiles.map((p, i) => {
             if (i !== activeTab) return null;
             const artifact = selection[i];
@@ -990,7 +993,7 @@ function ConclusionSection({
             <Link
               key={persona.title}
               href={`/agent/${profiles[i].id}`}
-              className="group rounded-xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="group rounded-xl border border-border bg-card p-5 transition-[transform,border-color,box-shadow] hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <div className="mb-3 flex items-center gap-2">
                 <div

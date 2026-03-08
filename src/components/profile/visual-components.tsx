@@ -110,10 +110,10 @@ export function TasteDNA({
   return (
     <div className="overflow-hidden rounded-2xl border border-border">
       <div className="flex h-16 sm:h-20">
-        {colors.map((color) => (
+        {colors.map((color, index) => (
           <div
-            key={color.hex}
-            className="group relative transition-all duration-300 hover:brightness-110"
+            key={`${color.hex}-${color.name}-${index}`}
+            className="group relative transition-[filter] duration-300 hover:brightness-110"
             style={{
               backgroundColor: color.hex,
               flexGrow: color.percentage,
@@ -128,13 +128,14 @@ export function TasteDNA({
         ))}
       </div>
       <div className="flex flex-wrap items-center gap-3 border-t border-border bg-muted/30 px-4 py-2">
-        {colors.slice(0, 5).map((color) => {
+        {colors.slice(0, 5).map((color, index) => {
           const matching =
             artifacts?.filter((a) =>
               a.dominant_colors.some(
                 (c) => c.toLowerCase() === color.hex.toLowerCase(),
               ),
             ) ?? [];
+          const colorKey = `${color.hex}-${color.name}-${index}`;
 
           const inner = (
             <div className="flex cursor-default items-center gap-1.5">
@@ -150,14 +151,14 @@ export function TasteDNA({
 
           return artifacts && agentId && matching.length > 0 ? (
             <ArtifactHoverCard
-              key={color.hex}
+              key={colorKey}
               matching={matching}
               agentId={agentId}
             >
               {inner}
             </ArtifactHoverCard>
           ) : (
-            <div key={color.hex}>{inner}</div>
+            <div key={colorKey}>{inner}</div>
           );
         })}
         {colors.length > 5 && (
@@ -334,7 +335,7 @@ export function FontSpecimens({
             </div>
             <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-muted">
               <div
-                className="h-full rounded-full bg-primary transition-all duration-700"
+                className="h-full rounded-full bg-primary transition-[width] duration-700"
                 style={{ width: `${font.percentage}%` }}
               />
             </div>
@@ -409,7 +410,7 @@ function RingGauge({
             strokeLinecap="round"
             strokeDasharray={circumference}
             strokeDashoffset={offset}
-            className="transition-all duration-1000 ease-out"
+            className="transition-[stroke-dashoffset] duration-1000 ease-out"
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
@@ -635,6 +636,7 @@ export function DarkModeSplit({
           >
             <div className="text-center">
               <svg
+                aria-hidden="true"
                 className="mx-auto mb-1 text-amber-400"
                 width="28"
                 height="28"
@@ -667,6 +669,7 @@ export function DarkModeSplit({
           >
             <div className="text-center">
               <svg
+                aria-hidden="true"
                 className="mx-auto mb-1 text-indigo-300"
                 width="22"
                 height="22"
@@ -747,16 +750,17 @@ export function ColorPaletteGrid({
 }) {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
-      {colors.map((color) => {
+      {colors.map((color, index) => {
         const matching =
           artifacts?.filter((a) =>
             a.dominant_colors.some(
               (c) => c.toLowerCase() === color.hex.toLowerCase(),
             ),
           ) ?? [];
+        const colorKey = `${color.hex}-${color.name}-${index}`;
 
         const card = (
-          <div className="group rounded-xl border border-border bg-card p-3 transition-all hover:-translate-y-0.5 hover:shadow-md">
+          <div className="group rounded-xl border border-border bg-card p-3 transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-md">
             <div
               className="mb-3 aspect-square w-full rounded-lg border border-border transition-transform group-hover:scale-105"
               style={{ backgroundColor: color.hex }}
@@ -778,14 +782,14 @@ export function ColorPaletteGrid({
 
         return artifacts && agentId && matching.length > 0 ? (
           <ArtifactHoverCard
-            key={color.hex}
+            key={colorKey}
             matching={matching}
             agentId={agentId}
           >
             {card}
           </ArtifactHoverCard>
         ) : (
-          <div key={color.hex}>{card}</div>
+          <div key={colorKey}>{card}</div>
         );
       })}
     </div>

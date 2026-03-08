@@ -222,7 +222,14 @@ export function ProbeRunView({ initialResponse }: ProbeRunViewProps) {
             </div>
           </div>
 
-          <div className="mt-6 h-2 overflow-hidden rounded-full bg-muted">
+          <div
+            className="mt-6 h-2 overflow-hidden rounded-full bg-muted"
+            role="progressbar"
+            aria-valuenow={Math.min(progressWidth, 100)}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label="Probe run progress"
+          >
             <div
               className={`h-full rounded-full transition-[width] duration-500 ${
                 run.status === "failed" || run.status === "interrupted"

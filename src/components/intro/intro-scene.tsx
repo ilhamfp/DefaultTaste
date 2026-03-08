@@ -463,7 +463,16 @@ export function IntroScene() {
   return (
     <motion.section
       aria-label="DefaultTaste intro presentation"
+      role="button"
+      tabIndex={0}
+      aria-pressed={isBrandVisible}
       onClick={() => setIsBrandVisible((visible) => !visible)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setIsBrandVisible((visible) => !visible);
+        }
+      }}
       className="relative isolate flex min-h-screen cursor-pointer items-center justify-center overflow-hidden bg-background px-4 py-6 text-foreground select-none sm:px-6 lg:px-10"
     >
       <div

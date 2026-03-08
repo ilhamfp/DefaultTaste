@@ -469,7 +469,7 @@ export function formatProfileDate(value: string) {
 type ProfileTab = "report" | "artifacts";
 
 const tabButtonClass = (active: boolean) =>
-  `px-4 py-2 text-sm transition-colors border-b-2 ${
+  `px-4 py-2 text-sm transition-colors border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
     active
       ? "border-primary font-medium text-primary"
       : "border-transparent text-muted-foreground hover:text-foreground"
@@ -537,7 +537,7 @@ export function ProfileReport({
             variants={fadeUp}
             custom={1}
           >
-            <h1 className="font-serif text-4xl tracking-tight text-foreground">
+            <h1 className="text-pretty font-serif text-4xl tracking-tight text-foreground">
               {profile.name}
             </h1>
             <div className="mt-3 flex flex-wrap items-center gap-3 font-mono text-xs text-muted-foreground sm:text-sm">
@@ -587,14 +587,22 @@ export function ProfileReport({
       {isWebsite ? (
         <div>
           {/* Top tabs */}
-          <nav className="mb-6 flex gap-1 border-b border-border">
+          <nav className="mb-6 flex gap-1 border-b border-border" role="tablist" aria-label="Profile sections">
             <button
+              role="tab"
+              id="tab-report"
+              aria-selected={activeTab === "report"}
+              aria-controls="tabpanel-report"
               onClick={() => setActiveTab("report")}
               className={tabButtonClass(activeTab === "report")}
             >
               Report
             </button>
             <button
+              role="tab"
+              id="tab-artifacts"
+              aria-selected={activeTab === "artifacts"}
+              aria-controls="tabpanel-artifacts"
               onClick={() => setActiveTab("artifacts")}
               className={tabButtonClass(activeTab === "artifacts")}
             >
@@ -610,7 +618,7 @@ export function ProfileReport({
           {/* Tab content */}
           <div>
             {activeTab === "report" && (
-              <>
+              <div role="tabpanel" id="tabpanel-report" aria-labelledby="tab-report">
                 <WebsiteProfileView
                   profile={profile}
                   reducedMotion={reducedMotion}
@@ -635,11 +643,13 @@ export function ProfileReport({
                     </div>
                   </div>
                 </motion.div>
-              </>
+              </div>
             )}
 
             {activeTab === "artifacts" && (
-              <ArtifactsGrid artifacts={artifacts} agentId={profile.id} />
+              <div role="tabpanel" id="tabpanel-artifacts" aria-labelledby="tab-artifacts">
+                <ArtifactsGrid artifacts={artifacts} agentId={profile.id} />
+              </div>
             )}
           </div>
         </div>

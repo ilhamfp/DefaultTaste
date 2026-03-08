@@ -45,7 +45,7 @@ export default function VisualReportsPage() {
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
         {/* Header */}
         <header className="mb-12 text-center">
-          <h1 className="font-serif text-3xl tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+          <h1 className="text-pretty font-serif text-3xl tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Visual Reports
           </h1>
           <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
@@ -62,7 +62,7 @@ export default function VisualReportsPage() {
 
         {/* Clean list */}
         <div>
-          <h2 className="mb-6 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+          <h2 className="text-pretty mb-6 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
             All reports
           </h2>
           <div className="divide-y divide-border border-t border-border">
@@ -75,7 +75,7 @@ export default function VisualReportsPage() {
                   />
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-3">
-                      <h3 className="font-serif text-lg text-foreground">
+                      <h3 className="text-pretty font-serif text-lg text-foreground">
                         {report.title}
                       </h3>
                       {!report.available && (
@@ -100,7 +100,7 @@ export default function VisualReportsPage() {
                 <Link
                   key={report.id}
                   href={report.href}
-                  className="block rounded-lg transition-colors hover:bg-muted/40"
+                  className="block rounded-lg transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:rounded-lg"
                 >
                   {content}
                 </Link>

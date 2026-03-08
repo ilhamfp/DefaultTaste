@@ -22,7 +22,7 @@ type ReportCarouselProps = {
 export function ReportCarousel({ geminiArtifacts }: ReportCarouselProps) {
   const geminiPreviews = geminiArtifacts
     .map((m) => {
-      const entry = m.entries[Math.floor(Math.random() * m.entries.length)];
+      const entry = m.entries[0];
       return entry ? { agentId: m.agentId, entry } : null;
     })
     .filter(Boolean) as { agentId: string; entry: ArtifactEntry }[];
@@ -72,7 +72,7 @@ export function ReportCarousel({ geminiArtifacts }: ReportCarouselProps) {
 function BookCover({ report }: { report: ReportCard }) {
   const inner = (
     <div
-      className={`group relative flex h-[13rem] w-[9.5rem] shrink-0 flex-col overflow-hidden rounded-sm shadow-md transition-all sm:h-[15rem] sm:w-[10.5rem] ${
+      className={`group relative flex h-[13rem] w-[9.5rem] shrink-0 flex-col overflow-hidden rounded-sm shadow-md transition-[transform,box-shadow] sm:h-[15rem] sm:w-[10.5rem] ${
         report.comingSoon
           ? "cursor-default grayscale"
           : "hover:-translate-y-1 hover:shadow-xl"

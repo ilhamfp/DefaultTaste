@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { motion, AnimatePresence, LayoutGroup, useReducedMotion } from "framer-motion";
+import Link from "next/link";
 
 /* ── Animated SVG patterns ─────────────────────────────────────── */
 
@@ -246,11 +246,101 @@ function PatternRenderer({
   return <NestedRects color={color} looping={looping} />;
 }
 
+/* ── Expanded card inner content ───────────────────────────────── */
+
+function ExpandedCardContent({ card, looping }: { card: CardDef; looping: boolean }) {
+  return (
+    <div
+      className="relative overflow-hidden rounded-2xl shadow-2xl"
+      style={{
+        backgroundColor: card.bg,
+        width: LARGE.w,
+        height: LARGE.h,
+      }}
+    >
+      <h3
+        className="absolute font-serif"
+        style={{
+          color: card.textColor,
+          whiteSpace: "pre-line",
+          fontSize: 38,
+          lineHeight: "40px",
+          top: 20,
+          left: 20,
+        }}
+      >
+        {card.title}
+      </h3>
+
+      {!card.available && (
+        <span
+          className="absolute font-mono text-[10px] uppercase tracking-widest"
+          style={{
+            color: card.textColor,
+            opacity: 0.5,
+            top: 110,
+            left: 20,
+          }}
+        >
+          Coming soon
+        </span>
+      )}
+
+      <motion.p
+        className="absolute text-sm leading-relaxed"
+        style={{
+          color: card.descColor,
+          left: 20,
+          right: 20,
+          top: card.available ? 108 : 134,
+        }}
+        initial={{ opacity: 0, filter: "blur(4px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.4, delay: 0.15 }}
+      >
+        {card.description}
+      </motion.p>
+
+      {card.available && (
+        <motion.span
+          className="absolute z-10 font-mono text-xs tracking-wide"
+          style={{
+            color: card.textColor,
+            left: 20,
+            bottom: 20,
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.7 }}
+          transition={{ duration: 0.25, delay: 0.25 }}
+        >
+          Click to view report →
+        </motion.span>
+      )}
+
+      <div
+        className="absolute overflow-hidden"
+        style={{
+          left: 16,
+          right: 16,
+          bottom: card.available ? 44 : 16,
+          height: 200,
+        }}
+      >
+        <PatternRenderer
+          type={card.patternKey}
+          color={card.textColor}
+          looping={looping}
+        />
+      </div>
+    </div>
+  );
+}
+
 /* ── Exported carousel ─────────────────────────────────────────── */
 
 export function VisualReportCarousel() {
   const [expanded, setExpanded] = useState<string | null>(null);
-  const router = useRouter();
+  const reducedMotion = useReducedMotion() ?? false;
 
   const collapse = useCallback(() => setExpanded(null), []);
 
@@ -277,10 +367,13 @@ export function VisualReportCarousel() {
             if (card.id === expanded) return null;
 
             return (
-              <motion.div
+              <motion.button
+                type="button"
                 key={card.id}
                 layoutId={`rcard-${card.id}`}
-                className="absolute cursor-pointer select-none"
+                className="absolute cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:rounded-2xl"
+                aria-expanded={expanded === card.id}
+                aria-label={card.title.replace("\n", " ")}
                 style={{
                   left: "50%",
                   top: "50%",
@@ -349,7 +442,7 @@ export function VisualReportCarousel() {
                     />
                   </div>
                 </div>
-              </motion.div>
+              </motion.button>
             );
           })}
         </div>
@@ -360,6 +453,7 @@ export function VisualReportCarousel() {
         {expanded && (
           <motion.div
             key="backdrop"
+            role="presentation"
             className="fixed inset-0 z-[99] bg-background/60 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -374,107 +468,22 @@ export function VisualReportCarousel() {
       {expandedCard && (
         <div
           className="pointer-events-none fixed inset-0 z-[100] flex items-start justify-center pt-[12vh]"
-          onClick={collapse}
         >
           <motion.div
             layoutId={`rcard-${expandedCard.id}`}
-            className="pointer-events-auto relative cursor-pointer select-none"
+            className="pointer-events-auto relative select-none"
             transition={spring}
-            onClick={(e) => {
-              e.stopPropagation();
-              if (expandedCard.available) {
-                router.push(expandedCard.slug);
-              }
-            }}
           >
-            <div
-              className="relative overflow-hidden rounded-2xl shadow-2xl"
-              style={{
-                backgroundColor: expandedCard.bg,
-                width: LARGE.w,
-                height: LARGE.h,
-              }}
-            >
-              {/* Title */}
-              <h3
-                className="absolute font-serif"
-                style={{
-                  color: expandedCard.textColor,
-                  whiteSpace: "pre-line",
-                  fontSize: 38,
-                  lineHeight: "40px",
-                  top: 20,
-                  left: 20,
-                }}
+            {expandedCard.available ? (
+              <Link
+                href={expandedCard.slug}
+                className="block cursor-pointer rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
-                {expandedCard.title}
-              </h3>
-
-              {/* Coming soon badge */}
-              {!expandedCard.available && (
-                <span
-                  className="absolute font-mono text-[10px] uppercase tracking-widest"
-                  style={{
-                    color: expandedCard.textColor,
-                    opacity: 0.5,
-                    top: 110,
-                    left: 20,
-                  }}
-                >
-                  Coming soon
-                </span>
-              )}
-
-              {/* Description */}
-              <motion.p
-                className="absolute text-sm leading-relaxed"
-                style={{
-                  color: expandedCard.descColor,
-                  left: 20,
-                  right: 20,
-                  top: expandedCard.available ? 108 : 134,
-                }}
-                initial={{ opacity: 0, filter: "blur(4px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                transition={{ duration: 0.4, delay: 0.15 }}
-              >
-                {expandedCard.description}
-              </motion.p>
-
-              {/* CTA */}
-              {expandedCard.available && (
-                <motion.span
-                  className="absolute z-10 font-mono text-xs tracking-wide"
-                  style={{
-                    color: expandedCard.textColor,
-                    left: 20,
-                    bottom: 20,
-                  }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.7 }}
-                  transition={{ duration: 0.25, delay: 0.25 }}
-                >
-                  Click to view report →
-                </motion.span>
-              )}
-
-              {/* Animated illustration */}
-              <div
-                className="absolute overflow-hidden"
-                style={{
-                  left: 16,
-                  right: 16,
-                  bottom: expandedCard.available ? 44 : 16,
-                  height: 200,
-                }}
-              >
-                <PatternRenderer
-                  type={expandedCard.patternKey}
-                  color={expandedCard.textColor}
-                  looping={true}
-                />
-              </div>
-            </div>
+                <ExpandedCardContent card={expandedCard} looping={!reducedMotion} />
+              </Link>
+            ) : (
+              <ExpandedCardContent card={expandedCard} looping={!reducedMotion} />
+            )}
           </motion.div>
         </div>
       )}

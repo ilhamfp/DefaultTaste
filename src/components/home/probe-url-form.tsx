@@ -48,7 +48,7 @@ export function ProbeUrlForm() {
           <input
             id="agent-server-url"
             name="agentServerUrl"
-            type="text"
+            type="url"
             value={endpoint}
             onChange={(event) => {
               setEndpoint(event.target.value);
@@ -58,7 +58,7 @@ export function ProbeUrlForm() {
             spellCheck={false}
             placeholder="https://agent.example.com/v1/generate or wss://agent.example.com/live"
             aria-describedby={helperId}
-            className="min-w-0 flex-1 rounded-lg border border-transparent bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-border focus:outline-none"
+            className="min-w-0 flex-1 rounded-lg border border-transparent bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus-visible:border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           />
 
           <button

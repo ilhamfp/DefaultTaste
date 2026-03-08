@@ -40,7 +40,7 @@ const geminiStack = [
 
 export default function AboutPage() {
   return (
-    <MarketingShell current="about">
+    <MarketingShell>
       <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <section className="max-w-4xl">
           <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">

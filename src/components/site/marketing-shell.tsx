@@ -4,7 +4,7 @@ import { SiteHeader } from "./site-header";
 
 type MarketingShellProps = {
   children: ReactNode;
-  current?: "docs" | "about";
+  current?: "visual-reports" | "intro";
   mainClassName?: string;
   compactHeader?: boolean;
   backgroundVariant?: "default" | "home";

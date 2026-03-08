@@ -148,10 +148,18 @@ def update_run(
 
 
 def load_base_profile(media: str) -> dict[str, Any]:
-    profile_path = PROJECT_ROOT / "data" / media / "profile.json"
+    candidate_paths: list[Path] = []
 
-    if profile_path.exists():
-        return read_json(profile_path)
+    if media == "websites":
+        candidate_paths.append(
+            PROJECT_ROOT / "data" / "websites" / "gemini-flash" / "profile.json",
+        )
+
+    candidate_paths.append(PROJECT_ROOT / "data" / media / "profile.json")
+
+    for profile_path in candidate_paths:
+        if profile_path.exists():
+            return read_json(profile_path)
 
     if media == "websites":
         return {

@@ -47,7 +47,7 @@ export default async function DocsPage() {
   const agents = await getHomepageAgentSummaries();
 
   return (
-    <MarketingShell current="docs">
+    <MarketingShell>
       <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <section className="max-w-3xl">
           <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">

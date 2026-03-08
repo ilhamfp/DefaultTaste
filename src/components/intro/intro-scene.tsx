@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import {
   motion,
   useAnimationFrame,
@@ -488,6 +490,15 @@ export function IntroScene() {
         className="absolute left-1/2 top-1/2 size-[18rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-3xl sm:size-[24rem]"
       />
 
+      <Link
+        href="/"
+        onClick={(e) => e.stopPropagation()}
+        aria-label="Back to home"
+        className="fixed left-4 top-4 z-40 flex size-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:left-6 sm:top-6"
+      >
+        <ArrowLeft className="size-5" />
+      </Link>
+
       {introTweets.map((tweet) => (
         <FloatingTweetCard
           key={tweet.id}
@@ -514,7 +525,7 @@ export function IntroScene() {
         >
           <div
             aria-hidden="true"
-            className="absolute inset-x-[-7rem] inset-y-[-5.5rem] bg-[radial-gradient(circle_at_50%_44%,rgba(0,120,111,0.1),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f7f8f4_100%)] blur-2xl [mask-image:radial-gradient(ellipse_at_center,black_0%,black_42%,transparent_80%)]"
+            className="absolute inset-x-[-7rem] inset-y-[-5.5rem] bg-[radial-gradient(circle_at_50%_44%,rgba(0,120,111,0.22),transparent_46%),linear-gradient(180deg,#ffffff_0%,#f0faf8_100%)] blur-2xl [mask-image:radial-gradient(ellipse_at_center,black_0%,black_50%,transparent_82%)]"
           />
           <div className="relative px-6 py-5 sm:px-8 sm:py-6">
             <BrandLockup

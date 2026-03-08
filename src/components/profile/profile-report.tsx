@@ -174,6 +174,124 @@ function TastePieChart({
   );
 }
 
+const LAYOUT_COLORS = [
+  "#009689",
+  "#5A7DA8",
+  "#C47558",
+  "#A08E4F",
+  "#8674A8",
+  "#7C7C67",
+];
+
+function LayoutTypesChart({
+  data,
+}: {
+  data: { name: string; percentage: number }[];
+}) {
+  if (data.length === 0) return null;
+
+  const [primary, ...rest] = data;
+
+  return (
+    <div className="space-y-2">
+      <div
+        className="overflow-hidden rounded-xl p-5"
+        style={{ backgroundColor: LAYOUT_COLORS[0] }}
+      >
+        <p className="font-mono text-3xl font-semibold tracking-tight text-white">
+          {primary.percentage}%
+        </p>
+        <p className="mt-1 text-sm font-medium text-white/80">
+          {primary.name}
+        </p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-2">
+        {rest.map((item, i) => (
+          <div
+            key={item.name}
+            className="overflow-hidden rounded-xl p-3"
+            style={{
+              backgroundColor: LAYOUT_COLORS[(i + 1) % LAYOUT_COLORS.length],
+            }}
+          >
+            <p className="font-mono text-lg font-semibold tracking-tight text-white sm:text-xl">
+              {item.percentage}%
+            </p>
+            <p className="mt-0.5 text-xs text-white/75">{item.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const KEY_COLORS = [
+  "#009689",
+  "#5A7DA8",
+  "#C47558",
+  "#A08E4F",
+  "#8674A8",
+  "#5E8A7A",
+  "#B06878",
+  "#7A8FB0",
+  "#9B8560",
+  "#6A7C6A",
+];
+
+function KeySignatureChart({
+  data,
+}: {
+  data: { name: string; percentage: number }[];
+}) {
+  if (data.length === 0) return null;
+
+  const [primary, ...rest] = data;
+
+  return (
+    <div className="space-y-2">
+      <div
+        className="overflow-hidden rounded-xl p-5"
+        style={{ backgroundColor: KEY_COLORS[0] }}
+      >
+        <p className="font-mono text-3xl font-semibold tracking-tight text-white">
+          {primary.percentage}%
+        </p>
+        <p className="mt-1 text-sm font-medium text-white/80">
+          {primary.name}
+        </p>
+      </div>
+
+      <div className="space-y-1">
+        {rest.map((item, i) => (
+          <div
+            key={item.name}
+            className="flex items-center gap-3 rounded-lg px-3 py-2"
+            style={{
+              backgroundColor:
+                KEY_COLORS[(i + 1) % KEY_COLORS.length] + "12",
+            }}
+          >
+            <div
+              className="size-2.5 shrink-0 rounded-full"
+              style={{
+                backgroundColor:
+                  KEY_COLORS[(i + 1) % KEY_COLORS.length],
+              }}
+            />
+            <span className="flex-1 text-sm text-foreground">
+              {item.name}
+            </span>
+            <span className="font-mono text-sm font-medium text-muted-foreground">
+              {item.percentage}%
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
 
@@ -249,7 +367,7 @@ function WebsiteProfileView({
       {/* Layout */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <Section title="Layout Types" index={10} reducedMotion={reducedMotion}>
-          <TastePieChart data={wp.layouts} />
+          <LayoutTypesChart data={wp.layouts} />
         </Section>
         <Section title="Layout Techniques" index={10} reducedMotion={reducedMotion}>
           <HorizontalBarChart data={wp.layout_techniques} />
@@ -354,7 +472,7 @@ function MusicProfileView({
           index={keySectionIndex}
           reducedMotion={reducedMotion}
         >
-          <TastePieChart data={mp.keys} />
+          <KeySignatureChart data={mp.keys} />
         </Section>
         <Section
           title="Genre Distribution"
@@ -581,6 +699,22 @@ export function ProfileReport({
         </div>
 
         <div className="mt-6 border-b border-border" />
+
+        <motion.p
+          initial={reducedMotion ? false : "hidden"}
+          animate={reducedMotion ? undefined : "visible"}
+          variants={fadeUp}
+          custom={2}
+          className="mt-4 text-sm leading-relaxed text-muted-foreground"
+        >
+          We asked{" "}
+          <span className="font-medium text-foreground">{profile.name}</span> to
+          {isWebsite
+            ? " \"make a website\""
+            : " \"make a song\""}{" "}
+          {profile.probe_count} times with no additional instructions, then
+          analyzed the patterns in its outputs.
+        </motion.p>
       </section>
 
       {/* Tabbed layout for website profiles */}

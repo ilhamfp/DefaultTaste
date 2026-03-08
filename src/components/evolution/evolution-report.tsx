@@ -180,7 +180,7 @@ export function EvolutionReport({ profiles, manifests }: Props) {
 
   if (profiles.length < 3) {
     return (
-      <MarketingShell compactHeader mainClassName="px-4 sm:px-6">
+      <MarketingShell mainClassName="px-4 sm:px-6">
         <div className="mx-auto max-w-5xl px-2 pb-12 pt-10">
           <p className="text-sm text-muted-foreground">
             Not enough profile data to show evolution report.
@@ -197,7 +197,7 @@ export function EvolutionReport({ profiles, manifests }: Props) {
   const wps = [wp0, wp1, wp2];
 
   return (
-    <MarketingShell compactHeader mainClassName="px-4 sm:px-6">
+    <MarketingShell mainClassName="px-4 sm:px-6">
       <div className="mx-auto max-w-5xl px-2 pb-12 pt-10 sm:px-0">
         {/* ── 1. Hero + Artifact Triptych header ──────────── */}
         <HeroSection

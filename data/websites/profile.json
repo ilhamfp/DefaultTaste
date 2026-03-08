@@ -1,0 +1,97 @@
+{
+  "id": "gemini-flash",
+  "name": "Gemini 2.5 Flash",
+  "model": "gemini-2.5-flash",
+  "probe_type": "website",
+  "probe_count": 5,
+  "date": "2026-03-07",
+  "website_profile": {
+    "frameworks": [
+      {
+        "name": "Vanilla HTML",
+        "count": 5,
+        "percentage": 100
+      }
+    ],
+    "css_frameworks": [
+      {
+        "name": "Vanilla CSS",
+        "count": 5,
+        "percentage": 100
+      }
+    ],
+    "colors": [
+      {
+        "hex": "#1a1a2e",
+        "name": "Dark Navy",
+        "count": 5,
+        "percentage": 100
+      },
+      {
+        "hex": "#764ba2",
+        "name": "Purple",
+        "count": 4,
+        "percentage": 80
+      },
+      {
+        "hex": "#667eea",
+        "name": "Indigo",
+        "count": 3,
+        "percentage": 60
+      },
+      {
+        "hex": "#16213e",
+        "name": "Midnight Blue",
+        "count": 2,
+        "percentage": 40
+      },
+      {
+        "hex": "#16213e",
+        "name": "Deep Navy",
+        "count": 1,
+        "percentage": 20
+      },
+      {
+        "hex": "#667eea",
+        "name": "Soft Indigo",
+        "count": 1,
+        "percentage": 20
+      },
+      {
+        "hex": "#667eea",
+        "name": "Indigo Blue",
+        "count": 1,
+        "percentage": 20
+      },
+      {
+        "hex": "#764ba2",
+        "name": "Deep Purple",
+        "count": 1,
+        "percentage": 20
+      },
+      {
+        "hex": "#16213e",
+        "name": "Deep Blue",
+        "count": 1,
+        "percentage": 20
+      }
+    ],
+    "fonts": [
+      {
+        "name": "Inter",
+        "count": 5,
+        "percentage": 100
+      }
+    ],
+    "layouts": [
+      {
+        "name": "Landing Page",
+        "count": 5,
+        "percentage": 100
+      }
+    ],
+    "libraries": [],
+    "dark_mode_percentage": 100
+  },
+  "correction_prompt": "When designing, explore a wider spectrum of possibilities by experimenting with vibrant light-themed palettes, earthy tones like terracotta and sage, or high-energy neon accents. \nVenture beyond standard landing pages to try editorial magazine layouts, bento grids, or brutalist-inspired archives. \nDiversify your typography using elegant serifs like Playfair Display, technical monospaces like JetBrains Mono, or avant-garde display fonts like Syne. \nConsider the utility of modern frameworks like Tailwind CSS or the dynamic motion of libraries like Framer Motion and GSAP. \nAim for varied aesthetic moods, from minimalist Swiss design and soft glassmorphism to gritty retro-analog or clean, corporate Memphis styles. \nEmbrace architectural curiosity by testing how different structures, colors, and fonts can shift a project's entire personality."
+}

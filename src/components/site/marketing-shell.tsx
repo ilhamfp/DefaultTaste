@@ -6,7 +6,6 @@ type MarketingShellProps = {
   children: ReactNode;
   current?: "visual-reports" | "intro";
   mainClassName?: string;
-  compactHeader?: boolean;
   backgroundVariant?: "default" | "home";
 };
 
@@ -14,7 +13,6 @@ export function MarketingShell({
   children,
   current,
   mainClassName,
-  compactHeader = false,
   backgroundVariant = "default",
 }: MarketingShellProps) {
   return (
@@ -34,7 +32,7 @@ export function MarketingShell({
       />
 
       <div className="relative z-10 flex min-h-screen flex-col">
-        <SiteHeader current={current} compact={compactHeader} />
+        <SiteHeader current={current} />
         <main id="main-content" className={cn("flex-1", mainClassName)}>
           {children}
         </main>

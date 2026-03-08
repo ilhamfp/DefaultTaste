@@ -494,7 +494,7 @@ export function IntroScene() {
         href="/"
         onClick={(e) => e.stopPropagation()}
         aria-label="Back to home"
-        className="fixed left-4 top-4 z-40 flex size-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:left-6 sm:top-6"
+        className="fixed left-4 top-4 z-40 flex size-11 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:left-6 sm:top-6"
       >
         <ArrowLeft className="size-5" />
       </Link>

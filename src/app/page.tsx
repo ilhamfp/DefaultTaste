@@ -16,7 +16,6 @@ export default async function Home() {
 
   return (
     <MarketingShell
-      compactHeader
       backgroundVariant="home"
       mainClassName="px-4 sm:px-6 lg:h-[calc(100svh-3.5rem)]"
     >
@@ -30,7 +29,7 @@ export default async function Home() {
               wordmarkClassName="text-[2.45rem] sm:text-[3.1rem]"
             />
 
-            <h1 className="max-w-[38rem] font-serif text-[1.9rem] leading-[1.04] tracking-tight text-foreground text-pretty sm:text-[2.45rem] lg:text-[2.7rem]">
+            <h1 className="max-w-[38rem] font-serif text-[1.9rem] leading-[1.12] tracking-tight text-foreground text-pretty sm:text-[2.45rem] sm:leading-[1.04] lg:text-[2.7rem]">
               <span className="block">Point us at an agent.</span>
               <span className="mt-2 block italic text-foreground/78">
                 Reveal the taste it defaults to.

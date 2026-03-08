@@ -94,12 +94,12 @@ export function ProbeSetupForm({
       }}
     >
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)]">
-        <div className="space-y-6 rounded-xl border border-border bg-card p-7">
+        <div className="space-y-6 rounded-xl border border-border bg-card p-5 sm:p-7">
           <div>
             <p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">
               Probe setup
             </p>
-            <h1 className="mt-3 font-serif text-4xl tracking-tight text-foreground">
+            <h1 className="mt-3 font-serif text-3xl tracking-tight text-foreground sm:text-4xl">
               Configure your probe run.
             </h1>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">

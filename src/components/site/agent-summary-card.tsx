@@ -78,7 +78,7 @@ export function AgentSummaryCard({
               key={stat.label}
               className="rounded-lg bg-muted/70 px-2 py-1.5"
             >
-              <dt className="truncate text-[8px] uppercase tracking-[0.18em] text-muted-foreground">
+              <dt className="truncate text-[9px] uppercase tracking-[0.18em] text-muted-foreground">
                 {stat.label}
               </dt>
               <dd className="mt-0.5 truncate text-[11px] font-medium text-foreground">

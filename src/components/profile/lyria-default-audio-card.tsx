@@ -317,6 +317,7 @@ export function LyriaDefaultAudioCard({
             <Button
               type="button"
               size="sm"
+              className="min-h-[44px]"
               onClick={handleTogglePlayback}
               disabled={Boolean(playbackError)}
               aria-pressed={isPlaying}

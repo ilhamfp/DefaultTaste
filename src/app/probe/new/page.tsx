@@ -51,7 +51,7 @@ export default async function ProbeSetupPage({
   const depth = parseDepth(pickParam(params.depth));
 
   return (
-    <MarketingShell compactHeader mainClassName="px-4 sm:px-6">
+    <MarketingShell mainClassName="px-4 sm:px-6">
       <div className="mx-auto max-w-6xl px-2 pb-16 pt-10 sm:px-0">
         <ProbeSetupForm
           initialEndpoint={endpoint}

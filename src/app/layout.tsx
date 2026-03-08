@@ -18,9 +18,13 @@ const notoSerif = Noto_Serif({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://default-taste.vercel.app"),
   title: "DefaultTaste — Revealing AI Aesthetic Defaults",
   description:
     "Probe AI models hundreds of times. Discover their hidden aesthetic preferences. Get a correction prompt to override them.",
+  twitter: {
+    card: "summary_large_image",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },

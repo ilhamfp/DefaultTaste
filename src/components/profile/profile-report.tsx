@@ -49,7 +49,7 @@ const fadeUp = {
   }),
 };
 
-const sectionClass = "rounded-xl border border-border bg-card p-6";
+const sectionClass = "rounded-xl border border-border bg-card p-4 sm:p-6";
 const labelClass = "text-xs uppercase tracking-[0.24em] text-muted-foreground";
 const focusRingClass =
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
@@ -123,8 +123,8 @@ function HorizontalBarChart({
         <YAxis
           type="category"
           dataKey="name"
-          tick={{ fontSize: 11, fill: "#0C0C09" }}
-          width={120}
+          tick={{ fontSize: 10, fill: "#0C0C09" }}
+          width={90}
           axisLine={false}
           tickLine={false}
         />
@@ -148,29 +148,42 @@ function TastePieChart({
   data: { name: string; percentage: number }[];
 }) {
   return (
-    <ResponsiveContainer width="100%" height={250}>
-      <PieChart>
-        <Pie
-          data={data}
-          dataKey="percentage"
-          nameKey="name"
-          cx="50%"
-          cy="50%"
-          outerRadius={88}
-          stroke="#FFFFFF"
-          strokeWidth={2}
-          label={(props: PieLabelRenderProps) =>
-            `${props.name ?? ""} ${((props.percent ?? 0) * 100).toFixed(0)}%`
-          }
-          style={{ fontSize: 11, fill: "#7C7C67" }}
-        >
-          {data.map((_, i) => (
-            <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />
-          ))}
-        </Pie>
-        <Tooltip contentStyle={tooltipStyle} />
-      </PieChart>
-    </ResponsiveContainer>
+    <div>
+      <ResponsiveContainer width="100%" height={220}>
+        <PieChart>
+          <Pie
+            data={data}
+            dataKey="percentage"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={72}
+            stroke="#FFFFFF"
+            strokeWidth={2}
+            label={(props: PieLabelRenderProps) =>
+              `${((props.percent ?? 0) * 100).toFixed(0)}%`
+            }
+            style={{ fontSize: 10, fill: "#7C7C67" }}
+          >
+            {data.map((_, i) => (
+              <Cell key={i} fill={CHART_COLORS[i % CHART_COLORS.length]} />
+            ))}
+          </Pie>
+          <Tooltip contentStyle={tooltipStyle} />
+        </PieChart>
+      </ResponsiveContainer>
+      <div className="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1">
+        {data.map((item, i) => (
+          <div key={item.name} className="flex items-center gap-1.5">
+            <div
+              className="h-2.5 w-2.5 shrink-0 rounded-full"
+              style={{ backgroundColor: CHART_COLORS[i % CHART_COLORS.length] }}
+            />
+            <span className="text-xs text-muted-foreground">{item.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -514,7 +527,7 @@ function MusicProfileView({
           <div className="space-y-3">
             {mp.instruments.map((inst) => (
               <div key={inst.name} className="flex items-center gap-3">
-                <span className="w-40 shrink-0 text-sm text-foreground">
+                <span className="w-28 shrink-0 text-sm text-foreground sm:w-40">
                   {inst.name}
                 </span>
                 <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-muted">
@@ -655,7 +668,7 @@ export function ProfileReport({
             variants={fadeUp}
             custom={1}
           >
-            <h1 className="text-pretty font-serif text-4xl tracking-tight text-foreground">
+            <h1 className="text-pretty font-serif text-3xl tracking-tight text-foreground sm:text-4xl">
               {profile.name}
             </h1>
             <div className="mt-3 flex flex-wrap items-center gap-3 font-mono text-xs text-muted-foreground sm:text-sm">

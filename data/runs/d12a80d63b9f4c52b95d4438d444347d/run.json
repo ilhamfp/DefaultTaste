@@ -1,0 +1,25 @@
+{
+  "id": "d12a80d63b9f4c52b95d4438d444347d",
+  "settings": {
+    "endpointUrl": "https://agent.example.com/v1/generate",
+    "label": null,
+    "description": "adasdsa",
+    "media": "website",
+    "depth": "standard"
+  },
+  "status": "completed",
+  "createdAt": "2026-03-07T07:21:46.776Z",
+  "updatedAt": "2026-03-07T07:21:50.900549+00:00",
+  "startedAt": "2026-03-07T07:21:46.945382+00:00",
+  "completedAt": "2026-03-07T07:21:50.900348+00:00",
+  "error": null,
+  "transportLabel": "Future integration target: Gemini-compatible HTTPS generate endpoint",
+  "workerPid": null,
+  "resultProfilePath": "data/runs/d12a80d63b9f4c52b95d4438d444347d/profile.json",
+  "progress": {
+    "current": 30,
+    "total": 30,
+    "percent": 100,
+    "message": "Demo walkthrough complete. Your simulated taste profile is ready."
+  }
+}

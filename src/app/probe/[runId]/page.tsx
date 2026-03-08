@@ -28,7 +28,7 @@ export default async function ProbeRunPage({
     run.status === "completed" ? await readProbeRunProfile(run) : null;
 
   return (
-    <MarketingShell compactHeader mainClassName="px-4 sm:px-6">
+    <MarketingShell mainClassName="px-4 sm:px-6">
       <ProbeRunView initialResponse={{ run, profile }} />
     </MarketingShell>
   );

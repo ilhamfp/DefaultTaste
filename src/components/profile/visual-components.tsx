@@ -30,6 +30,7 @@ function ArtifactHoverCard({
 }) {
   const [show, setShow] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const isTouchRef = useRef(false);
 
   if (matching.length === 0) return <>{children}</>;
 
@@ -39,18 +40,27 @@ function ArtifactHoverCard({
     <div
       className="relative"
       onMouseEnter={() => {
+        if (isTouchRef.current) return;
         clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(() => setShow(true), 250);
       }}
       onMouseLeave={() => {
+        if (isTouchRef.current) return;
         clearTimeout(timeoutRef.current);
         setShow(false);
+      }}
+      onTouchStart={() => {
+        isTouchRef.current = true;
+      }}
+      onClick={() => {
+        if (!isTouchRef.current) return;
+        setShow((prev) => !prev);
       }}
     >
       {children}
       {show && (
-        <div className="absolute left-1/2 top-full z-50 mt-2 w-max -translate-x-1/2 animate-in fade-in slide-in-from-top-1 duration-150">
-          <div className="rounded-xl border border-border bg-card p-3 shadow-xl">
+        <div className="absolute left-0 top-full z-50 mt-2 max-w-[calc(100vw-2rem)] animate-in fade-in slide-in-from-top-1 duration-150">
+          <div className="overflow-x-auto rounded-xl border border-border bg-card p-3 shadow-xl">
             <p className="mb-2 text-[10px] uppercase tracking-widest text-muted-foreground">
               {matching.length} artifact{matching.length !== 1 ? "s" : ""} with
               this trait
@@ -198,12 +208,12 @@ export function PersonalityRadarChart({
 
   return (
     <div>
-      <ResponsiveContainer width="100%" height={320}>
+      <ResponsiveContainer width="100%" height={280}>
         <RadarChart cx="50%" cy="50%" outerRadius="72%" data={data}>
           <PolarGrid stroke="#E8E8E3" />
           <PolarAngleAxis
             dataKey="trait"
-            tick={{ fontSize: 11, fill: "#7C7C67" }}
+            tick={{ fontSize: 10, fill: "#7C7C67" }}
           />
           <PolarRadiusAxis
             angle={90}
@@ -341,7 +351,7 @@ export function FontSpecimens({
             </div>
             {artifacts && matching.length > 0 && (
               <p className="mt-2 text-[10px] text-muted-foreground/60">
-                Hover to see {matching.length} example
+                Tap to see {matching.length} example
                 {matching.length !== 1 ? "s" : ""}
               </p>
             )}
@@ -443,7 +453,7 @@ export function VisualFeaturesGauges({
   };
 }) {
   return (
-    <div className="flex flex-wrap items-start justify-center gap-6 sm:gap-8">
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 md:grid-cols-4 lg:grid-cols-7">
       <RingGauge
         value={features.has_animations_pct}
         label="Animations"
@@ -599,6 +609,7 @@ export function DarkModeSplit({
   const hoverTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(
     undefined,
   );
+  const isTouchRef = useRef(false);
 
   const lightArtifacts =
     artifacts?.filter((a) => a.theme === "light") ?? [];
@@ -614,13 +625,20 @@ export function DarkModeSplit({
   const previews = hoveredArtifacts.slice(0, 4);
 
   function enterSide(side: "light" | "dark") {
+    if (isTouchRef.current) return;
     clearTimeout(hoverTimeout.current);
     hoverTimeout.current = setTimeout(() => setHoveredSide(side), 250);
   }
 
   function leaveSide() {
+    if (isTouchRef.current) return;
     clearTimeout(hoverTimeout.current);
     setHoveredSide(null);
+  }
+
+  function tapSide(side: "light" | "dark") {
+    if (!isTouchRef.current) return;
+    setHoveredSide((prev) => (prev === side ? null : side));
   }
 
   return (
@@ -633,6 +651,8 @@ export function DarkModeSplit({
             style={{ flexGrow: lightPct }}
             onMouseEnter={() => enterSide("light")}
             onMouseLeave={leaveSide}
+            onTouchStart={() => { isTouchRef.current = true; }}
+            onClick={() => tapSide("light")}
           >
             <div className="text-center">
               <svg
@@ -666,6 +686,8 @@ export function DarkModeSplit({
             style={{ flexGrow: Math.max(darkPercentage, 3) }}
             onMouseEnter={() => enterSide("dark")}
             onMouseLeave={leaveSide}
+            onTouchStart={() => { isTouchRef.current = true; }}
+            onClick={() => tapSide("dark")}
           >
             <div className="text-center">
               <svg
@@ -690,8 +712,8 @@ export function DarkModeSplit({
       </div>
       {/* Artifact preview popover */}
       {hoveredSide && agentId && previews.length > 0 && (
-        <div className="absolute left-1/2 top-full z-50 mt-2 w-max -translate-x-1/2 animate-in fade-in slide-in-from-top-1 duration-150">
-          <div className="rounded-xl border border-border bg-card p-3 shadow-xl">
+        <div className="absolute left-0 top-full z-50 mt-2 max-w-[calc(100vw-2rem)] animate-in fade-in slide-in-from-top-1 duration-150">
+          <div className="overflow-x-auto rounded-xl border border-border bg-card p-3 shadow-xl">
             <p className="mb-2 text-[10px] uppercase tracking-widest text-muted-foreground">
               {hoveredArtifacts.length} {hoveredSide} artifact
               {hoveredArtifacts.length !== 1 ? "s" : ""}

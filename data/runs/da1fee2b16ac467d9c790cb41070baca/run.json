@@ -1,0 +1,25 @@
+{
+  "id": "da1fee2b16ac467d9c790cb41070baca",
+  "settings": {
+    "endpointUrl": "https://agent.example.com/v1/generate?v=2",
+    "label": "Demo Agent",
+    "description": "Stage demo endpoint",
+    "media": "website",
+    "depth": "quick"
+  },
+  "status": "completed",
+  "createdAt": "2026-03-07T08:40:07.730Z",
+  "updatedAt": "2026-03-07T08:40:10.804464+00:00",
+  "startedAt": "2026-03-07T08:40:07.829410+00:00",
+  "completedAt": "2026-03-07T08:40:10.804441+00:00",
+  "error": null,
+  "transportLabel": "Future integration target: Gemini-compatible HTTPS generate endpoint",
+  "workerPid": null,
+  "resultProfilePath": "data/runs/da1fee2b16ac467d9c790cb41070baca/profile.json",
+  "progress": {
+    "current": 12,
+    "total": 12,
+    "percent": 100,
+    "message": "Demo walkthrough complete. Your simulated taste profile is ready."
+  }
+}

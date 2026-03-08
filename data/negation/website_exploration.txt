@@ -1,0 +1,6 @@
+When designing, explore a wider spectrum of possibilities by experimenting with vibrant light-themed palettes, earthy tones like terracotta and sage, or high-energy neon accents. 
+Venture beyond standard landing pages to try editorial magazine layouts, bento grids, or brutalist-inspired archives. 
+Diversify your typography using elegant serifs like Playfair Display, technical monospaces like JetBrains Mono, or avant-garde display fonts like Syne. 
+Consider the utility of modern frameworks like Tailwind CSS or the dynamic motion of libraries like Framer Motion and GSAP. 
+Aim for varied aesthetic moods, from minimalist Swiss design and soft glassmorphism to gritty retro-analog or clean, corporate Memphis styles. 
+Embrace architectural curiosity by testing how different structures, colors, and fonts can shift a project's entire personality.

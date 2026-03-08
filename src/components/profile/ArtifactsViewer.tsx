@@ -86,8 +86,8 @@ function ArtifactModal({
       }}
     >
       <div className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-xl">
-        <div className="flex items-center justify-between border-b border-border px-5 py-3">
-          <div className="flex items-center gap-3">
+        <div className="flex items-start justify-between border-b border-border px-5 py-3">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             <span className="font-mono text-sm text-muted-foreground">
               #{artifact.run_index}
             </span>
@@ -103,7 +103,7 @@ function ArtifactModal({
           </div>
           <button
             onClick={onClose}
-            className="rounded-lg p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="ml-auto shrink-0 rounded-lg p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             aria-label="Close"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -254,7 +254,7 @@ export function ArtifactsGrid({
             Clear filters
           </button>
         )}
-        <span className="ml-auto font-mono text-xs text-muted-foreground">
+        <span className="w-full font-mono text-xs text-muted-foreground sm:ml-auto sm:w-auto">
           {filtered.length} artifact{filtered.length !== 1 ? "s" : ""}
         </span>
       </div>

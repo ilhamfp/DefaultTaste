@@ -19,7 +19,7 @@ export default async function AgentProfilePage({
 
   if (!profile) {
     return (
-      <MarketingShell compactHeader mainClassName="px-4 sm:px-6">
+      <MarketingShell mainClassName="px-4 sm:px-6">
         <div className="mx-auto max-w-5xl px-2 pb-12 pt-10 sm:px-0">
           <p className="text-sm text-muted-foreground">Agent not found.</p>
           <Link
@@ -34,7 +34,7 @@ export default async function AgentProfilePage({
   }
 
   return (
-    <MarketingShell compactHeader mainClassName="px-4 sm:px-6">
+    <MarketingShell mainClassName="px-4 sm:px-6">
       <div className="mx-auto max-w-5xl px-2 pb-12 pt-10 sm:px-0">
         <ProfileReport
           profile={profile}
